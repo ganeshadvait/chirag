@@ -1,65 +1,267 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import dynamic from "next/dynamic";
+
+// Static imports
+import Header from "@/components/header/header";
+import Hero from "@/components/hero/hero";
+import Second from "@/components/second/second";
+import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
+import FooterComponent from "@/components/footer/footer";
+import Faqs from "@/components/faqs/faq";
+import MobileStickyFooter from "@/components/mobilsticky";
+// import QuestioneryPopUp from "@/components/questionerypopup";
+import Conditioncost from "@/components/conditioncost";
+// import DoctorsData from "./doctorsdata/doctorsdata"
+// import Whatare from "./components/what/whatare";
+// const DoctorCardThree = dynamic(() => import("./components/doctorsthreecards/doctorsthreecards"));
+
+// Dynamic imports
+const DoctorCard = dynamic(() => import("@/components/topdoctors/ourdoctors"));
+const HospitalComparison = dynamic(
+  () => import("@/components/Treatmenttable/Hospitalcomparison")
+);
+const Accreditations = dynamic(
+  () => import("@/components/Accreditions/accreditions")
+);
+const VideoSection = dynamic(() => import("@/components/Videosection/videos"));
+const PatientTalks = dynamic(
+  () => import("@/components/Patienttalks/patients")
+);
+const Luxgpt = dynamic(() => import("@/components/luxgpt/luxgpt"));
+// const Footer = dynamic(() => import("./components/footer/footer"));
+
+// const Faqs = dynamic(() => import("./components/faqs/faq"));
 
 export default function Home() {
+  // const pathname = usePathname();
+
+  // Fallback hero text based on pathname
+  const heroHeading =
+    "Lux Hospitals - Advanced Surgerical Hospital in Hyderabad";
+
+  // if (pathname.includes("piles")) {
+  //   heroHeading = "Get Relief from Piles Today";
+
+  // } else if (pathname.includes("fistula")) {
+  //   heroHeading = "Fistula Treatment at Lux Hospitals";
+
+  // }
+
+  // Dummy content
+  const defaultDescList = [
+    "Advanced Laser & Minimally Invasive Surgeries",
+    "Same-day discharge & 30-minute procedures",
+    "Cashless Insurance Accepted",
+    "0% EMI Options Available",
+    "Expert Doctors & State-of-the-Art Facilities",
+  ];
+
+  const services = [
+    {
+      image:
+        "https://luxhospitals.com/wp-content/uploads/2025/04/converted-3.avif",
+      title: "Book an Appointment",
+      arrow: "/Arrow.svg",
+      link: "tel:917969084448",
+    },
+    {
+      image: "/cost extimation.avif",
+      title: "Cost Estimation",
+      arrow: "/Arrow.svg",
+      link: "whatsapp",
+    },
+    {
+      image:
+        "https://luxhospitals.com/wp-content/uploads/2025/04/converted-2.avif",
+      title: "Second Opinion",
+      arrow: "/Arrow.svg",
+      link: "whatsapp",
+    },
+    {
+      image:
+        "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
+      title: "Insurance Coverage",
+      arrow: "/Arrow.svg",
+      link: "tel:917969084448",
+    },
+  ];
+
+  const defaultLocationHeading =
+    "Lux Hospitals - - Leading Center for Proctology & Advanced Surgery";
+
+  // const whatAreH = "What is Piles?";
+  // const whatAreP =
+  //   "Piles, also known as hemorrhoids, are swollen and inflamed veins in the rectum or anus. They cause discomfort, bleeding, itching, and pain during bowel movements. Piles can be internal or external and range from mild to severe.";
+  // const whatHead = "Treatment we provide";
+  // const treatments = [
+  //   "Laser Treatment",
+  //   "Rubber Band Ligation",
+  //   "Sclerotherapy",
+  //   "Surgical Hemorrhoidectomy",
+  // ];
+
+  // const fheading = "Frequently Asked Questions";
+  const faqs = [
+    {
+      faqTitle: " What medical departments are available at Lux Hospitals.?",
+      faqAnswer:
+        "We specialize in Proctology, Laparoscopic Surgery, Urology, Gynecology, ENT, Orthopedics, and Plastic & Cosmetic Surgery, all under one roof.",
+    },
+    {
+      faqTitle: "Can I get same-day consultations and quick appointments?",
+      faqAnswer:
+        "Yes, Lux Hospitals offers fast-track appointments with minimal wait time. Same-day consultations are available for most departments.",
+    },
+    {
+      faqTitle: " Are both male and female doctors available?",
+      faqAnswer:
+        "Yes, we have highly qualified male and female specialists across all departments, including female gynecologists for women-centric care.",
+    },
+    {
+      faqTitle: "How do I book an appointment at Lux Hospitals?",
+      faqAnswer:
+        "You can easily book online, call our helpline, or walk in. Our care team will help you with doctor availability and treatment planning.",
+    },
+    {
+      faqTitle: "Why is Lux Hospitals the best preference for you?",
+      faqAnswer:
+        "Lux Hospitals provides expert care across multiple specialties using advanced equipment. We offer same-day procedures and personalized treatment focused on your comfort and recovery. Patient-first care is always our motto.",
+    },
+    {
+      faqTitle: "Does Lux Hospitals accept health insurance?",
+      faqAnswer:
+        "Yes, we accept most leading insurance plans for departments like Proctology, Urology, ENT, Orthopedics, Gynecology, and Laparoscopy. Cosmetic procedures are not covered.",
+    },
+  ];
+  // const doctorOrder = [
+  //   "Dr. Harshitha Kakarla",
+  //   "Dr. Samhitha Alukur",
+  //   "Dr. Pragnia Poloju"
+  // ];
+
+  const [questionnaireOpen, setQuestionnaireOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Header
+        PhoneNumber={"07969084448"}
+        mobilectatext={"Call Now"}
+        mobileNumberHeader={"tel:07969084448"}
+      />
+      <Hero
+        heading={heroHeading}
+        descList={defaultDescList}
+        heroImage={"/happy patient.avif"}
+      />
+      <Second
+        services={services}
+        onOpenQuestionnaire={() => setQuestionnaireOpen(true)}
+      />
+    
+      <Conditioncost />
+      <HospitalLocation locationsectionheading={defaultLocationHeading} />
+      <section
+        className="w-[90%]"
+        style={{
+          margin: "auto",
+        }}
+      >
+        <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-4">
+          Our Top Doctors
+        </h2>
+        <div className="doctors_container">
+          <DoctorCard
+            url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Samhitha-Reddy-2.webp"
+            name="Dr. Samhitha Reddy"
+            qualification="MBBS, MS, FMAS, FISCP, DMAS"
+            designation="Piles Specialist"
+            experience="Experieance:8 years"
+            description="Dr. Samhitha Reddy is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, she worked with top surgeons in India. She treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS."
+            mobileNumberDoctor={"tel:917969084448"}
+          />
+          <DoctorCard
+            url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Abhishek-Katha-2.webp"
+            name="Dr. Abhishek Katha"
+            qualification="MBBS, MS, FMAS"
+            designation="Piles Specialist"
+            experience="Experieance:9 years"
+            description="Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care."
+            mobileNumberDoctor={"tel:917969084448"}
+          />
+        </div>
+      </section>
+      {/* {doctorOrder.length > 0 && (
+              <section
+                className="w-[90%]"
+                style={{
+                  margin: "auto",
+                }}
+              >
+                <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-4">
+                  Our Top Doctors
+                </h2>
+                <div className="doctors_container">
+                  {doctorOrder.map((doctorName, ind) => {
+                    const cardData = DoctorsData["Gynecology"][doctorName as keyof typeof DoctorsData["Gynecology"]];
+                    return (
+                      <div key={ind}>
+                        <DoctorCardThree
+                          url={cardData.url}
+                          name={cardData.name}
+                          qualification={cardData.qualification}
+                          designation="Consultant Piles Specialist"
+                          experience={cardData.experience}
+                          description={cardData.description}
+                          mobileNumberDoctor="tel:07969084448"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            )} */}
+      <HospitalComparison
+        theading={"Treatment at Lux Hospitals"}
+        ConditionVideo={"/tablevideo.mp4"}
+      />
+      <Accreditations />
+      <VideoSection />
+      <PatientTalks />
+      <Luxgpt />
+      {/* {whatAreH && (
+              <Whatare
+                whatAreH={whatAreH}
+                whatAreP={whatAreP}
+                whatHead={whatHead}
+                treatments={treatments.map((treatment) => ({
+                  title: treatment,
+                }))}
+              />
+            )} */}
+
+      {faqs.length > 0 && (
+        <Faqs
+          // fheading={fheading}
+          faqs={faqs.map((faq) => ({
+            faqquestion: faq.faqTitle,
+            faqanswer: faq.faqAnswer,
+          }))}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      )}
+      <FooterComponent
+        footerdesc="Visit the best piles hospital in Hyderabad for painless, advanced treatment and expert care!"
+        footernumber="07969084448"
+      />
+      <MobileStickyFooter mobileNumber="tel:07969084449" />
+
+      {/* <MobileStickyFooter/> */}
+
+      {/* <Faqs  fheading={"heading"}
+        faqquestion={"title"}
+        faqanswer={"answer"}
+      /> */}
+    </>
   );
 }
