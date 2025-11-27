@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-// import "./headerstyles.css";
-// import { handleWhatsappConnection } from "../../careconsole";
 import LoaderModal from "../LoaderModal";
 import Image from "next/image";
 
@@ -115,28 +113,6 @@ export default function Header({
           </ul>
         </nav>
 
-        {/* <div className="header__cta">
-          <a
-            href={mobileNumberHeader}
-            className="header_cta_type_one flex items-center gap-2"
-          >
-            <img
-              src="/phone-call-icon svg.svg"
-              alt="Call Icon"
-              className="w-4 h-4 md:w-5 md:h-5"
-            />
-            <span className="phone_number">{PhoneNumber}</span>
-            <span
-              suppressHydrationWarning
-              data-cta="header cta call button"
-              className="call_now gtm-cta"
-              onClick={() => handleCTAclick("Book Appointment header right")}
-            >
-              {mobilectatext}
-            </span>
-          </a>
-          
-        </div> */}
         <div className="header__cta">
           {/* <!-- Mobile Link (≤ 760px) --> */}
           <a
@@ -166,9 +142,6 @@ export default function Header({
               e.preventDefault();
               handleWhatsapp("Contact");
             }}
-            // onClick={() => {
-            //   window.location.href = "https://wa.me/917969084444";
-            // }}
             className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
           >
             <Image

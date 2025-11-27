@@ -36,19 +36,8 @@ const DoctorCard = ({
       window.removeEventListener("resize", updateScreenSize);
     };
   }, []);
-
-  // const handleClick = () => {
-  //   if (isDesktop) {
-  //     handleWhatsappConnection(name); // Desktop behavior
-  //   } else {
-  //     window.location.href = mobileNumberDoctor; // Mobile behavior
-  //   }
-  // };
   const handleClick = () => {
     alert("WhatsApp feature is coming soon!");
-
-    
-
   };
 
   return (
@@ -78,9 +67,6 @@ const DoctorCard = ({
 
               <button
                 onClick={handleClick}
-                // onClick={() => {
-                //   window.location.href = "https://wa.me/917969084444";
-                // }}
                 className="dbutton mt-4 border border-indigo-900 text-indigo-900 font-bold py-2 px-5 rounded-full transition-all duration-300 hover:bg-indigo-900 hover:text-white"
               >
                 Book an Appointment

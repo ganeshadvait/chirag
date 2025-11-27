@@ -87,17 +87,6 @@ export default function LoaderModal({
           </a>
         )}
 
-        {/* Add QR code here */}
-        {/* <div className="hidden md:block text-left mt-6 mx-auto">
-          <img
-            src="/Lux QR WhatsApp.avif"
-            alt="Lux Whatsapp QR Code"
-            className="w-40 h-40 mx-auto"
-          />
-          <p className="text-xs text-gray-500 mt-2 text-center">
-            Scan the Q  R code to open WhatsApp
-          </p>
-        </div> */}
       </div>
     </div>
 

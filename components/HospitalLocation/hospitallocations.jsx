@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
-// import "./hplstyles.css";
 import Image from "next/image";
 
 export default function HospitalLocation({ locationsectionheading }) {

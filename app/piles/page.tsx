@@ -19,7 +19,7 @@ const HospitalComparison = dynamic(
   () => import("@/components/Treatmenttable/Hospitalcomparison")
 );
 const HospitalComparisond = dynamic(() =>
-  import("../components/dynamictable/dynamictables")
+  import("@/components/dynamictable/dynamictables")
 );
 const Accreditations = dynamic(
   () => import("@/components/Accreditions/accreditions")
@@ -138,7 +138,7 @@ export default function Home() {
         onOpenQuestionnaire={() => setQuestionnaireOpen(true)}
       />
 
-      {/* <Conditioncost /> */}
+      <Conditioncost />
       <HospitalLocation locationsectionheading={defaultLocationHeading} />
       <section
         className="w-[90%]"

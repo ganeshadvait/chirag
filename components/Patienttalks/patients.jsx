@@ -132,9 +132,6 @@ const VideoCard = ({ testimonial }) => {
         height={300}  // pick a base height (square since you used w-full h-full)
         className="object-cover w-full h-full"
       />
-      {/* <div className="p-4 text-center">
-        <p className="text-gray-900 font-bold">{testimonial.name}</p>
-      </div> */}
     </div>
   );
 };
