@@ -200,39 +200,6 @@ export default function VideoWithCarousel() {
               </div>
             ))}
           </div>
-          {/* <div
-            ref={scrollRef}
-            className="flex space-x-4 overflow-x-auto snap-x snap-mandatory scroll-smooth w-full scrollbar-hide scroll_container"
-          >
-            {reviews.map((review) => (
-              <div
-                key={review.id}
-                className="review-card snap-center flex-shrink-0 
-        w-full sm:w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px]
-        min-h-[220px] md:min-h-[260px] lg:h-[300px] xl:h-[310px]
-        rounded-xl overflow-hidden flex flex-col items-center justify-center 
-        p-4 space-y-2 bg-white border border-gray-200"
-              > */}
-          {/* Google Icon and Stars */}
-          {/* <div className="flex items-center space-x-2">
-                  <Image
-                    src={review.googleIcon}
-                    alt="Google Icon"
-                    width={30}
-                    height={30} */}
-          {/* // className="w-10 h-10" */}
-          {/* /> */}
-          {/* <div className="flex space-x-1">{renderStars(review.rating)}</div>
-                </div> */}
-
-          {/* Review Text */}
-          {/* <p className="text-gray-700 text-center text-sm">{`"${review.reviewText}"`}</p> */}
-
-          {/* Reviewer Name */}
-          {/* <span className="text-indigo-900 font-semibold">{review.reviewerName}</span>
-              </div> */}
-          {/* ))} */}
-          {/* </div> */}
 
 
           {/* Navigation Dots */}

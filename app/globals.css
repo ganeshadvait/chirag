@@ -1035,7 +1035,7 @@ p {
   }
 }
 
-@media (min-width: 426spx) and (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
   .freeopd-content {
     font-size: 12px !important;
   }

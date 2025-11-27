@@ -1,8 +1,6 @@
 "use client";
-// import "./luxgptstyles.css";
 import Image from "next/image";
 import { useState } from "react";
-// import { handleWhatsappConnection } from "../../careconsole";
 import SpinnerCircleDemo from "../loader";
 
 export default function Luxgpt() {
@@ -48,9 +46,6 @@ export default function Luxgpt() {
                 setClosee(true);
                 runModel();
               }}
-              // onClick={() => {
-              //   window.location.href = "https://wa.me/917969084444";
-              // }}
               className="bg-[#964F9C] text-white p-2 rounded-full w-10 h-10"
             >
               ➜
@@ -59,13 +54,6 @@ export default function Luxgpt() {
         </div>
 
         <div className="md:w-1/3 mt-6 md:mt-0 second_box">
-          {/* <Image
-            src="/AskGPTAnything.png"
-            alt="LUXGPT Chat"
-            className="w-[300px] h-[320px] rounded-xl object-fill gpt_image"
-            width={500}
-            height={320} // Updated height
-          /> */}
           <Image
             src="/AskGPTAnything.png"
             alt="LUXGPT Chat"

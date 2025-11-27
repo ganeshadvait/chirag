@@ -11,36 +11,12 @@ export default function Second({ services, onOpenQuestionnaire }) {
   const [showFallback, setShowFallback] = useState(false);
   const [serviceTitle, setServiceTitle] = useState("");
   const [closee, setClosee] = useState(false);
-  // const [hideImages, setHideImages] = useState(false); //for conditionaly hide image in the page 
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const currentUrl = window.location.href;
-  //     const isPilesPage = currentUrl.includes("/piles/");
-  //     setHideImages(isPilesPage);
-
-  //     // ✅ Set min-height of all .sessioncards when on /piles/
-  //     const cards = document.querySelectorAll(".sessioncards");
-  //     cards.forEach((card) => {
-  //       card.style.minHeight = isPilesPage ? "50px" : "auto";
-  //     });
-  //   }
-  // }, []);
 
 
   const handleClick = (index, title) => {
     alert("WhatsApp feature is coming soon!");
 
   };
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     if (window.location.href.includes("/piles/")) {
-  //       document.body.classList.add("piles-page");
-  //     } else {
-  //       document.body.classList.remove("piles-page");
-  //     }
-  //   }
-  // }, []);
 
   return (
     <>
@@ -83,8 +59,6 @@ export default function Second({ services, onOpenQuestionnaire }) {
                   : "min-h-[30px]"
                   }`}
               >
-                {/* 👇 Conditionally hide image when URL includes /piles/ */}
-                {/* ✅ Only show Image if service.image exists */}
                 {hasImage && (
                   <div className="relative w-full h-40">
                     <Image
@@ -114,7 +88,6 @@ export default function Second({ services, onOpenQuestionnaire }) {
         })}
       </section>
 
-      {/* Modal with Spinner and Fallback */}
       {showModal && (
         <LoaderModal
           serviceTitle={serviceTitle}
