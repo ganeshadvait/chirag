@@ -32,7 +32,7 @@ const Luxgpt = dynamic(() => import("@/components/luxgpt/luxgpt"));
 
 export default function Home() {
   const heroHeading =
-    "Best Piles Treatment Hospital in Bangalore";
+    "Best Fistula Treatment Hospital in Bangalore";
 
 
   // Dummy content
@@ -78,34 +78,34 @@ export default function Home() {
 
   const faqs = [
     {
-      faqTitle: " What are piles?",
+      faqTitle: " What is a fistula?",
       faqAnswer:
-        "Piles are swollen veins in the anal area that may cause pain, itching, or bleeding.",
+        "A fistula is a small tunnel that forms between the anus and nearby skin, usually due to infection.",
     },
     {
-      faqTitle: "How do I know if I have piles?",
+      faqTitle: "What is laser fistula treatment?",
       faqAnswer:
-        "Common signs include bleeding during bowel movements, a lump near the anus, pain, or irritation.",
-    },
-    {
-      faqTitle: "Do all piles need surgery?",
-      faqAnswer:
-        "No. Early-stage piles can often be treated with medicines, fibre, ointments, and Sitz baths.",
-    },
-    {
-      faqTitle: "What is laser treatment for piles?",
-      faqAnswer:
-        "Laser treatment is a minimally invasive procedure that seals the swollen veins with controlled laser energy — no major cuts or stitches.",
+        "It is a minimally invasive procedure that closes the fistula tract using laser energy—without big cuts or stitches.",
     },
     {
       faqTitle: "Is laser treatment painful?",
       faqAnswer:
-        "Most patients experience minimal discomfort compared to traditional surgery.",
+        "The procedure is painless because it is done under anesthesia. Afterward, most patients feel only mild discomfort.",
     },
     {
-      faqTitle: "How long does the procedure take?",
+      faqTitle: "How long does the treatment take?",
       faqAnswer:
-        "Usually around 20–30 minutes, depending on the case.",
+        "Usually between 30 and 60 minutes.",
+    },
+    {
+      faqTitle: "Do I need to stay in the hospital?",
+      faqAnswer:
+        "Most patients go home the same day.",
+    },
+    {
+      faqTitle: "How fast is the recovery?",
+      faqAnswer:
+        "Recovery is quick many patients resume normal work in 2–3 days.",
     },
   ];
 
@@ -145,20 +145,20 @@ export default function Home() {
           margin: "auto",
         }}
       >
-        <h2 className="doctors_heading text-xl font-bold text-center text-[#625587] mb-4">
+        <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-4">
           Our Top Doctors
         </h2>
         <div className="doctors_container">
           <DoctorCard
-            url="/dr chirag.webp"
-            name="Dr. Rajasekhar"
-            qualification="MBBS, MS"
-            designation="COLORECTAL SURGEON"
-            experience="Experieance:38 years"
-            description="Dr. Rajasekhar is one of Bangalore’s most experienced colorectal specialists, known for his expertise in treating piles using conservative and advanced minimally invasive laser techniques. His patient-first approach ensures diagnosis is accurate, treatment is personalised, and recovery is as fast and comfortable as possible."
+            url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Samhitha-Reddy-2.webp"
+            name="Dr. Samhitha Reddy"
+            qualification="MBBS, MS, FMAS, FISCP, DMAS"
+            designation="Piles Specialist"
+            experience="Experieance:8 years"
+            description="Dr. Samhitha Reddy is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, she worked with top surgeons in India. She treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS."
             mobileNumberDoctor={"tel:917969084448"}
           />
-          {/* <DoctorCard
+          <DoctorCard
             url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Abhishek-Katha-2.webp"
             name="Dr. Abhishek Katha"
             qualification="MBBS, MS, FMAS"
@@ -166,7 +166,7 @@ export default function Home() {
             experience="Experieance:9 years"
             description="Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care."
             mobileNumberDoctor={"tel:917969084448"}
-          /> */}
+          />
         </div>
       </section>
       <HospitalComparisond thead1={"Features"} thead2={"Other Hospital"} thead3={"Lux Hospitals"} theading={"Piles Treatment at Lux Hospitals"} rows={tableData} ConditionVideo={"/piles final dr sam.webm"} />
@@ -185,8 +185,8 @@ export default function Home() {
         />
       )}
       <FooterComponent
-        footerdesc="About Chirag Global Hospitals"
-        extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
+      extradesc={""}
+        footerdesc="Visit the best piles hospital in Hyderabad for painless, advanced treatment and expert care!"
         footernumber="07969084448"
       />
       <MobileStickyFooter mobileNumber="tel:07969084449" />

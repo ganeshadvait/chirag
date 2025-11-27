@@ -48,7 +48,7 @@ const DoctorCard = ({
       >
         <div className="left_doctor flex-shrink-0 w-72">
           <div className="doctor_card bg-white shadow-md w-72 text-center">
-            <div className="bg-blue-100 flex items-center justify-center rounded-t-3xl p-3 inner_doctor">
+            <div className="bg-[#CBC9C5] flex items-center justify-center rounded-t-3xl p-3 inner_doctor">
               <Image
                 src={url}
                 alt={name}
@@ -58,7 +58,7 @@ const DoctorCard = ({
               />
             </div>
             <div className="p-4 content_cars">
-              <h3 className="text-lg font-bold text-indigo-900 doctor_name">
+              <h3 className="text-lg font-bold text-black-900 doctor_name">
                 {name}
               </h3>
               <p className="text-sm text-gray-600 designation">{qualification}</p>
@@ -67,7 +67,7 @@ const DoctorCard = ({
 
               <button
                 onClick={handleClick}
-                className="dbutton mt-4 border border-indigo-900 text-indigo-900 font-bold py-2 px-5 rounded-full transition-all duration-300 hover:bg-indigo-900 hover:text-white"
+                className="dbutton mt-4 border border-black-900 text-black-900 font-bold py-2 px-5 rounded-full transition-all duration-300 hover:bg-indigo-900 hover:text-white"
               >
                 Book an Appointment
               </button>

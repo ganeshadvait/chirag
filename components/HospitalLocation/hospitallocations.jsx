@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function HospitalLocation({ locationsectionheading }) {
   return (
     <section className="flex flex-col items-center hospital_location_section">
-      <h2 className="Location_heading font-bold text-center text-indigo-900">
+      <h2 className="Location_heading font-bold text-center text-[#625587]">
         Our Hospital Location
       </h2>
       <div className="border-grey-100 location_card shadow-lg">
@@ -50,8 +50,8 @@ export default function HospitalLocation({ locationsectionheading }) {
 
             {/* Address Info */}
             <p className="mt-3 text-gray-700 flex items-start address_info">
-              Plot no: 116, Lumbini Enclave Hitech city main road, Landmark:
-              near IKEA, Gachibowli, Hyderabad, Telangana 500081
+               103, 6th Cross Rd, Dollar Layout, BTM 2nd Stage,
+              Bengaluru, Karnataka 560076
             </p>
 
             {/* Buttons */}
@@ -60,7 +60,7 @@ export default function HospitalLocation({ locationsectionheading }) {
                 href="https://maps.app.goo.gl/evEJmyVJqMArfBoG7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="review_button flex items-center justify-center gap-2 bg-[#915097] text-white px-4 py-2 rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-[#7e4483] flex-1"
+                className="review_button flex items-center justify-center gap-2 bg-[#f8b956] text-white px-4 py-2 rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-[#7e4483] flex-1"
               >
                 <FaMapMarkerAlt /> Get Direction
               </a>

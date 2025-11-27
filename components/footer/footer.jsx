@@ -24,14 +24,14 @@ const data = {
 
   contactus: {
     address:
-      "Lux hospitals - Plot No. 116, Lumbini Enclave Hitech city main road, Gachibowli, Near IKEA, Hyderabad, 500081.",
-    phone: "07969084444",
-    email: "care@luxhospitals.com",
+      "103, 6th Cross Rd, Dollar Layout, BTM 2nd Stage, Bengaluru, Karnataka 560076",
+    phone: "9380498256",
+    email: "info@chiragglobalhospitals.com",
     website: "www.luxhospitals.com",
   },
 };
 
-const FooterComponent = ({ footerdesc, footernumber }) => {
+const FooterComponent = ({ footerdesc, footernumber, extradesc }) => {
   return (
     <section id="contact" className="footer bg-white">
       <div className="inner_footer">
@@ -46,6 +46,7 @@ const FooterComponent = ({ footerdesc, footernumber }) => {
             />
           </Link>
           <p className="text-black-600 mt-2 footer_description">{footerdesc}</p>
+          <p>{extradesc}</p>
         </div>
 
         <div className="inner_second_footer">

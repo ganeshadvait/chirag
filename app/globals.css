@@ -335,14 +335,14 @@ a {
   .stickey_whatsapp {
     border-radius: 10px 0px 0px 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #d5b8d8;
+    background-color: #625587;
   }
 
   .stickey_appointment {
     border: none;
     border-radius: 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #cba7ce;
+    background-color: #625587;
     margin-top: -1px;
   }
 
@@ -350,26 +350,26 @@ a {
     border: none;
     border-radius: 0px 0px 0px 10px;
     padding: 8px 8px 8px 8px;
-    background-color: #c195c4;
+    background-color: #625587;
     margin-top: -1px;
   }
 
   .stickey_whatsapp svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #f8b956;
   }
 
   .stickey_appointment svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #f8b956;
   }
 
   .stickey_maps svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #f8b956;
   }
 
   .stickey_whatsapp span {
@@ -429,14 +429,14 @@ a {
   .stickey_whatsapp {
     border-radius: 10px 0px 0px 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #d5b8d8;
+    background-color: #625587;
   }
 
   .stickey_appointment {
     border: none;
     border-radius: 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #cba7ce;
+    background-color: #625587;
     margin-top: -1px;
   }
 
@@ -444,38 +444,38 @@ a {
     border: none;
     border-radius: 0px 0px 0px 10px;
     padding: 8px 8px 8px 8px;
-    background-color: #c195c4;
+    background-color: #625587;
     margin-top: -1px;
   }
 
   .stickey_whatsapp svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #ffffff;
   }
 
   .stickey_appointment svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #ffffff;
   }
 
   .stickey_maps svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #ffffff;
   }
 
   .stickey_whatsapp span {
-    color: #252b61;
+    color: #ffffff;
   }
 
   .stickey_appointment span {
-    color: #252b61;
+    color: #ffffff;
   }
 
   .stickey_maps span {
-    color: #252b61;
+    color: #ffffff;
   }
 }
 
@@ -949,7 +949,7 @@ a {
 }
 
 p {
-  color: #000;
+  color: #656378;
 }
 
 /* Contact Us Section */
@@ -1269,7 +1269,7 @@ html {
   width: auto;
   border-radius: 50px;
   padding: 14px 28px;
-  background: #99509f;
+  background: #f8b956;
   color: #fff;
 }
 
@@ -1638,7 +1638,7 @@ html {
   width: 96%;
   max-width: 1500px; /* 👈 limit total width */
   margin: 40px auto; /* 👈 center horizontally */
-  background: linear-gradient(180deg, #984f9e 0%, #ab5fb1 100%);
+  background: linear-gradient(180deg, #625587 0%, #625587 100%);
   border-radius: 6px;
 }
 
@@ -2527,7 +2527,7 @@ html {
   background-color: rgba(0, 0, 0, 0.04);
   /* semi-transparent white */
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
 }
 
 .video-overlay-content p {
