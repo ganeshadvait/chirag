@@ -15,37 +15,37 @@ export default function VideoWithCarousel() {
   const reviews = [
     {
       id: 1,
-      reviewerName: "Krishna Nallapu",
-      reviewText: "I came to Lux Hospitals for my knee pain and was treated by the orthopaedic team. Dr saikishan was a very knowledgeable person . They explained the condition clearly and suggested the best option for me. The surgery went smoothly, and the physiotherapy support helped me recover faster. The doctors and staff were so caring—it really felt like family.",
-      googleIcon: "/iconG.avif", // Add the path to Google icon
+      reviewerName: "Karthik",
+      reviewText: "If you’re suffering from piles, fissures, or fistulas, this hospital is truly a one-stop solution for all your anorectal health concerns. From the moment you walk in, you’re treated with professionalism and care.",
+      googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 5 stars
     },
     {
       id: 2,
-      reviewerName: "Surekha Ayinabattina",
-      reviewText: "My cousin had multiple fractures in an accident. We took him to Lux Hospitals where Dr. Sai Kishan treated him. The way he handled the emergency, explained the situation, and reassured our family was remarkable. He personally followed up and monitored the healing. We’re deeply thankful for his care and compassion.",
-      googleIcon: "/iconG.avif", // Add the path to Google icon
+      reviewerName: "Sompali Pratima",
+      reviewText: "The staff was very approachable and explained everything in detail. They were focused about fixing the lifestyle problems than just giving medications Recommended for anyone with piles problems.",
+      googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 4 stars
     },
     {
       id: 3,
-      reviewerName: "Yanamadni Bujji",
-      reviewText: "My mother had severe arthritis pain in her hip. Dr. Sai Kishan Sirasala treated her with precision, and now she can move and walk without much discomfort. We are very satisfied with his care.",
-      googleIcon: "/iconG.avif", // Add the path to Google icon
+      reviewerName: "Manjunath",
+      reviewText: "All Staffs are good, supportive doctors, good treatment for piles, fistula",
+      googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 3 stars
     },
     {
       id: 4,
-      reviewerName: "Jaya Prakash",
-      reviewText: "I sustained injuries to my knee and shoulder while playing rugby. I was worried I might never play again. Dr. Sai Kishan at Lux Hospitals evaluated both injuries carefully, planned the treatments, and supervised my recovery with excellent physiotherapy support. His guidance and the hospital staff’s attention made the entire process smooth. Today, I am fully recovered and back to playing competitively. Dr. Sai Kishan is the best orthopedic surgeon I have ever met.",
-      googleIcon: "/iconG.avif", // Add the path to Google icon
+      reviewerName: "Abdul khader",
+      reviewText: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+      googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 5 stars
     },
     {
       id: 5,
-      reviewerName: "Sravan Kumar Reddy",
-      reviewText: "I injured my knee during a basketball match and had persistent pain. Dr. Sai Kishan at Lux Hospitals suggested knee arthroscopy to repair the meniscus. The surgery was smooth, and he explained each step clearly to me and my parents. The physiotherapy team at Lux Hospitals helped me regain strength quickly. Within a few weeks, I was back on the court playing. Truly thankful for Dr. Sai Kishan’s care and he was an expert orthopaedic doctor in Hyderabad.",
-      googleIcon: "/iconG.avif", // Add the path to Google icon
+      reviewerName: "Kiran Kumar",
+      reviewText: "Dr. Rajasekhar sir is the best surgeon to treat piles and fistula issues. He got many years of experience. He is so down to earth person. speaks very softly with patients and understands the problem in detail before he prescribe the treatment. I have undergone laser surgery for piles. Same day i got discharges and pain completely vanished from 4rth day onwards. I highly recommend this hospital for piles issue.",
+      googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 5 stars
     },
     // Add more reviews here
@@ -150,7 +150,7 @@ export default function VideoWithCarousel() {
       ref={sectionRef}
       className="flex flex-col items-center w-[95%] mx-auto my-8 gap-3 max-w-[1500px]"
     >
-      <h2 className="text-xl sm:text-2xl font-bold text-indigo-900 patienttalk_heading">
+      <h2 className="text-xl sm:text-2xl font-bold text-[#7966af] patienttalk_heading">
         Patients Love Us
       </h2>
       <p className="text-gray-700 text-center max-w-xl pb-4 text-base font-semibold max-[325px]:text-[12px]">
@@ -158,7 +158,7 @@ export default function VideoWithCarousel() {
       </p>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full">
-        <div className="w-full md:w-[40%] aspect-video rounded-2xl overflow-hidden shadow-lg h-auto">
+        {/* <div className="w-full md:w-[40%] aspect-video rounded-2xl overflow-hidden shadow-lg h-auto">
           <iframe
             className="w-full h-full rounded-2xl"
             src="https://www.youtube.com/embed/o_nLKQvH-Ww?rel=0&autoplay=0&modestbranding=1"
@@ -167,10 +167,10 @@ export default function VideoWithCarousel() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
 
         <div
-          className="w-full md:w-[60%] flex flex-col items-center"
+          className="w-full md:w-[100%] flex flex-col items-center"
           onMouseEnter={pauseAutoScroll}
           onTouchStart={pauseAutoScroll}
         >
@@ -196,14 +196,14 @@ export default function VideoWithCarousel() {
                 />
                 <p className="text-gray-700 text-center text-sm">"{review.reviewText}"</p>
                 <div className="flex space-x-1">{renderStars(review.rating)}</div>
-                <span className="text-indigo-900 font-semibold">{review.reviewerName}</span>
+                <span className="text-[#7966af] font-semibold">{review.reviewerName}</span>
               </div>
             ))}
           </div>
 
 
           {/* Navigation Dots */}
-          <div className="flex gap-2 mt-3 md:hidden">
+          <div className="flex gap-2 mt-3">
             {reviews.map((_, index) => (
               <button
                 key={index}
@@ -212,8 +212,8 @@ export default function VideoWithCarousel() {
                   pauseAutoScroll();
                 }}
                 className={`h-2 w-2 rounded-full transition-all ${activeIndex === index
-                  ? "bg-indigo-900 w-5"
-                  : "bg-gray-400 hover:bg-gray-600"
+                  ? "bg-[#7966af] w-5"
+                  : "bg-gray-400 hover:bg-[#7966af]"
                   }`}
               />
             ))}

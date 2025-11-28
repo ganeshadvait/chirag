@@ -6,15 +6,15 @@ import Image from "next/image";
 export default function HospitalLocation({ locationsectionheading }) {
   return (
     <section className="flex flex-col items-center hospital_location_section">
-      <h2 className="Location_heading font-bold text-center text-indigo-900">
+      <h2 className="Location_heading font-bold text-center text-[#7966af]">
         Our Hospital Location
       </h2>
       <div className="border-grey-100 location_card shadow-lg">
         <div className="leftl-right">
-          <a href="https://maps.app.goo.gl/evEJmyVJqMArfBoG7">
+          <a href="https://maps.app.goo.gl/nAWJqH1nyXAZvcth8">
 
             <Image
-              src="/mapsgoogle.avif"
+              src="/chirag-map.webp"
               alt="Description"
               width={800}    // choose a base width
               height={450}   // choose a base height (16:9 ratio for maps usually)
@@ -50,17 +50,17 @@ export default function HospitalLocation({ locationsectionheading }) {
 
             {/* Address Info */}
             <p className="mt-3 text-gray-700 flex items-start address_info">
-              Plot no: 116, Lumbini Enclave Hitech city main road, Landmark:
-              near IKEA, Gachibowli, Hyderabad, Telangana 500081
+               103, 6th Cross Rd, Dollar Layout, BTM 2nd Stage,
+              Bengaluru, Karnataka 560076
             </p>
 
             {/* Buttons */}
             <div className="mt-4 flex gap-4 w-full mobilectas">
               <a
-                href="https://maps.app.goo.gl/evEJmyVJqMArfBoG7"
+                href="https://maps.app.goo.gl/nAWJqH1nyXAZvcth8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="review_button flex items-center justify-center gap-2 bg-[#915097] text-white px-4 py-2 rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-[#7e4483] flex-1"
+                className="review_button flex items-center justify-center gap-2 bg-[#f8b956] text-white px-4 py-2 rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-[#68559e] flex-1"
               >
                 <FaMapMarkerAlt /> Get Direction
               </a>
@@ -73,7 +73,7 @@ export default function HospitalLocation({ locationsectionheading }) {
                 className="google-btn border flex gap-2 px-6 py-4 rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-gray-100 flex-1 justify-center"
               >
                 <Image
-                  src="/iconG.avif"
+                  src="/iconG.webp"
                   alt="Google Icon"
                   width={28}   // matches w-7 (7 * 4px = 28px)
                   height={28}  // matches h-7

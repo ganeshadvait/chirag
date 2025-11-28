@@ -5,7 +5,7 @@ import React from "react";
 
 export default function VideoSection() {
   return (
-    <section className={` videos_section fade-in `}>
+    <section className={` hidden videos_section fade-in `}>
       <video autoPlay muted loop playsInline className="bg-video">
         <source className="desktop_videosection" src="/final branding video 28.mp4" type="video/mp4" />
         <source className="mobile_videosection" src="/mobile v branding video.mp4" type="video/mp4" />

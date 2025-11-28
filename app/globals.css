@@ -236,7 +236,7 @@ a {
 }
 
 .doctors_card_contanier {
-  border: 1px solid;
+  
   border-radius: 25px;
 }
 
@@ -335,14 +335,14 @@ a {
   .stickey_whatsapp {
     border-radius: 10px 0px 0px 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #d5b8d8;
+    background-color: #9E8DCE;
   }
 
   .stickey_appointment {
     border: none;
     border-radius: 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #cba7ce;
+    background-color: #7966AF;
     margin-top: -1px;
   }
 
@@ -350,38 +350,38 @@ a {
     border: none;
     border-radius: 0px 0px 0px 10px;
     padding: 8px 8px 8px 8px;
-    background-color: #c195c4;
+    background-color: #68559E;
     margin-top: -1px;
   }
 
   .stickey_whatsapp svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #f8b956;
   }
 
   .stickey_appointment svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #f8b956;
   }
 
   .stickey_maps svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #f8b956;
   }
 
   .stickey_whatsapp span {
-    color: #252b61;
+    color: #9E8DCE;
   }
 
   .stickey_appointment span {
-    color: #252b61;
+    color: #7966AF;
   }
 
   .stickey_maps span {
-    color: #252b61;
+    color: #68559E;
   }
 }
 
@@ -429,14 +429,14 @@ a {
   .stickey_whatsapp {
     border-radius: 10px 0px 0px 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #d5b8d8;
+    background-color: #9E8DCE;
   }
 
   .stickey_appointment {
     border: none;
     border-radius: 0px;
     padding: 8px 8px 8px 8px;
-    background-color: #cba7ce;
+    background-color: #7966AF;
     margin-top: -1px;
   }
 
@@ -444,38 +444,38 @@ a {
     border: none;
     border-radius: 0px 0px 0px 10px;
     padding: 8px 8px 8px 8px;
-    background-color: #c195c4;
+    background-color: #68559E;
     margin-top: -1px;
   }
 
   .stickey_whatsapp svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #ffffff;
   }
 
   .stickey_appointment svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #ffffff;
   }
 
   .stickey_maps svg {
     width: 30px;
     height: 30px;
-    fill: #252b61;
+    fill: #ffffff;
   }
 
   .stickey_whatsapp span {
-    color: #252b61;
+    color: #ffffff;
   }
 
   .stickey_appointment span {
-    color: #252b61;
+    color: #ffffff;
   }
 
   .stickey_maps span {
-    color: #252b61;
+    color: #ffffff;
   }
 }
 
@@ -669,6 +669,7 @@ a {
 
 .table_heading {
   font-size: 30px;
+  color: #7966AF;
 }
 
 .table_others {
@@ -700,13 +701,7 @@ a {
   }
 }
 
-.video-container,
-.table_container {
-  box-shadow: 0px 4px 4px rgba(164, 162, 162, 0.5),
-    0px -4px 10px rgba(164, 162, 162, 0.5),
-    4px 0px 10px rgba(164, 162, 162, 0.5),
-    -4px 0px 10px rgba(164, 162, 162, 0.5);
-}
+
 
 .table_container {
   border-radius: 12px;
@@ -865,7 +860,7 @@ a {
   height: auto;
   margin: 0 auto;
   padding: 60px;
-  background: #e9dcea;
+  background: #C5B4F5;
   border-radius: 6px;
   display: flex;
   justify-content: space-around;
@@ -879,6 +874,7 @@ a {
 
 .footer_logo img {
   margin-bottom: 20px;
+  width:21%;
 }
 
 .inner_second_footer {
@@ -949,7 +945,7 @@ a {
 }
 
 p {
-  color: #000;
+  color: #656378;
 }
 
 /* Contact Us Section */
@@ -1269,7 +1265,7 @@ html {
   width: auto;
   border-radius: 50px;
   padding: 14px 28px;
-  background: #99509f;
+  background: #f8b956;
   color: #fff;
 }
 
@@ -1362,7 +1358,7 @@ html {
 
 @media (min-width: 768px) {
   .header__logo {
-    width: 100%;
+    width: 29%;
     max-width: 190px;
   }
 
@@ -1462,7 +1458,7 @@ html {
 } */
 @media (max-width: 1024px) and (min-width: 769px) {
   .header__logo {
-    width: 100%;
+    width: 41%;
     max-width: 190px;
   }
 
@@ -1480,7 +1476,7 @@ html {
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .header__logo {
-    width: 100%;
+    width: 40%;
     max-width: 190px;
   }
 
@@ -1501,7 +1497,7 @@ html {
   }
 
   .header__logo {
-    width: 100%;
+    width: 41%;
     max-width: 190px;
   }
 
@@ -1534,7 +1530,7 @@ html {
   }
 
   .header__logo {
-    width: 100%;
+    width: 41%;
     max-width: 190px;
   }
 
@@ -1552,7 +1548,7 @@ html {
 
 @media (max-width: 450px) and (min-width: 320px) {
   .header__logo {
-    width: 100%;
+    width: 29%;
     max-width: 190px;
   }
 
@@ -1579,7 +1575,7 @@ html {
   }
 
   .header__logo {
-    width: 100%;
+    width: 28%;
     max-width: 190px;
   }
 
@@ -1638,7 +1634,7 @@ html {
   width: 96%;
   max-width: 1500px; /* 👈 limit total width */
   margin: 40px auto; /* 👈 center horizontally */
-  background: linear-gradient(180deg, #984f9e 0%, #ab5fb1 100%);
+  background: linear-gradient(180deg, #625587 0%, #625587 100%);
   border-radius: 6px;
 }
 
@@ -1737,7 +1733,7 @@ html {
   }
 
   .hero_section {
-    padding: 4px 0 0 0;
+    padding: 1px;
   }
 
   .hero_image {
@@ -2079,7 +2075,7 @@ html {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: hsl(295, 33%, 46%);
+  background: #68559e;
   border-radius: 6px;
   box-shadow: 0 4px 10px #14142b0a;
   max-width: 1500px; /* 👈 limit total width */
@@ -2320,19 +2316,19 @@ html {
 }
 
 .second_section a:nth-child(1) .sessioncards {
-  background: #a3dac2;
+  background: #C5B4F5;
 }
 
 .second_section a:nth-child(2) .sessioncards {
-  background: #f0da69;
+  background: #f8c067;
 }
 
 .second_section a:nth-child(3) .sessioncards {
-  background: #e7c2d4;
+  background: #f58589;
 }
 
 .second_section a:nth-child(4) .sessioncards {
-  background: #92bdf6;
+  background: #7CD1C0;
 }
 
 .service_title {
@@ -2438,17 +2434,9 @@ html {
   }
 }
 
-.video-container,
-.table_container {
-  box-shadow: 0px 4px 4px rgba(164, 162, 162, 0.5),
-    0px -4px 10px rgba(164, 162, 162, 0.5),
-    4px 0px 10px rgba(164, 162, 162, 0.5),
-    -4px 0px 10px rgba(164, 162, 162, 0.5);
-}
 
-.table_container {
-  border-radius: 12px;
-}
+
+
 
 /* ========== End of Table Section Component ========== */
 
@@ -2527,7 +2515,7 @@ html {
   background-color: rgba(0, 0, 0, 0.04);
   /* semi-transparent white */
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
 }
 
 .video-overlay-content p {

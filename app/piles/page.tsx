@@ -12,6 +12,7 @@ import FooterComponent from "@/components/footer/footer";
 import Faqs from "@/components/faqs/faq";
 import MobileStickyFooter from "@/components/mobilsticky";
 import Conditioncost from "@/components/conditioncost";
+import VideoWithCarousel from "@/components/VideoWithCarousel/VideoWithCarousel";
 
 // Dynamic imports
 const DoctorCard = dynamic(() => import("@/components/topdoctors/ourdoctors"));
@@ -32,16 +33,15 @@ const Luxgpt = dynamic(() => import("@/components/luxgpt/luxgpt"));
 
 export default function Home() {
   const heroHeading =
-    "Lux Hospitals - Advanced Surgerical Hospital in Hyderabad";
+    "Best Piles Treatment Hospital in Bangalore";
 
 
   // Dummy content
   const defaultDescList = [
-    "Advanced Laser & Minimally Invasive Surgeries",
-    "Same-day discharge & 30-minute procedures",
-    "Cashless Insurance Accepted",
-    "0% EMI Options Available",
-    "Expert Doctors & State-of-the-Art Facilities",
+    "38+ Years Expertise in Colorectal Care",
+    "Minimally Invasive Laser & DG-HAL Procedures",
+    "90% Patients Treated Without Surgery First",
+    "Same-Day Consultation & Comfortable OPD Experience",
   ];
 
   const services = [
@@ -49,11 +49,11 @@ export default function Home() {
       image:
         "https://luxhospitals.com/wp-content/uploads/2025/04/converted-3.avif",
       title: "Book an Appointment",
-      arrow: "/Arrow.svg",
+      arrow: "\Arrow.svg",
       link: "tel:917969084448",
     },
     {
-      image: "/cost extimation.avif",
+      image: "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
       title: "Cost Estimation",
       arrow: "/Arrow.svg",
       link: "whatsapp",
@@ -75,38 +75,38 @@ export default function Home() {
   ];
 
   const defaultLocationHeading =
-    "Lux Hospitals - - Leading Center for Proctology & Advanced Surgery";
+    "Our Hospital location Chirag Global Hospitals";
 
   const faqs = [
     {
-      faqTitle: " What medical departments are available at Lux Hospitals.?",
+      faqTitle: " What are piles?",
       faqAnswer:
-        "We specialize in Proctology, Laparoscopic Surgery, Urology, Gynecology, ENT, Orthopedics, and Plastic & Cosmetic Surgery, all under one roof.",
+        "Piles are swollen veins in the anal area that may cause pain, itching, or bleeding.",
     },
     {
-      faqTitle: "Can I get same-day consultations and quick appointments?",
+      faqTitle: "How do I know if I have piles?",
       faqAnswer:
-        "Yes, Lux Hospitals offers fast-track appointments with minimal wait time. Same-day consultations are available for most departments.",
+        "Common signs include bleeding during bowel movements, a lump near the anus, pain, or irritation.",
     },
     {
-      faqTitle: " Are both male and female doctors available?",
+      faqTitle: "Do all piles need surgery?",
       faqAnswer:
-        "Yes, we have highly qualified male and female specialists across all departments, including female gynecologists for women-centric care.",
+        "No. Early-stage piles can often be treated with medicines, fibre, ointments, and Sitz baths.",
     },
     {
-      faqTitle: "How do I book an appointment at Lux Hospitals?",
+      faqTitle: "What is laser treatment for piles?",
       faqAnswer:
-        "You can easily book online, call our helpline, or walk in. Our care team will help you with doctor availability and treatment planning.",
+        "Laser treatment is a minimally invasive procedure that seals the swollen veins with controlled laser energy — no major cuts or stitches.",
     },
     {
-      faqTitle: "Why is Lux Hospitals the best preference for you?",
+      faqTitle: "Is laser treatment painful?",
       faqAnswer:
-        "Lux Hospitals provides expert care across multiple specialties using advanced equipment. We offer same-day procedures and personalized treatment focused on your comfort and recovery. Patient-first care is always our motto.",
+        "Most patients experience minimal discomfort compared to traditional surgery.",
     },
     {
-      faqTitle: "Does Lux Hospitals accept health insurance?",
+      faqTitle: "How long does the procedure take?",
       faqAnswer:
-        "Yes, we accept most leading insurance plans for departments like Proctology, Urology, ENT, Orthopedics, Gynecology, and Laparoscopy. Cosmetic procedures are not covered.",
+        "Usually around 20–30 minutes, depending on the case.",
     },
   ];
 
@@ -131,14 +131,14 @@ export default function Home() {
       <Hero
         heading={heroHeading}
         descList={defaultDescList}
-        heroImage={"/happy patient.avif"}
+        heroImage={"/happypatient.avif"}
       />
       <Second
         services={services}
         onOpenQuestionnaire={() => setQuestionnaireOpen(true)}
       />
 
-      <Conditioncost />
+      {/* <Conditioncost /> */}
       <HospitalLocation locationsectionheading={defaultLocationHeading} />
       <section
         className="w-[90%]"
@@ -146,20 +146,20 @@ export default function Home() {
           margin: "auto",
         }}
       >
-        <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-4">
+        <h2 className="doctors_heading text-xl font-bold text-center text-[#7966AF] mb-4">
           Our Top Doctors
         </h2>
         <div className="doctors_container">
           <DoctorCard
-            url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Samhitha-Reddy-2.webp"
-            name="Dr. Samhitha Reddy"
-            qualification="MBBS, MS, FMAS, FISCP, DMAS"
-            designation="Piles Specialist"
-            experience="Experieance:8 years"
-            description="Dr. Samhitha Reddy is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, she worked with top surgeons in India. She treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS."
+            url="/doctorbg.png"
+            name="Dr. Rajasekhar"
+            qualification="MBBS, MS"
+            designation="COLORECTAL SURGEON"
+            experience="Experieance:38 years"
+            description="Dr. Rajasekhar is one of Bangalore’s most experienced colorectal specialists, known for his expertise in treating piles using conservative and advanced minimally invasive laser techniques. His patient-first approach ensures diagnosis is accurate, treatment is personalised, and recovery is as fast and comfortable as possible."
             mobileNumberDoctor={"tel:917969084448"}
           />
-          <DoctorCard
+          {/* <DoctorCard
             url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Abhishek-Katha-2.webp"
             name="Dr. Abhishek Katha"
             qualification="MBBS, MS, FMAS"
@@ -167,13 +167,13 @@ export default function Home() {
             experience="Experieance:9 years"
             description="Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care."
             mobileNumberDoctor={"tel:917969084448"}
-          />
+          /> */}
         </div>
       </section>
-      <HospitalComparisond thead1={"Features"} thead2={"Other Hospital"} thead3={"Lux Hospitals"} theading={"Piles Treatment at Lux Hospitals"} rows={tableData} ConditionVideo={"/piles final dr sam.webm"} />
+      <HospitalComparisond thead1={"Features"} thead2={"Other Hospital"} thead3={"chirag Hospitals"} theading={"Piles Treatment at Chirag Hospitals"} rows={tableData} ConditionVideo={"/chirag-piles-video.mp4"} />
       <Accreditations />
       <VideoSection />
-      <PatientTalks />
+      <VideoWithCarousel />
       <Luxgpt />
 
       {faqs.length > 0 && (
@@ -186,10 +186,11 @@ export default function Home() {
         />
       )}
       <FooterComponent
-        footerdesc="Visit the best piles hospital in Hyderabad for painless, advanced treatment and expert care!"
-        footernumber="07969084448"
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
+        footernumber="9380498256"
       />
-      <MobileStickyFooter mobileNumber="tel:07969084449" />
+      <MobileStickyFooter mobileNumber="tel:9380498256" />
     </>
   );
 }

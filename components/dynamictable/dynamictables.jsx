@@ -29,7 +29,7 @@ export default function HospitalComparison({ thead1, thead2, thead3, theading, r
         </div>
 
         {/* TABLE SECTION */}
-        <div className="w-full lg:w-1/2 overflow-x-auto table_container">
+        <div className="w-full lg:w-1/2 overflow-x-auto table_container  ">
           <table className="w-full border-collapse border rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-green-300 text-gray-800">

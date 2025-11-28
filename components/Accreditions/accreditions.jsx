@@ -5,7 +5,7 @@ import Image from "next/image";
 const Accreditations = () => {
   return (
     <>
-      <section className="accreditions flex flex-col items-center max-w-[1500px] mx-auto">
+      <section className=" hidden accreditions flex flex-col items-center max-w-[1500px] mx-auto">
         <h2 className="Accreditations_heading text-center font-bold text-xl fonts_title text-indigo-900 mt-8">
           Accreditations
         </h2>
