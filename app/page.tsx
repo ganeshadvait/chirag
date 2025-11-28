@@ -186,6 +186,7 @@ export default function Home() {
         />
       )}
       <FooterComponent
+      extradesc={""}
         footerdesc="Visit the best piles hospital in Hyderabad for painless, advanced treatment and expert care!"
         footernumber="07969084448"
       />
