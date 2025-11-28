@@ -17,7 +17,7 @@ export default function Luxgpt() {
       <section className="Luxgpt_section">
         <div className="md:w-1/2 text-center md:text-left left_Container">
           <h2 className="text_luxgot font-500 text-white">
-            <span className="text-yellow-400 ">LUXGPT</span> : Your One <br />
+            <span className="text-yellow-400 ">CHIRAG-GPT</span> : Your One <br />
             <span className="gpttext_span_mobile text-white">
               Message Away<br></br> Companion
             </span>
@@ -46,7 +46,7 @@ export default function Luxgpt() {
                 setClosee(true);
                 runModel();
               }}
-              className="bg-[#964F9C] text-white p-2 rounded-full w-10 h-10"
+              className="bg-[#68559e] text-white p-2 rounded-full w-10 h-10"
             >
               ➜
             </button>
@@ -55,7 +55,7 @@ export default function Luxgpt() {
 
         <div className="md:w-1/3 mt-6 md:mt-0 second_box">
           <Image
-            src="/AskGPTAnything.png"
+            src="/AskGPTAnything.webp"
             alt="LUXGPT Chat"
             width={500}
             height={320}

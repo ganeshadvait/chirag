@@ -6,7 +6,7 @@ import Link from "next/link";
 const data = {
   description:
     "Lorem ipsum dolor sit amet consectetur. Aliquet morbi amet nec diam. Vel massa commodo viverra.Lorem ipsum dolor sit amet consectetur. Aliquet morbi amet nec diam",
-  logo: "/lux logo final .png",
+  logo: "/Chirag-New-logo_.webp",
   forpatients: [
     { text: "About Us", url: "#" },
     { text: "FAQs", url: "#" },
@@ -14,12 +14,12 @@ const data = {
     { text: "Blogs", url: "#" },
   ],
   centerofexcellence: [
-    { text: "Proctology", url: "#" },
-    { text: "Laparoscopic surgeries", url: "#" },
-    { text: "Urology", url: "#" },
-    { text: "Gynaecology", url: "#" },
-    { text: "Plastic and Cosmetic Surgeries", url: "#" },
-    { text: "Orthopaedics", url: "#" },
+    { text: "Piles", url: "#" },
+    { text: "Fissure", url: "#" },
+    { text: "Fistula", url: "#" },
+    { text: "Constipation", url: "#" },
+    { text: "Colon Cancer", url: "#" },
+    { text: "Pilonidal Sinus", url: "#" },
   ],
 
   contactus: {
@@ -27,7 +27,7 @@ const data = {
       "103, 6th Cross Rd, Dollar Layout, BTM 2nd Stage, Bengaluru, Karnataka 560076",
     phone: "9380498256",
     email: "info@chiragglobalhospitals.com",
-    website: "www.luxhospitals.com",
+    website: "www.chiragglobalhospitals.com",
   },
 };
 
@@ -121,7 +121,7 @@ const FooterComponent = ({ footerdesc, footernumber, extradesc }) => {
                 />
               </span>
               <Link
-                href="https://luxhospitals.com/"
+                href="https://www.chiragglobalhospitals.com/"
                 className="hover:text-[#99509f]"
               >
                 {data.contactus.website}

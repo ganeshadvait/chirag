@@ -52,7 +52,7 @@ export default function Home() {
       link: "tel:917969084448",
     },
     {
-      image: "/cost extimation.avif",
+      image: "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
       title: "Cost Estimation",
       arrow: "/Arrow.svg",
       link: "whatsapp",
@@ -185,8 +185,8 @@ export default function Home() {
         />
       )}
       <FooterComponent
-      extradesc={""}
-        footerdesc="Visit the best piles hospital in Hyderabad for painless, advanced treatment and expert care!"
+      footerdesc={"About Chirag Global Hospitals"}
+        extradesc="Visit the best piles hospital in Hyderabad for painless, advanced treatment and expert care!"
         footernumber="07969084448"
       />
       <MobileStickyFooter mobileNumber="tel:07969084449" />

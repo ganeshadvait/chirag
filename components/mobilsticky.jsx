@@ -35,7 +35,7 @@ const MobileStickyFooter = ({ mobileNumber }) => {
     >
       <div className="stickey_footer_container w-full justify-between items-stretch">
         {/* WhatsApp CTA */}
-        <div className="stickey_whatsapp flex-1 bg-[#984F9E] text-center py-2 btm_buttton">
+        <div className="stickey_whatsapp flex-1 bg-[#9E8DCE] text-center py-2 btm_buttton">
           <a
             href="#"
             onClick={(e) => {
@@ -65,7 +65,7 @@ const MobileStickyFooter = ({ mobileNumber }) => {
         </div>
 
         {/* Book Appointment CTA */}
-        <div className="stickey_appointment flex-1 bg-[#984F9E] text-center py-2 btm_buttton border-l border-white">
+        <div className="stickey_appointment flex-1 bg-[#9E8DCE] text-center py-2 btm_buttton border-l border-white">
           <a
             href={isMobile ? Number : "#"}
             onClick={(e) => {
@@ -112,9 +112,9 @@ const MobileStickyFooter = ({ mobileNumber }) => {
         </div>
 
         {/* Online Consultation CTA */}
-        <div className="stickey_maps flex-1 bg-[#984F9E] text-center py-2 btm_buttton border-l border-white">
+        <div className="stickey_maps flex-1 bg-[#9E8DCE] text-center py-2 btm_buttton border-l border-white">
           <a
-            href="https://maps.app.goo.gl/evEJmyVJqMArfBoG7"
+            href="https://maps.app.goo.gl/zmXJdTJMCUXTdcMv9"
             className="flex flex-col  text-white items-center text-[12px] text-sm font-500"
             style={{
               rowGap: "5px",

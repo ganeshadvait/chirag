@@ -54,13 +54,13 @@ export default function Header({
           <a href="#">
             <img
               className="logo-fade header__logo"
-              src="/LogoLux.png"
+              src="\Chirag-New-logo_.webp"
               alt="logo"
-              width={140}
+              width={60}
               height={60}
             />
           </a>
-          <a
+          {/* <a
             href="#iso_section"
             onClick={(e) => {
               e.preventDefault();
@@ -74,9 +74,9 @@ export default function Header({
               width={100} // pick a suitable width
               height={100} // pick a suitable height
             />
-          </a>
+          </a> */}
 
-          <a
+          {/* <a
             href="#nabh_section"
             onClick={(e) => {
               e.preventDefault();
@@ -90,7 +90,7 @@ export default function Header({
               width={100} // adjust to your design
               height={100} // adjust to your design
             />
-          </a>
+          </a> */}
         </div>
 
         <nav className="header__menu">

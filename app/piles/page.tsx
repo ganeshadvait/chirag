@@ -12,6 +12,7 @@ import FooterComponent from "@/components/footer/footer";
 import Faqs from "@/components/faqs/faq";
 import MobileStickyFooter from "@/components/mobilsticky";
 import Conditioncost from "@/components/conditioncost";
+import VideoWithCarousel from "@/components/VideoWithCarousel/VideoWithCarousel";
 
 // Dynamic imports
 const DoctorCard = dynamic(() => import("@/components/topdoctors/ourdoctors"));
@@ -48,11 +49,11 @@ export default function Home() {
       image:
         "https://luxhospitals.com/wp-content/uploads/2025/04/converted-3.avif",
       title: "Book an Appointment",
-      arrow: "/Arrow.svg",
+      arrow: "\Arrow.svg",
       link: "tel:917969084448",
     },
     {
-      image: "/cost extimation.avif",
+      image: "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
       title: "Cost Estimation",
       arrow: "/Arrow.svg",
       link: "whatsapp",
@@ -137,7 +138,7 @@ export default function Home() {
         onOpenQuestionnaire={() => setQuestionnaireOpen(true)}
       />
 
-      <Conditioncost />
+      {/* <Conditioncost /> */}
       <HospitalLocation locationsectionheading={defaultLocationHeading} />
       <section
         className="w-[90%]"
@@ -145,12 +146,12 @@ export default function Home() {
           margin: "auto",
         }}
       >
-        <h2 className="doctors_heading text-xl font-bold text-center text-[#625587] mb-4">
+        <h2 className="doctors_heading text-xl font-bold text-center text-[#7966AF] mb-4">
           Our Top Doctors
         </h2>
         <div className="doctors_container">
           <DoctorCard
-            url="/dr chirag.webp"
+            url="/doctorbg.png"
             name="Dr. Rajasekhar"
             qualification="MBBS, MS"
             designation="COLORECTAL SURGEON"
@@ -169,10 +170,10 @@ export default function Home() {
           /> */}
         </div>
       </section>
-      <HospitalComparisond thead1={"Features"} thead2={"Other Hospital"} thead3={"Lux Hospitals"} theading={"Piles Treatment at Lux Hospitals"} rows={tableData} ConditionVideo={"/piles final dr sam.webm"} />
+      <HospitalComparisond thead1={"Features"} thead2={"Other Hospital"} thead3={"chirag Hospitals"} theading={"Piles Treatment at Chirag Hospitals"} rows={tableData} ConditionVideo={"/chirag-piles-video.mp4"} />
       <Accreditations />
       <VideoSection />
-      <PatientTalks />
+      <VideoWithCarousel />
       <Luxgpt />
 
       {faqs.length > 0 && (
@@ -187,9 +188,9 @@ export default function Home() {
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"
         extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
-        footernumber="07969084448"
+        footernumber="9380498256"
       />
-      <MobileStickyFooter mobileNumber="tel:07969084449" />
+      <MobileStickyFooter mobileNumber="tel:9380498256" />
     </>
   );
 }
