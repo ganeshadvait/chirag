@@ -156,7 +156,7 @@ export default function Home() {
             qualification="MBBS, MS"
             designation="COLORECTAL SURGEON"
             experience="Experieance:38 years"
-            description="Dr. Rajasekhar is one of Bangalore’s most experienced colorectal specialists, known for his expertise in treating piles using conservative and advanced minimally invasive laser techniques. His patient-first approach ensures diagnosis is accurate, treatment is personalised, and recovery is as fast and comfortable as possible."
+            description="Dr. Rajasekhar is a leading colorectal specialist in Bangalore, known for effective conservative and advanced laser treatments for piles. He focuses on accurate diagnosis, personalised care, and faster, comfortable recovery."
             mobileNumberDoctor={"tel:917969084448"}
           />
           {/* <DoctorCard
