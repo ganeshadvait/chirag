@@ -17,12 +17,11 @@ export default function Luxgpt() {
       <section className="Luxgpt_section">
         <div className="md:w-1/2 text-center md:text-left left_Container">
           <h2 className="text_luxgot font-500 text-white">
-            <span className="text-yellow-400 ">CHIRAG-GPT</span> : Your One <br />
-            <span className="gpttext_span_mobile text-white">
-              Message Away<br></br> Companion
+            <span className="text-yellow-400 ">CHIRAG-GPT</span> : Your <br /> One Message
+            <span className="gpttext_span_mobile text-white">  Away Buddy
             </span>
             <span className="gpttext_span_desktop text-white">
-              Message Away Companion
+              Message Away Buddy
             </span>
           </h2>
           <p className="mt-7 text-lg leading-relaxed luxgpt_para">
@@ -55,7 +54,7 @@ export default function Luxgpt() {
 
         <div className="md:w-1/3 mt-6 md:mt-0 second_box">
           <Image
-            src="/AskGPTAnything.webp"
+            src="/chiraggpt.png"
             alt="LUXGPT Chat"
             width={500}
             height={320}
