@@ -21,6 +21,7 @@ import DoctorsData from "@/app/doctorsdata/doctorsdata"
 import Treatments from "@/components/ouradvtreatments/treatments"
 import Symptoms from "@/components/symptoms/symptoms"
 import Numbers from "@/components/Number/number"
+import ConditionConsultation from "@/components/conditionconsulatation/conditionconsulatation";
 
 const DoctorsSection = dynamic(
   () => import("@/components/topdoctors/DoctorsMoreTree"),
@@ -151,6 +152,38 @@ export default function Home() {
       "Interno – External Piles",
     ],
   };
+  const conditionConsultationContent = {
+    leftBox: {
+      heading: "Why Laser Treatment?",
+      points: [
+        "No Cuts and No Bleed",
+        "30 min procedure",
+        "Get back to normal life within 24 hours",
+      ],
+    },
+
+    rightBox: {
+      heading: "Your Journey to Health Starts Here",
+      points: [
+        <>
+          <strong>Consultation</strong> Visit us for a detailed consultation with our
+          experienced doctors. (Both online and offline options available.)
+        </>,
+        <>
+          <strong>Diagnosis</strong> Advanced diagnostic tools for accurate
+          identification of your condition.
+        </>,
+        <>
+          <strong>Treatment</strong> Get the best-in-class treatment tailored to your
+          needs.
+        </>,
+        <>
+          <strong>Follow-Up Care</strong> Regular check-ups to ensure a smooth
+          recovery and long-term wellness.
+        </>,
+      ],
+    },
+  };
 
   return (
     <>
@@ -226,12 +259,15 @@ export default function Home() {
         )
       }
       <HospitalComparisond {...pilesComparisonContent} />
+      <ConditionConsultation
+        leftBox={conditionConsultationContent.leftBox}
+        rightBox={conditionConsultationContent.rightBox}
+      />
       <Numbers />
       <Accreditations />
       <VideoSection />
       <VideoWithCarousel />
       {/* <Luxgpt /> */}
-
       {
         faqs.length > 0 && (
           <Faqs

@@ -4,7 +4,7 @@ import React from "react";
 
 
 
-export default function HospitalComparison({theading, ConditionVideo, title, description, points }) {
+export default function HospitalComparison({ theading, ConditionVideo, title, description, points }) {
   return (
     <section className="w-[95%] md:w-[96%] max-w-[1500px] mx-auto py-8">
       <h2 className="table_heading text-center text-xl font-bold text-indigo-900">
@@ -83,10 +83,12 @@ export default function HospitalComparison({theading, ConditionVideo, title, des
             {description}
           </p>
 
-          <ul className="space-y-4">
+          <ul className="space-y-4 list-disc marker:text-[#6A5A8A] marker:text-[20px] pl-6">
             {points.map((p, i) => (
-              <li key={i} className="flex items-center gap-3 text-[16px] sm:text-lg font-medium text-gray-900">
-                <span className="text-[#6A5A8A] text-xl mt-1">⚪</span>
+              <li
+                key={i}
+                className="text-[16px] sm:text-lg font-medium text-gray-900 leading-relaxed"
+              >
                 {p}
               </li>
             ))}
