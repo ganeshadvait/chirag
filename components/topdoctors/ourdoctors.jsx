@@ -44,9 +44,9 @@ const DoctorCard = ({
     <section>
       <div
         id="doctors"
-        className="doctors_card_contanier flex w-full max-w-4xl h-auto items-stretch rounded-xl border-1 border-gray-100 transition-transform duration-300 hover:-translate-y-1 mt-4"
+        className="doctors_card_contanier flex w-[fit-content]  h-auto items-stretch rounded-xl border-1 border-gray-100 transition-transform duration-300 hover:-translate-y-1 mt-4"
       >
-        <div className="left_doctor flex-shrink-0 w-72">
+        <div className="left_doctor  w-72">
           <div className="doctor_card bg-white shadow-md w-72 text-center">
             <div className="bg-[#CBC9C5]0 flex items-center justify-center rounded-t-3xl p-3 inner_doctor">
               <Image
@@ -67,18 +67,11 @@ const DoctorCard = ({
 
               <button
                 onClick={handleClick}
-                className="dbutton mt-4 border border-black-900 text-black-900 font-bold py-2 px-5 rounded-full transition-all duration-300 hover:bg-[#625587] hover:text-white"
+                className="dbutton mt-4 border border-gray-200 text-black-900 font-bold py-2 px-5 rounded-full transition-all duration-300 hover:bg-[#625587] hover:text-white"
               >
                 Book an Appointment
               </button>
             </div>
-          </div>
-        </div>
-        <div className="right_content flex-1 p-4 flex items-center">
-          <div className="text-gray-600 leading-relaxed text-left md:text-center">
-            <p className="extra_fonts right_align doctor_desktop_description">
-              {description}
-            </p>
           </div>
         </div>
 

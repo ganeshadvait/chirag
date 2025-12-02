@@ -3,6 +3,10 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 
+interface TopDoctorsProps {
+  doctorOrder: string[];
+}
+
 // Static imports
 import Header from "@/components/header/header";
 import Hero from "@/components/hero/hero";
@@ -12,6 +16,16 @@ import FooterComponent from "@/components/footer/footer";
 import Faqs from "@/components/faqs/faq";
 import MobileStickyFooter from "@/components/mobilsticky";
 import Conditioncost from "@/components/conditioncost";
+import VideoWithCarousel from "@/components/VideoWithCarousel/VideoWithCarousel";
+import DoctorsData from "@/app/doctorsdata/doctorsdata"
+import Treatments from "@/components/ouradvtreatments/treatments"
+import Symptoms from "@/components/symptoms/symptoms"
+import Numbers from "@/components/Number/number"
+
+const DoctorsSection = dynamic(
+  () => import("@/components/topdoctors/DoctorsMoreTree"),
+  { ssr: false }
+);
 
 // Dynamic imports
 const DoctorCard = dynamic(() => import("@/components/topdoctors/ourdoctors"));
@@ -41,36 +55,6 @@ export default function Home() {
     "Minimally Invasive Laser & DG-HAL Procedures",
     "90% Patients Treated Without Surgery First",
     "Same-Day Consultation & Comfortable OPD Experience",
-  ];
-
-  const services = [
-    {
-      image:
-        "https://luxhospitals.com/wp-content/uploads/2025/04/converted-3.avif",
-      title: "Book an Appointment",
-      arrow: "/Arrow.svg",
-      link: "tel:917969084448",
-    },
-    {
-      image: "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
-      title: "Cost Estimation",
-      arrow: "/Arrow.svg",
-      link: "whatsapp",
-    },
-    {
-      image:
-        "https://luxhospitals.com/wp-content/uploads/2025/04/converted-2.avif",
-      title: "Second Opinion",
-      arrow: "/Arrow.svg",
-      link: "whatsapp",
-    },
-    {
-      image:
-        "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
-      title: "Insurance Coverage",
-      arrow: "/Arrow.svg",
-      link: "tel:917969084448",
-    },
   ];
 
   const defaultLocationHeading =
@@ -109,16 +93,64 @@ export default function Home() {
     },
   ];
 
-  const tableData = [
-    { label: "Treatment Type", other: "Open Surgery", lux: "Laser + Harmonic" },
-    { label: "Recovery Time", other: "7–10 Days", lux: "Same Day" },
-    { label: "Pain & Bleeding", other: "Painful with Bleeding", lux: "Painless & Bloodless" },
-    { label: "Insurance & EMI", other: "Not Always Cashless", lux: "All Insurances + 0% EMI" },
-    { label: "Room Type", other: "General / Shared", lux: "Private Suite" },
-    { label: "Cost Transparency", other: "Variable & Hidden Costs", lux: "Fixed & Transparent" },
+  const doctorOrder = [
+    "Dr. Samhitha Reddy",
+    "Dr. Abhishek Katha",
+    "Dr. Priyank Salecha",
+    "Dr. Harshitha Kakarla",
+    "Dr. Pragnia Poloju",
+    "Dr. Samhitha Alukur",
+    "Dr. M Ram Prabhu",
+    "Dr. Chandana Guduru",
+    "Dr. Madan Mohan",
+    "Dr. Sai Kishan Sirasala"
+  ];
+  const treatment = [
+    {
+      title: "Laser Treatment for Piles",
+      desc: "A pain-free, same-day procedure with faster recovery and minimal downtime.",
+      icon: "👨‍⚕️",
+    },
+    {
+      title: "Stapler Surgery for Piles",
+      desc: "An innovative method that offers quick relief with reduced risk of recurrence.",
+      icon: "🩺",
+    },
+    {
+      title: "Fistula Treatment",
+      desc: "Advanced surgical options like LIFT procedure, laser ablation, and more.",
+      icon: "🏥",
+    },
   ];
 
-  const [questionnaireOpen, setQuestionnaireOpen] = useState(false);
+  const SymptomsContent = {
+    heading: "Symptoms of Piles",
+    icon: "🩺",
+    symptoms: [
+      "Blood In Stool",
+      "Swelling Around The Anus",
+      "Sometimes Associated With Pain & Burning",
+      "Itching May Be Present Sometimes",
+    ],
+  }
+  const pilesComparisonContent = {
+    theading: "Piles Treatment at Chirag Hospitals",
+    ConditionVideo: "/chirag-piles-video.mp4",
+
+    title: "What are Piles or Hemorrhoids?",
+    description: (
+      <>
+        Piles are swollen blood vessels found inside or under the skin around the bottom.
+        These are also called <strong>Hemorrhoids</strong>. There are 3 types of Piles.
+      </>
+    ),
+
+    points: [
+      "External Hemorrhoids",
+      "Internal Hemorrhoids",
+      "Interno – External Piles",
+    ],
+  };
 
   return (
     <>
@@ -132,64 +164,91 @@ export default function Home() {
         descList={defaultDescList}
         heroImage={"/happypatient.avif"}
       />
-      <Second
+      <Treatments
+        heading="Our Advanced Treatments"
+        items={treatment}
+      />
+      <Symptoms
+        heading={SymptomsContent.heading}
+        icon={SymptomsContent.icon}
+        symptoms={SymptomsContent.symptoms}
+      />
+      {/* <Second
         services={services}
         onOpenQuestionnaire={() => setQuestionnaireOpen(true)}
-      />
+      /> */}
 
-      <Conditioncost />
+      {/* <Conditioncost /> */}
       <HospitalLocation locationsectionheading={defaultLocationHeading} />
-      <section
-        className="w-[90%]"
-        style={{
-          margin: "auto",
-        }}
-      >
-        <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-4">
-          Our Top Doctors
-        </h2>
-        <div className="doctors_container">
-          <DoctorCard
-            url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Samhitha-Reddy-2.webp"
-            name="Dr. Samhitha Reddy"
-            qualification="MBBS, MS, FMAS, FISCP, DMAS"
-            designation="Piles Specialist"
-            experience="Experieance:8 years"
-            description="Dr. Samhitha Reddy is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, she worked with top surgeons in India. She treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS."
-            mobileNumberDoctor={"tel:917969084448"}
-          />
-          <DoctorCard
-            url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Abhishek-Katha-2.webp"
-            name="Dr. Abhishek Katha"
-            qualification="MBBS, MS, FMAS"
-            designation="Piles Specialist"
-            experience="Experieance:9 years"
-            description="Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care."
-            mobileNumberDoctor={"tel:917969084448"}
-          />
-        </div>
-      </section>
-      <HospitalComparisond thead1={"Features"} thead2={"Other Hospital"} thead3={"Lux Hospitals"} theading={"Piles Treatment at Lux Hospitals"} rows={tableData} ConditionVideo={"/piles final dr sam.webm"} />
+      {
+        doctorOrder.length > 0 && (
+          <section
+            className="w-[95%] py-4 sm:py-8"
+            style={{ margin: "auto" }}
+          >
+            <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-6">
+              Our Top Doctors
+            </h2>
+            <DoctorsSection
+              doctors={doctorOrder.map((doctorName) => {
+                const departmentKeys = Object.keys(DoctorsData as any).filter(
+                  (dept) => DoctorsData[dept][doctorName]
+                );
+
+                if (departmentKeys.length === 0) return null;
+
+                let chosenDept = departmentKeys[0];
+
+                // Special handling for duplicate doctors
+                if (doctorName === "Dr. Abhishek Katha") {
+                  chosenDept = "General & Laparoscopic";
+                }
+                if (doctorName === "Dr. Samhitha Reddy") {
+                  chosenDept = "Proctology";
+                }
+
+                const cardData = DoctorsData[chosenDept][doctorName];
+
+                return {
+                  url: cardData.url,
+                  name: cardData.name,
+                  qualification: cardData.qualification,
+                  designation: `${chosenDept} Specialist`, // 👈 forced department-based designation
+                  experience: cardData.experience,
+                  description: cardData.description,
+                  mobileNumberDoctor:
+                    cardData.mobileNumberDoctor || "tel:07969084443",
+                };
+              }).filter(Boolean)}
+            />
+
+          </section>
+        )
+      }
+      <HospitalComparisond {...pilesComparisonContent} />
+      <Numbers />
       <Accreditations />
       <VideoSection />
-      <PatientTalks />
-      <Luxgpt />
+      <VideoWithCarousel />
+      {/* <Luxgpt /> */}
 
-      {faqs.length > 0 && (
-        <Faqs
-          // fheading={fheading}
-          faqs={faqs.map((faq) => ({
-            faqquestion: faq.faqTitle,
-            faqanswer: faq.faqAnswer,
-          }))}
-        />
-      )}
+      {
+        faqs.length > 0 && (
+          <Faqs
+            // fheading={fheading}
+            faqs={faqs.map((faq) => ({
+              faqquestion: faq.faqTitle,
+              faqanswer: faq.faqAnswer,
+            }))}
+          />
+        )
+      }
       <FooterComponent
-      footerdesc={"About Chirag Global Hospitals"}
-        extradesc="Visit the best piles hospital in Hyderabad for painless, advanced treatment and expert care!"
-        footernumber="07969084448"
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
+        footernumber="9380498256"
       />
-      <MobileStickyFooter mobileNumber="tel:07969084449" />
+      <MobileStickyFooter mobileNumber="tel:9380498256" />
     </>
   );
 }

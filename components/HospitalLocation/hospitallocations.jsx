@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function HospitalLocation({ locationsectionheading }) {
   return (
-    <section className="flex flex-col items-center hospital_location_section">
-      <h2 className="Location_heading font-bold text-center text-[#7966af]">
+    <section className="flex flex-col items-center hospital_location_section py-4 sm:py-8">
+      <h2 className="Location_heading font-bold text-center text-[#7966af] sm:py-4">
         Our Hospital Location
       </h2>
       <div className="border-grey-100 location_card shadow-lg">
@@ -60,7 +60,7 @@ export default function HospitalLocation({ locationsectionheading }) {
                 href="https://maps.app.goo.gl/nAWJqH1nyXAZvcth8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="review_button flex items-center justify-center gap-2 bg-[#f8b956] text-white px-4 py-2 rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-[#68559e] flex-1"
+                className="review_button flex items-center justify-center gap-2 bg-[#f8b956] text-white px-4 py-2 rounded-3xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-[#68559e] flex-1"
               >
                 <FaMapMarkerAlt /> Get Direction
               </a>
@@ -70,7 +70,7 @@ export default function HospitalLocation({ locationsectionheading }) {
                 href="https://www.google.com/maps/place/LUX+Hospitals+%7C+NABH+Certified+%7C+Best+Hospital+in+Hyderabad+for+Proctology,+Gynecology,+Orthopedics+%26+Laparoscopic+Surgery/@17.4334221,78.3744207,840m/data=!3m1!1e3!4m8!3m7!1s0x3bcb91e736fbc1b5:0x3a136dab257734d3!8m2!3d17.4334221!4d78.3744207!9m1!1b1!16s%2Fg%2F11svndq_5s!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="google-btn border flex gap-2 px-6 py-4 rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-gray-100 flex-1 justify-center"
+                className="google-btn border-gray-100 flex gap-2 px-6 py-4 rounded-3xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-gray-100 flex-1 justify-center"
               >
                 <Image
                   src="/iconG.webp"

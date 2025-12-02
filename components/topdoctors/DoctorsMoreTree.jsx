@@ -51,16 +51,16 @@ const DoctorsSection = ({ doctors }) => {
     };
 
     // --- Auto Scroll Logic ---
-    const startAutoScroll = () => {
-        if (autoScrollRef.current) return;
-        autoScrollRef.current = setInterval(() => {
-            setActiveIndex((prev) => {
-                const nextIndex = (prev + 1) % doctors.length;
-                scrollTo(nextIndex);
-                return nextIndex;
-            });
-        }, 2000); // 2s cycle
-    };
+    // const startAutoScroll = () => {
+    //     if (autoScrollRef.current) return;
+    //     autoScrollRef.current = setInterval(() => {
+    //         setActiveIndex((prev) => {
+    //             const nextIndex = (prev + 1) % doctors.length;
+    //             scrollTo(nextIndex);
+    //             return nextIndex;
+    //         });
+    //     }, 2000); // 2s cycle
+    // };
 
     const stopAutoScroll = () => {
         if (autoScrollRef.current) {
@@ -120,13 +120,13 @@ const DoctorsSection = ({ doctors }) => {
           ${doctors.length > 2 ? "md:overflow-x-auto" : "md:overflow-x-hidden"}
         `}
                 style={{ scrollbarWidth: "none" }}
-                onMouseEnter={stopAutoScroll}
-                onMouseLeave={startAutoScroll}
+                // onMouseEnter={stopAutoScroll}
+                // onMouseLeave={startAutoScroll}
             >
                 {doctors.map((doc, i) => (
                     <div
                         key={i}
-                        className="flex-shrink-0 w-full md:w-1/2 snap-center px-2"
+                        className=" w-full md:w-1/2 snap-center px-2"
                         aria-hidden={i !== activeIndex}
                     >
                         <DoctorCard {...doc} />
