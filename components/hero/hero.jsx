@@ -15,7 +15,7 @@ export default function Hero({ heading, descList, heroImage }) {
             <Image
               src={heroImage}
               alt="Healthcare Support Services"
-              className="logo-fade hero_image"
+              className="logo-fade hero_image mt-0"
               fill
               priority
             />

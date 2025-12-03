@@ -272,7 +272,7 @@ a {
 }
 
 .doctor_card {
-  border-radius: 25px 0px 0px 25px;
+  border-radius: 25px;
 }
 
 .doctors_heading {
@@ -950,7 +950,7 @@ p {
 
 /* Contact Us Section */
 .c_four {
-  width: 30%;
+  width: 36%;
 }
 
 .contact_details {
@@ -1633,7 +1633,7 @@ html {
 .hero_section {
   width: 96%;
   max-width: 1500px; /* 👈 limit total width */
-  margin: 40px auto; /* 👈 center horizontally */
+  margin: 20px auto 40px; /* 👈 center horizontally */
   background: linear-gradient(180deg, #625587 0%, #625587 100%);
   border-radius: 6px;
 }
@@ -1681,7 +1681,7 @@ html {
 .hero_image {
   width: 100%;
   position: relative !important;
-  margin-top: -88px;
+  margin-top: 0px;
 }
 
 @media (max-width: 768px) {
@@ -1734,11 +1734,12 @@ html {
 
   .hero_section {
     padding: 1px;
+    margin: 20px auto 20px;
   }
 
-  .hero_image {
+  /* .hero_image {
     display: none;
-  }
+  } */
 
   .hero_section {
     border-radius: 6px;
@@ -1809,7 +1810,7 @@ html {
 /* ========== Hospital location Styles ========== */
 
 .hospital_location_section {
-  width: 96%;
+  width: 80%;
   margin: auto;
   max-width: 1500px; /* 👈 limit total width */
 }
@@ -1823,7 +1824,7 @@ html {
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin: 24px 0 40px 0;
+  margin: 14px 0 20px 0;
   border-radius: 20px;
 }
 
@@ -1865,7 +1866,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 16px 0 40px 0;
+    margin: 16px 0 20px 0;
     border-radius: 20px;
   }
 
@@ -2423,7 +2424,7 @@ html {
   display: flex;
   flex-direction: column;
   /* Mobile default */
-  gap: 1rem;
+  gap: 2rem;
   /* same as Tailwind's gap-6 */
 }
 

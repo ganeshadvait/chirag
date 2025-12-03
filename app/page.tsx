@@ -3,6 +3,10 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 
+interface TopDoctorsProps {
+  doctorOrder: string[];
+}
+
 // Static imports
 import Header from "@/components/header/header";
 import Hero from "@/components/hero/hero";
@@ -13,6 +17,16 @@ import Faqs from "@/components/faqs/faq";
 import MobileStickyFooter from "@/components/mobilsticky";
 import Conditioncost from "@/components/conditioncost";
 import VideoWithCarousel from "@/components/VideoWithCarousel/VideoWithCarousel";
+import DoctorsData from "@/app/doctorsdata/doctorsdata"
+import Treatments from "@/components/ouradvtreatments/treatments"
+import Symptoms from "@/components/symptoms/symptoms"
+import Numbers from "@/components/Number/number"
+import ConditionConsultation from "@/components/conditionconsulatation/conditionconsulatation";
+
+const DoctorsSection = dynamic(
+  () => import("../components/topdoctors/DoctorsMoreTree"),
+  { ssr: false }
+);
 
 // Dynamic imports
 const DoctorCard = dynamic(() => import("@/components/topdoctors/ourdoctors"));
@@ -121,6 +135,98 @@ export default function Home() {
 
   const [questionnaireOpen, setQuestionnaireOpen] = useState(false);
 
+  const doctorOrder = [
+    "Dr. Samhitha Reddy",
+    "Dr. Abhishek Katha",
+    "Dr. Priyank Salecha",
+    "Dr. Harshitha Kakarla",
+    "Dr. Pragnia Poloju",
+    "Dr. Samhitha Alukur",
+    "Dr. M Ram Prabhu",
+    "Dr. Chandana Guduru",
+    "Dr. Madan Mohan",
+    "Dr. Sai Kishan Sirasala"
+  ];
+  const treatment = [
+    {
+      title: "Laser Treatment for Piles",
+      desc: "A pain-free, same-day procedure with faster recovery and minimal downtime.",
+      icon: "👨‍⚕️",
+    },
+    {
+      title: "Stapler Surgery for Piles",
+      desc: "An innovative method that offers quick relief with reduced risk of recurrence.",
+      icon: "🩺",
+    },
+    {
+      title: "Fistula Treatment",
+      desc: "Advanced surgical options like LIFT procedure, laser ablation, and more.",
+      icon: "🏥",
+    },
+  ];
+
+  const SymptomsContent = {
+    heading: "Symptoms of Piles",
+    icon: "🩺",
+    symptoms: [
+      "Blood In Stool",
+      "Swelling Around The Anus",
+      "Sometimes Associated With Pain & Burning",
+      "Itching May Be Present Sometimes",
+    ],
+  }
+  const pilesComparisonContent = {
+    theading: "Piles Treatment at Chirag Hospitals",
+    ConditionVideo: "/chirag-piles-video.mp4",
+
+    title: "What are Piles or Hemorrhoids?",
+    description: (
+      <>
+        Piles are swollen blood vessels found inside or under the skin around the bottom.
+        These are also called <strong>Hemorrhoids</strong>. There are 3 types of Piles.
+      </>
+    ),
+
+    points: [
+      "External Hemorrhoids",
+      "Internal Hemorrhoids",
+      "Interno – External Piles",
+    ],
+  };
+
+  const conditionConsultationContent = {
+    leftBox: {
+      heading: "Why Laser Treatment?",
+      points: [
+        "No Cuts and No Bleed",
+        "30 min procedure",
+        "Get back to normal life within 24 hours",
+      ],
+    },
+
+    rightBox: {
+      heading: "Your Journey to Health Starts Here",
+      points: [
+        <>
+          <strong>Consultation</strong> Visit us for a detailed consultation with our
+          experienced doctors. (Both online and offline options available.)
+        </>,
+        <>
+          <strong>Diagnosis</strong> Advanced diagnostic tools for accurate
+          identification of your condition.
+        </>,
+        <>
+          <strong>Treatment</strong> Get the best-in-class treatment tailored to your
+          needs.
+        </>,
+        <>
+          <strong>Follow-Up Care</strong> Regular check-ups to ensure a smooth
+          recovery and long-term wellness.
+        </>,
+      ],
+    },
+  };
+
   return (
     <>
       <Header
@@ -133,58 +239,89 @@ export default function Home() {
         descList={defaultDescList}
         heroImage={"/happypatient.avif"}
       />
-      <Second
+      <Treatments
+        heading="Our Advanced Treatments"
+        items={treatment}
+      />
+      <Symptoms
+        heading={SymptomsContent.heading}
+        icon={SymptomsContent.icon}
+        symptoms={SymptomsContent.symptoms}
+      />
+      {/* <Second
         services={services}
         onOpenQuestionnaire={() => setQuestionnaireOpen(true)}
-      />
+      /> */}
 
       {/* <Conditioncost /> */}
       <HospitalLocation locationsectionheading={defaultLocationHeading} />
-      <section
-        className="w-[90%]"
-        style={{
-          margin: "auto",
-        }}
-      >
-        <h2 className="doctors_heading text-xl font-bold text-center text-[#7966AF] mb-4">
-          Our Top Doctors
-        </h2>
-        <div className="doctors_container">
-          <DoctorCard
-            url="/doctorbg.png"
-            name="Dr. Rajasekhar"
-            qualification="MBBS, MS"
-            designation="COLORECTAL SURGEON"
-            experience="Experieance:38 years"
-            description="Dr. Rajasekhar is a leading colorectal specialist in Bangalore, known for effective conservative and advanced laser treatments for piles. He focuses on accurate diagnosis, personalised care, and faster, comfortable recovery."
-            mobileNumberDoctor={"tel:917969084448"}
-          />
-          {/* <DoctorCard
-            url="https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Abhishek-Katha-2.webp"
-            name="Dr. Abhishek Katha"
-            qualification="MBBS, MS, FMAS"
-            designation="Piles Specialist"
-            experience="Experieance:9 years"
-            description="Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care."
-            mobileNumberDoctor={"tel:917969084448"}
-          /> */}
-        </div>
-      </section>
-      <HospitalComparisond thead1={"Features"} thead2={"Other Hospital"} thead3={"chirag Hospitals"} theading={"Piles Treatment at Chirag Hospitals"} rows={tableData} ConditionVideo={"/chirag-piles-video.mp4"} />
+      {
+        doctorOrder.length > 0 && (
+          <section
+            className="w-[95%] py-4 sm:py-8"
+            style={{ margin: "auto" }}
+          >
+            <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-6">
+              Our Top Doctors
+            </h2>
+            <DoctorsSection
+              doctors={doctorOrder.map((doctorName) => {
+                const departmentKeys = Object.keys(DoctorsData as any).filter(
+                  (dept) => DoctorsData[dept][doctorName]
+                );
+
+                if (departmentKeys.length === 0) return null;
+
+                let chosenDept = departmentKeys[0];
+
+                // Special handling for duplicate doctors
+                if (doctorName === "Dr. Abhishek Katha") {
+                  chosenDept = "General & Laparoscopic";
+                }
+                if (doctorName === "Dr. Samhitha Reddy") {
+                  chosenDept = "Proctology";
+                }
+
+                const cardData = DoctorsData[chosenDept][doctorName];
+
+                return {
+                  url: cardData.url,
+                  name: cardData.name,
+                  qualification: cardData.qualification,
+                  designation: `${chosenDept} Specialist`, // 👈 forced department-based designation
+                  experience: cardData.experience,
+                  description: cardData.description,
+                  mobileNumberDoctor:
+                    cardData.mobileNumberDoctor || "tel:07969084443",
+                };
+              }).filter(Boolean)}
+            />
+
+          </section>
+        )
+      }
+      <HospitalComparisond {...pilesComparisonContent} />
+      <ConditionConsultation
+        leftBox={conditionConsultationContent.leftBox}
+        rightBox={conditionConsultationContent.rightBox}
+      />
+      <Numbers />
       <Accreditations />
       <VideoSection />
       <VideoWithCarousel />
-      <Luxgpt />
+      {/* <Luxgpt /> */}
 
-      {faqs.length > 0 && (
-        <Faqs
-          // fheading={fheading}
-          faqs={faqs.map((faq) => ({
-            faqquestion: faq.faqTitle,
-            faqanswer: faq.faqAnswer,
-          }))}
-        />
-      )}
+      {
+        faqs.length > 0 && (
+          <Faqs
+            // fheading={fheading}
+            faqs={faqs.map((faq) => ({
+              faqquestion: faq.faqTitle,
+              faqanswer: faq.faqAnswer,
+            }))}
+          />
+        )
+      }
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"
         extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
