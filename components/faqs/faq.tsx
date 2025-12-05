@@ -29,7 +29,9 @@ export default function Faqs({ faqs }: Props) {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`accordion ${activeIndex === index ? "active" : ""}`}
+            className={`accordion rounded-xl ${
+              activeIndex === index ? "active" : ""
+            }`}
             onClick={() => toggleAccordion(index)}
           >
             <div className="accordion_head">

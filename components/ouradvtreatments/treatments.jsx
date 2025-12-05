@@ -27,7 +27,7 @@ export default function TreatmentCards({ heading, items }) {
         {items.map((item, i) => (
           <div
             key={i}
-            className="rounded-3xl bg-[#F4E9D1] p-5 sm:p-10 text-center shadow-sm"
+            className="rounded-3xl bg-[#F4E9D1] p-5 sm:p-10 text-center "
           >
             <div className="text-5xl m-3 sm:mb-6">{item.icon}</div>
             <h3 className="text-[16px] sm:text-xl font-semibold text-[#2D2A32] mb-4">

@@ -17,10 +17,10 @@ import Faqs from "@/components/faqs/faq";
 import MobileStickyFooter from "@/components/mobilsticky";
 import Conditioncost from "@/components/conditioncost";
 import VideoWithCarousel from "@/components/VideoWithCarousel/VideoWithCarousel";
-import DoctorsData from "@/app/doctorsdata/doctorsdata"
-import Treatments from "@/components/ouradvtreatments/treatments"
-import Symptoms from "@/components/symptoms/symptoms"
-import Numbers from "@/components/Number/number"
+import DoctorsData from "@/app/doctorsdata/doctorsdata";
+import Treatments from "@/components/ouradvtreatments/treatments";
+import Symptoms from "@/components/symptoms/symptoms";
+import Numbers from "@/components/Number/number";
 import ConditionConsultation from "@/components/conditionconsulatation/conditionconsulatation";
 
 const DoctorsSection = dynamic(
@@ -33,8 +33,8 @@ const DoctorCard = dynamic(() => import("@/components/topdoctors/ourdoctors"));
 const HospitalComparison = dynamic(
   () => import("@/components/Treatmenttable/Hospitalcomparison")
 );
-const HospitalComparisond = dynamic(() =>
-  import("@/components/dynamictable/dynamictables")
+const HospitalComparisond = dynamic(
+  () => import("@/components/dynamictable/dynamictables")
 );
 const Accreditations = dynamic(
   () => import("@/components/Accreditions/accreditions")
@@ -46,9 +46,7 @@ const PatientTalks = dynamic(
 const Luxgpt = dynamic(() => import("@/components/luxgpt/luxgpt"));
 
 export default function Home() {
-  const heroHeading =
-    "Welcome to Chirag Global Hospitals";
-
+  const heroHeading = "Welcome to Chirag Global Hospitals";
 
   // Dummy content
   const defaultDescList = [
@@ -63,11 +61,12 @@ export default function Home() {
       image:
         "https://luxhospitals.com/wp-content/uploads/2025/04/converted-3.avif",
       title: "Book an Appointment",
-      arrow: "\Arrow.svg",
+      arrow: "Arrow.svg",
       link: "tel:917969084448",
     },
     {
-      image: "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
+      image:
+        "https://luxhospitals.com/wp-content/uploads/2025/04/converted-5.avif",
       title: "Cost Estimation",
       arrow: "/Arrow.svg",
       link: "whatsapp",
@@ -119,18 +118,29 @@ export default function Home() {
     },
     {
       faqTitle: "How long does the procedure take?",
-      faqAnswer:
-        "Usually around 20–30 minutes, depending on the case.",
+      faqAnswer: "Usually around 20–30 minutes, depending on the case.",
     },
   ];
 
   const tableData = [
     { label: "Treatment Type", other: "Open Surgery", lux: "Laser + Harmonic" },
     { label: "Recovery Time", other: "7–10 Days", lux: "Same Day" },
-    { label: "Pain & Bleeding", other: "Painful with Bleeding", lux: "Painless & Bloodless" },
-    { label: "Insurance & EMI", other: "Not Always Cashless", lux: "All Insurances + 0% EMI" },
+    {
+      label: "Pain & Bleeding",
+      other: "Painful with Bleeding",
+      lux: "Painless & Bloodless",
+    },
+    {
+      label: "Insurance & EMI",
+      other: "Not Always Cashless",
+      lux: "All Insurances + 0% EMI",
+    },
     { label: "Room Type", other: "General / Shared", lux: "Private Suite" },
-    { label: "Cost Transparency", other: "Variable & Hidden Costs", lux: "Fixed & Transparent" },
+    {
+      label: "Cost Transparency",
+      other: "Variable & Hidden Costs",
+      lux: "Fixed & Transparent",
+    },
   ];
 
   const [questionnaireOpen, setQuestionnaireOpen] = useState(false);
@@ -145,7 +155,7 @@ export default function Home() {
     "Dr. M Ram Prabhu",
     "Dr. Chandana Guduru",
     "Dr. Madan Mohan",
-    "Dr. Sai Kishan Sirasala"
+    "Dr. Sai Kishan Sirasala",
   ];
   const treatment = [
     {
@@ -174,7 +184,7 @@ export default function Home() {
       "Sometimes Associated With Pain & Burning",
       "Itching May Be Present Sometimes",
     ],
-  }
+  };
   const pilesComparisonContent = {
     theading: "Piles Treatment at Chirag Hospitals",
     ConditionVideo: "/chirag-piles-video.mp4",
@@ -182,8 +192,9 @@ export default function Home() {
     title: "What are Piles or Hemorrhoids?",
     description: (
       <>
-        Piles are swollen blood vessels found inside or under the skin around the bottom.
-        These are also called <strong>Hemorrhoids</strong>. There are 3 types of Piles.
+        Piles are swollen blood vessels found inside or under the skin around
+        the bottom. These are also called <strong>Hemorrhoids</strong>. There
+        are 3 types of Piles.
       </>
     ),
 
@@ -208,16 +219,17 @@ export default function Home() {
       heading: "Your Journey to Health Starts Here",
       points: [
         <>
-          <strong>Consultation</strong> Visit us for a detailed consultation with our
-          experienced doctors. (Both online and offline options available.)
+          <strong>Consultation</strong> Visit us for a detailed consultation
+          with our experienced doctors. (Both online and offline options
+          available.)
         </>,
         <>
           <strong>Diagnosis</strong> Advanced diagnostic tools for accurate
           identification of your condition.
         </>,
         <>
-          <strong>Treatment</strong> Get the best-in-class treatment tailored to your
-          needs.
+          <strong>Treatment</strong> Get the best-in-class treatment tailored to
+          your needs.
         </>,
         <>
           <strong>Follow-Up Care</strong> Regular check-ups to ensure a smooth
@@ -239,10 +251,8 @@ export default function Home() {
         descList={defaultDescList}
         heroImage={"/happypatient.avif"}
       />
-      <Treatments
-        heading="Our Advanced Treatments"
-        items={treatment}
-      />
+      <Numbers />
+      <Treatments heading="Our Advanced Treatments" items={treatment} />
       <Symptoms
         heading={SymptomsContent.heading}
         icon={SymptomsContent.icon}
@@ -255,17 +265,14 @@ export default function Home() {
 
       {/* <Conditioncost /> */}
       <HospitalLocation locationsectionheading={defaultLocationHeading} />
-      {
-        doctorOrder.length > 0 && (
-          <section
-            className="w-[95%] py-4 sm:py-8"
-            style={{ margin: "auto" }}
-          >
-            <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-6">
-              Our Top Doctors
-            </h2>
-            <DoctorsSection
-              doctors={doctorOrder.map((doctorName) => {
+      {doctorOrder.length > 0 && (
+        <section className="w-[95%] py-4 sm:py-8" style={{ margin: "auto" }}>
+          <h2 className="doctors_heading text-xl font-bold text-center text-indigo-900 mb-6">
+            Our Top Doctors
+          </h2>
+          <DoctorsSection
+            doctors={doctorOrder
+              .map((doctorName) => {
                 const departmentKeys = Object.keys(DoctorsData as any).filter(
                   (dept) => DoctorsData[dept][doctorName]
                 );
@@ -294,34 +301,31 @@ export default function Home() {
                   mobileNumberDoctor:
                     cardData.mobileNumberDoctor || "tel:07969084443",
                 };
-              }).filter(Boolean)}
-            />
-
-          </section>
-        )
-      }
+              })
+              .filter(Boolean)}
+          />
+        </section>
+      )}
       <HospitalComparisond {...pilesComparisonContent} />
       <ConditionConsultation
         leftBox={conditionConsultationContent.leftBox}
         rightBox={conditionConsultationContent.rightBox}
       />
-      <Numbers />
+
       <Accreditations />
       <VideoSection />
       <VideoWithCarousel />
       {/* <Luxgpt /> */}
 
-      {
-        faqs.length > 0 && (
-          <Faqs
-            // fheading={fheading}
-            faqs={faqs.map((faq) => ({
-              faqquestion: faq.faqTitle,
-              faqanswer: faq.faqAnswer,
-            }))}
-          />
-        )
-      }
+      {faqs.length > 0 && (
+        <Faqs
+          // fheading={fheading}
+          faqs={faqs.map((faq) => ({
+            faqquestion: faq.faqTitle,
+            faqanswer: faq.faqAnswer,
+          }))}
+        />
+      )}
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"
         extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
