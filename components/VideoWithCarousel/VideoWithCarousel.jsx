@@ -16,35 +16,40 @@ export default function VideoWithCarousel() {
     {
       id: 1,
       reviewerName: "Karthik",
-      reviewText: "If you’re suffering from piles, fissures, or fistulas, this hospital is truly a one-stop solution for all your anorectal health concerns. From the moment you walk in, you’re treated with professionalism and care.",
+      reviewText:
+        "If you’re suffering from piles, fissures, or fistulas, this hospital is truly a one-stop solution for all your anorectal health concerns. From the moment you walk in, you’re treated with professionalism and care.",
       googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 5 stars
     },
     {
       id: 2,
       reviewerName: "Sompali Pratima",
-      reviewText: "The staff was very approachable and explained everything in detail. They were focused about fixing the lifestyle problems than just giving medications Recommended for anyone with piles problems.",
+      reviewText:
+        "The staff was very approachable and explained everything in detail. They were focused about fixing the lifestyle problems than just giving medications Recommended for anyone with piles problems.",
       googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 4 stars
     },
     {
       id: 3,
       reviewerName: "Manjunath",
-      reviewText: "All Staffs are good, supportive doctors, good treatment for piles, fistula",
+      reviewText:
+        "All Staffs are good, supportive doctors, good treatment for piles, fistula",
       googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 3 stars
     },
     {
       id: 4,
       reviewerName: "Abdul khader",
-      reviewText: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+      reviewText:
+        "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
       googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 5 stars
     },
     {
       id: 5,
       reviewerName: "Kiran Kumar",
-      reviewText: "Dr. Rajasekhar sir is the best surgeon to treat piles and fistula issues. He got many years of experience. He is so down to earth person. speaks very softly with patients and understands the problem in detail before he prescribe the treatment. I have undergone laser surgery for piles. Same day i got discharges and pain completely vanished from 4rth day onwards. I highly recommend this hospital for piles issue.",
+      reviewText:
+        "Dr. Rajasekhar sir is the best surgeon to treat piles and fistula issues. He got many years of experience. He is so down to earth person. speaks very softly with patients and understands the problem in detail before he prescribe the treatment. I have undergone laser surgery for piles. Same day i got discharges and pain completely vanished from 4rth day onwards. I highly recommend this hospital for piles issue.",
       googleIcon: "/iconG.webp", // Add the path to Google icon
       rating: 5, // 5 stars
     },
@@ -63,7 +68,10 @@ export default function VideoWithCarousel() {
     setIsInteracting(true);
     if (interactionTimeoutRef.current)
       clearTimeout(interactionTimeoutRef.current);
-    interactionTimeoutRef.current = setTimeout(() => setIsInteracting(false), 7000);
+    interactionTimeoutRef.current = setTimeout(
+      () => setIsInteracting(false),
+      7000
+    );
   };
 
   // 🔹 Detect manual scroll and update active index
@@ -137,7 +145,10 @@ export default function VideoWithCarousel() {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       stars.push(
-        <span key={i} className={i < rating ? "text-yellow-400" : "text-gray-300"}>
+        <span
+          key={i}
+          className={i < rating ? "text-yellow-400" : "text-gray-300"}
+        >
           ★
         </span>
       );
@@ -154,7 +165,8 @@ export default function VideoWithCarousel() {
         Patients Love Us
       </h2>
       <p className="text-gray-700 text-center max-w-xl pb-4 text-base font-semibold max-[325px]:text-[12px]">
-        Our patients share their heartfelt stories, praising the care, comfort, and compassion they experienced.
+        Our patients share their heartfelt stories, praising the care, comfort,
+        and compassion they experienced.
       </p>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full">
@@ -184,7 +196,7 @@ export default function VideoWithCarousel() {
                 className="review-card snap-center flex-shrink-0 
                   w-full sm:w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px]
                   min-h-[220px] md:min-h-[260px] lg:h-[300px] xl:h-[310px]
-                  rounded-xl overflow-hidden flex flex-col items-center justify-center 
+                  rounded-2xl overflow-hidden flex flex-col items-center justify-center 
                   p-4 space-y-2 bg-white border border-gray-200"
               >
                 <Image
@@ -194,13 +206,18 @@ export default function VideoWithCarousel() {
                   height={40}
                   className="w-10 h-10"
                 />
-                <p className="text-gray-700 text-center text-sm">"{review.reviewText}"</p>
-                <div className="flex space-x-1">{renderStars(review.rating)}</div>
-                <span className="text-[#7966af] font-semibold">{review.reviewerName}</span>
+                <p className="text-gray-700 text-center text-sm">
+                  "{review.reviewText}"
+                </p>
+                <div className="flex space-x-1">
+                  {renderStars(review.rating)}
+                </div>
+                <span className="text-[#7966af] font-semibold">
+                  {review.reviewerName}
+                </span>
               </div>
             ))}
           </div>
-
 
           {/* Navigation Dots */}
           <div className="flex gap-2 mt-3">
@@ -211,10 +228,11 @@ export default function VideoWithCarousel() {
                   scrollToSlide(index);
                   pauseAutoScroll();
                 }}
-                className={`h-2 w-2 rounded-full transition-all ${activeIndex === index
-                  ? "bg-[#7966af] w-5"
-                  : "bg-gray-400 hover:bg-[#7966af]"
-                  }`}
+                className={`h-2 w-2 rounded-full transition-all ${
+                  activeIndex === index
+                    ? "bg-[#7966af] w-5"
+                    : "bg-gray-400 hover:bg-[#7966af]"
+                }`}
               />
             ))}
           </div>

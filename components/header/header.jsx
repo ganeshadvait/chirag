@@ -42,58 +42,27 @@ export default function Header({
   const [showModal, setShowModal] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
   const [serviceTitle, setServiceTitle] = useState("");
-   const [onClosee, setClosee] = useState(false);
+  const [onClosee, setClosee] = useState(false);
   const handleWhatsapp = (title) => {
-   alert("WhatsApp feature is coming soon!");
+    alert("WhatsApp feature is coming soon!");
   };
 
   return (
     <>
-      <header className="header">
+      <header className="header w-[96%] h-[90px] mx-auto my-2 flex items-center justify-between p-5 border border-[#ebeff6] bg-white sticky top-[10px] z-[1000] transition-all duration-300 ease-in-out max-w-[1500px] shadow-lg rounded-xl">
         <div className="header__logos">
           <a href="#">
-            <img
+            <Image
               className="logo-fade header__logo"
-              src="\Chirag-New-logo_.webp"
+              src="/Chirag-New-logo_.webp"
               alt="logo"
-              width={60}
-              height={60}
+              width={100}
+              height={100}
             />
           </a>
-          {/* <a
-            href="#iso_section"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("iso_section");
-            }}
-          >
-            <Image
-              className="logo-fade header__logotwo"
-              src="/isoshadow.png"
-              alt="ISO Certification Logo"
-              width={100} // pick a suitable width
-              height={100} // pick a suitable height
-            />
-          </a> */}
-
-          {/* <a
-            href="#nabh_section"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("nabh_section");
-            }}
-          >
-            <Image
-              className="logo-fade header__logothree"
-              src="/nabhshodow.png"
-              alt="NABH Certification Logo"
-              width={100} // adjust to your design
-              height={100} // adjust to your design
-            />
-          </a> */}
         </div>
 
-        <nav className="header__menu">
+        <nav className="header__menu font-semibold">
           <ul>
             {[
               { link: "", value: "Home" },
