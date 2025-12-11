@@ -1,5 +1,5 @@
-import React from 'react';
-import Header from "@/components/partials/header/header"
+import React from "react";
+import Header from "@/components/partials/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
@@ -11,18 +11,45 @@ import Why from "@/components/partials/why/why";
 import Google from "@/components/partials/google/google";
 import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
-import FAQ from "@/components/partials/faq/faq";
+import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 
 export default function NewDesign() {
+  const faqs = [
+    {
+      faqTitle: " What are piles?",
+      faqAnswer:
+        "Piles are swollen veins in the anal area that may cause pain, itching, or bleeding.",
+    },
+    {
+      faqTitle: "How do I know if I have piles?",
+      faqAnswer:
+        "Common signs include bleeding during bowel movements, a lump near the anus, pain, or irritation.",
+    },
+    {
+      faqTitle: "Do all piles need surgery?",
+      faqAnswer:
+        "No. Early-stage piles can often be treated with medicines, fibre, ointments, and Sitz baths.",
+    },
+    {
+      faqTitle: "What is laser treatment for piles?",
+      faqAnswer:
+        "Laser treatment is a minimally invasive procedure that seals the swollen veins with controlled laser energy — no major cuts or stitches.",
+    },
+    {
+      faqTitle: "Is laser treatment painful?",
+      faqAnswer:
+        "Most patients experience minimal discomfort compared to traditional surgery.",
+    },
+    {
+      faqTitle: "How long does the procedure take?",
+      faqAnswer: "Usually around 20–30 minutes, depending on the case.",
+    },
+  ];
   return (
-
     <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
-      <Header />
-
       {/* 2-Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
-
         {/* LEFT SIDE 70% */}
         <div className="space-y-10">
           <Hero />
@@ -36,7 +63,15 @@ export default function NewDesign() {
           <Google />
           <Info />
           <CtaBanner />
-          <FAQ />
+          {faqs.length > 0 && (
+            <Faqs
+              // fheading={fheading}
+              faqs={faqs.map((faq) => ({
+                faqquestion: faq.faqTitle,
+                faqanswer: faq.faqAnswer,
+              }))}
+            />
+          )}
         </div>
 
         {/* RIGHT SIDE 30% (Sticky Form) */}
@@ -45,7 +80,6 @@ export default function NewDesign() {
             <Form />
           </div>
         </div>
-
       </div>
     </div>
   );
