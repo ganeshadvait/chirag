@@ -65,6 +65,7 @@ export default function NewDesign() {
           <CtaBanner />
           {faqs.length > 0 && (
             <Faqs
+              className="!w-[95%] mx-[unset]"
               // fheading={fheading}
               faqs={faqs.map((faq) => ({
                 faqquestion: faq.faqTitle,

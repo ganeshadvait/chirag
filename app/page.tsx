@@ -319,6 +319,7 @@ export default function Home() {
 
       {faqs.length > 0 && (
         <Faqs
+          className="w-[70%] mx-auto"
           // fheading={fheading}
           faqs={faqs.map((faq) => ({
             faqquestion: faq.faqTitle,

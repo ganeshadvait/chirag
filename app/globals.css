@@ -724,9 +724,6 @@ a {
 }
 
 .inner_section {
-  width: 70%;
-  height: auto;
-  margin: auto;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -1650,8 +1647,6 @@ html {
   list-style: none;
   list-style-type: none;
 }
-
-
 
 .hero_image {
   width: 100%;

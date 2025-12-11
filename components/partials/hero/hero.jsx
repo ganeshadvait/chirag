@@ -6,7 +6,6 @@ export default function PilesTreatmentSection() {
   return (
     <section className="w-full bg-white py-12 my-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6">
-
         {/* LEFT CONTENT */}
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
@@ -28,12 +27,15 @@ export default function PilesTreatmentSection() {
               </li>
             ))}
           </ul>
+          <button className="mt-6 bg-orange-500 hover:bg-orange-600 transition text-white font-semibold rounded-full px-8 py-3 text-lg">
+            Calculate Surgery Cost
+          </button>
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="relative w-full h-64 sm:h-80 md:h-[400px] rounded-lg overflow-hidden">
+        <div className="relative w-full h-64 sm:h-80 md:h-[400px] rounded-xl overflow-hidden">
           <Image
-            src="/AskGPTAnything.webp"
+            src="/interaction.png"
             alt="Doctor in white coat"
             fill
             className="object-cover"
