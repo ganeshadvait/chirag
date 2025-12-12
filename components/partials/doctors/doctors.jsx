@@ -1,3 +1,4 @@
+import Image from "next/image";
 const topDoctors = [
   {
     name: "Dr. Mahesh Boyapati",
@@ -37,6 +38,13 @@ const moreDoctors = [
     reviews: "98%",
     img: "/MedicalProfessionalPortrait.png",
   },
+  {
+    name: "Dr Gabriel Sukumar Chinnam",
+    role: "General, Laparoscopic and Gastrointestinal Surgeon",
+    experience: "32 Years",
+    reviews: "98%",
+    img: "/MedicalProfessionalPortrait.png",
+  },
 ];
 
 export default function DoctorsSection() {
@@ -46,7 +54,7 @@ export default function DoctorsSection() {
       <h2 className="text-xl font-semibold mb-3">Our Top Doctors</h2>
 
       {/* TOP DOCTORS */}
-      <div className="space-y-4 flex gap-2">
+      <div className="space-y-4 py-2 flex gap-2">
         {topDoctors.map((doc, idx) => (
           <DoctorCard key={idx} doctor={doc} />
         ))}
@@ -56,7 +64,7 @@ export default function DoctorsSection() {
       <ConsultBanner />
 
       {/* MORE DOCTORS */}
-      <div className="space-y-4 mt-4">
+      <div className="space-y-4 py-2 flex gap-2">
         {moreDoctors.map((doc, idx) => (
           <DoctorCard key={idx} doctor={doc} />
         ))}
@@ -107,7 +115,7 @@ function DoctorCard({ doctor }) {
       </div>
 
       {/* CTA BUTTON */}
-      <button className="border-2 border-rose-400 text-rose-500 rounded-full px-6 py-3 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-rose-50 transition flex items-center gap-2 w-full text-center flex justify-center items-center">
+      <button className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-3 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center">
         <span className="text-base text-center">Book Free Consultation</span>
       </button>
     </div>
@@ -118,7 +126,49 @@ function DoctorCard({ doctor }) {
 
 function ConsultBanner() {
   return (
-    <div className="mt-4 bg-green-50 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between">
+    <div className="w-full bg-green-50 rounded-2xl p-6 md:p-10 my-8">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+        {/* Left Section */}
+        <div className="flex flex-col items-start gap-4 max-w-md">
+          <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
+            <span className="text-xl">🏪</span>
+          </div>
+
+          <div>
+            <h2 className="text-[32px] font-semibold text-gray-900 mb-4">
+              Check Surgery Cost
+            </h2>
+            <p className="mt-2 text-gray-600 text-[18px]">
+              Find the total cost of Surgery at the best hospitals in your city.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Card */}
+        <div className="w-full max-w-md rounded-2xl  p-2 text-center">
+          <Image
+            src="/chiraggpt.png"
+            alt="Franchise Offer"
+            width={150}
+            height={100}
+            className="mx-auto mb-4 rounded-lg"
+          />
+
+          <button
+            className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+          >
+            Calculate Surgery Cost
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+  );
+}
+
+{/* <div className="mt-4 bg-green-50 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between">
       <div className="max-w-md">
         <h3 className="text-xl font-bold text-green-700">
           Consult The Doctor <span className="text-gray-900">Now</span>
@@ -129,7 +179,7 @@ function ConsultBanner() {
         </p>
 
         <button className="mt-4 bg-green-600 text-white px-5 py-3 rounded-full flex items-center gap-2 shadow hover:bg-green-700 transition">
-          <span>💬</span> WhatsApp To Consult Doctor
+          <span></span> WhatsApp To Consult Doctor
         </button>
       </div>
 
@@ -138,6 +188,4 @@ function ConsultBanner() {
         alt="Consult Doctor"
         className="w-36 h-auto mt-4 md:mt-0"
       />
-    </div>
-  );
-}
+    </div> */}

@@ -14,11 +14,15 @@ export default function WhyChooseHexa() {
         Why Choose HexaHealth for Piles Treatment in Hyderabad?
       </h2>
 
-      <div className="bg-emerald-50 rounded-3xl px-6 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
-        <ul className="space-y-3 text-lg text-gray-900">
+      <div className=" rounded-3xl pr-6 py-6 ">
+        <ul className="space-y-6 text-lg text-gray-900 list-none">
           {points.map((item, i) => (
-            <li key={i} className="flex items-start">
-              <span className="mt-2 mr-3 h-2 w-2 rounded-full bg-emerald-600"></span>
+            <li key={i} className="flex items-center list-none gap-2 transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-2 border border-transparent hover:border-gray-100  hover:bg-gray  rounded-lg p-2 w-[fit-content] cursor-normal">
+              <span className=" mr-3 flex-shrink-0">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+</svg>
+              </span>
               <span>{item}</span>
             </li>
           ))}

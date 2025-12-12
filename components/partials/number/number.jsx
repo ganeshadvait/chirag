@@ -1,6 +1,6 @@
 export default function StatsSection() {
   return (
-    <section className="w-full py-12">
+    <section className="w-full py-8">
       <div className=" mx-auto p-8 border border-gray-100 rounded-2xl shadow-lg bg-gray-50/50 backdrop-blur-sm">
         {/* Top heading row */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
