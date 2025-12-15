@@ -1,6 +1,7 @@
 // components/ConsultationForm.jsx
 "use client";
 import { useState } from "react";
+import TestimonialSlider from "@/components/partials/reviews/reviews";
 
 // Simple up arrow SVG
 function UpIcon({ className = "" }) {
@@ -45,14 +46,22 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="w-full max-w-sm bg-white shadow-[unset] md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-10">
-      <h2 className={`text-xl font-semibold text-[#0b1b3f] mb-0 md:mb-4  ${!showForm ? 'hidden' : 'block'}`}>
+    <div className="w-full max-w-sm bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-4">
+      {!showForm && <TestimonialSlider />}
+
+      <h2
+        className={`text-xl font-semibold text-[#0b1b3f] mt-2 mb-0 md:mb-4  ${
+          !showForm ? "hidden" : "block"
+        }`}
+      >
         Book Free Consultation
       </h2>
 
       {/* Animated Form Inputs - hidden on mobile, toggled by Book Now */}
       <div
-        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] ${!showForm ? 'my-0' : 'my-4'}  ${formAnim}`}
+        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] ${
+          !showForm ? "my-0" : "my-4"
+        }  ${formAnim}`}
       >
         <form onSubmit={handleSubmit}>
           {/* Patient Name */}
