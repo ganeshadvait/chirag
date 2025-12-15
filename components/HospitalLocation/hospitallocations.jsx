@@ -60,7 +60,7 @@ export default function HospitalLocation({ locationsectionheading }) {
                 href="https://maps.app.goo.gl/nAWJqH1nyXAZvcth8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="review_button flex items-center justify-center gap-2 bg-[#f8b956] text-white px-4 py-2 rounded-3xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-[#68559e] flex-1"
+                className="review_button flex items-center justify-center gap-2 bg-[#f8b956] text-white px-4 py-2 rounded-3xl hover:bg-[#68559e] flex-1"
               >
                 <FaMapMarkerAlt /> Get Direction
               </a>

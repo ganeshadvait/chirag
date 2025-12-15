@@ -1,4 +1,6 @@
 import React from "react";
+
+import dynamic from "next/dynamic";
 import Header from "@/components/partials/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
@@ -14,6 +16,11 @@ import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
+import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
+
+const HospitalComparisond = dynamic(
+  () => import("@/components/dynamictable/dynamictables")
+);
 
 export default function NewDesign() {
   const faqs = [
@@ -47,6 +54,27 @@ export default function NewDesign() {
       faqAnswer: "Usually around 20–30 minutes, depending on the case.",
     },
   ];
+  const pilesComparisonContent = {
+    theading: "Piles Treatment at Chirag Hospitals",
+    ConditionVideo: "/chirag-piles-video.mp4",
+
+    title: "What are Piles or Hemorrhoids?",
+    description: (
+      <>
+        Piles are swollen blood vessels found inside or under the skin around
+        the bottom. These are also called <strong>Hemorrhoids</strong>. There
+        are 3 types of Piles.
+      </>
+    ),
+
+    points: [
+      "External Hemorrhoids",
+      "Internal Hemorrhoids",
+      "Interno – External Piles",
+    ],
+  };
+  const defaultLocationHeading =
+    "Our Hospital location Chirag Global Hospitals";
   return (
     <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
       {/* 2-Column Layout */}
@@ -58,10 +86,11 @@ export default function NewDesign() {
           <Cost />
           <Risk />
           <Doctors />
+          <HospitalLocation locationsectionheading={defaultLocationHeading} />
           <CostDepends />
           <InsurenceAdvisor />
           <Why />
-          
+          <HospitalComparisond {...pilesComparisonContent} />
           <Info />
           <CtaBanner />
           {faqs.length > 0 && (
@@ -80,6 +109,7 @@ export default function NewDesign() {
         <div className="relative">
           {/* Desktop: sticky, Mobile: fixed bottom */}
           <div className="hidden lg:block sticky top-24">
+            <Reviews />
             <Form />
           </div>
           <div

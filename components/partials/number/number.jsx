@@ -17,27 +17,27 @@ export default function StatsSection() {
         <hr className="my-6 bg-gray-100 text-gray-100" />
 
         {/* Horizontal scroll stats (similar to logo slider) */}
-        <div className="flex justify-between gap-6 overflow-x-auto no-scrollbar py-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:flex md:justify-between gap-6 py-4">
           {/* Card 1 */}
-          <div className="min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-            <p className="text-3xl font-semibold !text-black">24 hr</p>
-            <p className="text-gray-700 mt-1">Discharge</p>
+          <div className="min-w-[150px] sm:min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+            <p className="text-[24px] sm:text-3xl font-semibold !text-black">24 hr</p>
+            <p className="text-[14px] sm:text-[16px] text-gray-700 mt-1">Discharge</p>
           </div>
 
           {/* Card 2 */}
-          <div className="min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100  hover:shadow-lg transition-shadow duration-300">
-            <p className="text-3xl font-semibold !text-black">98%</p>
-            <p className="text-gray-700 mt-1">Patient Satisfaction</p>
+          <div className="min-w-[150px] sm:min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100  hover:shadow-lg transition-shadow duration-300">
+            <p className="text-[24px] sm:text-3xl font-semibold !text-black">98%</p>
+            <p className="text-[14px] sm:text-[16px] text-gray-700 mt-1">Patient Satisfaction</p>
           </div>
 
           {/* Card 3 */}
-          <div className="min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100  hover:shadow-lg transition-shadow duration-300">
-            <p className="text-3xl font-semibold !text-black">3 Days</p>
-            <p className="text-gray-700 mt-1">Recovery Time</p>
+          <div className="min-w-[150px] sm:min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100  hover:shadow-lg transition-shadow duration-300">
+            <p className="text-[24px] sm:text-3xl font-semibold !text-black">3 Days</p>
+            <p className="text-[14px] sm:text-[16px] text-gray-700 mt-1">Recovery Time</p>
           </div>
-          <div className="min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100  hover:shadow-lg transition-shadow duration-300">
-            <p className="text-3xl font-semibold !text-black">5 Days</p>
-            <p className="text-gray-700 mt-1">Average Stay</p>
+          <div className="min-w-[150px] sm:min-w-[200px] bg-white  rounded-xl px-6 py-6 text-center border border-gray-100  hover:shadow-lg transition-shadow duration-300">
+            <p className="text-[24px] sm:text-3xl font-semibold !text-black">5 Days</p>
+            <p className="text-[14px] sm:text-[16px] text-gray-700 mt-1">Average Stay</p>
           </div>
         </div>
       </div>
