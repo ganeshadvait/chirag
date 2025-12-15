@@ -11,19 +11,19 @@ export default function AiHealthBanner() {
             <div className="flex flex-col items-start gap-4 w-full md:basis-7/10">
 
               <div>
-                <h2 className="text-[32px] font-700 text-gray-900">
+                <h2 className="text-[32px] font-900 text-gray-900">
                   Your Health Matters – Schedule Your Visit
                 </h2>
               </div>
               <button
-                className="mt-3 rounded-full bg-blue-500 px-8 py-4 text-sm font-medium text-white hover:bg-blue-600 transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+                className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
               >
                 Calculate Surgery Cost
               </button>
             </div>
 
             {/* Right Card - 30% */}
-            <div className="w-full md:basis-3/10 rounded-2xl p-2 text-center">
+            <div className="hidden md:block w-full md:basis-3/10 rounded-2xl p-2 text-center">
               <Image
                 src="/chiraggpt.png"
                 alt="Franchise Offer"

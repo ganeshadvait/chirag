@@ -57,7 +57,7 @@ export default function DoctorsSection() {
   return (
     <div className="w-full  mx-auto px-4 py-6">
       {/* TITLE */}
-      <h2 className="text-xl font-semibold mb-3">Our Top Doctors</h2>
+      <h2 className="text-[24px] sm:text-[30px] text-[#625587] text-center font-semibold mb-8">Our Top Doctors</h2>
 
       {/* TOP DOCTORS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
@@ -128,7 +128,7 @@ function DoctorCard({ doctor }) {
       </div> */}
 
       {/* CTA BUTTON */}
-      <button className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-3 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center">
+      <button className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-2 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center">
         <span className="text-base text-center">Book Free Consultation</span>
       </button>
     </div>
@@ -167,7 +167,7 @@ function ConsultBanner() {
     
     
             {/* Right Card */}
-            <div className="w-full max-w-md rounded-2xl  p-2 text-center">
+            <div className="hidden md:block w-full max-w-md rounded-2xl  p-2 text-center">
               <Image
                 src="/chiraggpt.png"
                 alt="Franchise Offer"

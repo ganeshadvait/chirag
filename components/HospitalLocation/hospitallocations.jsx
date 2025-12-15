@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function HospitalLocation({ locationsectionheading }) {
   return (
     <section className="flex flex-col items-center hospital_location_section py-4 sm:py-8">
-      <h2 className="Location_heading font-bold text-center text-[#7966af] sm:py-4">
+      <h2 className="Location_heading font-semibold text-center text-[#7966af] sm:py-4 text-[24px] sm:text-[30px]">
         Our Hospital Location
       </h2>
       <div className="border-grey-100 location_card shadow-lg">

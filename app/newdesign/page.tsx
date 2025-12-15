@@ -109,7 +109,6 @@ export default function NewDesign() {
         <div className="relative">
           {/* Desktop: sticky, Mobile: fixed bottom */}
           <div className="hidden lg:block sticky top-24">
-            <Reviews />
             <Form />
           </div>
           <div

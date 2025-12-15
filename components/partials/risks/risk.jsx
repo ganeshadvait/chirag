@@ -1,7 +1,7 @@
 export default function RisksOfDelay() {
   return (
     <div className="w-full max-w-5xl mx-auto  rounded-xl md:p-6 px-4">
-      <h2 className="text-2xl font-semibold mb-8 text-gray-900">
+      <h2 className="text-[24px] sm:text-[30px] font-semibold mb-8 text-[#625587]">
         Risks of Delay in Piles Operation
       </h2>
 
@@ -22,7 +22,7 @@ export default function RisksOfDelay() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="size-6"
               >
