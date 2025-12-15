@@ -1,11 +1,11 @@
 import Image from "next/image";
 const topDoctors = [
   {
-    name: "Dr. Mahesh Boyapati",
-    role: "General and Laparoscopic Surgeon, Proctologist",
+    name: "Dr. Rajasekhar M R",
+    role: "MBBS, MS - FOUNDER AND SENIOR COLORECTAL SURGEON",
     experience: "14 Years",
     reviews: "100%",
-    img: "/MedicalProfessionalPortrait.png",
+    img: "/chiragheroimage.png",
   },
   {
     name: "Dr Dumpa Sruthi",

@@ -20,7 +20,7 @@ export default function PilesTreatmentSection() {
               "Pay Later Facility",
             ].map((item, idx) => (
               <li key={idx} className="flex items-center gap-3">
-                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#F8B956] text-white text-sm">
+                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#625587] text-white text-sm">
                   ✓
                 </span>
                 <span className="text-lg text-gray-700 font-semibold">{item}{"."}</span>
@@ -35,7 +35,7 @@ export default function PilesTreatmentSection() {
         {/* RIGHT IMAGE */}
         <div className="relative w-full h-64 sm:h-80 md:h-[400px] rounded-xl overflow-hidden">
           <Image
-            src="/interaction.png"
+            src="/chiragheroimage.png"
             alt="Doctor in white coat"
             fill
             className="object-cover"

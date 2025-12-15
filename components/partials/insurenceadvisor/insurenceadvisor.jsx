@@ -18,9 +18,9 @@ export default function InsuranceAdvisorSection() {
             </p>
 
             <img
-              src="/images/insurance-family.png"
+              src="/checkinsurancecoverage.png"
               alt="Insurance coverage illustration"
-              className="mt-6 w-56"
+              className="mt-6 w-56 mx-auto"
             />
           </div>
 
@@ -46,9 +46,9 @@ export default function InsuranceAdvisorSection() {
             </p>
 
             <img
-              src="/images/health-advisor.png"
+              src="/talktohealthadvaiser.png"
               alt="Health advisor illustration"
-              className="mt-6 w-56"
+              className="mt-6 w-56 mx-auto"
             />
           </div>
 

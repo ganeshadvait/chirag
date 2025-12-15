@@ -150,7 +150,7 @@ export default function TestimonialSlider() {
 
   return (
     <div className="max-w-xl mx-auto px-3 sm:px-4 mt-8">
-      <div className="border border-[#22C55E] rounded-2xl p-3 sm:p-4 bg-white">
+      <div className="border border-[#625587] rounded-2xl p-3 sm:p-4 bg-white">
 
         {/* REVIEW CAROUSEL */}
         <div
@@ -191,7 +191,7 @@ export default function TestimonialSlider() {
 
         {/* CTA */}
         <div className="mt-6 flex justify-center">
-          <button className="bg-[#059669] hover:bg-[#047857] text-white font-semibold px-6 sm:px-8 py-3 rounded-full transition text-sm sm:text-base flex items-center gap-2">
+          <button className="bg-[#625587] hover:bg-[#625587] text-white font-semibold px-6 sm:px-8 py-3 rounded-full transition text-sm sm:text-base flex items-center gap-2">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
               alt="Google"
