@@ -49,7 +49,7 @@ const moreDoctors = [
 
 export default function DoctorsSection() {
   return (
-    <div className="w-full  mx-auto px-4 py-6">
+    <div className="w-full  mx-auto px-0 md:px-4 py-6">
       {/* TITLE */}
       <h2 className="text-xl font-semibold mb-3">Our Top Doctors</h2>
 

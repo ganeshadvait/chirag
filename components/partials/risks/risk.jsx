@@ -1,6 +1,6 @@
 export default function RisksOfDelay() {
   return (
-    <div className="w-full max-w-5xl mx-auto  rounded-xl p-6 ">
+    <div className="w-full max-w-5xl mx-auto  rounded-xl md:p-6 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-gray-900">
         Risks of Delay in Piles Operation
       </h2>
@@ -13,12 +13,26 @@ export default function RisksOfDelay() {
           "Prolapsed (Bulging) Piles",
           "Risk of Anaemia",
         ].map((item, idx) => (
-          <li key={idx} className="flex items-start gap-4 transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4 border border-transparent hover:border-gray-100  hover:bg-gray  rounded-lg p-2 w-[fit-content]">
+          <li
+            key={idx}
+            className="flex items-start gap-4 transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4 border border-transparent hover:border-gray-100  hover:bg-gray  rounded-lg p-2 w-[fit-content]"
+          >
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-</svg>
-</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </span>
             <span>{item}</span>
           </li>
         ))}

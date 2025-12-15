@@ -37,7 +37,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 py-6">
+    <section className="w-full max-w-5xl mx-auto px-4 py-6 bg-black">
       <h2 className="text-2xl font-semibold text-gray-900 mb-4">
         Frequently Asked Questions
       </h2>

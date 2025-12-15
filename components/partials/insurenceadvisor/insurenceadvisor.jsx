@@ -1,7 +1,7 @@
 // components/InsuranceAdvisorSection.jsx
 export default function InsuranceAdvisorSection() {
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 py-8">
+    <section className="w-full max-w-5xl mx-auto  px-0 md:px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         {/* Card 1 – Insurance Coverage */}
