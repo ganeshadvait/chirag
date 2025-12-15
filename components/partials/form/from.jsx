@@ -32,7 +32,7 @@ export default function ConsultationForm() {
 
   // Animation styles
   const formAnim = showForm
-    ? "max-h-[500px] opacity-100 scale-100"
+    ? "max-h-[500px] opacity-100 scale-100 "
     : "max-h-0 opacity-0 scale-95 pointer-events-none";
 
   // Only allow submit if form is open
@@ -46,13 +46,13 @@ export default function ConsultationForm() {
 
   return (
     <div className="w-full max-w-sm bg-white shadow-[unset] md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-10">
-      <h2 className="text-xl font-semibold text-[#0b1b3f] mb-0 md:mb-4 hidden md:block">
+      <h2 className={`text-xl font-semibold text-[#0b1b3f] mb-0 md:mb-4  ${!showForm ? 'hidden' : 'block'}`}>
         Book Free Consultation
       </h2>
 
       {/* Animated Form Inputs - hidden on mobile, toggled by Book Now */}
       <div
-        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] my-4 ${formAnim}`}
+        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] ${!showForm ? 'my-0' : 'my-4'}  ${formAnim}`}
       >
         <form onSubmit={handleSubmit}>
           {/* Patient Name */}
