@@ -77,7 +77,14 @@ export default function NewDesign() {
 
         {/* RIGHT SIDE 30% (Sticky Form) */}
         <div className="relative">
-          <div className="sticky top-24">
+          {/* Desktop: sticky, Mobile: fixed bottom */}
+          <div className="hidden lg:block sticky top-24">
+            <Form />
+          </div>
+          <div
+            className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent  shadow-lg px-4 py-1"
+            style={{ maxWidth: "1500px", margin: "0 auto" }}
+          >
             <Form />
           </div>
         </div>
