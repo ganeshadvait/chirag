@@ -31,7 +31,7 @@ export default function TreatmentCostDependsOn() {
 
       <div className="border border-emerald-400 rounded-3xl px-6 pt-6 pb-4 bg-white shadow-sm">
         {/* Top row of factors */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item, idx) => (
             <div
               key={idx}
