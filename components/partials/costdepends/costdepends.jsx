@@ -50,7 +50,7 @@ export default function TreatmentCostDependsOn() {
 
         {/* Bottom WhatsApp button */}
         <button className="mt-6 w-full bg-emerald-600 text-white font-semibold rounded-full py-3.5 flex items-center justify-center gap-2 text-lg hover:bg-emerald-700 transition">
-          <span className="text-2xl">💬</span>
+          <span className="text-2xl"></span>
           <span>Chat with Expert</span>
         </button>
       </div>

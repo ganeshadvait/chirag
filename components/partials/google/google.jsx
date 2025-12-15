@@ -44,7 +44,7 @@ export default function PatientReviews() {
 
         {/* Book Appointment Button */}
         <button className="w-full bg-emerald-600 text-white rounded-full py-4 text-lg font-semibold flex items-center justify-center gap-3 hover:bg-emerald-700 transition">
-          <span className="text-2xl">📅</span>
+          <span className="text-2xl"></span>
           Book Appointment
         </button>
 

@@ -1,35 +1,48 @@
 // components/AiHealthBanner.jsx
+import Image from 'next/image';
 export default function AiHealthBanner() {
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 py-6">
-      <div className="border border-blue-300 rounded-3xl bg-blue-50 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between">
-
-        {/* Left Text Section */}
-        <div className="max-w-lg">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-snug">
-            Your Health, <span className="text-blue-600">Simplified by AI</span>
-          </h2>
-
-          <p className="text-gray-700 mt-3 text-lg leading-relaxed">
-            Get instant, doctor-backed insights on symptoms,
-            treatments, medicines & more.
-          </p>
-
-          <button className="mt-6 bg-blue-600 hover:bg-blue-700 transition text-white font-semibold rounded-full px-8 py-3 text-lg shadow">
-            Check Now
-          </button>
-        </div>
-
-        {/* Right Image */}
-        <div className="mt-8 md:mt-0 md:ml-6">
-          <img
-            src="/images/ai-health-bot.png"   // replace with your actual image
-            alt="AI Health Assistant"
-            className="w-40 md:w-56 h-auto"
-          />
-        </div>
-
-      </div>
-    </section>
+   <>
+   <section className='p-6'>
+    <div className="w-full border border-blue-300 rounded-3xl bg-blue-50 flex flex-col md:flex-row items-center justify-between rounded-2xl p-6 md:p-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+    
+            {/* Left Section */}
+            <div className="flex flex-col items-start gap-4 w-full">
+              <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
+                <span className="text-xl">🏪</span>
+              </div>
+    
+              <div>
+                <h2 className="text-[32px] font-semibold text-gray-900 mb-4">
+                  Check Surgery Cost
+                </h2>
+                <p className="mt-2 text-gray-600 text-[18px]">
+                  Find the total cost of Surgery at the best hospitals in your city.
+                </p>
+              </div>
+            </div>
+    
+            {/* Right Card */}
+            <div className="w-full max-w-md rounded-2xl  p-2 text-center">
+              <Image
+                src="/chiraggpt.png"
+                alt="Franchise Offer"
+                width={150}
+                height={100}
+                className="mx-auto mb-4 rounded-lg"
+              />
+    
+              <button
+                className="mt-3 rounded-full bg-blue-500 px-8 py-4 text-sm font-medium text-white hover:bg-blue-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+              >
+                Calculate Surgery Cost
+              </button>
+            </div>
+    
+    
+          </div>
+        </div></section></>
+    
   );
 }

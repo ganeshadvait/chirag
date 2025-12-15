@@ -36,8 +36,8 @@ export default function ConsultationForm() {
       </div>
 
       {/* Submit Button */}
-      <button className="w-full mt-5 bg-[#ff7164] hover:bg-[#ff5b4c] transition text-white text-lg font-semibold py-3 rounded-full shadow">
-        BOOK NOW
+      <button className="w-full mt-5 bg-[#F8B956] hover:bg-[#F8B956] hover:bg-transparent border-2 border-transparent hover:border-[#F8B956] hover:text-black transition text-white text-md font-semibold py-3.5 rounded-full shadow">
+        Consult Now
       </button>
     </div>
   );
