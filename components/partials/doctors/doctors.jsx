@@ -54,7 +54,7 @@ export default function DoctorsSection() {
       <h2 className="text-xl font-semibold mb-3">Our Top Doctors</h2>
 
       {/* TOP DOCTORS */}
-      <div className="space-y-4 py-2 flex gap-2">
+      <div className="space-y-4 py-2 flex flex-col sm:flex-row gap-2">
         {topDoctors.map((doc, idx) => (
           <DoctorCard key={idx} doctor={doc} />
         ))}
@@ -64,7 +64,7 @@ export default function DoctorsSection() {
       <ConsultBanner />
 
       {/* MORE DOCTORS */}
-      <div className="space-y-4 py-2 flex gap-2">
+      <div className="space-y-4 py-2 flex flex-col sm:flex-row gap-2">
         {moreDoctors.map((doc, idx) => (
           <DoctorCard key={idx} doctor={doc} />
         ))}
