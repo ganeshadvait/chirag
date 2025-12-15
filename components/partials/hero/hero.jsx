@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function PilesTreatmentSection() {
   return (
-    <section className="w-full bg-white pt-4 md:pt-12 pb-8 my-4">
+    <section className="w-full bg-white pt-4  pb-8 my-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4 md:px-6">
         {/* LEFT CONTENT */}
         <div>
@@ -20,7 +20,7 @@ export default function PilesTreatmentSection() {
               "Pay Later Facility",
             ].map((item, idx) => (
               <li key={idx} className="flex items-center gap-3">
-                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#F8B956] text-white text-sm">
+                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#625587] text-white text-sm">
                   ✓
                 </span>
                 <span className="text-lg text-gray-700 font-semibold">{item}{"."}</span>

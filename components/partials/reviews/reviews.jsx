@@ -5,19 +5,22 @@ export default function TestimonialSlider() {
   const wrapperRef = useRef(null);
   const containerRef = useRef(null);
   const timerRef = useRef(null);
+  const mobileWrapperRef = useRef(null);
+  const mobileContainerRef = useRef(null);
+  const mobileTimerRef = useRef(null);
 
-  const GAP = 16; // px gap between cards
+  const GAP = 16;
 
   const testimonials = [
     {
-      title: "laser treatment for my dad’s piles",
-      text: "Dr. Samhitha Reddy’s laser treatment for my dad’s piles worked wonders. He’s pain-free now and really grateful for her care!",
+      title: "laser treatment for my dad's piles",
+      text: "Dr. Samhitha Reddy's laser treatment for my dad's piles worked wonders. He's pain-free now and really grateful for her care!",
       name: "Mithilesh Sah",
       rating: 5,
     },
     {
       title: "smooth and painless",
-      text: "Dr. Samhitha Reddy’s laser treatment for my fissure was smooth and painless. She was super kind, which made the whole process much easier.",
+      text: "Dr. Samhitha Reddy's laser treatment for my fissure was smooth and painless. She was super kind, which made the whole process much easier.",
       name: "Rohit Kumar",
       rating: 5,
     },
@@ -41,19 +44,25 @@ export default function TestimonialSlider() {
     },
   ];
 
-  // clone last & first for true infinite loop
   const slides = [
     testimonials[testimonials.length - 1],
     ...testimonials,
     testimonials[0],
   ];
 
+  // Desktop state
   const [index, setIndex] = useState(1);
   const [slideWidth, setSlideWidth] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
 
-  /* ⭐ Stars */
+  // Mobile state
+  const [mobileIndex, setMobileIndex] = useState(1);
+  const [mobileSlideWidth, setMobileSlideWidth] = useState(0);
+  const [isMobileDragging, setIsMobileDragging] = useState(false);
+  const [mobileStartX, setMobileStartX] = useState(0);
+  const [showmReviews, setShowmReviews] = useState(true);
+
   const Stars = ({ rating }) => {
     const full = Math.floor(rating);
     const half = rating % 1 !== 0;
@@ -68,14 +77,13 @@ export default function TestimonialSlider() {
     );
   };
 
-  /* Width calculation */
+  // Desktop functions
   const updateWidth = () => {
     if (containerRef.current) {
       setSlideWidth(containerRef.current.offsetWidth + GAP);
     }
   };
 
-  /* Auto slide */
   const startAuto = () => {
     stopAuto();
     timerRef.current = setInterval(() => {
@@ -87,7 +95,6 @@ export default function TestimonialSlider() {
     if (timerRef.current) clearInterval(timerRef.current);
   };
 
-  /* Touch swipe */
   const onTouchStart = (e) => {
     setIsDragging(true);
     setStartX(e.touches[0].clientX);
@@ -98,81 +105,253 @@ export default function TestimonialSlider() {
     if (!isDragging) return;
     const diff = e.touches[0].clientX - startX;
     wrapperRef.current.style.transition = "none";
-    wrapperRef.current.style.transform = `translateX(${-index * slideWidth + diff}px)`;
+    wrapperRef.current.style.transform = `translateX(${
+      -index * slideWidth + diff
+    }px)`;
   };
 
   const onTouchEnd = (e) => {
     if (!isDragging) return;
     const diff = e.changedTouches[0].clientX - startX;
-
     if (Math.abs(diff) > slideWidth / 4) {
       setIndex((i) => (diff < 0 ? i + 1 : i - 1));
     }
-
     setIsDragging(false);
     startAuto();
   };
 
-  /* Init */
+  // Mobile functions
+  const updateMobileWidth = () => {
+    if (mobileContainerRef.current) {
+      const cardHeight = 50 + GAP;
+      setMobileSlideWidth(cardHeight);
+    }
+  };
+
+  const startMobileAuto = () => {
+    stopMobileAuto();
+    mobileTimerRef.current = setInterval(() => {
+      setMobileIndex((i) => i + 1);
+    }, 3000);
+  };
+
+  const stopMobileAuto = () => {
+    if (mobileTimerRef.current) clearInterval(mobileTimerRef.current);
+  };
+
+  const onMobileTouchStart = (e) => {
+    setIsMobileDragging(true);
+    setMobileStartX(e.touches[0].clientY);
+    stopMobileAuto();
+  };
+
+  const onMobileTouchMove = (e) => {
+    if (!isMobileDragging) return;
+    const diff = e.touches[0].clientY - mobileStartX;
+    mobileWrapperRef.current.style.transition = "none";
+    mobileWrapperRef.current.style.transform = `translateY(${
+      -mobileIndex * mobileSlideWidth + diff
+    }px)`;
+  };
+
+  const onMobileTouchEnd = (e) => {
+    if (!isMobileDragging) return;
+    const diff = e.changedTouches[0].clientY - mobileStartX;
+    if (Math.abs(diff) > mobileSlideWidth / 4) {
+      setMobileIndex((i) => (diff < 0 ? i + 1 : i - 1));
+    }
+    setIsMobileDragging(false);
+    startMobileAuto();
+  };
+
+  // Desktop carousel effect
   useEffect(() => {
     updateWidth();
-    startAuto();
     window.addEventListener("resize", updateWidth);
+    startAuto();
 
     return () => {
-      stopAuto();
       window.removeEventListener("resize", updateWidth);
+      stopAuto();
     };
   }, []);
 
-  /* Slide animation */
   useEffect(() => {
     if (!wrapperRef.current) return;
 
-    wrapperRef.current.style.transition = "transform 0.5s ease";
+    wrapperRef.current.style.transition = "transform 0.5s ease-in-out";
     wrapperRef.current.style.transform = `translateX(${-index * slideWidth}px)`;
 
-    // seamless reset (NO jump)
-    if (index === slides.length - 1) {
-      setTimeout(() => {
+    const handleTransitionEnd = () => {
+      if (index === 0) {
+        wrapperRef.current.style.transition = "none";
+        setIndex(testimonials.length);
+      } else if (index === slides.length - 1) {
         wrapperRef.current.style.transition = "none";
         setIndex(1);
-      }, 500);
-    }
+      }
+    };
 
-    if (index === 0) {
-      setTimeout(() => {
-        wrapperRef.current.style.transition = "none";
-        setIndex(slides.length - 2);
-      }, 500);
-    }
+    wrapperRef.current.addEventListener("transitionend", handleTransitionEnd);
+    return () => {
+      wrapperRef.current?.removeEventListener(
+        "transitionend",
+        handleTransitionEnd
+      );
+    };
   }, [index, slideWidth]);
 
-  return (
-    <div className="max-w-xl mx-auto px-3 sm:px-4 mt-8">
-      <div className="border border-[#22C55E] rounded-2xl p-3 sm:p-4 bg-white">
+  // Mobile carousel effect
+  useEffect(() => {
+    updateMobileWidth();
+    startMobileAuto();
 
-        {/* REVIEW CAROUSEL */}
+    return () => {
+      stopMobileAuto();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!mobileWrapperRef.current) return;
+
+    mobileWrapperRef.current.style.transition = "transform 0.5s ease-in-out";
+    mobileWrapperRef.current.style.transform = `translateY(${
+      -mobileIndex * mobileSlideWidth
+    }px)`;
+
+    const handleTransitionEnd = () => {
+      if (mobileIndex === 0) {
+        mobileWrapperRef.current.style.transition = "none";
+        setMobileIndex(testimonials.length);
+      } else if (mobileIndex === slides.length - 1) {
+        mobileWrapperRef.current.style.transition = "none";
+        setMobileIndex(1);
+      }
+    };
+
+    mobileWrapperRef.current.addEventListener(
+      "transitionend",
+      handleTransitionEnd
+    );
+    return () => {
+      mobileWrapperRef.current?.removeEventListener(
+        "transitionend",
+        handleTransitionEnd
+      );
+    };
+  }, [mobileIndex, mobileSlideWidth]);
+
+  const toggleReviews = () => {
+    setShowmReviews((prev) => !prev);
+  };
+
+  return (
+    <div className="max-w-xl mx-auto">
+      <div className="rounded-2xl">
+        {/* MOBILE VERTICAL CAROUSEL */}
+        <div className="sm:hidden">
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col">
+              {showmReviews && (
+                <>
+                  <div
+                    ref={mobileContainerRef}
+                    className="overflow-hidden h-[66px] p-2"
+                    onTouchStart={onMobileTouchStart}
+                    onTouchMove={onMobileTouchMove}
+                    onTouchEnd={onMobileTouchEnd}
+                  >
+                    <div
+                      ref={mobileWrapperRef}
+                      className="flex flex-col"
+                      style={{ gap: `${GAP}px` }}
+                    >
+                      {slides.map((t, i) => (
+                        <div
+                          key={i}
+                          className="flex items-center gap-2 border-2 border-gray-200 rounded-lg px-3 py-2 bg-white flex-shrink-0"
+                          style={{ height: 50 }}
+                        >
+                          <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                            alt="Google"
+                            className="w-6 h-6 flex-shrink-0"
+                          />
+                          <span className="text-xs text-gray-700 line-clamp-2">
+                            {t.text}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Mobile Dots */}
+                  <div className="flex justify-center gap-2 pb-4">
+                    {testimonials.map((_, i) => {
+                      const isActive =
+                        mobileIndex === i + 1 ||
+                        (mobileIndex === 0 && i === testimonials.length - 1) ||
+                        (mobileIndex === slides.length - 1 && i === 0);
+                      return (
+                        <button
+                          key={i}
+                          aria-label={`Go to slide ${i + 1}`}
+                          className={`w-2 h-2 rounded-full transition-all duration-200 border border-[#059669] ${
+                            isActive ? "bg-[#059669]" : "bg-white"
+                          }`}
+                          onClick={() => setMobileIndex(i + 1)}
+                        />
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
+            <button onClick={toggleReviews}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                {showmReviews ? (
+                  // Up arrow
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m19.5 15.75-7.5-7.5-7.5 7.5"
+                  />
+                ) : (
+                  // Down arrow
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* DESKTOP HORIZONTAL CAROUSEL */}
         <div
           ref={containerRef}
-          className="overflow-hidden"
+          className="overflow-hidden py-2 hidden sm:block"
           onMouseEnter={stopAuto}
           onMouseLeave={startAuto}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <div
-            ref={wrapperRef}
-            className="flex"
-            style={{ gap: `${GAP}px` }}
-          >
+          <div ref={wrapperRef} className="flex" style={{ gap: `${GAP}px` }}>
             {slides.map((t, i) => (
               <div
                 key={i}
-                className="w-full min-w-full border border-gray-200 rounded-xl p-4 sm:p-5"
+                className="flex-shrink-0 w-full border border-gray-200 rounded-xl p-5 bg-white"
               >
-                <h3 className="text-[#170F49] font-semibold text-base sm:text-lg">
+                <h3 className="text-[#170F49] font-semibold text-lg">
                   {t.title}
                 </h3>
 
@@ -180,27 +359,58 @@ export default function TestimonialSlider() {
                   {t.text}
                 </p>
 
-                <div className="mt-4">
-                  <p className="font-medium text-[#170F49]">{t.name}</p>
-                  <Stars rating={t.rating} />
+                <div className="mt-4 flex items-center gap-3">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                    alt="Google"
+                    className="w-5 h-5"
+                  />
+                  <div>
+                    <p className="font-medium text-[#170F49]">{t.name}</p>
+                    <Stars rating={t.rating} />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-6 flex justify-center">
-          <button className="bg-[#059669] hover:bg-[#047857] text-white font-semibold px-6 sm:px-8 py-3 rounded-full transition text-sm sm:text-base flex items-center gap-2">
+        {/* Desktop Dots */}
+        <div className="hidden sm:flex justify-center gap-2 pb-6">
+          {testimonials.map((_, i) => {
+            const isActive =
+              index === i + 1 ||
+              (index === 0 && i === testimonials.length - 1) ||
+              (index === slides.length - 1 && i === 0);
+            return (
+              <button
+                key={i}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-200 border border-[#059669] ${
+                  isActive ? "bg-[#059669]" : "bg-white"
+                }`}
+                onClick={() => setIndex(i + 1)}
+              />
+            );
+          })}
+        </div>
+
+        {/* CTA Button */}
+        <div className=" pb-2">
+          <a
+            href="https://www.google.com/search?q=your+business+name+reviews"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-[#059669] hover:bg-[#047857] text-white font-semibold px-8 py-4 rounded-full transition text-sm sm:text-base flex items-center gap-2 justify-center"
+          >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
               alt="Google"
               className="w-4 h-4"
             />
             Google Review
-          </button>
+          </a>
         </div>
-
       </div>
     </div>
   );
