@@ -25,7 +25,7 @@ export default function TreatmentCostDependsOn() {
 
   return (
     <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-6">
-      <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+      <h2 className="text-[24px] sm:text-[32px] font-semibold text-[#625587] mb-8 text-center">
         Treatment Cost Depends On
       </h2>
 

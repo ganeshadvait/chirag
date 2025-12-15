@@ -1780,7 +1780,7 @@ html {
 /* ========== Hospital location Styles ========== */
 
 .hospital_location_section {
-  width: 80%;
+  /* width: 80%; */
   margin: auto;
   max-width: 1500px; /* 👈 limit total width */
 }
@@ -1877,9 +1877,9 @@ html {
     /* height: 440px; */
   }
 
-  .hospital_location_section {
+  /* .hospital_location_section {
     width: 95%;
-  }
+  } */
 }
 
 @media (max-width: 380px) {

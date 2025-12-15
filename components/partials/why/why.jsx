@@ -10,7 +10,7 @@ export default function WhyChooseHexa() {
 
   return (
     <section className="w-full max-w-5xl mx-auto px-4 py-6">
-      <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+      <h2 className="text-2xl md:text-3xl font-semibold text-[#625587] mb-4">
         Why Choose HexaHealth for Piles Treatment in Hyderabad?
       </h2>
 
@@ -19,9 +19,9 @@ export default function WhyChooseHexa() {
           {points.map((item, i) => (
             <li key={i} className="flex items-center list-none gap-2 transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-2 border border-transparent hover:border-gray-100  hover:bg-gray  rounded-lg p-2 w-[fit-content] cursor-normal">
               <span className=" mr-3 flex-shrink-0">
-                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
               </span>
               <span>{item}</span>
             </li>

@@ -21,8 +21,8 @@ export default function Faqs({ faqs, className }: Props) {
   };
 
   return (
-    <section id="faqs" className={`faqs_section `}>
-      <h2 className="text-3xl text-[#7966af] mb-[24px] text-center font-bold faq_title">
+    <section id="faqs" className={`faqs_section mx-auto`}>
+      <h2 className="text-3xl text-[#625587] mb-[24px] text-center font-bold faq_title">
         {/* {fheading || "FAQ’s (Frequently Asked Questions)"} */}
         Frequently Asked Questions
       </h2>
