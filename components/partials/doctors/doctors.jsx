@@ -1,55 +1,55 @@
 import Image from "next/image";
 const topDoctors = [
   {
-    name: "Dr. Mahesh Boyapati",
+    name: "Dr. Rajasekhar M R",
     designation: "MBBS, MS",
-    qualification: "General Surgeon",
+    qualification: "Founder and Senior Colorectal Surgeon",
     experience: "12 Years",
     reviews: "99%",
-    img: "/MedicalProfessionalPortrait.png",
+    img: "/doctorchiragcard.png",
   },
   {
-    name: "Dr. Mahesh Boyapati",
-    designation: "MBBS, MS",
-    qualification: "General Surgeon",
+    name: "Dr. Shreedevi KN",
+    designation: "MBBS, MS, FSGE",
+    qualification: "Surgical Gastroenterologist and colo rectal surgeon",
     experience: "12 Years",
     reviews: "99%",
-    img: "/MedicalProfessionalPortrait.png",
+    img: "/doctorshreedevicard.png",
   },
   {
-    name: "Dr. Mahesh Boyapati",
-    designation: "MBBS, MS",
-    qualification: "General Surgeon",
+    name: "Dr. Prithvija Chakravarthy",
+    designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
+    qualification: "Proctologist",
     experience: "12 Years",
     reviews: "99%",
-    img: "/MedicalProfessionalPortrait.png",
+    img: "/doctorprithvicard.png",
   },
 ];
 
 const moreDoctors = [
   {
-    name: "Dr. Mahesh Boyapati",
-    designation: "MBBS, MS",
-    qualification: "General Surgeon",
+    name: "Dr. Suchitra N Adiga",
+    designation: "BAMS, MS(Ayu)",
+    qualification: "Proctologist",
     experience: "12 Years",
     reviews: "99%",
-    img: "/MedicalProfessionalPortrait.png",
+    img: "/doctorsuchithracard.png",
   },
   {
-    name: "Dr. Mahesh Boyapati",
-    designation: "MBBS, MS",
+    name: "Dr.Jyotsna Vemulapalli",
+    designation: "MBBS, MS(Gen Surgery)",
     qualification: "General Surgeon",
     experience: "12 Years",
     reviews: "99%",
-    img: "/MedicalProfessionalPortrait.png",
+    img: "/doctorjyotsnacard.png",
   },
   {
-    name: "Dr. Mahesh Boyapati",
-    designation: "MBBS, MS",
+    name: "Dr. Padmanabh R Bhat",
+    designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
     qualification: "General Surgeon",
     experience: "12 Years",
     reviews: "99%",
-    img: "/MedicalProfessionalPortrait.png",
+    img: "/doctorpadmanabhcard.png",
   },
 ];
 
@@ -169,7 +169,7 @@ function ConsultBanner() {
             {/* Right Card */}
             <div className="hidden md:block w-full max-w-md rounded-2xl  p-2 text-center">
               <Image
-                src="/chiraggpt.png"
+                src="/consultthedoctor.png"
                 alt="Franchise Offer"
                 width={250}
                 height={200}
