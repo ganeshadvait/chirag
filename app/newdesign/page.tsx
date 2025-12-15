@@ -61,12 +61,12 @@ export default function NewDesign() {
           <CostDepends />
           <InsurenceAdvisor />
           <Why />
-          <Google />
+          
           <Info />
           <CtaBanner />
           {faqs.length > 0 && (
             <Faqs
-              className="!w-[95%] mx-[unset]"
+              className="md:!w-[95%] w-full mx-[unset]"
               // fheading={fheading}
               faqs={faqs.map((faq) => ({
                 faqquestion: faq.faqTitle,
@@ -83,7 +83,7 @@ export default function NewDesign() {
             <Form />
           </div>
           <div
-            className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent  shadow-lg px-4 py-1"
+            className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
             style={{ maxWidth: "1500px", margin: "0 auto" }}
           >
             <Form />

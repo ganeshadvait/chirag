@@ -45,14 +45,14 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="w-full max-w-sm bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-10">
-      <h2 className="text-xl font-semibold text-[#0b1b3f] mb-0 md:mb-4">
+    <div className="w-full max-w-sm bg-white shadow-[unset] md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-10">
+      <h2 className="text-xl font-semibold text-[#0b1b3f] mb-0 md:mb-4 hidden md:block">
         Book Free Consultation
       </h2>
 
       {/* Animated Form Inputs - hidden on mobile, toggled by Book Now */}
       <div
-        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] mt-2 ${formAnim}`}
+        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] my-4 ${formAnim}`}
       >
         <form onSubmit={handleSubmit}>
           {/* Patient Name */}
@@ -91,7 +91,7 @@ export default function ConsultationForm() {
       </div>
 
       {/* Action Buttons: Book Now & Call Now, always visible */}
-      <div className="flex flex-row gap-3 mt-5 w-full items-center">
+      <div className="flex flex-row gap-3 mt-0 md:mt-5 w-full items-center">
         <button
           className="flex-1 bg-[#F8B956] hover:bg-transparent border-2 border-transparent hover:border-[#F8B956] hover:text-black transition text-white text-sm font-semibold rounded-full shadow min-w-[80px] px-2 py-3 md:py-4 flex items-center justify-center gap-2"
           onClick={() => setShowForm((v) => !v)}
