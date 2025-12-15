@@ -1,5 +1,9 @@
-// components/LaserPilesInfo.jsx
+"use client";
+import { useState } from "react";
+
 export default function LaserPilesInfo() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section className="w-full max-w-5xl mx-auto px-4 py-6">
       <div className="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-6 md:p-8">
@@ -33,7 +37,7 @@ export default function LaserPilesInfo() {
           Cost of piles operation depends on the following:
         </p>
 
-        <ol className="list-decimal list-inside text-gray-700 space-y-1 mb-6">
+        <ol className="list-decimal list-inside text-gray-700 space-y-1 mb-4">
           <li>Hospital reputation</li>
           <li>Doctor&apos;s expertise</li>
           <li>Grades of Piles (1,2,3,4)</li>
@@ -41,13 +45,29 @@ export default function LaserPilesInfo() {
           <li>Any pre-existing medical conditions</li>
         </ol>
 
-        {/* Read More Link */}
-        <a
-          href="#"
-          className="text-emerald-600 font-medium hover:underline text-lg"
+        {/* EXPANDABLE CONTENT */}
+        {expanded && (
+          <div className="text-gray-700 leading-relaxed space-y-3 mb-4">
+            <p>
+              Laser piles surgery is typically recommended for patients looking for
+              minimally invasive treatment with faster recovery. Most patients can
+              resume normal activities within a few days.
+            </p>
+            <p>
+              The final cost may vary depending on hospital facilities, surgeon
+              experience, and post-operative care requirements.
+            </p>
+          </div>
+        )}
+
+        {/* Read More / Less */}
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-emerald-600 font-medium text-lg hover:underline focus:outline-none"
         >
-          read more
-        </a>
+          {expanded ? "Read less" : "Read more"}
+        </button>
+
       </div>
     </section>
   );

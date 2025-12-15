@@ -1,37 +1,44 @@
 import Image from "next/image";
-
-export default function SurgeryCostCTA() {
+export default function FranchiseOffer() {
   return (
-    <section className="w-full py-10">
-      <div className="max-w-6xl mx-auto bg-[#FFF8F0] border border-[#E4C8A0] rounded-2xl p-4 md:p-12 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
-        
-        {/* LEFT SIDE */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900">
-            Check <span className="text-orange-600">Surgery Cost</span>
-          </h2>
+    <div className="w-full bg-teal-50 rounded-2xl p-6 md:p-10">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
-          <p className="mt-4 text-gray-700 text-lg leading-relaxed">
-            Find the total cost of Surgery at the best hospitals in your city.
-          </p>
+        {/* Left Section */}
+        <div className="flex flex-col items-start gap-4 max-w-md">
+          <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
+            <span className="text-xl">🏪</span>
+          </div>
 
-          <button className="mt-6 bg-orange-500 hover:bg-orange-600 transition text-white font-semibold rounded-full px-8 py-3 text-lg">
+          <div>
+            <h2 className="text-[32px] font-semibold text-gray-900 mb-4">
+              Check Surgery Cost
+            </h2>
+            <p className="mt-2 text-gray-600 text-[18px]">
+              Find the total cost of Surgery at the best hospitals in your city.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Card */}
+        <div className="w-full max-w-md rounded-2xl  p-2 text-center">
+          <Image
+            src="/chiraggpt.png"
+            alt="Franchise Offer"
+            width={150}
+            height={100}
+            className="mx-auto mb-4 rounded-lg"
+          />
+
+          <button
+            className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+          >
             Calculate Surgery Cost
           </button>
         </div>
 
-        {/* RIGHT SIDE IMAGE */}
-        <div className="flex justify-center">
-          <Image
-            src="/chiraggpt.png" // Replace with your actual file path
-            alt="Surgeons performing surgery illustration"
-            width={250}
-            height={150}
-            className="object-contain"
-          />
-        </div>
 
       </div>
-    </section>
+    </div>
   );
 }

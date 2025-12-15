@@ -1,7 +1,7 @@
 // components/PatientReviews.jsx
 export default function PatientReviews() {
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 py-6">
+    <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-6">
       {/* Heading */}
       <h2 className="text-2xl font-semibold text-gray-900 mb-4">
         What our Patients Say
@@ -44,7 +44,7 @@ export default function PatientReviews() {
 
         {/* Book Appointment Button */}
         <button className="w-full bg-emerald-600 text-white rounded-full py-4 text-lg font-semibold flex items-center justify-center gap-3 hover:bg-emerald-700 transition">
-          <span className="text-2xl">📅</span>
+          <span className="text-2xl"></span>
           Book Appointment
         </button>
 
