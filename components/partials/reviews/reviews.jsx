@@ -186,9 +186,19 @@ export default function TestimonialSlider() {
       if (index === 0) {
         wrapperRef.current.style.transition = "none";
         setIndex(testimonials.length);
+        requestAnimationFrame(() => {
+          if (wrapperRef.current)
+            wrapperRef.current.style.transform = `translateX(${
+              -testimonials.length * slideWidth
+            }px)`;
+        });
       } else if (index === slides.length - 1) {
         wrapperRef.current.style.transition = "none";
         setIndex(1);
+        requestAnimationFrame(() => {
+          if (wrapperRef.current)
+            wrapperRef.current.style.transform = `translateX(${-slideWidth}px)`;
+        });
       }
     };
 
@@ -269,7 +279,7 @@ export default function TestimonialSlider() {
                       {slides.map((t, i) => (
                         <div
                           key={i}
-                          className="flex items-center gap-2 border-2 border-gray-200 rounded-lg px-3 py-2 bg-white flex-shrink-0"
+                          className="flex items-center gap-2 rounded-lg px-3 py-2 bg-white flex-shrink-0"
                           style={{ height: 50 }}
                         >
                           <img
