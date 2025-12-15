@@ -61,7 +61,7 @@ export default function ConsultationForm() {
             placeholder="Patient Name (Optional)"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-3 rounded-2xl border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-coral-400 focus:border-coral-400 placeholder-gray-400 mb-3"
+            className="w-full px-4 py-3 rounded-2xl border border-gray-300 text-gray-700 focus:outline-none placeholder-gray-400 mb-3"
             disabled={submitting}
           />
 
@@ -75,7 +75,7 @@ export default function ConsultationForm() {
               placeholder="Mobile Number"
               value={mobile}
               onChange={(e) => setMobile(e.target.value)}
-              className="w-full px-4 py-3 rounded-2xl border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-coral-400 focus:border-coral-400 placeholder-gray-400"
+              className="w-full px-4 py-3 rounded-2xl border border-gray-300 text-gray-700 focus:outline-none placeholder-gray-400"
               disabled={submitting}
             />
           </div>
