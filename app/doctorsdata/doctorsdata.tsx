@@ -16,17 +16,17 @@ export interface DoctorsDataType {
 const DoctorsData: DoctorsDataType = {
   Proctology: {
     "Dr. Samhitha Reddy": {
-      url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Samhitha-Reddy-2.webp",
-      name: "Dr. Samhitha Reddy",
-      qualification: "MBBS, MS, FMAS, FISCP, DMAS",
-      experience: "Experieance:8 years",
-      designation: "Proctology Specialist",
+      url: "/chiragheroimage.png",
+      name: "Dr. Rajasekhar M R",
+      qualification: "MBBS, MS",
+      experience: "FOUNDER AND SENIOR",
+      designation: "COLORECTAL SURGEON",
       description:
         "Dr. Samhitha Reddy is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, she worked with top surgeons in India. She treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS.",
       mobileNumberDoctor: "tel:07969084448",
     },
     "Dr. Abhishek Katha": {
-      url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Abhishek-Katha-2.webp",
+      url: "/doctorshreedeviimage.png",
       name: "Dr. Abhishek Katha",
       qualification: "MBBS, MS, FMAS",
       experience: "Experieance:16 years",
@@ -39,7 +39,7 @@ const DoctorsData: DoctorsDataType = {
 
   "General & Laparoscopic": {
     "Dr. Abhishek Katha": {
-      url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Abhishek-Katha-2.webp",
+      url: "/doctorshreedeviimage.png",
       name: "Dr. Abhishek Katha",
       qualification: "MBBS, MS, FMAS",
       designation: "General and Laparoscopic Specialist",
@@ -49,7 +49,7 @@ const DoctorsData: DoctorsDataType = {
       mobileNumberDoctor: "tel:07969084448",
     },
     "Dr. Samhitha Reddy": {
-      url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Samhitha-Reddy-2.webp",
+      url: "/chiragheroimage.png",
       name: "Dr. Samhitha Reddy",
       qualification: "MBBS, MS, FMAS, FISCP, DMAS",
       designation: "General and Laparoscopic Specialist",
@@ -72,7 +72,7 @@ const DoctorsData: DoctorsDataType = {
 
   Urology: {
     "Dr. Priyank Salecha": {
-      url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Priyank-Ashokkumar-Salecha.webp", // Image to be added
+      url: "/doctorprithvijachakravarthyimg.png", // Image to be added
       name: "Dr. Priyank Salecha",
       qualification: "MBBS, MS, MCH, DNB",
       designation: "Consultant Urologist & Andrologist",
@@ -83,7 +83,7 @@ const DoctorsData: DoctorsDataType = {
 
   Gynecology: {
     "Dr. Harshitha Kakarla": {
-      url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Harshitha-Kakarla-1.webp",
+      url: "/doctorsuchitra.png",
       name: "Dr. Harshita Kakarla",
       qualification: "MBBS, MS, FMAS",
       designation: "Gynecology Specialist",
