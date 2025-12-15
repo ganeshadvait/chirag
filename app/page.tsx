@@ -46,8 +46,13 @@ const PatientTalks = dynamic(
 const Luxgpt = dynamic(() => import("@/components/luxgpt/luxgpt"));
 
 export default function Home() {
-  const heroHeading = "Welcome to Chirag Global Hospitals";
+  
+  
 
+  const heroContent = {
+    heading: "Welcome to Chirag Global Hospitals",
+    heroImage : "/chiragheroimage.png"
+  }
   // Dummy content
   const defaultDescList = [
     "38+ Years Expertise in Colorectal Care",
@@ -247,9 +252,9 @@ export default function Home() {
         mobileNumberHeader={"tel:07969084448"}
       />
       <Hero
-        heading={heroHeading}
+        heading={heroContent.heading}
         descList={defaultDescList}
-        heroImage={"/happypatient.avif"}
+        heroImage={heroContent.heroImage}
       />
       <Numbers />
       <Treatments heading="Our Advanced Treatments" items={treatment} />

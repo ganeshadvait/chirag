@@ -13,6 +13,7 @@ import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
+import Reviews from "@/components/partials/reviews/reviews";
 
 export default function NewDesign() {
   const faqs = [
@@ -78,6 +79,7 @@ export default function NewDesign() {
         {/* RIGHT SIDE 30% (Sticky Form) */}
         <div className="relative">
           <div className="sticky top-24">
+            <Reviews />
             <Form />
           </div>
         </div>
