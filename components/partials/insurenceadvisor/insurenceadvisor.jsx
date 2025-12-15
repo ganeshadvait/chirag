@@ -5,12 +5,12 @@ export default function InsuranceAdvisorSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         {/* Card 1 – Insurance Coverage */}
-        <div className="flex flex-col rounded-3xl border border-orange-200 bg-orange-50 px-6 md:px-10 py-6 shadow-sm gap-4">
+        <div className="flex flex-col rounded-3xl  bg-white border border-gray-100 px-6 md:px-10 py-6 shadow-sm gap-4">
 
           {/* Content */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 leading-snug">
-              Check <span className="text-orange-500">Insurance Coverage</span>
+              Check <span className="text-[#625587]">Insurance Coverage</span>
             </h2>
 
             <p className="mt-3 text-gray-700 text-lg leading-relaxed">
@@ -25,7 +25,7 @@ export default function InsuranceAdvisorSection() {
           </div>
 
           {/* Button pinned to bottom */}
-          <button className="mt-auto rounded-full bg-orange-500 px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-orange-600 transition">
+          <button className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border[#625587] transition flex items-center justify-center">
             <span className="mr-2 text-xl"></span>
             Check Insurance Coverage
           </button>
@@ -33,12 +33,12 @@ export default function InsuranceAdvisorSection() {
 
 
         {/* Card 2 – Health Advisor */}
-        <div className="flex flex-col rounded-3xl border border-orange-200 bg-orange-50 px-6 md:px-10 py-6 shadow-sm gap-4">
+        <div className="flex flex-col rounded-3xl bg-white border border-gray-100 px-6 md:px-10 py-6 shadow-sm gap-4">
 
           {/* Content */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 leading-snug">
-              Talk To <span className="text-orange-500">Health Advisor</span>
+              Talk To <span className="text-[#625587]">Health Advisor</span>
             </h2>
 
             <p className="mt-3 text-gray-700 text-lg leading-relaxed">
@@ -53,7 +53,7 @@ export default function InsuranceAdvisorSection() {
           </div>
 
           {/* Button pinned to bottom */}
-          <button className="mt-auto rounded-full bg-orange-500 px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-orange-600 transition flex items-center justify-center">
+          <button className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border[#625587] transition flex items-center justify-center">
             <span className="mr-2 text-xl"></span>
             Call Advisor Now
           </button>

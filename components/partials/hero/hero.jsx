@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function PilesTreatmentSection() {
   return (
-    <section className="w-full bg-white pt-4 md:pt-12 pb-8 my-4">
+    <section className="w-full bg-white pt-4  pb-8 my-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4 md:px-6">
         {/* LEFT CONTENT */}
         <div>

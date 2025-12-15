@@ -6,8 +6,8 @@ import React from "react";
 
 export default function HospitalComparison({ theading, ConditionVideo, title, description, points }) {
   return (
-    <section className="w-[95%] md:w-[96%] max-w-[1500px] mx-auto py-8">
-      <h2 className="table_heading text-center text-xl font-bold text-indigo-900">
+    <section className="w-[95%] md:w-[96%] max-w-[1500px] mx-auto py-4">
+      <h2 className="table_heading text-center text-xl font-bold text-[#625587]">
         {theading}
       </h2>
 
@@ -15,7 +15,7 @@ export default function HospitalComparison({ theading, ConditionVideo, title, de
         <div className="w-full lg:w-1/2">
           <div>
             <video
-              className="w-full h-[240px] lg:h-[405px] rounded-lg video-container"
+              className="w-full h-[240px] lg:h-[280px] rounded-lg video-container"
               autoPlay
               muted
               loop

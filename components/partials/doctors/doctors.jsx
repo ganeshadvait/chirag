@@ -1,60 +1,66 @@
 import Image from "next/image";
 const topDoctors = [
   {
-    name: "Dr. Rajasekhar M R",
-    role: "MBBS, MS - FOUNDER AND SENIOR COLORECTAL SURGEON",
-    experience: "14 Years",
-    reviews: "100%",
-    img: "/chiragheroimage.png",
-  },
-  {
-    name: "Dr Dumpa Sruthi",
-    role: "General Surgeon, Proctologist and Laparoscopic Surgeon",
-    experience: "10 Years",
+    name: "Dr. Mahesh Boyapati",
+    designation: "MBBS, MS",
+    qualification: "General Surgeon",
+    experience: "12 Years",
     reviews: "99%",
     img: "/MedicalProfessionalPortrait.png",
   },
   {
-    name: "Dr Krishna Mohan Y",
-    role: "General, Laparoscopic and Bariatric Surgeon, Proctologist",
-    experience: "31 Years",
-    reviews: "100%",
+    name: "Dr. Mahesh Boyapati",
+    designation: "MBBS, MS",
+    qualification: "General Surgeon",
+    experience: "12 Years",
+    reviews: "99%",
+    img: "/MedicalProfessionalPortrait.png",
+  },
+  {
+    name: "Dr. Mahesh Boyapati",
+    designation: "MBBS, MS",
+    qualification: "General Surgeon",
+    experience: "12 Years",
+    reviews: "99%",
     img: "/MedicalProfessionalPortrait.png",
   },
 ];
 
 const moreDoctors = [
   {
-    name: "Dr Venugopal Pareek",
-    role: "General and Gastrointestinal Surgeon",
-    experience: "24 Years",
-    reviews: "98%",
+    name: "Dr. Mahesh Boyapati",
+    designation: "MBBS, MS",
+    qualification: "General Surgeon",
+    experience: "12 Years",
+    reviews: "99%",
     img: "/MedicalProfessionalPortrait.png",
   },
   {
-    name: "Dr Gabriel Sukumar Chinnam",
-    role: "General, Laparoscopic and Gastrointestinal Surgeon",
-    experience: "32 Years",
-    reviews: "98%",
+    name: "Dr. Mahesh Boyapati",
+    designation: "MBBS, MS",
+    qualification: "General Surgeon",
+    experience: "12 Years",
+    reviews: "99%",
     img: "/MedicalProfessionalPortrait.png",
   },
   {
-    name: "Dr Gabriel Sukumar Chinnam",
-    role: "General, Laparoscopic and Gastrointestinal Surgeon",
-    experience: "32 Years",
-    reviews: "98%",
+    name: "Dr. Mahesh Boyapati",
+    designation: "MBBS, MS",
+    qualification: "General Surgeon",
+    experience: "12 Years",
+    reviews: "99%",
     img: "/MedicalProfessionalPortrait.png",
   },
 ];
 
 export default function DoctorsSection() {
   return (
-    <div className="w-full  mx-auto px-0 md:px-4 py-6">
+    <div className="w-full  mx-auto px-4 py-6">
       {/* TITLE */}
-      <h2 className="text-xl font-semibold mb-3">Our Top Doctors</h2>
+      <h2 className="text-[24px] sm:text-[30px] text-[#625587] text-center font-semibold mb-8">Our Top Doctors</h2>
 
       {/* TOP DOCTORS */}
-      <div className="space-y-4 py-2 flex flex-col sm:flex-row gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
         {topDoctors.map((doc, idx) => (
           <DoctorCard key={idx} doctor={doc} />
         ))}
@@ -64,7 +70,7 @@ export default function DoctorsSection() {
       <ConsultBanner />
 
       {/* MORE DOCTORS */}
-      <div className="space-y-4 py-2 flex flex-col sm:flex-row gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
         {moreDoctors.map((doc, idx) => (
           <DoctorCard key={idx} doctor={doc} />
         ))}
@@ -82,18 +88,26 @@ function DoctorCard({ doctor }) {
         <img
           src={doctor.img}
           alt={doctor.name}
-          className="w-18 h-18 rounded-xl object-cover object-top"
+          className="w-20 h-20 rounded-xl object-cover object-top"
         />
 
         <div className="flex-1">
           <p className="text-md font-semibold text-gray-900">{doctor.name}</p>
           <p className="text-gray-700 mt-1 leading-snug text-[12px]">
-            {doctor.role}
+            {doctor.designation}
           </p>
+          <p className="text-gray-700 mt-1 leading-snug text-[12px]">
+            {doctor.qualification}
+          </p>
+          <p className="text-[12px] text-gray-500 mt-1">
+            Experience: <span className="text-gray-900 text-[12px]">{doctor.experience}</span>
+          </p>
+          {/* <p className="text-xs text-gray-500 text-start">
+            <span className="text-gray-900">{doctor.reviews}</span> of Positive Reviews
+          </p> */}
         </div>
       </div>
-      <div className="flex justify-between gap-4 mt-3 w-full">
-        {/* Experience */}
+      {/* <div className="flex justify-between gap-4 mt-3 w-full">
         <div className="flex items-center bg-violet-50 px-3 py-2 rounded-lg text-sm w-full">
           <div className="w-full">
             <p className="font-semibold text-gray-900 text-[14px]">
@@ -103,7 +117,6 @@ function DoctorCard({ doctor }) {
           </div>
         </div>
 
-        {/* Reviews */}
         <div className="flex items-center bg-green-50 px-3 py-2 rounded-lg text-sm w-full">
           <div className="w-full">
             <p className="font-semibold text-gray-900">{doctor.reviews}</p>
@@ -112,10 +125,10 @@ function DoctorCard({ doctor }) {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* CTA BUTTON */}
-      <button className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-3 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center">
+      <button className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-2 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center">
         <span className="text-base text-center">Book Free Consultation</span>
       </button>
     </div>
@@ -126,45 +139,45 @@ function DoctorCard({ doctor }) {
 
 function ConsultBanner() {
   return (
-    <div className="w-full bg-green-50 rounded-2xl p-6 md:p-10 my-8">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-
-        {/* Left Section */}
-        <div className="flex flex-col items-start gap-4 max-w-md">
-          <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
-            <span className="text-xl">🏪</span>
-          </div>
-
-          <div>
-            <h2 className="text-[32px] font-semibold text-gray-900 mb-4">
-              Check Surgery Cost
-            </h2>
-            <p className="mt-2 text-gray-600 text-[18px]">
-              Find the total cost of Surgery at the best hospitals in your city.
-            </p>
+    <div className="w-full bg-[#9e8dce] rounded-2xl p-6 md:px-10 md:py-6 my-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+    
+            {/* Left Section */}
+            <div className="flex flex-col items-start gap-4 max-w-md">
+              {/* <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
+                <span className="text-xl">🏪</span>
+              </div> */}
+    
+              <div>
+                <h2 className="text-[30px] sm:text-[32px] font-semibold text-white mb-4">
+                  Consult The Doctor Now
+                </h2>
+                <ul className="mt-2 text-white text-[16px] sm:text-[18px] list-disc list-inside space-y-2">
+                  <li>Free Consultation</li>
+                  <li>Online Consultation</li>
+                  <li>Know Your condition fron top doctors</li>
+                </ul>
+              </div>
+              <button
+                className="mt-3 rounded-full bg-[#f8b956] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+              >
+                Talk to the Doctor
+              </button>
+            </div>
+    
+    
+            {/* Right Card */}
+            <div className="hidden md:block w-full max-w-md rounded-2xl  p-2 text-center">
+              <Image
+                src="/chiraggpt.png"
+                alt="Franchise Offer"
+                width={250}
+                height={200}
+                className="mx-auto rounded-lg"
+              />
+            </div>
           </div>
         </div>
-
-        {/* Right Card */}
-        <div className="w-full max-w-md rounded-2xl  p-2 text-center">
-          <Image
-            src="/chiraggpt.png"
-            alt="Franchise Offer"
-            width={150}
-            height={100}
-            className="mx-auto mb-4 rounded-lg"
-          />
-
-          <button
-            className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
-          >
-            Calculate Surgery Cost
-          </button>
-        </div>
-
-
-      </div>
-    </div>
   );
 }
 
