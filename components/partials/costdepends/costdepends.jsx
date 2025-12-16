@@ -4,22 +4,22 @@ export default function TreatmentCostDependsOn() {
     {
       titleBold: "Type of",
       titleRest: "Procedure",
-      icon: "🩺", // replace with your SVG/icon
+      icon: "/typeofprocedure.png", // replace with your SVG/icon
     },
     {
       titleBold: "Severity of",
       titleRest: "the Disease",
-      icon: "📊",
+      icon: "/severitydisease.png",
     },
     {
       titleBold: "Past Medical",
       titleRest: "Condition",
-      icon: "👨‍⚕️",
+      icon: "/pastmedical.png",
     },
     {
       titleBold: "Contact",
       titleRest: "for exact cost",
-      icon: "🎧",
+      icon: "/contact.png",
     },
   ];
 
@@ -38,7 +38,7 @@ export default function TreatmentCostDependsOn() {
               className="flex flex-col items-center text-center space-y-3"
             >
               <div className="w-24 h-24 rounded-full bg-emerald-50 flex items-center justify-center">
-                <span className="text-3xl text-emerald-500">{item.icon}</span>
+                <img src={item.icon} alt="" className="w-10 h-10 object-contain"/>
               </div>
               <div className="text-sm leading-snug">
                 <p className="font-semibold text-gray-900">{item.titleBold}</p>

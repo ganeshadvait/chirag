@@ -31,9 +31,9 @@ export default function FranchiseOffer() {
         {/* Right Card */}
         <div className="hidden md:block w-full max-w-md rounded-2xl  p-2 text-center">
           <Image
-            src="/chiraggpt.png"
+            src="/checkthesurgerycost.png"
             alt="Franchise Offer"
-            width={250}
+            width={300}
             height={200}
             className="mx-auto mb-4 rounded-lg"
           />

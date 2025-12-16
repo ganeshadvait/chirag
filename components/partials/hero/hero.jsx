@@ -35,7 +35,7 @@ export default function PilesTreatmentSection() {
         {/* RIGHT IMAGE */}
         <div className="relative w-full h-64 sm:h-80 md:h-[400px] rounded-xl overflow-hidden">
           <Image
-            src="/interaction.png"
+            src="/chiragheroimage.png"
             alt="Doctor in white coat"
             fill
             className="object-cover"

@@ -25,10 +25,10 @@ export default function AiHealthBanner() {
             {/* Right Card - 30% */}
             <div className="hidden md:block w-full md:basis-3/10 rounded-2xl p-2 text-center">
               <Image
-                src="/chiraggpt.png"
+                src="/scheduleyourvisit.png"
                 alt="Franchise Offer"
-                width={150}
-                height={100}
+                width={200}
+                height={200}
                 className="mx-auto mb-4 rounded-lg"
               />
             </div>
