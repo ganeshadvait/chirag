@@ -1,7 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export default function TestimonialSlider() {
+export default function TestimonialSlider({
+  testimonials = [],
+  ctaText = "",
+  ctaLink = "#",
+  sourceLogo = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg",
+}) {
   const wrapperRef = useRef(null);
   const containerRef = useRef(null);
   const timerRef = useRef(null);
@@ -11,44 +16,14 @@ export default function TestimonialSlider() {
 
   const GAP = 16;
 
-  const testimonials = [
-    {
-      title: "laser treatment for my dad's piles",
-      text: "Dr. Samhitha Reddy's laser treatment for my dad's piles worked wonders. He's pain-free now and really grateful for her care!",
-      name: "Mithilesh Sah",
-      rating: 5,
-    },
-    {
-      title: "smooth and painless",
-      text: "Dr. Samhitha Reddy's laser treatment for my fissure was smooth and painless. She was super kind, which made the whole process much easier.",
-      name: "Rohit Kumar",
-      rating: 5,
-    },
-    {
-      title: "Colorectal Diseases",
-      text: "Lux hospital is one of best hospital in Hyderabad for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
-      name: "Arti Shettiwar",
-      rating: 4.5,
-    },
-    {
-      title: "Admitted for my fistula surgery",
-      text: "I was admitted for my fistula surgery, Dr Samhita explained everything clearly. Surgery was seamless & painless. Great staff support.",
-      name: "Sanat Jayasingh",
-      rating: 4.7,
-    },
-    {
-      title: "Fistula Surgery",
-      text: "We were admitted for fistula surgery. Staff and doctor were polite & quick. Special thanks to Ashok for insurance support.",
-      name: "Sujith V",
-      rating: 4.8,
-    },
-  ];
-
-  const slides = [
-    testimonials[testimonials.length - 1],
-    ...testimonials,
-    testimonials[0],
-  ];
+  const slides =
+    testimonials.length > 0
+      ? [
+        testimonials[testimonials.length - 1],
+        ...testimonials,
+        testimonials[0],
+      ]
+      : [];
 
   // Desktop state
   const [index, setIndex] = useState(1);
@@ -105,9 +80,8 @@ export default function TestimonialSlider() {
     if (!isDragging) return;
     const diff = e.touches[0].clientX - startX;
     wrapperRef.current.style.transition = "none";
-    wrapperRef.current.style.transform = `translateX(${
-      -index * slideWidth + diff
-    }px)`;
+    wrapperRef.current.style.transform = `translateX(${-index * slideWidth + diff
+      }px)`;
   };
 
   const onTouchEnd = (e) => {
@@ -149,9 +123,8 @@ export default function TestimonialSlider() {
     if (!isMobileDragging) return;
     const diff = e.touches[0].clientY - mobileStartX;
     mobileWrapperRef.current.style.transition = "none";
-    mobileWrapperRef.current.style.transform = `translateY(${
-      -mobileIndex * mobileSlideWidth + diff
-    }px)`;
+    mobileWrapperRef.current.style.transform = `translateY(${-mobileIndex * mobileSlideWidth + diff
+      }px)`;
   };
 
   const onMobileTouchEnd = (e) => {
@@ -188,9 +161,8 @@ export default function TestimonialSlider() {
         setIndex(testimonials.length);
         requestAnimationFrame(() => {
           if (wrapperRef.current)
-            wrapperRef.current.style.transform = `translateX(${
-              -testimonials.length * slideWidth
-            }px)`;
+            wrapperRef.current.style.transform = `translateX(${-testimonials.length * slideWidth
+              }px)`;
         });
       } else if (index === slides.length - 1) {
         wrapperRef.current.style.transition = "none";
@@ -225,9 +197,8 @@ export default function TestimonialSlider() {
     if (!mobileWrapperRef.current) return;
 
     mobileWrapperRef.current.style.transition = "transform 0.5s ease-in-out";
-    mobileWrapperRef.current.style.transform = `translateY(${
-      -mobileIndex * mobileSlideWidth
-    }px)`;
+    mobileWrapperRef.current.style.transform = `translateY(${-mobileIndex * mobileSlideWidth
+      }px)`;
 
     const handleTransitionEnd = () => {
       if (mobileIndex === 0) {
@@ -255,8 +226,18 @@ export default function TestimonialSlider() {
     setShowmReviews((prev) => !prev);
   };
 
+  const handleDotClick = (i) => {
+    setIndex(i + 1);   // Move to the selected slide
+    stopAuto();        // Stop auto-slide immediately
+
+    // Restart auto-slide after 7 seconds
+    setTimeout(() => {
+      startAuto();
+    }, 7000);
+  };
+
   return (
-    <div className="max-w-xl mx-auto">
+    <div id="reviews" className="max-w-xl mx-auto">
       <div className="rounded-2xl">
         {/* MOBILE VERTICAL CAROUSEL */}
         <div className="sm:hidden">
@@ -283,7 +264,7 @@ export default function TestimonialSlider() {
                           style={{ height: 50 }}
                         >
                           <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                            src={sourceLogo}
                             alt="Google"
                             className="w-6 h-6 flex-shrink-0"
                           />
@@ -305,9 +286,8 @@ export default function TestimonialSlider() {
                         <button
                           key={i}
                           aria-label={`Go to slide ${i + 1}`}
-                          className={`w-2 h-2 rounded-full transition-all duration-200 border border-[#059669] ${
-                            isActive ? "bg-[#059669]" : "bg-white"
-                          }`}
+                          className={`w-2 h-2 rounded-full transition-all duration-200 border border-[#059669] ${isActive ? "bg-[#059669]" : "bg-white"
+                            }`}
                           onClick={() => setMobileIndex(i + 1)}
                         />
                       );
@@ -348,7 +328,7 @@ export default function TestimonialSlider() {
         {/* DESKTOP HORIZONTAL CAROUSEL */}
         <div
           ref={containerRef}
-          className="overflow-hidden py-2 hidden sm:block"
+          className="overflow-hidden py-2 hidden sm:block scrollbar-hide"
           onMouseEnter={stopAuto}
           onMouseLeave={startAuto}
           onTouchStart={onTouchStart}
@@ -371,7 +351,7 @@ export default function TestimonialSlider() {
 
                 <div className="mt-4 flex items-center gap-3">
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                    src={sourceLogo}
                     alt="Google"
                     className="w-5 h-5"
                   />
@@ -386,20 +366,21 @@ export default function TestimonialSlider() {
         </div>
 
         {/* Desktop Dots */}
+        {/* Desktop Dots */}
         <div className="hidden sm:flex justify-center gap-2 pb-6">
           {testimonials.map((_, i) => {
             const isActive =
               index === i + 1 ||
               (index === 0 && i === testimonials.length - 1) ||
               (index === slides.length - 1 && i === 0);
+
             return (
               <button
                 key={i}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-200 border border-[#059669] ${
-                  isActive ? "bg-[#059669]" : "bg-white"
-                }`}
-                onClick={() => setIndex(i + 1)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-200 border border-[#059669] ${isActive ? "bg-[#059669]" : "bg-white"
+                  }`}
+                onClick={() => handleDotClick(i)}
               />
             );
           })}
@@ -408,17 +389,17 @@ export default function TestimonialSlider() {
         {/* CTA Button */}
         <div className=" pb-2">
           <a
-            href="https://www.google.com/search?q=your+business+name+reviews"
+            href={ctaLink}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full bg-[#059669] hover:bg-[#047857] text-white font-semibold px-8 py-4 rounded-full transition text-sm sm:text-base flex items-center gap-2 justify-center"
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+              src={sourceLogo}
               alt="Google"
               className="w-4 h-4"
             />
-            Google Review
+            {ctaText}
           </a>
         </div>
       </div>

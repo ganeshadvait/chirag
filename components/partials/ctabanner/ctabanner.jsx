@@ -1,41 +1,44 @@
-// components/AiHealthBanner.jsx
-import Image from 'next/image';
-export default function AiHealthBanner() {
+import Image from "next/image";
+
+export default function AiHealthBanner({
+  heading,
+  buttonText,
+  imageSrc,
+}) {
   return (
-    <>
-      <section className='px-0 md:p-6'>
-        <div className="w-full border border-blue-300 rounded-3xl bg-blue-50 flex flex-col md:flex-row items-center justify-between rounded-2xl p-6 md:p-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+    <section className="px-0 md:p-6">
+      <div className="w-full border border-blue-300 rounded-3xl bg-blue-50 flex flex-col md:flex-row items-center justify-between ">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
 
-            {/* Left Section - 70% */}
-            <div className="flex flex-col items-start gap-4 w-full md:basis-7/10">
+          {/* Left Section */}
+          <div className="flex flex-col items-start gap-4 w-full md:basis-7/10 p-6 md:p-8">
+            <h2 className="text-[32px] font-bold text-gray-900">
+              {heading}
+            </h2>
 
-              <div>
-                <h2 className="text-[32px] font-900 text-gray-900">
-                  Your Health Matters – Schedule Your Visit
-                </h2>
-              </div>
-              <button
-                className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
-              >
-                Calculate Surgery Cost
-              </button>
-            </div>
-
-            {/* Right Card - 30% */}
-            <div className="hidden md:block w-full md:basis-3/10 rounded-2xl p-2 text-center">
-              <Image
-                src="/scheduleyourvisit.png"
-                alt="Franchise Offer"
-                width={200}
-                height={200}
-                className="mx-auto mb-4 rounded-lg"
-              />
-            </div>
-
+            <button
+              className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+            >
+              {buttonText}
+            </button>
           </div>
 
-        </div></section></>
+          {/* Right Section */}
+          {imageSrc && (
+            <div className="hidden md:block md:basis-3/10 rounded-2xl text-center">
+              <div className="relative mx-auto w-[90%] aspect-square">
+                <Image
+                  src={imageSrc}
+                  alt="Health CTA"
+                  fill
+                  className="rounded-lg "
+                />
+              </div>
+            </div>
+          )}
 
+        </div>
+      </div>
+    </section>
   );
 }
