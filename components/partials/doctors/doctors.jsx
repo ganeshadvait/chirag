@@ -1,61 +1,66 @@
 import Image from "next/image";
-const topDoctors = [
-  {
-    name: "Dr. Rajasekhar M R",
-    designation: "MBBS, MS",
-    qualification: "Founder and Senior Colorectal Surgeon",
-    experience: "12 Years",
-    reviews: "99%",
-    img: "/doctorchiragcard.png",
-  },
-  {
-    name: "Dr. Shreedevi KN",
-    designation: "MBBS, MS, FSGE",
-    qualification: "Surgical Gastroenterologist and colo rectal surgeon",
-    experience: "12 Years",
-    reviews: "99%",
-    img: "/doctorshreedevicard.png",
-  },
-  {
-    name: "Dr. Prithvija Chakravarthy",
-    designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
-    qualification: "Proctologist",
-    experience: "12 Years",
-    reviews: "99%",
-    img: "/doctorprithvicard.png",
-  },
-];
+// const topDoctors = [
+//   {
+//     name: "Dr. Rajasekhar M R",
+//     designation: "MBBS, MS",
+//     qualification: "Founder and Senior Colorectal Surgeon",
+//     experience: "12 Years",
+//     reviews: "99%",
+//     img: "/doctorchiragcard.png",
+//   },
+//   {
+//     name: "Dr. Shreedevi KN",
+//     designation: "MBBS, MS, FSGE",
+//     qualification: "Surgical Gastroenterologist and colo rectal surgeon",
+//     experience: "12 Years",
+//     reviews: "99%",
+//     img: "/doctorshreedevicard.png",
+//   },
+//   {
+//     name: "Dr. Prithvija Chakravarthy",
+//     designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
+//     qualification: "Proctologist",
+//     experience: "12 Years",
+//     reviews: "99%",
+//     img: "/doctorprithvicard.png",
+//   },
+// ];
 
-const moreDoctors = [
-  {
-    name: "Dr. Suchitra N Adiga",
-    designation: "BAMS, MS(Ayu)",
-    qualification: "Proctologist",
-    experience: "12 Years",
-    reviews: "99%",
-    img: "/doctorsuchithracard.png",
-  },
-  {
-    name: "Dr.Jyotsna Vemulapalli",
-    designation: "MBBS, MS(Gen Surgery)",
-    qualification: "General Surgeon",
-    experience: "12 Years",
-    reviews: "99%",
-    img: "/doctorjyotsnacard.png",
-  },
-  {
-    name: "Dr. Padmanabh R Bhat",
-    designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
-    qualification: "General Surgeon",
-    experience: "12 Years",
-    reviews: "99%",
-    img: "/doctorpadmanabhcard.png",
-  },
-];
+// const moreDoctors = [
+//   {
+//     name: "Dr. Suchitra N Adiga",
+//     designation: "BAMS, MS(Ayu)",
+//     qualification: "Proctologist",
+//     experience: "12 Years",
+//     reviews: "99%",
+//     img: "/doctorsuchithracard.png",
+//   },
+//   {
+//     name: "Dr.Jyotsna Vemulapalli",
+//     designation: "MBBS, MS(Gen Surgery)",
+//     qualification: "General Surgeon",
+//     experience: "12 Years",
+//     reviews: "99%",
+//     img: "/doctorjyotsnacard.png",
+//   },
+//   {
+//     name: "Dr. Padmanabh R Bhat",
+//     designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
+//     qualification: "General Surgeon",
+//     experience: "12 Years",
+//     reviews: "99%",
+//     img: "/doctorpadmanabhcard.png",
+//   },
+// ];
 
-export default function DoctorsSection() {
+export default function DoctorsSection({
+  heading,
+  topDoctors,
+  moreDoctors,
+  banner,
+}) {
   return (
-    <div className="w-full  mx-auto px-4 py-6">
+    <div id="doctors" className="w-full  mx-auto px-4 py-6">
       {/* TITLE */}
       <h2 className="text-[24px] sm:text-[30px] text-[#625587] text-center font-semibold mb-8">Our Top Doctors</h2>
 
@@ -67,7 +72,7 @@ export default function DoctorsSection() {
       </div>
 
       {/* CONSULT BANNER */}
-      <ConsultBanner />
+      <ConsultBanner {...banner} />
 
       {/* MORE DOCTORS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
@@ -137,47 +142,52 @@ function DoctorCard({ doctor }) {
 
 /* ------------------ Consult Banner ------------------ */
 
-function ConsultBanner() {
+function ConsultBanner({
+  heading = "",
+  points = [],
+  buttonText = "",
+  imageSrc = "",
+}) {
   return (
-    <div className="w-full bg-[#9e8dce] rounded-2xl p-6 md:px-10 md:py-6 my-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-    
-            {/* Left Section */}
-            <div className="flex flex-col items-start gap-4 max-w-md">
-              {/* <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
+    <div className="w-full bg-[#9e8dce] rounded-2xl my-6">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+        {/* Left Section */}
+        <div className="flex flex-col items-start gap-4 max-w-md p-6">
+          {/* <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
                 <span className="text-xl">🏪</span>
               </div> */}
-    
-              <div>
-                <h2 className="text-[30px] sm:text-[32px] font-semibold text-white mb-4">
-                  Consult The Doctor Now
-                </h2>
-                <ul className="mt-2 text-white text-[16px] sm:text-[18px] list-disc list-inside space-y-2">
-                  <li>Free Consultation</li>
-                  <li>Online Consultation</li>
-                  <li>Know Your condition fron top doctors</li>
-                </ul>
-              </div>
-              <button
-                className="mt-3 rounded-full bg-[#f8b956] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
-              >
-                Talk to the Doctor
-              </button>
-            </div>
-    
-    
-            {/* Right Card */}
-            <div className="hidden md:block w-full max-w-md rounded-2xl  p-2 text-center">
-              <Image
-                src="/consultthedoctor.png"
-                alt="Franchise Offer"
-                width={250}
-                height={200}
-                className="mx-auto rounded-lg"
-              />
-            </div>
+
+          <div>
+            <h2 className="text-[30px] sm:text-[32px] font-semibold text-white mb-4">
+              {heading}
+            </h2>
+            <ul className="mt-2 text-white text-[16px] sm:text-[18px] list-disc list-outside pl-4 sm:pl-6 space-y-2">
+              {points.length > 0 &&
+                points.map((point, i) => <li key={i}>{point}</li>)}
+            </ul>
+          </div>
+          <button
+            className="mt-3 rounded-full bg-[#f8b956] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+          >
+            {buttonText}
+          </button>
+        </div>
+
+
+        {/* Right Card */}
+        <div className="hidden md:block w-full max-w-md rounded-2xl text-center">
+          <div className="relative mx-auto w-[80%] aspect-[5/4]">
+            <Image
+              src={imageSrc}
+              alt={heading}
+              fill
+              className="rounded-lg object-contain"
+            />
           </div>
         </div>
+      </div>
+    </div>
   );
 }
 

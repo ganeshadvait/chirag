@@ -1,6 +1,6 @@
 // components/ConsultationForm.jsx
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TestimonialSlider from "@/components/partials/reviews/reviews";
 
 // Simple up arrow SVG
@@ -25,11 +25,17 @@ function UpIcon({ className = "" }) {
   );
 }
 
-export default function ConsultationForm() {
+export default function ConsultationForm({ reviewsData }) {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Animation styles
   const formAnim = showForm
@@ -47,21 +53,26 @@ export default function ConsultationForm() {
 
   return (
     <div className="w-full max-w-sm bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-4">
-      {!showForm && <TestimonialSlider />}
-
+      {mounted && !showForm && reviewsData && (
+        <div className="hidden lg:block min-h-[220px]">
+          <TestimonialSlider
+            testimonials={reviewsData.testimonials}
+            ctaText={reviewsData.ctaText}
+            ctaLink={reviewsData.ctaLink}
+          />
+        </div>
+      )}
       <h2
-        className={`text-xl font-semibold text-[#0b1b3f] mt-2 mb-0 md:mb-4  ${
-          !showForm ? "hidden" : "block"
-        }`}
+        className={`text-xl font-semibold text-[#0b1b3f] mt-2 mb-0 md:mb-4  ${!showForm ? "hidden" : "block"
+          }`}
       >
         Book Free Consultation
       </h2>
 
       {/* Animated Form Inputs - hidden on mobile, toggled by Book Now */}
       <div
-        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] ${
-          !showForm ? "my-0" : "my-4"
-        }  ${formAnim}`}
+        className={`overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.77,0,0.175,1)] ${!showForm ? "my-0" : "my-4"
+          }  ${formAnim}`}
       >
         <form onSubmit={handleSubmit}>
           {/* Patient Name */}
@@ -102,24 +113,38 @@ export default function ConsultationForm() {
       {/* Action Buttons: Book Now & Call Now, always visible */}
       <div className="flex flex-row gap-3 mt-0 md:mt-5 w-full items-center">
         <button
-          className="flex-1 bg-[#F8B956] hover:bg-transparent border-2 border-transparent hover:border-[#F8B956] hover:text-black transition text-white text-sm font-semibold rounded-full shadow min-w-[80px] px-2 py-3 md:py-4 flex items-center justify-center gap-2"
+          className="group flex-1 bg-[#F8B956] hover:bg-transparent border-2 border-transparent hover:border-[#F8B956] hover:text-black transition text-white text-sm font-semibold rounded-full shadow min-w-[80px] px-2 py-3 md:py-4 flex items-center justify-center gap-2"
           onClick={() => setShowForm((v) => !v)}
         >
           Book Now
-          <span
-            className={`transition-transform duration-300 ${
-              showForm ? "rotate-180" : "rotate-0"
-            }`}
-          >
-            <UpIcon />
-          </span>
+          <img
+            src="/uil_calender.svg"
+            alt="Calendar"
+            className="w-5 h-5 transition group-hover:invert"
+          />
         </button>
+        {/* Mobile + Tablet: Get Directions */}
         <button
-          className="flex-1 bg-[#625587] hover:bg-transparent border-2 border-[#625587] hover:text-[#0b1b3f] text-white hover:bg-white transition text-sm font-semibold rounded-full shadow min-w-[80px] px-2 py-3 md:py-4"
+          className="flex-1 lg:hidden bg-[#625587] border-2 border-[#625587] text-white transition text-sm font-semibold rounded-full shadow px-2 py-3"
+          onClick={() =>
+            window.open(
+              "https://www.google.com/maps?q=YOUR+CLINIC+ADDRESS",
+              "_blank"
+            )
+          }
+        >
+          Get Directions
+        </button>
+
+        {/* Desktop only: Call Now */}
+        <button
+          className="hidden lg:flex flex-1 bg-[#625587] hover:bg-transparent border-2 border-[#625587] hover:text-[#0b1b3f] text-white transition text-sm font-semibold rounded-full shadow px-2 py-3 md:py-4 items-center justify-center"
           onClick={() => window.open("tel:+919999999999", "_self")}
         >
           Call Now
         </button>
+
+
       </div>
     </div>
   );

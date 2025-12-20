@@ -1,7 +1,18 @@
 "use client";
 import { useState } from "react";
 
-export default function LaserPilesInfo() {
+export default function LaserPilesInfo({
+  aboutTitle,
+  aboutText,
+  advantagesTitle,
+  advantages,
+  costTitle,
+  costIntro,
+  costPoints,
+  expandedContent,
+  readMoreText = "Read more",
+  readLessText = "Read less",
+}) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -10,63 +21,54 @@ export default function LaserPilesInfo() {
 
         {/* About Section */}
         <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-          About Laser Piles Operation
+          {aboutTitle}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          In laser piles operation, a special laser is used to shrink the pile mass,
-          resulting in reduced swelling and discomfort. This advanced technique provides
-          effective treatment with minimal bleeding.
+          {aboutText}
         </p>
 
         {/* Advantages Section */}
         <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-          Advantages of Laser Operation for Piles
+          {advantagesTitle}
         </h3>
         <ol className="list-decimal list-inside text-gray-700 space-y-1 mb-6">
-          <li>Minimal pain and discomfort</li>
-          <li>Quicker recovery time</li>
-          <li>Reduced risk of complications</li>
-          <li>Early return to daily activities</li>
+          {advantages.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
         </ol>
 
         {/* Cost Section */}
         <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-          Piles Laser Operation Cost in Hyderabad
+          {costTitle}
         </h3>
         <p className="text-gray-700 leading-relaxed mb-3">
-          Cost of piles operation depends on the following:
+          {costIntro}
         </p>
 
         <ol className="list-decimal list-inside text-gray-700 space-y-1 mb-4">
-          <li>Hospital reputation</li>
-          <li>Doctor&apos;s expertise</li>
-          <li>Grades of Piles (1,2,3,4)</li>
-          <li>Procedure type (laser, stapler, open)</li>
-          <li>Any pre-existing medical conditions</li>
+          {costPoints.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
         </ol>
 
-        {/* EXPANDABLE CONTENT */}
+        {/* Expandable Content */}
         {expanded && (
           <div className="text-gray-700 leading-relaxed space-y-3 mb-4">
-            <p>
-              Laser piles surgery is typically recommended for patients looking for
-              minimally invasive treatment with faster recovery. Most patients can
-              resume normal activities within a few days.
-            </p>
-            <p>
-              The final cost may vary depending on hospital facilities, surgeon
-              experience, and post-operative care requirements.
-            </p>
+            {expandedContent.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
           </div>
         )}
 
         {/* Read More / Less */}
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-emerald-600 font-medium text-lg hover:underline focus:outline-none"
-        >
-          {expanded ? "Read less" : "Read more"}
-        </button>
+        {expandedContent?.length > 0 && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="text-emerald-600 font-medium text-lg hover:underline focus:outline-none"
+          >
+            {expanded ? readLessText : readMoreText}
+          </button>
+        )}
 
       </div>
     </section>

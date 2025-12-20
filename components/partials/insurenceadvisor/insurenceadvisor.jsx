@@ -1,64 +1,39 @@
-// components/InsuranceAdvisorSection.jsx
-export default function InsuranceAdvisorSection() {
+export default function InsuranceAdvisorSection({ cards }) {
   return (
-    <section className="w-full max-w-5xl mx-auto  px-0 md:px-4 py-8">
+    <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        {/* Card 1 – Insurance Coverage */}
-        <div className="flex flex-col rounded-3xl  bg-white border border-gray-100 px-6 md:px-10 py-6 shadow-sm gap-4">
+        {cards.map((card, idx) => (
+          <div
+            key={idx}
+            className="flex flex-col rounded-3xl bg-white border border-gray-100 px-6 md:px-10 py-6 shadow-sm gap-4"
+          >
+            {/* Content */}
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 leading-snug">
+                {card.titlePrefix}{" "}
+                <span className="text-[#625587]">{card.titleHighlight}</span>
+              </h2>
 
-          {/* Content */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 leading-snug">
-              Check <span className="text-[#625587]">Insurance Coverage</span>
-            </h2>
+              <p className="mt-3 text-gray-700 text-lg leading-relaxed">
+                {card.description}
+              </p>
 
-            <p className="mt-3 text-gray-700 text-lg leading-relaxed">
-              Find out if this treatment is covered in your insurance policy or not.
-            </p>
+              {card.image && (
+                <img
+                  src={card.image}
+                  alt={card.imageAlt || card.titleHighlight}
+                  className="mt-6 w-56 mx-auto"
+                />
+              )}
+            </div>
 
-            <img
-              src="/checkinsurancecoverage.png"
-              alt="Insurance coverage illustration"
-              className="mt-6 w-56 mx-auto"
-            />
+            {/* CTA */}
+            <button className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center">
+              {card.buttonText}
+            </button>
           </div>
-
-          {/* Button pinned to bottom */}
-          <button className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border[#625587] transition flex items-center justify-center">
-            <span className="mr-2 text-xl"></span>
-            Check Insurance Coverage
-          </button>
-        </div>
-
-
-        {/* Card 2 – Health Advisor */}
-        <div className="flex flex-col rounded-3xl bg-white border border-gray-100 px-6 md:px-10 py-6 shadow-sm gap-4">
-
-          {/* Content */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 leading-snug">
-              Talk To <span className="text-[#625587]">Health Advisor</span>
-            </h2>
-
-            <p className="mt-3 text-gray-700 text-lg leading-relaxed">
-              Find the best hospitals and best doctors for treatment.
-            </p>
-
-            <img
-              src="/talktohealthadvaiser.png"
-              alt="Health advisor illustration"
-              className="mt-6 w-56 mx-auto"
-            />
-          </div>
-
-          {/* Button pinned to bottom */}
-          <button className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border[#625587] transition flex items-center justify-center">
-            <span className="mr-2 text-xl"></span>
-            Call Advisor Now
-          </button>
-        </div>
-
+        ))}
 
       </div>
     </section>
