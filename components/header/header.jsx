@@ -51,19 +51,9 @@ export default function Header({
     <>
       <header className="header w-[96%] h-[90px] mx-auto my-2 flex items-center justify-between p-5 border border-[#ebeff6] bg-white sticky top-[10px] z-[1000] transition-all duration-300 ease-in-out max-w-[1500px] shadow-lg rounded-xl">
         <div className="header__logos">
-          <Link href="#">
-            <img
-              className="logo-fade header__logo"
-              src="/Chirag-New-logo_.webp"
-              alt="logo"
-            />
-          </Link>
-
-          <img
-            className="logo-fade header__logo"
-            src="/Transparent logo 38+.png"
-            alt="logo"
-          />
+          <img className="logo-fade header__logo" src="/Chirag-New-logo_.webp" />
+<img className="logo-fade header__logotwo" src="/Transparent logo 38+.png" />
+<img className="logo-fade header__logothree" src="/Transparent logo NABH.png" />
         </div>
 
         <nav className="header__menu font-semibold">
