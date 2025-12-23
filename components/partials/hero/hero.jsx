@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useFormModal } from "@/hooks/useFormModal";
 
 export default function PilesTreatmentSection({
   heading,
@@ -8,10 +9,11 @@ export default function PilesTreatmentSection({
   buttonText,
   imageSrc,
 }) {
+  const { openModal, FormModal } = useFormModal();
+
   return (
     <section className="w-full bg-white pt-4 pb-8 my-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4 md:px-6">
-
         {/* LEFT CONTENT */}
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
@@ -31,7 +33,10 @@ export default function PilesTreatmentSection({
             ))}
           </ul>
 
-          <button className="mt-6 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-8 py-3 text-lg">
+          <button
+            onClick={openModal}
+            className="mt-6 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-8 py-3 text-lg"
+          >
             {buttonText}
           </button>
         </div>
@@ -39,16 +44,13 @@ export default function PilesTreatmentSection({
         {/* RIGHT IMAGE */}
         {imageSrc && (
           <div className="relative w-full h-64 sm:h-80 md:h-[400px] rounded-xl overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt={heading}
-              fill
-              className="object-cover"
-            />
+            <Image src={imageSrc} alt={heading} fill className="object-cover" />
           </div>
         )}
-
       </div>
+
+      {/* Form Modal */}
+      <FormModal />
     </section>
   );
 }

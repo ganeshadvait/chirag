@@ -1,8 +1,9 @@
-export default function TreatmentCostDependsOn({
-  heading,
-  items,
-  ctaText,
-}) {
+"use client";
+import { useFormModal } from "@/hooks/useFormModal";
+
+export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
+  const { openModal, FormModal } = useFormModal();
+
   return (
     <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-6">
       <h2 className="text-[24px] sm:text-[32px] font-semibold text-[#625587] mb-8 text-center">
@@ -26,22 +27,24 @@ export default function TreatmentCostDependsOn({
               </div>
 
               <div className="text-sm leading-snug">
-                <p className="font-semibold text-gray-900">
-                  {item.titleBold}
-                </p>
-                <p className="text-gray-700">
-                  {item.titleRest}
-                </p>
+                <p className="font-semibold text-gray-900">{item.titleBold}</p>
+                <p className="text-gray-700">{item.titleRest}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <button className="mt-6 w-full bg-emerald-600 text-white font-semibold rounded-full py-3.5 flex items-center justify-center gap-2 text-lg hover:bg-emerald-700 transition">
+        <button
+          onClick={openModal}
+          className="mt-6 w-full bg-emerald-600 text-white font-semibold rounded-full py-3.5 flex items-center justify-center gap-2 text-lg hover:bg-emerald-700 transition"
+        >
           <span>{ctaText}</span>
         </button>
       </div>
+
+      {/* Form Modal */}
+      <FormModal />
     </section>
   );
 }

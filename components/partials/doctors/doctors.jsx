@@ -1,92 +1,46 @@
+"use client";
 import Image from "next/image";
-// const topDoctors = [
-//   {
-//     name: "Dr. Rajasekhar M R",
-//     designation: "MBBS, MS",
-//     qualification: "Founder and Senior Colorectal Surgeon",
-//     experience: "12 Years",
-//     reviews: "99%",
-//     img: "/doctorchiragcard.png",
-//   },
-//   {
-//     name: "Dr. Shreedevi KN",
-//     designation: "MBBS, MS, FSGE",
-//     qualification: "Surgical Gastroenterologist and colo rectal surgeon",
-//     experience: "12 Years",
-//     reviews: "99%",
-//     img: "/doctorshreedevicard.png",
-//   },
-//   {
-//     name: "Dr. Prithvija Chakravarthy",
-//     designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
-//     qualification: "Proctologist",
-//     experience: "12 Years",
-//     reviews: "99%",
-//     img: "/doctorprithvicard.png",
-//   },
-// ];
-
-// const moreDoctors = [
-//   {
-//     name: "Dr. Suchitra N Adiga",
-//     designation: "BAMS, MS(Ayu)",
-//     qualification: "Proctologist",
-//     experience: "12 Years",
-//     reviews: "99%",
-//     img: "/doctorsuchithracard.png",
-//   },
-//   {
-//     name: "Dr.Jyotsna Vemulapalli",
-//     designation: "MBBS, MS(Gen Surgery)",
-//     qualification: "General Surgeon",
-//     experience: "12 Years",
-//     reviews: "99%",
-//     img: "/doctorjyotsnacard.png",
-//   },
-//   {
-//     name: "Dr. Padmanabh R Bhat",
-//     designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
-//     qualification: "General Surgeon",
-//     experience: "12 Years",
-//     reviews: "99%",
-//     img: "/doctorpadmanabhcard.png",
-//   },
-// ];
-
+import { useFormModal } from "@/hooks/useFormModal";
 export default function DoctorsSection({
   heading,
   topDoctors,
   moreDoctors,
   banner,
 }) {
+  const { openModal, FormModal } = useFormModal();
   return (
     <div id="doctors" className="w-full  mx-auto px-4 py-6">
       {/* TITLE */}
-      <h2 className="text-[24px] sm:text-[30px] text-[#625587] text-center font-semibold mb-8">Our Top Doctors</h2>
+      <h2 className="text-[24px] sm:text-[30px] text-[#625587] text-center font-semibold mb-8">
+        Our Top Doctors
+      </h2>
 
       {/* TOP DOCTORS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
         {topDoctors.map((doc, idx) => (
-          <DoctorCard key={idx} doctor={doc} />
+          <DoctorCard key={idx} doctor={doc} openModal={openModal} />
         ))}
       </div>
 
       {/* CONSULT BANNER */}
-      <ConsultBanner {...banner} />
+      <ConsultBanner {...banner} openModal={openModal} />
 
       {/* MORE DOCTORS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
         {moreDoctors.map((doc, idx) => (
-          <DoctorCard key={idx} doctor={doc} />
+          <DoctorCard key={idx} doctor={doc} openModal={openModal} />
         ))}
       </div>
+
+      {/* Form Modal */}
+      <FormModal />
     </div>
   );
 }
 
 /* ------------------ Doctor Card ------------------ */
 
-function DoctorCard({ doctor }) {
+function DoctorCard({ doctor, openModal }) {
   return (
     <div className="flex flex-col gap-3 justify-between items-center bg-white rounded-2xl shadow-md px-5 py-4">
       <div className="flex items-start gap-4 w-full">
@@ -105,35 +59,19 @@ function DoctorCard({ doctor }) {
             {doctor.qualification}
           </p>
           <p className="text-[12px] text-gray-500 mt-1">
-            Experience: <span className="text-gray-900 text-[12px]">{doctor.experience}</span>
+            Experience:{" "}
+            <span className="text-gray-900 text-[12px]">
+              {doctor.experience}
+            </span>
           </p>
-          {/* <p className="text-xs text-gray-500 text-start">
-            <span className="text-gray-900">{doctor.reviews}</span> of Positive Reviews
-          </p> */}
         </div>
       </div>
-      {/* <div className="flex justify-between gap-4 mt-3 w-full">
-        <div className="flex items-center bg-violet-50 px-3 py-2 rounded-lg text-sm w-full">
-          <div className="w-full">
-            <p className="font-semibold text-gray-900 text-[14px]">
-              {doctor.experience}
-            </p>
-            <p className="text-[12px] text-gray-500 -mt-0.5">Experience</p>
-          </div>
-        </div>
-
-        <div className="flex items-center bg-green-50 px-3 py-2 rounded-lg text-sm w-full">
-          <div className="w-full">
-            <p className="font-semibold text-gray-900">{doctor.reviews}</p>
-            <p className="text-xs text-gray-500 -mt-0.5 text-center ">
-              Positive Reviews
-            </p>
-          </div>
-        </div>
-      </div> */}
 
       {/* CTA BUTTON */}
-      <button className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-2 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center">
+      <button
+        onClick={openModal}
+        className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-2 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center"
+      >
         <span className="text-base text-center">Book Free Consultation</span>
       </button>
     </div>
@@ -147,11 +85,11 @@ function ConsultBanner({
   points = [],
   buttonText = "",
   imageSrc = "",
+  openModal,
 }) {
   return (
     <div className="w-full bg-[#9e8dce] rounded-2xl my-6">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-
         {/* Left Section */}
         <div className="flex flex-col items-start gap-4 max-w-md p-6">
           {/* <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
@@ -168,12 +106,12 @@ function ConsultBanner({
             </ul>
           </div>
           <button
+            onClick={openModal}
             className="mt-3 rounded-full bg-[#f8b956] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
           >
             {buttonText}
           </button>
         </div>
-
 
         {/* Right Card */}
         <div className="hidden md:block w-full max-w-md rounded-2xl text-center">
@@ -190,25 +128,3 @@ function ConsultBanner({
     </div>
   );
 }
-
-{/* <div className="mt-4 bg-green-50 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between">
-      <div className="max-w-md">
-        <h3 className="text-xl font-bold text-green-700">
-          Consult The Doctor <span className="text-gray-900">Now</span>
-        </h3>
-        <p className="text-gray-700 mt-2">
-          Get a FREE consultation from our top doctors to know the best course
-          of treatment.
-        </p>
-
-        <button className="mt-4 bg-green-600 text-white px-5 py-3 rounded-full flex items-center gap-2 shadow hover:bg-green-700 transition">
-          <span></span> WhatsApp To Consult Doctor
-        </button>
-      </div>
-
-      <img
-        src="/images/consult.png"
-        alt="Consult Doctor"
-        className="w-36 h-auto mt-4 md:mt-0"
-      />
-    </div> */}

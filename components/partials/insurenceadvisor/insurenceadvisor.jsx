@@ -1,8 +1,12 @@
+"use client";
+import { useFormModal } from "@/hooks/useFormModal";
+
 export default function InsuranceAdvisorSection({ cards }) {
+  const { openModal, FormModal } = useFormModal();
+
   return (
     <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
         {cards.map((card, idx) => (
           <div
             key={idx}
@@ -29,13 +33,18 @@ export default function InsuranceAdvisorSection({ cards }) {
             </div>
 
             {/* CTA */}
-            <button className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center">
+            <button
+              onClick={openModal}
+              className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center"
+            >
               {card.buttonText}
             </button>
           </div>
         ))}
-
       </div>
+
+      {/* Form Modal */}
+      <FormModal />
     </section>
   );
 }

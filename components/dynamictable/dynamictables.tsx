@@ -1,10 +1,22 @@
 "use client";
-import React from "react";
+
+interface HospitalComparisonProps {
+  theading: string;
+  ConditionVideo: string;
+  title: string;
+  description: React.ReactNode;
+  points: string[];
+}
+
 // import "./tablestyles.css";
 
-
-
-export default function HospitalComparison({ theading, ConditionVideo, title, description, points }) {
+export default function HospitalComparison({
+  theading,
+  ConditionVideo,
+  title,
+  description,
+  points,
+}: HospitalComparisonProps) {
   return (
     <section className="w-[95%] md:w-[96%] max-w-[1500px] mx-auto py-4">
       <h2 className="table_heading text-center text-xl font-bold text-[#625587]">
@@ -21,8 +33,8 @@ export default function HospitalComparison({ theading, ConditionVideo, title, de
               loop
               playsInline
               controls
-            // onMouseEnter={(e) => (e.currentTarget.controls = true)}
-            // onMouseLeave={(e) => (e.currentTarget.controls = false)}
+              // onMouseEnter={(e) => (e.currentTarget.controls = true)}
+              // onMouseLeave={(e) => (e.currentTarget.controls = false)}
             >
               <source src={ConditionVideo} type="video/webm" />
               Your browser does not support the video tag.
