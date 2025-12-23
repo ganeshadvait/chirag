@@ -1219,7 +1219,7 @@ html {
 }
 
 .header__logos {
-  width: 12%;
+  width: 20%;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -1273,6 +1273,9 @@ html {
     gap: 10px;
     width: 30%;
   }
+  .header__logos img {
+  flex-shrink: 0;
+}
 
 
 
@@ -1323,7 +1326,7 @@ html {
 
 @media (min-width: 768px) {
   .header__logo {
-    width: 40%;
+    width: 65px;
     max-width: 190px;
   }
 
@@ -1444,17 +1447,17 @@ html {
 } */
 @media (max-width: 1024px) and (min-width: 769px) {
   .header__logo {
-    width: 41%;
+    width: 45px;
     max-width: 190px;
   }
 
   .header__logotwo {
-    width: 100px;
+    width: 45px;
     height: 70px;
   }
 
   .header__logothree {
-    width: 100px;
+    width: 45px;
     height: 70px;
     /* aspect-ratio: 30 / 30; */
   }
@@ -1462,7 +1465,7 @@ html {
 
 
   .header__logo {
-    width: 40%;
+    width: 65px;
     max-width: 190px;
   }
 
@@ -1473,17 +1476,17 @@ html {
   }
 
   .header__logo {
-    width: 41%;
+    width: 65px;
     max-width: 190px;
   }
 
   .header__logotwo {
-    width: 100px;
+    width: 45px;
     height: 70px;
   }
 
   .header__logothree {
-    width: 100px;
+    width: 45px;
     height: 70px;
     /* aspect-ratio: 1 / 1; */
   }
@@ -1501,22 +1504,28 @@ html {
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
+  .header__logos {
+    gap: 10px;
+  }
+  .header__menu ul{
+    gap: 30px;
+  }
   .header {
     gap: 5px;
   }
 
   .header__logo {
-    width: 41%;
+    width: 45px;
     max-width: 190px;
   }
 
   .header__logotwo {
-    width: 100px;
+    width: 45px;
     height: 60px;
   }
 
   .header__logothree {
-    width: 100px;
+    width: 45px;
     height: 60px;
     /* aspect-ratio: 1 / 1; */
   }
@@ -1529,12 +1538,12 @@ html {
   }
 
   .header__logotwo {
-    width: 100px;
+    width: 45px;
     height: 60px;
   }
 
   .header__logothree {
-    width: 100px;
+    width: 45px;
     height: 60px;
     /* aspect-ratio: 1 / 1; */
     gap: 5%;
@@ -1556,12 +1565,12 @@ html {
   }
 
   .header__logotwo {
-    width: 100px;
+    width: 45px;
     height: 50px;
   }
 
   .header__logothree {
-    width: 100px;
+    width: 45px;
     height: 50px;
     /* aspect-ratio: 1 / 1; */
   }
