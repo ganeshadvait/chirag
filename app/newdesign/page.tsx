@@ -58,7 +58,6 @@ export default function NewDesign() {
     ],
   };
 
-
   const costSectionData = {
     title: "Check Surgery Cost",
     points: [
@@ -109,8 +108,7 @@ export default function NewDesign() {
       {
         titlePrefix: "Talk To",
         titleHighlight: "Health Advisor",
-        description:
-          "Find the best hospitals and best doctors for treatment.",
+        description: "Find the best hospitals and best doctors for treatment.",
         image: "/talktohealthadvaiser.png",
         imageAlt: "Health advisor illustration",
         buttonText: "Call Advisor Now",
@@ -127,9 +125,6 @@ export default function NewDesign() {
       "24/7 Patient Support",
     ],
   };
-
-
-
 
   const faqs = [
     {
@@ -230,36 +225,31 @@ export default function NewDesign() {
     testimonials: [
       {
         title: "Laser treatment for my dad's piles",
-        text:
-          "Dr. Samhitha Reddy's laser treatment for my dad's piles worked wonders. He's pain-free now and really grateful for her care!",
+        text: "Dr. Samhitha Reddy's laser treatment for my dad's piles worked wonders. He's pain-free now and really grateful for her care!",
         name: "Mithilesh Sah",
         rating: 5,
       },
       {
         title: "Smooth and painless",
-        text:
-          "Dr. Samhitha Reddy's laser treatment for my fissure was smooth and painless. She was super kind, which made the whole process much easier.",
+        text: "Dr. Samhitha Reddy's laser treatment for my fissure was smooth and painless. She was super kind, which made the whole process much easier.",
         name: "Rohit Kumar",
         rating: 5,
       },
       {
         title: "Colorectal Diseases",
-        text:
-          "Lux hospital is one of best hospital in Hyderabad for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
+        text: "Lux hospital is one of best hospital in Hyderabad for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
         name: "Arti Shettiwar",
         rating: 4.5,
       },
       {
         title: "Admitted for my fistula surgery",
-        text:
-          "I was admitted for my fistula surgery, Dr Samhita explained everything clearly. Surgery was seamless & painless. Great staff support.",
+        text: "I was admitted for my fistula surgery, Dr Samhita explained everything clearly. Surgery was seamless & painless. Great staff support.",
         name: "Sanat Jayasingh",
         rating: 4.7,
       },
       {
         title: "Fistula Surgery",
-        text:
-          "We were admitted for fistula surgery. Staff and doctor were polite & quick. Special thanks to Ashok for insurance support.",
+        text: "We were admitted for fistula surgery. Staff and doctor were polite & quick. Special thanks to Ashok for insurance support.",
         name: "Sujith V",
         rating: 4.8,
       },
@@ -268,79 +258,77 @@ export default function NewDesign() {
     ctaLink: "https://www.google.com/search?q=your+business+name+reviews",
   };
 
-
   const defaultLocationHeading =
     "Our Hospital location Chirag Global Hospitals";
 
-
   const doctorsSectionData = {
-  heading: "Our Top Doctors",
+    heading: "Our Top Doctors",
 
-  topDoctors: [
-    {
-      name: "Dr. Rajasekhar M R",
-      designation: "MBBS, MS",
-      qualification: "Founder and Senior Colorectal Surgeon",
-      experience: "12 Years",
-      reviews: "99%",
-      img: "/doctorchiragcard.png",
-    },
-    {
-      name: "Dr. Shreedevi KN",
-      designation: "MBBS, MS, FSGE",
-      qualification: "Surgical Gastroenterologist and colo rectal surgeon",
-      experience: "12 Years",
-      reviews: "99%",
-      img: "/doctorshreedevicard.png",
-    },
-    {
-      name: "Dr. Prithvija Chakravarthy",
-      designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
-      qualification: "Proctologist",
-      experience: "12 Years",
-      reviews: "99%",
-      img: "/doctorprithvicard.png",
-    },
-  ],
-
-  moreDoctors: [
-    {
-      name: "Dr. Suchitra N Adiga",
-      designation: "BAMS, MS(Ayu)",
-      qualification: "Proctologist",
-      experience: "12 Years",
-      reviews: "99%",
-      img: "/doctorsuchithracard.png",
-    },
-    {
-      name: "Dr.Jyotsna Vemulapalli",
-      designation: "MBBS, MS(Gen Surgery)",
-      qualification: "General Surgeon",
-      experience: "12 Years",
-      reviews: "99%",
-      img: "/doctorjyotsnacard.png",
-    },
-    {
-      name: "Dr. Padmanabh R Bhat",
-      designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
-      qualification: "General Surgeon",
-      experience: "12 Years",
-      reviews: "99%",
-      img: "/doctorpadmanabhcard.png",
-    },
-  ],
-
-  banner: {
-    heading: "Consult The Doctor Now",
-    points: [
-      "Free Consultation",
-      "Online Consultation",
-      "Know your condition from top doctors",
+    topDoctors: [
+      {
+        name: "Dr. Rajasekhar M R",
+        designation: "MBBS, MS",
+        qualification: "Founder and Senior Colorectal Surgeon",
+        experience: "12 Years",
+        reviews: "99%",
+        img: "/doctorchiragcard.png",
+      },
+      {
+        name: "Dr. Shreedevi KN",
+        designation: "MBBS, MS, FSGE",
+        qualification: "Surgical Gastroenterologist and colo rectal surgeon",
+        experience: "12 Years",
+        reviews: "99%",
+        img: "/doctorshreedevicard.png",
+      },
+      {
+        name: "Dr. Prithvija Chakravarthy",
+        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
+        qualification: "Proctologist",
+        experience: "12 Years",
+        reviews: "99%",
+        img: "/doctorprithvicard.png",
+      },
     ],
-    buttonText: "Talk to the Doctor",
-    imageSrc: "/consultthedoctor.png",
-  },
-};
+
+    moreDoctors: [
+      {
+        name: "Dr. Suchitra N Adiga",
+        designation: "BAMS, MS(Ayu)",
+        qualification: "Proctologist",
+        experience: "12 Years",
+        reviews: "99%",
+        img: "/doctorsuchithracard.png",
+      },
+      {
+        name: "Dr.Jyotsna Vemulapalli",
+        designation: "MBBS, MS(Gen Surgery)",
+        qualification: "General Surgeon",
+        experience: "12 Years",
+        reviews: "99%",
+        img: "/doctorjyotsnacard.png",
+      },
+      {
+        name: "Dr. Padmanabh R Bhat",
+        designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
+        qualification: "General Surgeon",
+        experience: "12 Years",
+        reviews: "99%",
+        img: "/doctorpadmanabhcard.png",
+      },
+    ],
+
+    banner: {
+      heading: "Consult The Doctor Now",
+      points: [
+        "Free Consultation",
+        "Online Consultation",
+        "Know your condition from top doctors",
+      ],
+      buttonText: "Talk to the Doctor",
+      imageSrc: "/consultthedoctor.png",
+    },
+  };
 
   return (
     <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
@@ -366,7 +354,7 @@ export default function NewDesign() {
           />
           <InsurenceAdvisor {...insuranceAdvisorData} />
 
-          <Why {...whyChooseData}/>
+          <Why {...whyChooseData} />
           <HospitalComparisond {...pilesComparisonContent} />
           <Info {...laserPilesInfoData} />
           <CtaBanner {...aiHealthBannerData} />

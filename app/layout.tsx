@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Header from "@/components/header/header";
+import FooterComponent from "@/components/footer/footer";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -10,10 +12,11 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-
 export const metadata: Metadata = {
-  title: "Chirag Global Hospitals – Best Colon & Colorectal Care for Piles, Fistula & Colon Cancer",
-  description: "Chirag Global Hospitals offers 38 years of expert colorectal care for piles, fistula, fissure, constipation and colon/rectal disorders. Advanced laser treatments, experienced surgeons and personalized care ensure effective & affordable solutions.",
+  title:
+    "Chirag Global Hospitals – Best Colon & Colorectal Care for Piles, Fistula & Colon Cancer",
+  description:
+    "Chirag Global Hospitals offers 38 years of expert colorectal care for piles, fistula, fissure, constipation and colon/rectal disorders. Advanced laser treatments, experienced surgeons and personalized care ensure effective & affordable solutions.",
 };
 
 export default function RootLayout({
@@ -23,11 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${dmSans.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <Header
+        PhoneNumber={"07969084448"}
+        mobilectatext={"Call Now"}
+        mobileNumberHeader={"tel:07969084448"}
+      />
+      <body className={`${dmSans.variable} antialiased`}>{children}</body>
+      <FooterComponent
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
+        footernumber="9380498256"
+      />
     </html>
   );
 }
