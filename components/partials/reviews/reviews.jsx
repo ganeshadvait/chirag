@@ -392,7 +392,7 @@ export default function TestimonialSlider({
             href={ctaLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full bg-[#059669] hover:bg-[#047857] text-white font-semibold px-8 py-4 rounded-full transition text-sm sm:text-base flex items-center gap-2 justify-center"
+            className="w-full bg-[#17a388] hover:bg-white hover:text-black hover:border hover:border-[#17a388] text-white font-semibold px-8 py-4 rounded-full transition text-sm sm:text-base flex items-center gap-2 justify-center"
           >
             <img
               src={sourceLogo}

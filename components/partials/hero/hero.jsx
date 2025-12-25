@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
 
-export default function PilesTreatmentSection({
+export default function HeroSection({
   heading,
   points,
   buttonText,

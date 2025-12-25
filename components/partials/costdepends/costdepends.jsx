@@ -18,7 +18,7 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
               key={idx}
               className="flex flex-col items-center text-center space-y-3"
             >
-              <div className="w-24 h-24 rounded-full bg-emerald-50 flex items-center justify-center">
+              <div className="w-24 h-24 rounded-full bg-[#ccebe5] flex items-center justify-center">
                 <img
                   src={item.icon}
                   alt={item.titleBold}
@@ -37,7 +37,7 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
         {/* CTA */}
         <button
           onClick={openModal}
-          className="mt-6 w-full bg-emerald-600 text-white font-semibold rounded-full py-3.5 flex items-center justify-center gap-2 text-lg hover:bg-emerald-700 transition"
+          className="mt-6 w-full bg-[#17a388] text-white font-semibold rounded-full py-3.5 flex items-center justify-center gap-2 text-lg hover:bg-emerald-700 transition"
         >
           <span>{ctaText}</span>
         </button>
