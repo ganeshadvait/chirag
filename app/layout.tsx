@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} antialiased`}>{children}</body>
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"
-        extradesc="38 years of experience in diagnosing & treating piles, fistula, fissure, constipation and other colon/rectal disorders."
+        extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
         footernumber="9380498256"
       />
     </html>

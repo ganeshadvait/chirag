@@ -72,7 +72,7 @@ function DoctorCard({ doctor, openModal }) {
         onClick={openModal}
         className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-2 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center"
       >
-        <span className="text-base text-center">Book Free Consultation</span>
+        <span className="text-base text-center">Book Your Appointment</span>
       </button>
     </div>
   );

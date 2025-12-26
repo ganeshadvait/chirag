@@ -33,7 +33,7 @@ export default function HospitalLocation({ locationsectionheading }) {
               {/* Google Icon and Text */}
               <div className="flex items-center gap-2">
                 <div className="flex items-center">
-                  <span className="text-lg font-bold">4.8</span>
+                  <span className="text-lg font-bold">4.7</span>
                   <div className="flex text-yellow-500 ml-2">
                     {[...Array(5)].map((_, index) => (
                       <FaStar key={index} />
@@ -44,7 +44,7 @@ export default function HospitalLocation({ locationsectionheading }) {
 
               {/* Review Count */}
               <span className="font-medium review_count">
-                672 Google Reviews
+                1790 Google Reviews
               </span>
             </div>
 
@@ -57,7 +57,7 @@ export default function HospitalLocation({ locationsectionheading }) {
             {/* Buttons */}
             <div className="mt-4 flex gap-4 w-full mobilectas">
               <a
-                href="https://maps.app.goo.gl/nAWJqH1nyXAZvcth8"
+                href="https://maps.app.goo.gl/WmC3dzUAfeQFuG1A9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="review_button flex items-center justify-center gap-2 bg-[#f8b956] text-white px-4 py-2 rounded-3xl hover:bg-[#68559e] flex-1"
@@ -67,7 +67,7 @@ export default function HospitalLocation({ locationsectionheading }) {
 
               <a
                 // href="https://maps.app.goo.gl/evEJmyVJqMArfBoG7"
-                href="https://www.google.com/maps/place/LUX+Hospitals+%7C+NABH+Certified+%7C+Best+Hospital+in+Hyderabad+for+Proctology,+Gynecology,+Orthopedics+%26+Laparoscopic+Surgery/@17.4334221,78.3744207,840m/data=!3m1!1e3!4m8!3m7!1s0x3bcb91e736fbc1b5:0x3a136dab257734d3!8m2!3d17.4334221!4d78.3744207!9m1!1b1!16s%2Fg%2F11svndq_5s!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="google-btn border border-gray-100 flex gap-2 px-6 py-4 rounded-3xl hover:bg-gray-100 flex-1 justify-center"
