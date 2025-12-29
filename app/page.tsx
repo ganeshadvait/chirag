@@ -21,7 +21,7 @@ import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 import HospitalComparisond from "@/components/dynamictable/dynamictables";  
 export default function NewDesign() {
   const pilesHeroData = {
-    heading: "Best Piles Treatment In Hyderabad",
+    heading: "Best Piles Treatment In Bangalore",
     points: [
       "No Cut, No Dressing",
       "Expert Piles Doctors",
