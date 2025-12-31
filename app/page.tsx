@@ -1,7 +1,3 @@
-import React from "react";
-
-import dynamic from "next/dynamic";
-
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
@@ -18,7 +14,7 @@ import Form from "@/components/partials/form/from";
 
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 
-import HospitalComparisond from "@/components/dynamictable/dynamictables";  
+import HospitalComparisond from "@/components/dynamictable/dynamictables";
 export default function NewDesign() {
   const pilesHeroData = {
     heading: "Best Piles Treatment In Bangalore",
@@ -113,7 +109,7 @@ export default function NewDesign() {
     ],
   };
   const whyChooseData = {
-    heading: "Why Choose HexaHealth for Piles Treatment in Hyderabad?",
+    heading: "Why Choose Chirag Hospitals for Piles Treatment in Bangalore",
     points: [
       "Advanced Laser Techniques",
       "Expert Surgeons Team",

@@ -116,7 +116,7 @@ export default function NewDesign() {
     ],
   };
   const whyChooseData = {
-    heading: "Why Choose HexaHealth for Piles Treatment in Hyderabad?",
+    heading: "Why Choose Chirag Hospitals for Piles Treatment in Bangalore",
     points: [
       "Advanced Laser Techniques",
       "Expert Surgeons Team",
