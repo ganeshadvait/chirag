@@ -69,7 +69,7 @@ export default function NewDesign() {
   //   buttonText: "Calculate Surgery Cost",
   //   imageSrc: "/chiraggpt.png",
   // };
-  
+
   const risksOfDelayData = {
     heading: "Risks of Delaying Piles Treatment",
     risks: [
@@ -290,10 +290,11 @@ export default function NewDesign() {
     },
     {
       faqTitle: "Why is Chirag Hospitals trusted for piles treatment?",
-      faqAnswer: "Chirag Hospitals is known for safe treatment, modern facilities, and consistent patient care.",
+      faqAnswer:
+        "Chirag Hospitals is known for safe treatment, modern facilities, and consistent patient care.",
     },
   ];
-  
+
   const testimonialSectionData = {
     testimonials: [
       {
@@ -310,7 +311,7 @@ export default function NewDesign() {
       },
       {
         title: "Colorectal Diseases",
-        text: "Lux hospital is one of best hospital in Hyderabad for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
+        text: "Lux hospital is one of best hospital in Bangalore for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
         name: "Arti Shettiwar",
         rating: 4.5,
       },

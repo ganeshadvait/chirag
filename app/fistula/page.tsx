@@ -294,7 +294,7 @@ export default function NewDesign() {
       },
       {
         title: "Colorectal Diseases",
-        text: "Lux hospital is one of best hospital in Hyderabad for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
+        text: "Lux hospital is one of best hospital in Bangalore for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
         name: "Arti Shettiwar",
         rating: 4.5,
       },

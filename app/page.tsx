@@ -193,7 +193,7 @@ export default function NewDesign() {
       "Early return to daily activities",
     ],
 
-    costTitle: "Piles Laser Operation Cost in Hyderabad",
+    costTitle: "Piles Laser Operation Cost in Bangalore",
     costIntro: "Cost of piles operation depends on the following:",
     costPoints: [
       "Hospital reputation",
@@ -230,7 +230,7 @@ export default function NewDesign() {
       },
       {
         title: "Colorectal Diseases",
-        text: "Lux hospital is one of best hospital in Hyderabad for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
+        text: "Lux hospital is one of best hospital in Bangalore for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
         name: "Arti Shettiwar",
         rating: 4.5,
       },
