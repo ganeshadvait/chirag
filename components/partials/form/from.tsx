@@ -1,10 +1,34 @@
 // components/ConsultationForm.jsx
 "use client";
 import { useState, useEffect } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import TestimonialSlider from "@/components/partials/reviews/reviews";
 
+import type { Review } from "@/components/reviews-carousel";
+import ReviewsCarousel from "@/components/reviews-carousel";
+
+type LegacyTestimonial = {
+  title: string;
+  text: string;
+  name: string;
+  rating: number;
+  testimonial_date?: string;
+};
+
+interface ConsultationFormProps {
+  reviewsData?: {
+    testimonials: Array<Review | LegacyTestimonial>;
+    ctaText: string;
+    ctaLink: string;
+  } | null;
+}
+type FormData = {
+  full_name: string;
+  phone_number: string;
+};
+
 // Simple up arrow SVG
-function UpIcon({ className = "" }) {
+function UpIcon({ className = "" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -25,8 +49,10 @@ function UpIcon({ className = "" }) {
   );
 }
 
-export default function ConsultationForm({ reviewsData }) {
-  const [formData, setFormData] = useState({
+export default function ConsultationForm({
+  reviewsData,
+}: ConsultationFormProps) {
+  const [formData, setFormData] = useState<FormData>({
     full_name: "",
     phone_number: "",
   });
@@ -34,10 +60,20 @@ export default function ConsultationForm({ reviewsData }) {
   const [showForm, setShowForm] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
-  const [submitMessage, setSubmitMessage] = useState("");
-  const [utmParams, setUtmParams] = useState({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
+  const [submitMessage, setSubmitMessage] = useState<string>("");
+  const [utmParams, setUtmParams] = useState({
+    utm_source: "",
+    utm_medium: "",
+    utm_campaign: "",
+    utm_term: "",
+    utm_content: "",
+    utm_platform: "",
+    utm_device: "",
+  });
 
   // Capture UTM parameters on mount
   useEffect(() => {
@@ -53,14 +89,41 @@ export default function ConsultationForm({ reviewsData }) {
       utm_platform: urlParams.get("utm_platform") || "",
       utm_device: urlParams.get("utm_device") || "",
     };
-   
+
     setUtmParams(params);
   }, []);
 
+  // Normalize incoming testimonials to the `Review` shape expected by the carousel
+  const normalizedReviews: Review[] = (reviewsData?.testimonials ?? []).map(
+    (t, idx) => {
+      // If it's already a `Review`, keep as is
+      if (
+        (t as Review).author !== undefined &&
+        (t as Review).body !== undefined
+      ) {
+        return t as Review;
+      }
+      // Otherwise, map legacy shape to `Review`
+      const lt = t as LegacyTestimonial;
+      return {
+        id: `${lt.name}-${idx}`,
+        body: lt.text,
+        author: lt.name,
+        title: lt.title,
+      };
+    }
+  );
+
   // Handle input changes
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData(
+      (prev) =>
+        ({
+          ...prev,
+          [name as keyof FormData]: value,
+        } as FormData)
+    );
     // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
@@ -69,7 +132,7 @@ export default function ConsultationForm({ reviewsData }) {
 
   // Validation function
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: Record<string, string> = {};
 
     // Phone number is required
     if (!formData.phone_number || formData.phone_number.trim() === "") {
@@ -83,7 +146,7 @@ export default function ConsultationForm({ reviewsData }) {
   };
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!showForm) return;
 
@@ -123,7 +186,7 @@ export default function ConsultationForm({ reviewsData }) {
 
       // Submit to API with timeout
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+      const timeoutId = window.setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
       const response = await fetch("/api/leads/submit", {
         method: "POST",
@@ -134,7 +197,7 @@ export default function ConsultationForm({ reviewsData }) {
         signal: controller.signal,
       });
 
-      clearTimeout(timeoutId);
+      window.clearTimeout(timeoutId);
 
       let result;
       try {
@@ -171,7 +234,7 @@ export default function ConsultationForm({ reviewsData }) {
             "Failed to submit. Please try again."
         );
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
 
@@ -202,11 +265,16 @@ export default function ConsultationForm({ reviewsData }) {
       {mounted && !showForm && reviewsData && (
         <div className="hidden lg:block min-h-[220px]">
           <TestimonialSlider
-            testimonials={reviewsData.testimonials}
-            ctaText={reviewsData.ctaText}
-            ctaLink={reviewsData.ctaLink}
+            testimonials={(reviewsData?.testimonials ?? []) as any[]}
+            ctaText={reviewsData?.ctaText ?? ""}
+            ctaLink={reviewsData?.ctaLink ?? "#"}
           />
         </div>
+        // <div className=" hidden lg:flex min-h-[600px] w-full items-center justify-center overflow-visible p-8">
+        // <div className="w-full max-w-4xl overflow-visible">
+        //   <ReviewsCarousel height="300px" reviews={normalizedReviews} />
+        // </div>
+        // </div>
       )}
 
       <h2
@@ -295,7 +363,7 @@ export default function ConsultationForm({ reviewsData }) {
                 placeholder="Mobile Number *"
                 value={formData.phone_number}
                 onChange={handleChange}
-                maxLength="10"
+                maxLength={10}
                 className={`w-full px-4 py-3 rounded-2xl border ${
                   errors.phone_number ? "border-red-500" : "border-gray-300"
                 } text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#F8B956] placeholder-gray-400`}
@@ -346,7 +414,7 @@ export default function ConsultationForm({ reviewsData }) {
       <div className="flex flex-row gap-3 mt-0 md:mt-5 w-full items-center">
         <button
           className="group flex-1 bg-[#F8B956] hover:bg-transparent border-2 border-transparent hover:border-[#F8B956] hover:text-black transition text-white text-sm font-semibold rounded-full shadow min-w-[80px] px-2 py-3 md:py-4 flex items-center justify-center gap-2"
-          onClick={() => setShowForm((v) => !v)}
+          onClick={() => setShowForm((v: boolean) => !v)}
         >
           {showForm ? "Close Form" : "Book Now"}
           <img

@@ -1,3 +1,4 @@
+//file: app/doctorsdata/doctorsdata.tsx
 export interface DoctorDetails {
   url: string;
   name: string;
@@ -17,9 +18,9 @@ const DoctorsData: DoctorsDataType = {
   Proctology: {
     "Dr. Samhitha Reddy": {
       url: "/chiragheroimage.png",
-      name: "Dr. Rajasekhar M R",
+      name: "Dr. Samhitha Reddy",
       qualification: "MBBS, MS",
-      experience: "FOUNDER AND SENIOR",
+      experience: "Experieance:8 years",
       designation: "COLORECTAL SURGEON",
       description:
         "Dr. Samhitha Reddy is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, she worked with top surgeons in India. She treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS.",
@@ -29,8 +30,8 @@ const DoctorsData: DoctorsDataType = {
       url: "/doctorshreedeviimage.png",
       name: "Dr. Abhishek Katha",
       qualification: "MBBS, MS, FMAS",
-      experience: "Experieance:16 years",
-      designation: "Proctology Specialist.",
+      experience: "Experience: 16 years",
+      designation: "Proctology Specialist",
       description:
         "Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care.",
       mobileNumberDoctor: "tel:07969084448",
@@ -88,7 +89,7 @@ const DoctorsData: DoctorsDataType = {
       name: "Dr. Harshita Kakarla",
       qualification: "MBBS, MS, FMAS",
       designation: "Gynecology Specialist",
-      experience: "Experieance:12 years",
+      experience: "Experience: 12 years",
       description:
         "Gynaecologist and Advanced Laparoscopic Surgeon with 12 years' experience. Specialises in hysteroscopy, laparoscopy, fertility treatments, and pregnancy issues like IUGR, eclampsia. FMAS-certified, she has treated 7,000+ patients with a 99% success rate using evidence-based care.",
     },

@@ -3,12 +3,7 @@
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
 
-export default function HeroSection({
-  heading,
-  points,
-  buttonText,
-  imageSrc,
-}) {
+export default function HeroSection({ heading, points, buttonText, imageSrc }) {
   const { openModal, FormModal } = useFormModal();
 
   return (

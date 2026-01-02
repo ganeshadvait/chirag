@@ -142,7 +142,7 @@ export default function FormModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
       {/* Modal Container */}
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
@@ -171,7 +171,6 @@ export default function FormModal({ isOpen, onClose }) {
           <h2 className="text-2xl font-bold text-[#0b1b3f] mb-2">
             Book Free Consultation
           </h2>
-         
 
           {/* Success/Error Message */}
           {submitStatus && (
