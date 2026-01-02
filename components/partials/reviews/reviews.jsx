@@ -4,6 +4,28 @@
  */
 import { useEffect, useRef, useState } from "react";
 
+function ReadMoreText({ text, limit = 200 }) {
+  const [expanded, setExpanded] = useState(false);
+
+  if (text.length <= limit) {
+    return <span>{text}</span>;
+  }
+
+  const displayedText = expanded ? text : text.slice(0, limit) + "...";
+
+  return (
+    <span>
+      {displayedText}{" "}
+      <button
+        onClick={() => setExpanded((prev) => !prev)}
+        className="text-[#059669] font-medium ml-1"
+      >
+        {expanded ? "Read less" : "Read more"}
+      </button>
+    </span>
+  );
+}
+
 export default function TestimonialSlider(
   /** @type {{ testimonials?: Testimonial[], ctaText?: string, ctaLink?: string, sourceLogo?: string }} */
   {
@@ -278,8 +300,8 @@ export default function TestimonialSlider(
                             alt="Google"
                             className="w-6 h-6 flex-shrink-0"
                           />
-                          <span className="text-xs text-gray-700 line-clamp-2">
-                            {t.text}
+                          <span className="text-xs text-gray-700">
+                            <ReadMoreText text={t.text} limit={200} />
                           </span>
                         </div>
                       ))}
@@ -357,7 +379,7 @@ export default function TestimonialSlider(
                 </h3>
 
                 <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-                  {t.text}
+                  <ReadMoreText text={t.text} limit={250} />
                 </p>
 
                 <div className="mt-4 flex items-center gap-3">

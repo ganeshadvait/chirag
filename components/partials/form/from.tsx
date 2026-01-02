@@ -8,7 +8,7 @@ import type { Review } from "@/components/reviews-carousel";
 import ReviewsCarousel from "@/components/reviews-carousel";
 
 type LegacyTestimonial = {
-  title: string;
+  // title: string;
   text: string;
   name: string;
   rating: number;
@@ -94,25 +94,25 @@ export default function ConsultationForm({
   }, []);
 
   // Normalize incoming testimonials to the `Review` shape expected by the carousel
-  const normalizedReviews: Review[] = (reviewsData?.testimonials ?? []).map(
-    (t, idx) => {
-      // If it's already a `Review`, keep as is
-      if (
-        (t as Review).author !== undefined &&
-        (t as Review).body !== undefined
-      ) {
-        return t as Review;
-      }
-      // Otherwise, map legacy shape to `Review`
-      const lt = t as LegacyTestimonial;
-      return {
-        id: `${lt.name}-${idx}`,
-        body: lt.text,
-        author: lt.name,
-        title: lt.title,
-      };
-    }
-  );
+  // const normalizedReviews: Review[] = (reviewsData?.testimonials ?? []).map(
+  //   (t, idx) => {
+  //     // If it's already a `Review`, keep as is
+  //     if (
+  //       (t as Review).author !== undefined &&
+  //       (t as Review).body !== undefined
+  //     ) {
+  //       return t as Review;
+  //     }
+  //     // Otherwise, map legacy shape to `Review`
+  //     const lt = t as LegacyTestimonial;
+  //     return {
+  //       id: `${lt.name}-${idx}`,
+  //       body: lt.text,
+  //       author: lt.name,
+  //       title: lt.title,
+  //     };
+  //   }
+  // );
 
   // Handle input changes
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
