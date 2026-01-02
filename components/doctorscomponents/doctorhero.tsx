@@ -77,7 +77,7 @@ export default function Doctordetailspagehero({
                 <span>Experience: {merged.experience || "N/A"}</span>
               </div>
               <button
-                className="w-full h-[45px] text-white rounded-lg mb-2 bg-[#F8B956]"
+                className="w-full h-[45px] text-white rounded-full mb-2 bg-[#F8B956]"
                 onClick={() => {
                   if (merged.booklink && merged.booklink !== "#") {
                     window.location.href = merged.booklink;
