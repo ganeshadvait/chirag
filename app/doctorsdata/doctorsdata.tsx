@@ -16,14 +16,13 @@ export interface DoctorsDataType {
 }
 const DoctorsData: DoctorsDataType = {
   Proctology: {
-    "Dr. Samhitha Reddy": {
+    "Dr. Rajasekhar": {
       url: "/chiragheroimage.png",
-      name: "Dr. Samhitha Reddy",
+      name: "Dr. Rajasekhar",
       qualification: "MBBS, MS",
-      experience: "Experieance:8 years",
-      designation: "COLORECTAL SURGEON",
-      description:
-        "Dr. Samhitha Reddy is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, she worked with top surgeons in India. She treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS.",
+      experience: "Experieance: 38+ years",
+      designation: "Senior Colorectal Surgeon",
+      description: "Dr. Rajasekhar is one of Bangalore’s most respected and experienced colorectal surgeons, with over 38 years of clinical excellence. He is widely known for his expertise in the comprehensive management of colorectal and anorectal conditions, including piles, fissures, fistula, and other bowel disorders",
       mobileNumberDoctor: "tel:07969084448",
     },
     "Dr. Abhishek Katha": {
