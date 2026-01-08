@@ -1,21 +1,19 @@
-import React from "react";
-
 import dynamic from "next/dynamic";
-import Header from "@/components/partials/header/header";
-import Hero from "@/components/partials/hero/hero";
+
+import LadyHeroSection from "@/components/partials/hero/ladypileshero";
 import Number from "@/components/partials/number/number";
-import Cost from "@/components/partials/cost/cost";
+
 import Risk from "@/components/partials/risks/risk";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
 import Why from "@/components/partials/why/why";
-import Google from "@/components/partials/google/google";
+
 import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
-import Reviews from "@/components/partials/reviews/reviews";
+import DoctorsData from "../doctorsdata/doctorsdata";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 
 const HospitalComparisond = dynamic(
@@ -23,6 +21,8 @@ const HospitalComparisond = dynamic(
 );
 
 export default function NewDesign() {
+  const doctor = DoctorsData.Proctology["Dr. Shreedevi KN"];
+
   const HeroData = {
     heading: "Best Piles Treatment for Women in Bangalore",
     points: [
@@ -33,7 +33,11 @@ export default function NewDesign() {
       "Minimal pain, no stitches",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: doctor.url,
+    name: doctor.name,
+    qualifications: doctor.qualification,
+    designation: doctor.designation,
+    experience: doctor.experience,
   };
 
   const statsSectionData = {
@@ -311,7 +315,7 @@ export default function NewDesign() {
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
         {/* LEFT SIDE 70% */}
         <div className="space-y-10">
-          <Hero {...HeroData} />
+          <LadyHeroSection {...HeroData} />
           <Number {...statsSectionData} />
           {/* <Cost
             title={costSectionData.title}

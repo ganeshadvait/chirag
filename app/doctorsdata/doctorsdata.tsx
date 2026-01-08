@@ -35,12 +35,12 @@ const DoctorsData: DoctorsDataType = {
         "Holds fellowships in FMAS, Colorectal Surgery, and MIS",
       ],
     },
-    "Dr. Abhishek Katha": {
+    "Dr. Shreedevi KN": {
       url: "/doctorshreedeviimage.png",
-      name: "Dr. Abhishek Katha",
-      qualification: "MBBS, MS, FMAS",
-      experience: "Experience: 16 years",
-      designation: "Proctology Specialist",
+      name: "Dr. Shreedevi KN",
+      qualification: "MBBS, MS, FSGE",
+      experience: "Experience: 12 years",
+      designation: "Surgical Gastroenterologist and colo rectal surgeon",
       description:
         "Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care.",
       mobileNumberDoctor: "tel:07969084448",
@@ -133,9 +133,9 @@ const DoctorsData: DoctorsDataType = {
         "Plastic & Cosmetic Surgeon with 18 years’ experience. Expert in gynecomastia, breast augmentation, liposuction, and tummy tuck. Treated 6,000+ patients with 99% success, delivering personalised care and natural results.",
       mobileNumberDoctor: "tel:91796908446",
     },
-    "Dr. Chandana Guduru": {
+    "Dr. Shreedevi KN": {
       url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Chandana-Guduru.webp",
-      name: "Dr. Chandana Guduru",
+      name: "Dr. Shreedevi KN",
       qualification: "MBBS, MS, MCH (Plastic Surgery)",
       designation: "Plastic Surgeon",
       experience: "Experience: 10 years",

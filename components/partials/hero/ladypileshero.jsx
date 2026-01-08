@@ -2,27 +2,12 @@
 
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
-import DoctorsData from "@/app/doctorsdata/doctorsdata";
 
-export default function HeroSection({
-  heading,
-  points,
-  buttonText,
-  imageSrc,
-}) {
+
+export default function LadyHeroSection({ heading, points, buttonText, imageSrc, name, qualifications, designation, experience }) {
   const { openModal, FormModal } = useFormModal();
 
-  const doctor = DoctorsData.Proctology["Dr. Rajasekhar"];
 
-  const doctorInfo = {
-    image: doctor.url,
-    name: doctor.name,
-    qualifications: doctor.qualification,
-    designation: doctor.designation,
-    experience: doctor.experience,
-    booklink: doctor.mobileNumberDoctor || "#",
-    highlights: doctor.highlights || [],
-  };
 
   return (
     <section className="w-full bg-white pt-4 pb-8 my-4">
@@ -70,10 +55,10 @@ export default function HeroSection({
           )}
           <div className="bg-gray-100 rounded-xl  max-w-md mx-auto px-4 py-6 -mt-4 z-100 relative">
             <ul className="text-gray-800 font-medium space-y-1 flex flex-col items-center justify-center">
-              <li>{doctorInfo.name}</li>
-              <li>{doctorInfo.qualifications}</li>
-              <li>{doctorInfo.designation}</li>
-              <li>{doctorInfo.experience}</li>
+              <li>{name}</li>
+              <li>{qualifications}</li>
+              <li>{designation}</li>
+              <li>{experience}</li>
             </ul>
           </div>
         </section>
