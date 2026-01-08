@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DoctorsData from "../doctorsdata/doctorsdata";
+import HeroSection from "@/components/doctorscomponents/alldoctorshero";
 
 const slugify = (s = "") =>
   String(s)
@@ -11,7 +12,8 @@ export default function DoctorsPage() {
   const departments = Object.keys(DoctorsData);
 
   return (
-    <main style={{ padding: 24 }}>
+    <main>
+      <HeroSection />
       <h1>Doctors</h1>
       <ul>
         {departments.map((dept) => (

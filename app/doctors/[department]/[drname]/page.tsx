@@ -150,7 +150,7 @@ export default async function DoctorProfile({ params }: Props) {
     free: "Get Free OPD",
     intro: details.description,
     intro2: details.experience,
-    highlights: highlights,
+     highlights: details.highlights || [],
   };
 
   // Conditions based on department
@@ -266,7 +266,7 @@ export default async function DoctorProfile({ params }: Props) {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "12 Years",
+        experience: "38+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.png",
       },
