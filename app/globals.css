@@ -2570,7 +2570,7 @@ html {
     display: grid;
     gap: 24px;
     /* same as gap-6 */
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     /* first row: 4 slots ; second row: centered slots (empty at edges) */
     grid-template-areas:
       "a b c d"

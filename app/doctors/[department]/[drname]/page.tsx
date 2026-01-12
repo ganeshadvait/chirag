@@ -158,15 +158,11 @@ export default async function DoctorProfile({ params }: Props) {
     [key: string]: Array<{ src: string; alt: string; label: string }>;
   } = {
     Proctology: [
-      { src: "/api/placeholder/100/100", alt: "Piles", label: "Piles" },
-      { src: "/api/placeholder/100/100", alt: "Fistula", label: "Fistula" },
+      { src: "/chiragpiles.png", alt: "Piles", label: "Piles" },
+      { src: "/chiraganalfistula.png", alt: "Fistula", label: "Fistula" },
+      
       {
-        src: "/api/placeholder/100/100",
-        alt: "Hemorrhoids",
-        label: "Hemorrhoids",
-      },
-      {
-        src: "/api/placeholder/100/100",
+        src: "/chiraganalfissure.png",
         alt: "Anal Fissure",
         label: "Anal Fissure",
       },

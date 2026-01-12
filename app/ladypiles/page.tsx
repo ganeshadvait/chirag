@@ -128,7 +128,7 @@ export default function NewDesign() {
         "Proven treatment outcomes",
       ],
       buttonText: "Book Doctor Appointment",
-      imageSrc: "/consultthedoctor.png",
+      imageSrc: "/ladypilesconsultthedoctor.png",
     },
   };
 
