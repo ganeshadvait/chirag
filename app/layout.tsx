@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Header
-        PhoneNumber={"07969084448"}
+        PhoneNumber={"9380498256"}
         mobilectatext={"Call Now"}
-        mobileNumberHeader={"tel:07969084448"}
+        mobileNumberHeader={"tel:+919380498256"}
       />
       <body className={`${dmSans.variable} antialiased`}>{children}</body>
       <FooterComponent
