@@ -428,7 +428,7 @@ export default function ConsultationForm({
           className="flex-1 lg:hidden bg-[#625587] border-2 border-[#625587] text-white transition text-sm font-semibold rounded-full shadow px-2 py-3"
           onClick={() =>
             window.open(
-              "https://www.google.com/maps?q=YOUR+CLINIC+ADDRESS",
+              "https://maps.app.goo.gl/3ox9s9tsJ9rD9tmu7",
               "_blank"
             )
           }

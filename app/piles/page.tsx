@@ -211,7 +211,7 @@ export default function NewDesign() {
   };
   const InfoContent = {
     theading: "Piles Treatment at Chirag Hospitals",
-    ConditionVideo: "/chirag-piles-video.mp4",
+    videoSrc: "/chirag-piles-video.mp4",
 
     title: "What Are Piles or Hemorrhoids?",
     description: (
@@ -323,7 +323,7 @@ export default function NewDesign() {
       },
     ],
     ctaText: "Google Review",
-    ctaLink: "https://www.google.com/search?q=your+business+name+reviews",
+    ctaLink: "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
   return (
     <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
