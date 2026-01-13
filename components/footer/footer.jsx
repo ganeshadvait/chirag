@@ -33,7 +33,7 @@ const data = {
 
 const FooterComponent = ({ footerdesc, footernumber, extradesc }) => {
   return (
-    <section id="contact" className="footer bg-white">
+    <section id="contact" className="footer bg-white mb-[100px] md:mb-0">
       <div className="inner_footer">
         <div className="column c_one">
           <Link href="#" className="footer_logo">
