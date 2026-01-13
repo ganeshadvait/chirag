@@ -11,8 +11,8 @@ export interface DoctorInfo {
   designation?: string;
   experience?: string;
   booklink?: string;
-  insurance?: string;
-  free?: string;
+  // insurance?: string;
+  // free?: string;
   intro?: string;
   intro2?: string;
   highlights?: string[];
@@ -29,8 +29,8 @@ const DEFAULT_DOCTOR: DoctorInfo = {
   designation: "Specialist",
   experience: "Experience",
   booklink: "#",
-  insurance: "Have Insurance?",
-  free: "Get Free OPD",
+  // insurance: "Have Insurance?",
+  // free: "Get Free OPD",
   intro: "Introduction content goes here.",
   intro2: "Experience description goes here.",
   highlights: ["Expertise item 1", "Expertise item 2", "Expertise item 3"],
@@ -86,12 +86,12 @@ export default function Doctordetailspagehero({
               >
                 Book an Appointment
               </button>
-              <div className="flex items-center justify-center gap-2 text-sm">
+              {/* <div className="flex items-center justify-center gap-2 text-sm">
                 <span className="text-gray-700">
                   {merged.insurance || "Have Insurance?"}
                 </span>
                 <button className="p-0">{merged.free || "Get Free OPD"}</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

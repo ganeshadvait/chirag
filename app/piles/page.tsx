@@ -40,21 +40,21 @@ export default function NewDesign() {
     description:
       "Patients receive safe treatment, quick discharge, shorter hospital stays, and faster recovery with continuous medical care and support.",
     stats: [
-      {
+        {
         value: "24 hr",
         label: "Discharge",
       },
       {
-        value: "98%",
-        label: "Patient Satisfaction",
+        value: "180K+",
+        label: "Patient Treated",
       },
       {
         value: "3 Days",
         label: "Recovery Time",
       },
       {
-        value: "5 Days",
-        label: "Average Stay",
+        value: "99.5%",
+        label: "Success Rate",
       },
     ],
   };

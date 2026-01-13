@@ -21,7 +21,7 @@ const DoctorsData: DoctorsDataType = {
       url: "/chiragheroimage.png",
       name: "Dr. Rajasekhar",
       qualification: "MBBS, MS",
-      experience: "Experieance:38+ years",
+      experience: "Experience: 38 years",
       designation: "COLORECTAL SURGEON",
       description:
         "Dr. Rajasekhar is one of Bangalore’s most respected and experienced colorectal surgeons, with over 38 years of clinical excellence. He is widely known for his expertise in the comprehensive management of colorectal and anorectal conditions, including piles, fissures, fistula, and other bowel disorders.",
@@ -63,7 +63,7 @@ const DoctorsData: DoctorsDataType = {
       name: "Dr. Rajasekhar",
       qualification: "MBBS, MS, FMAS, FISCP, DMAS",
       designation: "Senior Colorectal Surgeon",
-      experience: "Experieance:38+ years",
+      experience: "Experience: 38 years",
       description:
         "Dr. Rajasekhar is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, he worked with top surgeons in India. He treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS.",
       mobileNumberDoctor: "tel:07969084448",

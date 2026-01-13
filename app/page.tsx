@@ -37,16 +37,16 @@ export default function NewDesign() {
         label: "Discharge",
       },
       {
-        value: "98%",
-        label: "Patient Satisfaction",
+        value: "180K+",
+        label: "Patient Treated",
       },
       {
         value: "3 Days",
         label: "Recovery Time",
       },
       {
-        value: "5 Days",
-        label: "Average Stay",
+        value: "99.5%",
+        label: "Success Rate",
       },
     ],
   };
@@ -152,7 +152,7 @@ export default function NewDesign() {
   ];
   const pilesComparisonContent = {
     theading: "Piles Treatment at Chirag Hospitals",
-    ConditionVideo: "/chirag-piles-video.mp4",
+    videoSrc: "/chirag-piles-video.mp4",
 
     title: "What are Piles or Hemorrhoids?",
     description: (
@@ -262,7 +262,7 @@ export default function NewDesign() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "12 Years",
+        experience: "38 Years",
         reviews: "99%",
         img: "/doctorchiragcard.png",
       },

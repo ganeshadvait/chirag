@@ -43,9 +43,9 @@ export default function NewDesign() {
       "Patients receive safe fistula treatment with shorter hospital stays, quick discharge, and dedicated medical support.",
     stats: [
       { value: "24 hr", label: "Discharge" },
-      { value: "98%", label: "Patient Satisfaction" },
+      { value: "180K", label: "Patient Treated" },
       { value: "3 Days", label: "Recovery Time" },
-      { value: "5 Days", label: "Average Stay" },
+      { value: "99.5%", label: "Success Rate" },
     ],
   };
 

@@ -19,7 +19,7 @@ export default function ExampleUsage() {
         onClick={openModal}
         className="bg-[#625587] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#514771] transition mt-4"
       >
-        Get Free Checkup
+        Get Checkup
       </button>
 
       {/* Another trigger */}

@@ -282,7 +282,7 @@ export default function ConsultationForm({
           !showForm ? "hidden" : "block"
         }`}
       >
-        Book Free Consultation
+        Book Consultation
       </h2>
 
       {/* Success/Error Message */}
