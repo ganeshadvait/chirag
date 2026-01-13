@@ -159,7 +159,7 @@ export default async function DoctorProfile({ params }: Props) {
   } = {
     Proctology: [
       { src: "/chiragpiles.png", alt: "Piles", label: "Piles" },
-      { src: "/chiraganalfistula.png", alt: "Fistula", label: "Fistula" },
+      { src: "/analfistulachiragimg.png", alt: "Fistula", label: "Fistula" },
       
       {
         src: "/chiraganalfissure.png",
@@ -325,33 +325,33 @@ export default async function DoctorProfile({ params }: Props) {
   const testimonialSectionData = {
     testimonials: [
       {
-        title: "Laser treatment for my dad's piles",
-        text: "Dr. Samhitha Reddy's laser treatment for my dad's piles worked wonders. He's pain-free now and really grateful for her care!",
-        name: "Mithilesh Sah",
+        title: "",
+        text: "This Hospital is one of the best hospitals in the world in terms of skill set mainly for fissure, fistula and for piles issue. Please don’t go by infrastructure and ambience.. Dr Rajshekhar is such a gem of the hospital, 70% recovery happens just by talking and interacting with him. Overall it’s a good systemic and highly skilled hospital which takes care even the post surgery recovery.. And the procedure is not really painful through laser…",
+        name: "NEERAJ ARORA",
         rating: 5,
       },
       {
-        title: "Smooth and painless",
-        text: "Dr. Samhitha Reddy's laser treatment for my fissure was smooth and painless. She was super kind, which made the whole process much easier.",
-        name: "Rohit Kumar",
+        title: "",
+        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+        name: "Abdul Khader",
         rating: 5,
       },
       {
-        title: "Colorectal Diseases",
-        text: "Lux hospital is one of best hospital in Bangalore for colorectal diseases. Dr. Samhita Mam explains everything in detail and the staff is caring.",
-        name: "Arti Shettiwar",
+        title: "",
+        text: "Dr. Rajashekar sir provides detailed consultation and report your condition very well. He makes good recommendation for you and is a gem in the medical community. When he observed my condition, he advised me for a consrvative management for treatment of piles. That means i do not require surgery for piles. I was so confident in his advice that I declared right away to pursue and follow his medication and other precautions. I completely recovered in a weeks’ time. I'm glad I found him through Google reviews and decided to visit him. Finally I am completely fine and cured from piles. Strongly suggest this hospital for piles as they treatment without surgery.",
+        name: "Reddeeswar Naidu",
         rating: 4.5,
       },
       {
-        title: "Admitted for my fistula surgery",
-        text: "I was admitted for my fistula surgery, Dr Samhita explained everything clearly. Surgery was seamless & painless. Great staff support.",
-        name: "Sanat Jayasingh",
+        title: "",
+        text: "My grandfather was diagnosed with Piles and doctors suggested that surgery is the way out. Considering his age 78 years we all were worried. My aunt suggested us to visit Dr Rajasekhar sir as she has a good experience previously with him. We were hesitant for the surgery, but Dr. Rajasekhar checked and informed us that he can treat without doing any surgery. He did not do any surgery for my grandfather and it took some time of 10 days to recover but he is doing good now. His team did a really good job. Doctor and his staff took good care of my grandfather and helped us during our tough times. The best human being we ever met. Strongly suggest to the people suffering with piles and fistula for treatment without surgery",
+        name: "Malleswari Subhrmanyam",
         rating: 4.7,
       },
       {
-        title: "Fistula Surgery",
-        text: "We were admitted for fistula surgery. Staff and doctor were polite & quick. Special thanks to Ashok for insurance support.",
-        name: "Sujith V",
+        title: "",
+        text: "Dr Rajasekar is one of the best doctor and a very nice person. We have till date had best experience with him and chirag hospital. He makes the patient and family feel so comfortable despite of the complex situation whatsoever. Dr. Rajasekhar has treated two of my family members for piles problems. A year before to my father-in-Law and recent one to my sister-in-law for piles both of them recovered fast and doing good. Such is the confidence we have built with Dr. Rajasekhar sir. These days we even visit him for second opinion on any health-related issues. Best doctor and best service. The best part of chirag hospital is that they will not push the patient to get surgery. They will try their best in treatment without any surgery. I like their approach very much and i strongly suggest for any one suffering with piles to visit chirag hospital to get treatment for piles without any surgery. Thank you Sir!!",
+        name: "Anji Yadav",
         rating: 4.8,
       },
     ],

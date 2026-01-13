@@ -221,12 +221,11 @@ export default function NewDesign() {
     advantagesTitle: "Treatment Options for Fistula",
     advantages: [
       "Medication for infection control",
-      "Non-surgical management",
       "Laser fistula treatment",
       "Surgical treatment if required",
     ],
 
-    costTitle: "Why Laser Is Best Treatment",
+    costTitle: "Why laser is the best treatment at Chirag Global Hospital",
     costIntro: "Laser fistula treatment is preferred because it offers:",
     costPoints: [
       "Minimally invasive procedure",
