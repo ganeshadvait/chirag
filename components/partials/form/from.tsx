@@ -261,7 +261,7 @@ export default function ConsultationForm({
     : "max-h-0 opacity-0 scale-95 pointer-events-none";
 
   return (
-    <div className="w-full max-w-sm bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-4">
+    <div className="w-full max-w-sm bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl p-4 md:p-6 mx-auto my-4 z-[1000]">
       {mounted && !showForm && reviewsData && (
         <div className="hidden lg:block min-h-[220px]">
           <TestimonialSlider

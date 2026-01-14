@@ -68,7 +68,7 @@ export default function HeroSection({
               </div>
             </>
           )}
-          <div className="bg-gray-100 rounded-xl  max-w-md mx-auto px-4 py-6 -mt-4 z-100 relative">
+          <div className="bg-gray-100 rounded-xl  max-w-md mx-auto px-4 py-6 -mt-4 relative z-0">
             <ul className="text-gray-800 font-medium space-y-1 flex flex-col items-center justify-center">
               <li>{doctorInfo.name}</li>
               <li>{doctorInfo.qualifications}</li>

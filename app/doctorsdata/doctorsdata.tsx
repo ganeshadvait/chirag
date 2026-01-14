@@ -25,7 +25,7 @@ const DoctorsData: DoctorsDataType = {
       designation: "COLORECTAL SURGEON",
       description:
         "Dr. Rajasekhar is one of Bangalore’s most respected and experienced colorectal surgeons, with over 38 years of clinical excellence. He is widely known for his expertise in the comprehensive management of colorectal and anorectal conditions, including piles, fissures, fistula, and other bowel disorders.",
-      mobileNumberDoctor: "tel:07969084448",
+      mobileNumberDoctor: "tel:9380498256",
       highlights: [
         "Over 38 years of clinical excellence in colorectal surgery",
         "Expertise in managing complex anorectal conditions",
@@ -43,7 +43,7 @@ const DoctorsData: DoctorsDataType = {
       designation: "Surgical Gastroenterologist and colo rectal surgeon",
       description:
         "Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care.",
-      mobileNumberDoctor: "tel:07969084448",
+      mobileNumberDoctor: "tel:9380498256",
     },
   },
 
@@ -56,7 +56,7 @@ const DoctorsData: DoctorsDataType = {
       experience: "Experieance:16 years",
       description:
         "Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care.",
-      mobileNumberDoctor: "tel:07969084448",
+      mobileNumberDoctor: "tel:9380498256",
     },
     "Dr. Rajasekhar": {
       url: "/chiragheroimage.png",
@@ -66,7 +66,7 @@ const DoctorsData: DoctorsDataType = {
       experience: "Experience: 38 years",
       description:
         "Dr. Rajasekhar is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, he worked with top surgeons in India. He treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS.",
-      mobileNumberDoctor: "tel:07969084448",
+      mobileNumberDoctor: "tel:9380498256",
     },
     "Dr. M Ram Prabhu": {
       url: "https://test.luxhospitals.com/wp-content/uploads/2025/04/Dr.-Ram-Prabhu-1.webp",
@@ -76,7 +76,7 @@ const DoctorsData: DoctorsDataType = {
       experience: "Experience: 18 years",
       description:
         "Plastic & Cosmetic Surgeon with 18 years’ experience. Expert in gynecomastia, breast augmentation, liposuction, and tummy tuck. Treated 6,000+ patients with 99% success, delivering personalised care and natural results.",
-      mobileNumberDoctor: "tel:91796908446",
+      mobileNumberDoctor: "tel:9380498256",
     },
   },
 
@@ -86,7 +86,7 @@ const DoctorsData: DoctorsDataType = {
       name: "Dr. Priyank Salecha",
       qualification: "MBBS, MS, MCH, DNB",
       designation: "Consultant Urologist & Andrologist",
-      experience: "Experience: 16 years",
+      experience: "Experience: 10 years",
       description:
         "Urologist and Andrologist with 16 years' expertise in kidney stones, prostate issues, varicocele, and circumcision. Specialises in microsurgery, penile prosthesis, and men’s health. Treated 7,000+ patients using advanced techniques and personalised care.",
     },
@@ -98,7 +98,7 @@ const DoctorsData: DoctorsDataType = {
       name: "Dr. Harshita Kakarla",
       qualification: "MBBS, MS, FMAS",
       designation: "Gynecology Specialist",
-      experience: "Experience: 12 years",
+      experience: "Experience: 8 years",
       description:
         "Gynaecologist and Advanced Laparoscopic Surgeon with 12 years' experience. Specialises in hysteroscopy, laparoscopy, fertility treatments, and pregnancy issues like IUGR, eclampsia. FMAS-certified, she has treated 7,000+ patients with a 99% success rate using evidence-based care.",
     },
@@ -138,7 +138,7 @@ const DoctorsData: DoctorsDataType = {
       name: "Dr. Shreedevi KN",
       qualification: "MBBS, MS, MCH (Plastic Surgery)",
       designation: "Plastic Surgeon",
-      experience: "Experience: 10 years",
+      experience: "Experience: 12 years",
       description:
         "Plastic & Cosmetic Surgeon with 10 years’ experience. Expert in breast augmentation, liposuction, tummy tuck, and gynecomastia. Fellowship in Cosmetic Surgery (Dubai). 4,000+ procedures with 99% success, known for natural results.",
       mobileNumberDoctor: "tel:91796908446",
