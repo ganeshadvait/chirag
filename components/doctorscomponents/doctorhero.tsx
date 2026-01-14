@@ -108,11 +108,8 @@ export default function Doctordetailspagehero({
 
             <section>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                Experience:
+                Experience: {merged.intro2 || "Experience details not available."}
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {merged.intro2 || "Experience details not available."}
-              </p>
               <ul className="space-y-3 text-gray-600">
                 {merged.highlights && merged.highlights.length > 0 ? (
                   merged.highlights.map((highlight, index) => (

@@ -68,7 +68,7 @@ export default function NewDesign() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "12 Years",
+        experience: "38 Years",
         reviews: "99%",
         img: "/doctorchiragcard.png",
       },
@@ -241,7 +241,7 @@ export default function NewDesign() {
   };
 
   const BannerData = {
-    heading: "Get Relief from Fistula – Book Consultation Today",
+    heading: "Get Relief from Fistula – Book Now",
     buttonText: "Book An Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };

@@ -88,7 +88,7 @@ export default function NewDesign() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "12 Years",
+        experience: "38 Years",
         reviews: "99%",
         img: "/doctorchiragcard.png",
       },
@@ -99,7 +99,7 @@ export default function NewDesign() {
         name: "Dr. Suchitra N Adiga",
         designation: "BAMS, MS(Ayu)",
         qualification: "Proctologist",
-        experience: "12 Years",
+        experience: "8 Years",
         reviews: "99%",
         img: "/doctorsuchithracard.png",
       },
@@ -225,10 +225,10 @@ export default function NewDesign() {
 
     advantagesTitle: "Treatment Options for Piles",
     advantages: [
-      "Medication for early stages",
-      "Lifestyle and dietary guidance",
-      "Non-surgical procedures",
       "Laser piles treatment",
+      "Lifestyle and dietary guidance",
+      "Advanced DGHAL procedure for piles",
+      "Ultrasonic shears excision for minimal pain and faster recovery",
     ],
 
     costTitle: "Why Laser Is Best Treatment",
@@ -247,7 +247,7 @@ export default function NewDesign() {
   };
 
   const BannerData = {
-    heading: "Get Relief from Piles – Women’s Care",
+    heading: "Expert  Piles Treatment for Women at Chirag Hospitals",
     buttonText: "Book Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };
