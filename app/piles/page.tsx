@@ -88,14 +88,14 @@ export default function NewDesign() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "12 Years",
+        experience: "38 Years",
         reviews: "99%",
         img: "/doctorchiragcard.png",
       },
       {
         name: "Dr. Shreedevi KN",
         designation: "MBBS, MS, FSGE",
-        qualification: "Surgical Gastroenterologist and colo rectal surgeon",
+        qualification: "Surgical Gastroenterologist and Colorectal surgeon",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorshreedevicard.png",
@@ -202,7 +202,7 @@ export default function NewDesign() {
   const whyChooseData = {
     heading: "Why Choose Chirag Hospitals for Piles Treatment in Bangalore",
     points: [
-      "Top specialist with 38+ years experience",
+      "Top specialist with 38 years experience",
       "High patient satisfaction",
       "Affordable treatment options",
       "Complete pre and post care",
@@ -235,10 +235,10 @@ export default function NewDesign() {
 
     advantagesTitle: "Treatment Options for Piles",
     advantages: [
-      "Medication for early stages",
-      "Diet and lifestyle changes",
-      "Non-surgical procedures",
       "Laser piles treatment",
+      "Lifestyle and dietary guidance",
+      "Advanced DGHAL procedure for piles",
+      "Ultrasonic shears excision for minimal pain and faster recovery",
     ],
 
     costTitle: "Why Laser Is Best Treatment",
@@ -257,7 +257,7 @@ export default function NewDesign() {
   };
 
   const BannerData = {
-    heading: "Get Relief from Piles – Book Today Now",
+    heading: "Get Relief from Piles – Book Now",
     buttonText: "Book An Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };

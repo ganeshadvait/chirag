@@ -57,11 +57,11 @@ export default function Header({
           />
           <img
             className="logo-fade header__logotwo"
-            src="/CHIRAG 30 years logo.png"
+            src="/38 logo.svg"
           />
           <img
             className="logo-fade header__logothree"
-            src="/Transparent logo NABH.png"
+            src="/Nabh-logo-img.avif"
           />
         </div>
 
