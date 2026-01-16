@@ -61,7 +61,7 @@ export default function Header({
           />
           <img
             className="logo-fade header__logothree"
-            src="/Nabh-logo-img.avif"
+            src="/Nabh-logo-img..avif"
           />
         </div>
 

@@ -71,7 +71,7 @@ export default function NewDesign() {
       {
         name: "Dr. Shreedevi KN",
         designation: "MBBS, MS, FSGE",
-        qualification: "Surgical Gastroenterologist and colo rectal surgeon",
+        qualification: "Surgical Gastroenterologist and Colorectal Surgeon",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorshreedevicard.png",
