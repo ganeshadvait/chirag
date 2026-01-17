@@ -1,3 +1,7 @@
+import React from "react";
+
+import dynamic from "next/dynamic";
+import Header from "@/components/partials/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
@@ -6,31 +10,36 @@ import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
 import Why from "@/components/partials/why/why";
-
+import Google from "@/components/partials/google/google";
 import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
-
+import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 
-import HospitalComparisond from "@/components/dynamictable/dynamictables";
+const HospitalComparisond = dynamic(
+  () => import("@/components/dynamictable/dynamictables")
+);
+
 export default function NewDesign() {
-  const pilesHeroData = {
-    heading: "Best Piles Treatment In Bangalore",
+  const HeroData = {
+    heading: "Top Colorectal Hospital in Bangalore",
     points: [
-      "No Cut, No Dressing",
-      "Expert Piles Doctors",
+      "38 Years of Specialized Experience",
+      "99.5% Success Rate in Anorectal Treatments",
+      "Advanced Laser & Minimally Invasive Procedures",
+      "Personalized, Patient-First Care",
     ],
-    buttonText: "Calculate Surgery Cost",
+    buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
   };
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",
     description:
-      "Our healthcare efficiency, faster discharge times, and superior recovery procedures help patients heal quickly and safely.",
+      "Patients receive safe treatment, quick discharge, shorter hospital stays, and faster recovery with continuous medical care and support.",
     stats: [
-      {
+        {
         value: "24 hr",
         label: "Discharge",
       },
@@ -49,204 +58,30 @@ export default function NewDesign() {
     ],
   };
 
-  const costSectionData = {
-    title: "Check Surgery Cost",
-    points: [
-      "Find the total cost of Surgery at the best hospitals.",
-      "Compare surgery prices across top hospitals.",
-      "Get a clear estimate before visiting the hospital.",
-    ],
-    buttonText: "Calculate Surgery Cost",
-    imageSrc: "/chiraggpt.png",
-  };
-  const treatmentCostDependsData = {
-    heading: "Treatment Cost Depends On",
-    items: [
-      {
-        titleBold: "Type of",
-        titleRest: "Procedure",
-        icon: "/typeofprocedure.png",
-      },
-      {
-        titleBold: "Severity of",
-        titleRest: "the Disease",
-        icon: "/severitydisease.png",
-      },
-      {
-        titleBold: "Past Medical",
-        titleRest: "Condition",
-        icon: "/pastmedical.png",
-      },
-      {
-        titleBold: "Contact",
-        titleRest: "for exact cost",
-        icon: "/contact.png",
-      },
-    ],
-    ctaText: "Chat with Expert",
-  };
-  const insuranceAdvisorData = {
-    cards: [
-      {
-        titlePrefix: "Check",
-        titleHighlight: "Insurance Coverage",
-        description:
-          "Find out if this treatment is covered in your insurance policy or not.",
-        image: "/checkinsurancecoverage.png",
-        imageAlt: "Insurance coverage illustration",
-        buttonText: "Check Insurance Coverage",
-      },
-      {
-        titlePrefix: "Talk To",
-        titleHighlight: "Health Advisor",
-        description: "Find the best hospitals and best doctors for treatment.",
-        image: "/talktohealthadvaiser.png",
-        imageAlt: "Health advisor illustration",
-        buttonText: "Call Advisor Now",
-      },
-    ],
-  };
-  const whyChooseData = {
-    heading: "Why Choose Chirag Hospitals for Piles Treatment in Bangalore",
-    points: [
-      "Advanced Laser Techniques",
-      "Expert Surgeons Team",
-      "Zero Waiting Time",
-      "Affordable Treatment Options",
-      "24/7 Patient Support",
-    ],
-  };
+  // const costSectionData = {
+  //   title: "Check Surgery Cost",
+  //   points: [
+  //     "Find the total cost of Surgery at the best hospitals.",
+  //     "Compare surgery prices across top hospitals.",
+  //     "Get a clear estimate before visiting the hospital.",
+  //   ],
+  //   buttonText: "Calculate Surgery Cost",
+  //   imageSrc: "/chiraggpt.png",
+  // };
 
-  const faqs = [
-    {
-      faqTitle: " What are piles?",
-      faqAnswer:
-        "Piles (hemorrhoids) are swollen blood vessels inside or around the anus. They may occur internally (inside the rectum) or externally (under the skin surrounding the anus).",
-    },
-    {
-      faqTitle: "How do I know if I have piles?",
-      faqAnswer:
-        "Common signs include bleeding during bowel movements, a lump near the anus, pain, or irritation.",
-    },
-    {
-      faqTitle: "Do all piles need surgery?",
-      faqAnswer:
-        "No. Early-stage piles can often be treated with medicines, fibre, ointments, and Sitz baths.",
-    },
-    {
-      faqTitle: "What is laser treatment for piles?",
-      faqAnswer:
-        "Laser treatment is a minimally invasive procedure that seals the swollen veins with controlled laser energy — no major cuts or stitches.",
-    },
-    {
-      faqTitle: "Is laser treatment painful?",
-      faqAnswer:
-        "Most patients experience minimal discomfort compared to traditional surgery.",
-    },
-    {
-      faqTitle: "How long does the procedure take?",
-      faqAnswer: "Usually around 20–30 minutes, depending on the case.",
-    },
-  ];
-  const pilesComparisonContent = {
-    theading: "Piles Treatment at Chirag Hospitals",
-    videoSrc: "/chirag-piles-video.mp4",
-
-    title: "What are Piles or Hemorrhoids?",
-    description: (
-      <>
-        Piles are swollen blood vessels found inside or under the skin around
-        the bottom. These are also called <strong>Hemorrhoids</strong>. There
-        are 3 types of Piles.
-      </>
-    ),
-
-    points: [
-      "External Hemorrhoids",
-      "Internal Hemorrhoids",
-      "Interno – External Piles",
-    ],
-  };
   const risksOfDelayData = {
-    heading: "Risks of Delay in Piles Operation",
+    heading: "Treatments We Offer",
     risks: [
-      "Intolerable Pain",
-      "Excessive Blood in Stool",
-      "Risk of Severe Infection",
-      "Prolapsed (Bulging) Piles",
-      "Risk of Anaemia",
+      "Piles (Hemorrhoids) ",
+      "Anal Fissure",
+      "Anal Fistula",
+      "Pilonidal Sinus ",
+      "Rectal Prolapse",
+      "Chronic Constipation ",
+      "Ulcerative Colitis & IBS Management",
+      "Colon & Rectal Cancer Diagnosis & Care",
     ],
   };
-
-  const laserPilesInfoData = {
-    aboutTitle: "About Laser Piles Operation",
-    aboutText:
-      "In laser piles operation, a special laser is used to shrink the pile mass, resulting in reduced swelling and discomfort. This advanced technique provides effective treatment with minimal bleeding.",
-
-    advantagesTitle: "Advantages of Laser Operation for Piles",
-    advantages: [
-      "Minimal pain and discomfort",
-      "Quicker recovery time",
-      "Reduced risk of complications",
-      "Early return to daily activities",
-    ],
-
-    costTitle: "Piles Laser Operation Cost in Bangalore",
-    costIntro: "Cost of piles operation depends on the following:",
-    costPoints: [
-      "Hospital reputation",
-      "Doctor's expertise",
-      "Grades of Piles (1,2,3,4)",
-      "Advanced DGHAL procedure for piles",
-      "Ultrasonic shears excision for minimal pain and faster recovery",
-      "Any pre-existing medical conditions",
-    ],
-
-    expandedContent: [
-      "Laser piles surgery is typically recommended for patients looking for minimally invasive treatment with faster recovery. Most patients can resume normal activities within a few days.",
-      "The final cost may vary depending on hospital facilities, surgeon experience, and post-operative care requirements.",
-    ],
-  };
-
-  const aiHealthBannerData = {
-    heading: "Your Health Matters – Schedule Your Visit",
-    buttonText: "Calculate Surgery Cost",
-    imageSrc: "/scheduleyourvisit.png",
-  };
-  const testimonialSectionData = {
-    testimonials: [
-      {
-        // title: "Laser treatment for my dad's piles",
-        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
-        name: "Abddul",
-        rating: 5,
-      },
-      {
-        // title: "Smooth and painless",
-        text: "I had a wonderful experience with Dr. Rajasekhar sir and his team a wonderful surgeons at Chirag hospital. His entire team is always helpful and kind. Dr. Rajasekar treated me for piles and he made sure I was comfortable. The staff in the hospital were very cooperative and soft spoken. They ensured I am prepared for the entire treatment. Dr. rajasekhar sir is friendly and approachable at any time in case of need. I feel much better and happy that I chose Dr. rajasekar sir to do my piles treatment. I would highly recommend anyone who wants to undergo piles treatment without undergoing any surgery.",
-        name: "Sai",
-        rating: 5,
-      },
-      {
-        // title: "Colorectal Diseases",
-        text: "I had piles issues for the last 2 years. even though I got surgery before, the problem came back again. Rajasekhar sir did surgery on me 4 months back. till now, no problem. treatment is good. fees are high but very good doctors. If treatment is more important than anything else, everyone should visit this hospital for piles and fistula problems.",
-        name: "Kasireddy",
-        rating: 5,
-      },
-      {
-        // title: "Admitted for my fistula surgery",
-        text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It’s been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
-        name: "Syam",
-        rating: 5,
-      },
-    ],
-    ctaText: "Google Review",
-    ctaLink: "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
-  };
-
-  const defaultLocationHeading =
-    "Our Hospital location Chirag Global Hospitals";
-
   const doctorsSectionData = {
     heading: "Our Top Doctors",
 
@@ -262,7 +97,7 @@ export default function NewDesign() {
       {
         name: "Dr. Shreedevi KN",
         designation: "MBBS, MS, FSGE",
-        qualification: "Surgical Gastroenterologist and Colorectal Surgeon",
+        qualification: "Surgical Gastroenterologist and Colorectal surgeon",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorshreedevicard.png",
@@ -307,29 +142,200 @@ export default function NewDesign() {
     banner: {
       heading: "Consult The Doctor Now",
       points: [
-        "Free Consultation",
-        "Online Consultation",
-        "Know your condition from top doctors",
+        "Experienced colorectal specialists",
+        "Modern laser treatment methods",
+        "Proven treatment outcomes",
       ],
-      buttonText: "Talk to the Doctor",
+      buttonText: "Book Doctor Appointment",
       imageSrc: "/consultthedoctor.png",
     },
   };
+  const defaultLocationHeading =
+    "Chirag Global Hospital - Best Colorectal Hospital in Bangalore";
 
+  const treatmentCostDependsData = {
+    heading: "Treatment Cost Depends On",
+    items: [
+      {
+        titleBold: "Type of",
+        titleRest: "Procedure",
+        icon: "/typeofprocedure.png",
+      },
+      {
+        titleBold: "Severity of",
+        titleRest: "the Disease",
+        icon: "/severitydisease.png",
+      },
+      {
+        titleBold: "Past Medical",
+        titleRest: "Condition",
+        icon: "/pastmedical.png",
+      },
+      {
+        titleBold: "Contact",
+        titleRest: "for exact cost",
+        icon: "/contact.png",
+      },
+    ],
+    ctaText: "Talk with Our Expert",
+  };
+  const insuranceAdvisorData = {
+    cards: [
+      {
+        titlePrefix: "Easy",
+        titleHighlight: "Payment Options",
+        description:
+          "Quality treatment made accessible with easy installment plans.",
+        image: "/checkinsurancecoverage.png",
+        imageAlt: "Insurance coverage illustration",
+        buttonText: "Check EMI Options",
+      },
+      {
+        titlePrefix: "Talk To",
+        titleHighlight: "Health Advisor",
+        description:
+          "At Chirag Global Hospitals, care begins with understanding and listening to every patient.",
+        image: "/talktohealthadvaiser.png",
+        imageAlt: "Health advisor illustration",
+        buttonText: "Call Our Advisors",
+      },
+    ],
+  };
+  const whyChooseData = {
+    heading: "Why Choose Chirag Global Hospitals",
+    points: [
+      "38 years of expertise in colorectal, anorectal, and digestive disorders",
+      "99.5% success rate in piles, fissure, fistula, and complex cases",
+      "Laser & minimally invasive treatments for faster recovery and less pain",
+      "Minimal Waiting Time for Consultations",
+      "Cost-Effective & Transparent Treatment Options",
+    ],
+  };
+  const InfoContent = {
+    theading: "Piles Treatment at Chirag Hospitals",
+    videoSrc: "/chirag-piles-video.mp4",
+
+    title: "Trusted Colon & Rectal Care",
+    description: (
+      <>
+        Piles, also called hemorrhoids, are swollen veins in the anal area that
+        cause pain, bleeding, and discomfort. Medical treatment helps relieve
+        symptoms and prevents complications.
+      </>
+    ),
+
+    points: [
+      "Internal Piles – Piles inside the rectum",
+      "External Piles – Piles outside the anus",
+      "Thrombosed Piles – Piles with blood clots",
+    ],
+  };
+  const InfoData = {
+    aboutTitle: "Symptoms of Piles",
+    aboutText:
+      "Piles commonly cause bleeding during bowel movements, pain, itching, swelling, or a lump around the anus that needs medical attention.",
+
+    advantagesTitle: "Treatment Options for Piles",
+    advantages: [
+      "Laser piles treatment",
+      "Lifestyle and dietary guidance",
+      "Advanced DGHAL procedure for piles",
+      "Ultrasonic shears excision for minimal pain and faster recovery",
+    ],
+
+    costTitle: "Why Laser Is Best Treatment",
+    costIntro: "Laser piles treatment is preferred because it offers:",
+    costPoints: [
+      "Minimally invasive procedure",
+      "Less pain and bleeding",
+      "Same-day discharge possible",
+      "Faster recovery time",
+    ],
+
+    expandedContent: [
+      "Laser piles treatment is a modern option for patients seeking effective relief with minimal discomfort and shorter recovery time.",
+      "Treatment plan and cost are decided after medical evaluation based on the severity and individual patient condition.",
+    ],
+  };
+
+  const BannerData = {
+    heading: "Get Relief from Colorectal Problems",
+    buttonText: "Book An Appointment",
+    imageSrc: "/scheduleyourvisit.png",
+  };
+
+  const faqs = [
+    {
+      faqTitle: "Why is Chirag Global Hospitals considered one of the best hospitals in Bangalore?",
+      faqAnswer:
+        "Because of its 38+ years of expertise, 99.5% success rate, advanced technology, and strong patient trust.",
+    },
+    {
+      faqTitle: "What conditions are treated at Chirag Global Hospitals?",
+      faqAnswer:
+        "Piles, fissure, fistula, constipation, pilonidal sinus, ulcerative colitis, colon cancer, and other colorectal disorders.",
+    },
+    {
+      faqTitle: "Are laser and minimally invasive treatments available?",
+      faqAnswer:
+        "Yes. We specialize in laser-based and minimally invasive procedures for faster recovery and minimal discomfort.",
+    },
+    {
+      faqTitle: "Do I need an appointment before visiting?",
+      faqAnswer:
+        "Yes. Prior appointments are recommended for timely consultation and personalized care.",
+    },
+    {
+      faqTitle: "Is the hospital suitable for patients from outside Bangalore?",
+      faqAnswer:
+        "Yes. We treat patients from across Karnataka, India, and abroad, with complete guidance throughout the treatment journey.",
+    },
+  ];
+
+  const testimonialSectionData = {
+    testimonials: [
+      {
+        // title: "Laser treatment for my dad's piles",
+        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+        name: "Abddul",
+        rating: 5,
+      },
+      {
+        // title: "Smooth and painless",
+        text: "I had a wonderful experience with Dr. Rajasekhar sir and his team a wonderful surgeons at Chirag hospital. His entire team is always helpful and kind. Dr. Rajasekar treated me for piles and he made sure I was comfortable. The staff in the hospital were very cooperative and soft spoken. They ensured I am prepared for the entire treatment. Dr. rajasekhar sir is friendly and approachable at any time in case of need. I feel much better and happy that I chose Dr. rajasekar sir to do my piles treatment. I would highly recommend anyone who wants to undergo piles treatment without undergoing any surgery.",
+        name: "Sai",
+        rating: 5,
+      },
+      {
+        // title: "Colorectal Diseases",
+        text: "I had piles issues for the last 2 years. even though I got surgery before, the problem came back again. Rajasekhar sir did surgery on me 4 months back. till now, no problem. treatment is good. fees are high but very good doctors. If treatment is more important than anything else, everyone should visit this hospital for piles and fistula problems.",
+        name: "Kasireddy",
+        rating: 5,
+      },
+      {
+        // title: "Admitted for my fistula surgery",
+        text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It’s been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
+        name: "Syam",
+        rating: 5,
+      },
+    ],
+    ctaText: "Google Review",
+    ctaLink: "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+  };
   return (
     <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
       {/* 2-Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
         {/* LEFT SIDE 70% */}
         <div className="space-y-10">
-          <Hero {...pilesHeroData} />
+          <Hero {...HeroData} />
           <Number {...statsSectionData} />
-          <Cost
+          {/* <Cost
             title={costSectionData.title}
             points={costSectionData.points}
             buttonText={costSectionData.buttonText}
             imageSrc={costSectionData.imageSrc}
-          />
+          /> */}
           <Risk {...risksOfDelayData} />
           <Doctors {...doctorsSectionData} />
           <HospitalLocation locationsectionheading={defaultLocationHeading} />
@@ -341,9 +347,9 @@ export default function NewDesign() {
           <InsurenceAdvisor {...insuranceAdvisorData} />
 
           <Why {...whyChooseData} />
-          <HospitalComparisond {...pilesComparisonContent} />
-          <Info {...laserPilesInfoData} />
-          <CtaBanner {...aiHealthBannerData} />
+          <HospitalComparisond {...InfoContent} />
+          <Info {...InfoData} />
+          <CtaBanner {...BannerData} />
           {faqs.length > 0 && (
             <Faqs
               className="md:!w-[95%] w-full mx-[unset]"
