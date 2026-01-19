@@ -218,7 +218,7 @@ export default function NewDesign() {
     title: "Why choose a specialist",
     description: (
       <>
-        Led by Dr. Rajasekhar Mysore (38+ yrs experience), Chirag Global
+        Led by Dr. Rajasekhar Mysore (38 yrs experience), Chirag Global
         Hospitals is one of Bangalore’s top colon care centers, offering safe,
         effective, and affordable treatment.
       </>
@@ -272,7 +272,7 @@ export default function NewDesign() {
       faqTitle:
         "Why is Chirag Global Hospitals considered one of the best hospitals in Bangalore?",
       faqAnswer:
-        "Because of its 38+ years of expertise, 99.5% success rate, advanced technology, and strong patient trust.",
+        "Because of its 38 years of expertise, 99.5% success rate, advanced technology, and strong patient trust.",
     },
     {
       faqTitle: "What conditions are treated at Chirag Global Hospitals?",

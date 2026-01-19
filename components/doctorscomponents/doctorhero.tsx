@@ -100,7 +100,7 @@ export default function Doctordetailspagehero({
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
                 Introduction:
               </h3>
-              <p id="doctors" className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {merged.intro || "Introduction content not available."}
               </p>
             </section>

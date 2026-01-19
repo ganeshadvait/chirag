@@ -343,7 +343,7 @@ export default function ConsultationForm({
             <input
               type="text"
               name="full_name"
-              placeholder="Patient Name (Optional)"
+              placeholder="Patient Name"
               value={formData.full_name}
               onChange={handleChange}
               className="w-full px-4 py-3 rounded-2xl border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#F8B956] placeholder-gray-400"

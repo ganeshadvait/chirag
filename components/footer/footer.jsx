@@ -69,7 +69,7 @@ const FooterComponent = ({ footerdesc, footernumber, extradesc }) => {
             <h3 className="font-semibold mb-2">Contact Us</h3>
             <p className="text-gray-700 mb-[10px]">
               <a
-                href="https://share.google/Rky3d6qbYL2zUqHRH"
+                href="https://maps.app.goo.gl/3ox9s9tsJ9rD9tmu7"
                 className="hover:text-[#99509f]"
               >
                 {data.contactus.address}
