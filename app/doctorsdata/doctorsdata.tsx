@@ -19,7 +19,7 @@ const DoctorsData: DoctorsDataType = {
   Proctology: {
     "Dr. Rajasekhar": {
       url: "/chiragheroimage.png",
-      name: "Dr. Rajasekhar",
+      name: "Dr. Rajasekhar M R",
       qualification: "MBBS, MS",
       experience: "38 years",
       designation: "SENIOR COLORECTAL SURGEON",

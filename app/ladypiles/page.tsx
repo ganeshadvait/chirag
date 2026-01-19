@@ -166,7 +166,7 @@ export default function NewDesign() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Affordable piles treatment for women with EMI options available.",
+          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Payment options illustration",
         buttonText: "Check EMI Options",
