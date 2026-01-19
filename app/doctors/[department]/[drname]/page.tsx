@@ -314,7 +314,6 @@ export default async function DoctorProfile({ params }: Props) {
     banner: {
       heading: "Consult The Doctor Now",
       points: [
-        "Free Consultation",
         "Online Consultation",
         "Know your condition from top doctors",
       ],
@@ -366,7 +365,7 @@ export default async function DoctorProfile({ params }: Props) {
     <>
       <Doctordetailspagehero doctor={doctorInfo} />
       <ConditionsWeTreat conditions={conditionsData} />
-      <section className="my-10 px-4">
+      <section id="doctors" className="my-10 px-4">
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left: Doctors */}
           <div className="w-full lg:w-3/4">
