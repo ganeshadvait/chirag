@@ -358,7 +358,7 @@ export default function NewDesign() {
             <Form reviewsData={testimonialSectionData} />
           </div>
           <div
-            className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
+            className="block lg:hidden fixed bottom-0 left-0 w-full z-200 bg-transparent   px-4 py-1"
             style={{ maxWidth: "1500px", margin: "0 auto" }}
           >
             <Form reviewsData={testimonialSectionData} />
