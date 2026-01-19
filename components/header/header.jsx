@@ -24,7 +24,7 @@ export default function Header({
     if (element) {
       window.history.pushState(null, "", `#${id}`);
       window.scrollTo({
-        top: element.offsetTop - 175,
+        top: element.offsetTop - 100,
         behavior: "smooth",
       });
     }
