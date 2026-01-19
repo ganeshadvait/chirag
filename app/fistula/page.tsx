@@ -165,7 +165,7 @@ export default function NewDesign() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Fistula treatment costs are affordable with EMI options available.",
+          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",

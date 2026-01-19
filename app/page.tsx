@@ -19,7 +19,7 @@ import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 
 const HospitalComparisond = dynamic(
-  () => import("@/components/dynamictable/dynamictables")
+  () => import("@/components/dynamictable/dynamictables"),
 );
 
 export default function NewDesign() {
@@ -39,7 +39,7 @@ export default function NewDesign() {
     description:
       "Patients receive safe treatment, quick discharge, shorter hospital stays, and faster recovery with continuous medical care and support.",
     stats: [
-        {
+      {
         value: "24 hr",
         label: "Discharge",
       },
@@ -185,7 +185,7 @@ export default function NewDesign() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Quality treatment made accessible with easy installment plans.",
+          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
@@ -212,49 +212,52 @@ export default function NewDesign() {
     ],
   };
   const InfoContent = {
-    theading: "Piles Treatment at Chirag Hospitals",
+    theading: "Trusted Colon & Rectal Care at Chirag Hospitals",
     videoSrc: "/chirag-piles-video.mp4",
 
-    title: "Trusted Colon & Rectal Care",
+    title: "Why choose a specialist",
     description: (
       <>
-        Piles, also called hemorrhoids, are swollen veins in the anal area that
-        cause pain, bleeding, and discomfort. Medical treatment helps relieve
-        symptoms and prevents complications.
+        Led by Dr. Rajasekhar Mysore (38+ yrs experience), Chirag Global
+        Hospitals is one of Bangalore’s top colon care centers, offering safe,
+        effective, and affordable treatment.
       </>
     ),
 
     points: [
-      "Internal Piles – Piles inside the rectum",
-      "External Piles – Piles outside the anus",
-      "Thrombosed Piles – Piles with blood clots",
+      "Care by qualified colorectal experts",
+      "Accurate diagnosis for lasting results",
+      "Safe treatment for piles, fistula, fissure, and constipation",
+      "Avoid risks from unqualified practitioners",
     ],
   };
   const InfoData = {
-    aboutTitle: "Symptoms of Piles",
+    aboutTitle: "Why Patients Trust Chirag Global Hospitals",
     aboutText:
-      "Piles commonly cause bleeding during bowel movements, pain, itching, swelling, or a lump around the anus that needs medical attention.",
+      "Patients trust Chirag Global Hospitals for its focused colorectal expertise, experienced specialists, and continuity of care. With advanced technology, compassionate treatment, and consistent results, we ensure high patient satisfaction and long-term outcomes.",
 
-    advantagesTitle: "Treatment Options for Piles",
+    advantagesTitle: "Advantages of Choosing Chirag Global Hospitals",
     advantages: [
-      "Laser piles treatment",
-      "Lifestyle and dietary guidance",
-      "Advanced DGHAL procedure for piles",
-      "Ultrasonic shears excision for minimal pain and faster recovery",
+      "Specialty Hospital for Piles, Fissure & Fistula",
+      "Comprehensive Care Under One Roof",
+      "Latest Technology & Evidence-Based Practices",
+      "Shorter Recovery & Faster Return to Daily Life",
+      "Transparent Guidance & Ethical Care",
+      "Support for Insurance & Cashless Treatment",
     ],
 
-    costTitle: "Why Laser Is Best Treatment",
-    costIntro: "Laser piles treatment is preferred because it offers:",
+    costTitle: "Not from India? No Problem!",
+    costIntro: "Our Medical Tourism Team Is Here to Guide You Every Step of the Way",
     costPoints: [
-      "Minimally invasive procedure",
-      "Less pain and bleeding",
-      "Same-day discharge possible",
-      "Faster recovery time",
+      "Assistance with Medical Visa and documentation",
+      "Access to Best-in-Class Medical Care",
+      "Affordable Treatment Packages with transparent pricing",
+      "Support for Local Travel & Sightseeing during your stay",
     ],
 
     expandedContent: [
-      "Laser piles treatment is a modern option for patients seeking effective relief with minimal discomfort and shorter recovery time.",
-      "Treatment plan and cost are decided after medical evaluation based on the severity and individual patient condition.",
+      "Patients trust Chirag Global Hospitals for specialized colorectal care, advanced technology, ethical practices, compassionate treatment, and consistently successful outcomes.Laser piles treatment is a modern option for patients seeking effective relief with minimal discomfort and shorter recovery time.",
+      "International patients receive seamless medical tourism support, affordable transparent packages, visa assistance, and access to world-class care.",
     ],
   };
 
@@ -266,7 +269,8 @@ export default function NewDesign() {
 
   const faqs = [
     {
-      faqTitle: "Why is Chirag Global Hospitals considered one of the best hospitals in Bangalore?",
+      faqTitle:
+        "Why is Chirag Global Hospitals considered one of the best hospitals in Bangalore?",
       faqAnswer:
         "Because of its 38+ years of expertise, 99.5% success rate, advanced technology, and strong patient trust.",
     },
@@ -320,7 +324,8 @@ export default function NewDesign() {
       },
     ],
     ctaText: "Google Review",
-    ctaLink: "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    ctaLink:
+      "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
   return (
     <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
@@ -346,7 +351,7 @@ export default function NewDesign() {
           />
           <InsurenceAdvisor {...insuranceAdvisorData} />
 
-          <Why {...whyChooseData} />
+          {/* <Why {...whyChooseData} /> */}
           <HospitalComparisond {...InfoContent} />
           <Info {...InfoData} />
           <CtaBanner {...BannerData} />
