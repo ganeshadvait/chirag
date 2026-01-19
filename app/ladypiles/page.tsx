@@ -1,14 +1,11 @@
 import dynamic from "next/dynamic";
-
 import LadyHeroSection from "@/components/partials/hero/ladypileshero";
 import Number from "@/components/partials/number/number";
-
 import Risk from "@/components/partials/risks/risk";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
 import Why from "@/components/partials/why/why";
-
 import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
@@ -358,7 +355,7 @@ export default function NewDesign() {
             <Form reviewsData={testimonialSectionData} />
           </div>
           <div
-            className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
+            className="block lg:hidden fixed bottom-0 left-0 w-full z-200 bg-transparent   px-4 py-1"
             style={{ maxWidth: "1500px", margin: "0 auto" }}
           >
             <Form reviewsData={testimonialSectionData} />

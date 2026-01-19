@@ -16,14 +16,11 @@ export default function DoctorsSection({
       </h2>
 
       {/* TOP DOCTORS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2 mb-4">
         {topDoctors.map((doc, idx) => (
           <DoctorCard key={idx} doctor={doc} openModal={openModal} />
         ))}
       </div>
-
-      {/* CONSULT BANNER */}
-      <ConsultBanner {...banner} openModal={openModal} />
 
       {/* MORE DOCTORS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
@@ -31,6 +28,8 @@ export default function DoctorsSection({
           <DoctorCard key={idx} doctor={doc} openModal={openModal} />
         ))}
       </div>
+      {/* CONSULT BANNER */}
+      <ConsultBanner {...banner} openModal={openModal} />
 
       {/* Form Modal */}
       <FormModal />
