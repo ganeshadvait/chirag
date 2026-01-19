@@ -3,6 +3,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import { useFormModal } from "@/hooks/useFormModal";
 
 export interface DoctorInfo {
   image?: string;
@@ -41,6 +42,8 @@ export default function Doctordetailspagehero({
 }: DoctorHeroProps) {
   const merged = { ...DEFAULT_DOCTOR, ...doctor };
 
+  const { openModal, FormModal } = useFormModal();
+
   return (
     <section>
       <div className="doctorhero flex items-stretch justify-center">
@@ -78,11 +81,7 @@ export default function Doctordetailspagehero({
               </div>
               <button
                 className="w-full h-[45px] text-white rounded-full mb-2 bg-[#F8B956]"
-                onClick={() => {
-                  if (merged.booklink && merged.booklink !== "#") {
-                    window.location.href = merged.booklink;
-                  }
-                }}
+                onClick={openModal}
               >
                 Book an Appointment
               </button>
@@ -129,6 +128,8 @@ export default function Doctordetailspagehero({
           </div>
         </div>
       </div>
+      {/* Form Modal */}
+      <FormModal />
     </section>
   );
 }

@@ -213,7 +213,7 @@ export default function NewDesign() {
   };
   const InfoContent = {
     theading: "Trusted Colon & Rectal Care at Chirag Hospitals",
-    videoSrc: "/chirag-piles-video.mp4",
+    videoSrc: "/chiraggenericvideo.webm",
 
     title: "Why choose a specialist",
     description: (
