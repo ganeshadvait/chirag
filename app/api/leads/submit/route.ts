@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
       date_time: body.date_time || new Date().toISOString(),
     };
 
-    const apiUrl = "https://chiragapis.onrender.com/api/leads/submit";
+    const apiUrl = "http://api.advaitlabs.com/api/leads/submit";
 
     const response = await fetch(apiUrl, {
       method: "POST",
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     if (!response.ok) {
       return NextResponse.json(
         { error: "Failed to submit lead", details: data },
-        { status: response.status }
+        { status: response.status },
       );
     }
 
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     console.error("Lead submission proxy error:", error);
     return NextResponse.json(
       { error: "Internal server error", message: (error as Error).message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -42,6 +42,6 @@ export async function POST(request: NextRequest) {
 export async function GET() {
   return NextResponse.json(
     { message: "Use POST method to submit leads" },
-    { status: 405 }
+    { status: 405 },
   );
 }
