@@ -7,8 +7,12 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
   const handleButtonClick = () => {
     if (typeof window !== "undefined") {
       if (window.innerWidth >= 768) {
-        openModal();
-      } else {
+      // Desktop → WhatsApp
+      window.open(
+        "https://wa.me/919019954658?text=Hi%20I%20need%20insurance%20assistance",
+        "_blank"
+      );
+    } else {
         window.open("tel:08065916415", "_self");
       }
     }
