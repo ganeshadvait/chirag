@@ -27,15 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Header
-        PhoneNumber={"+919380498256"}
+        PhoneNumber={"09380498256"}
         mobilectatext={"Call Now"}
-        mobileNumberHeader={"tel:+919380498256"}
+        mobileNumberHeader={"tel:09380498256"}
       />
       <body className={`${dmSans.variable} antialiased`}>{children}</body>
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"
         extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
-        footernumber="+919380498256"
+        footernumber="09380498256"
       />
     </html>
   );
