@@ -69,10 +69,18 @@ export default function LadyPilesConditions({
     heading: "Our Top Doctors",
 
     topDoctors: [
+       {
+        name: "Dr. Rajasekhar M R",
+        designation: "MBBS, MS",
+        qualification: "Founder and Senior Colorectal Surgeon",
+        experience: "38 Years",
+        reviews: "99%",
+        img: "/doctorchiragcard.png",
+      },
       {
         name: "Dr. Shreedevi KN",
         designation: "MBBS, MS, FSGE",
-        qualification: "Surgical Gastroenterologist and Colorectal Surgeon",
+        qualification: "Surgical Gastroenterologist and Colorectal surgeon",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorshreedevicard.png",
@@ -84,14 +92,6 @@ export default function LadyPilesConditions({
         experience: "10 Years",
         reviews: "99%",
         img: "/doctorprithvicard.png",
-      },
-      {
-        name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
-        qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "38 Years",
-        reviews: "99%",
-        img: "/doctorchiragcard.png",
       },
     ],
 
