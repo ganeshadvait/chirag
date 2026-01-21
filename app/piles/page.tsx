@@ -258,7 +258,7 @@ export default function NewDesign() {
 
   const BannerData = {
     heading: "Get Relief from Piles – Book Now",
-    buttonText: "Book An Appointment",
+    buttonText: "Book Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };
 

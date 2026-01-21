@@ -21,7 +21,7 @@ const slugify = (s?: string | null) =>
 
 function findDoctor(
   departmentParam: string,
-  doctorParam: string
+  doctorParam: string,
 ): DoctorDetails | null {
   const decodedDept = decodeURIComponent(departmentParam || "");
   const decodedDoctor = decodeURIComponent(doctorParam || "");
@@ -32,7 +32,7 @@ function findDoctor(
       k === departmentParam ||
       k === decodedDept ||
       slugify(k) === slugify(departmentParam) ||
-      slugify(k) === slugify(decodedDept)
+      slugify(k) === slugify(decodedDept),
   );
 
   // Fallback: case-insensitive match
@@ -40,7 +40,7 @@ function findDoctor(
     deptKey = Object.keys(DoctorsData).find(
       (k) =>
         k.toLowerCase() === (departmentParam || "").toLowerCase() ||
-        k.toLowerCase() === decodedDept.toLowerCase()
+        k.toLowerCase() === decodedDept.toLowerCase(),
     );
   }
 
@@ -54,7 +54,7 @@ function findDoctor(
       slugify(name) === slugify(doctorParam) ||
       slugify(name) === slugify(decodedDoctor) ||
       name === doctorParam ||
-      name === decodedDoctor
+      name === decodedDoctor,
   );
 
   if (!doctorKey) {
@@ -150,7 +150,7 @@ export default async function DoctorProfile({ params }: Props) {
     free: "Get Free OPD",
     intro: details.description,
     intro2: details.experience,
-     highlights: details.highlights || [],
+    highlights: details.highlights || [],
   };
 
   // Conditions based on department
@@ -160,11 +160,17 @@ export default async function DoctorProfile({ params }: Props) {
     Proctology: [
       { src: "/chiragpiles.png", alt: "Piles", label: "Piles" },
       { src: "/analfistulachiragimg.png", alt: "Fistula", label: "Fistula" },
-      
       {
         src: "/chiraganalfissure.png",
         alt: "Anal Fissure",
         label: "Anal Fissure",
+      },
+      { src: "/pilonidalsinus.svg", alt: "pilonidalsinus", label: "pilonidalsinus" },
+      { src: "/rectal prolaps.svg", alt: "rectal prolaps", label: "rectal prolaps" },
+      {
+        src: "/proctitis.svg",
+        alt: "proctitis",
+        label: "proctitis",
       },
     ],
     "General & Laparoscopic": [
@@ -313,10 +319,7 @@ export default async function DoctorProfile({ params }: Props) {
 
     banner: {
       heading: "Consult The Doctor Now",
-      points: [
-        "Online Consultation",
-        "Know your condition from top doctors",
-      ],
+      points: ["Online Consultation", "Know your condition from top doctors"],
       buttonText: "Talk to the Doctor",
       imageSrc: "/consultthedoctor.png",
     },
@@ -355,7 +358,8 @@ export default async function DoctorProfile({ params }: Props) {
       },
     ],
     ctaText: "Google Review",
-    ctaLink: "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    ctaLink:
+      "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
 
   const conditionsData =

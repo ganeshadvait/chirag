@@ -4,6 +4,16 @@ import { useFormModal } from "@/hooks/useFormModal";
 export default function InsuranceAdvisorSection({ cards }) {
   const { openModal, FormModal } = useFormModal();
 
+  const handleCTAClick = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 768) {
+        openModal();
+      } else {
+        window.open("tel:+919380498256", "_self"); 
+      }
+    }
+  };
+
   return (
     <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -16,7 +26,9 @@ export default function InsuranceAdvisorSection({ cards }) {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 leading-snug">
                 {card.titlePrefix}{" "}
-                <span className="text-[#625587]">{card.titleHighlight}</span>
+                <span className="text-[#625587]">
+                  {card.titleHighlight}
+                </span>
               </h2>
 
               <p className="mt-3 text-gray-700 text-lg leading-relaxed">
@@ -34,7 +46,7 @@ export default function InsuranceAdvisorSection({ cards }) {
 
             {/* CTA */}
             <button
-              onClick={openModal}
+              onClick={handleCTAClick}
               className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center"
             >
               {card.buttonText}

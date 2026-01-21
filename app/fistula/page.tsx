@@ -242,7 +242,7 @@ export default function NewDesign() {
 
   const BannerData = {
     heading: "Get Relief from Fistula – Book Now",
-    buttonText: "Book An Appointment",
+    buttonText: "Book Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };
 
