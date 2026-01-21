@@ -416,12 +416,13 @@ export default function ConsultationForm({
           className="group flex-1 bg-[#F8B956] hover:bg-transparent border-2 border-transparent hover:border-[#F8B956] hover:text-black transition text-white text-sm font-semibold rounded-full shadow min-w-[80px] px-2 py-3 md:py-4 flex items-center justify-center gap-2"
           onClick={() => setShowForm((v: boolean) => !v)}
         >
-          {showForm ? "Close Form" : "Book Now"}
           <img
             src="/uil_calender.svg"
             alt="Calendar"
             className="w-5 h-5 transition group-hover:invert"
           />
+          {showForm ? "Close Form" : "Book Now"}
+          
         </button>
         {/* Mobile + Tablet: Get Directions */}
         <button

@@ -32,7 +32,7 @@ export default function TestimonialSlider(
     testimonials = [],
     ctaText = "",
     ctaLink = "#",
-    sourceLogo = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg",
+    sourceLogo = "/chirag google logo.png",
   }
 ) {
   const wrapperRef = useRef(null);
@@ -383,7 +383,7 @@ export default function TestimonialSlider(
                 </p>
 
                 <div className="mt-4 flex items-center gap-3">
-                  <img src={sourceLogo} alt="Google" className="w-5 h-5" />
+                  <img src={sourceLogo} alt="Google" className="w-6 h-6" />
                   <div>
                     <p className="font-medium text-[#170F49]">{t.name}</p>
                     <Stars rating={t.rating} />
@@ -424,7 +424,7 @@ export default function TestimonialSlider(
             rel="noopener noreferrer"
             className="w-full bg-[#17a388] hover:bg-white hover:text-black hover:border hover:border-[#17a388] text-white font-semibold px-8 py-4 rounded-full transition text-sm sm:text-base flex items-center gap-2 justify-center"
           >
-            <img src={sourceLogo} alt="Google" className="w-4 h-4" />
+            <img src={sourceLogo} alt="Google" className="w-6 h-6" />
             {ctaText}
           </a>
         </div>
