@@ -439,7 +439,7 @@ export default function ConsultationForm({
         {/* Desktop only: Call Now */}
         <button
           className="hidden lg:flex flex-1 bg-[#625587] hover:bg-transparent border-2 border-[#625587] hover:text-[#0b1b3f] text-white transition text-sm font-semibold rounded-full shadow px-2 py-3 md:py-4 items-center justify-center"
-          onClick={() => window.open("tel:+919380498256", "_self")}
+          onClick={() => window.open("tel:09380498256", "_self")}
         >
           Call Now
         </button>
