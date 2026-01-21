@@ -4,6 +4,16 @@ import { useFormModal } from "@/hooks/useFormModal";
 export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
   const { openModal, FormModal } = useFormModal();
 
+  const handleButtonClick = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 768) {
+        openModal();
+      } else {
+        window.open("tel:09380498256", "_self");
+      }
+    }
+  };
+
   return (
     <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-6">
       <h2 className="text-[24px] sm:text-[32px] font-semibold text-[#625587] mb-8 text-center">
@@ -27,7 +37,9 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
               </div>
 
               <div className="text-sm leading-snug">
-                <p className="font-semibold text-gray-900">{item.titleBold}</p>
+                <p className="font-semibold text-gray-900">
+                  {item.titleBold}
+                </p>
                 <p className="text-gray-700">{item.titleRest}</p>
               </div>
             </div>
@@ -36,7 +48,7 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
 
         {/* CTA */}
         <button
-          onClick={openModal}
+          onClick={handleButtonClick}
           className="mt-6 w-full bg-[#17a388] text-white font-semibold rounded-full py-3.5 flex items-center justify-center gap-2 text-lg hover:bg-emerald-700 transition"
         >
           <span>{ctaText}</span>

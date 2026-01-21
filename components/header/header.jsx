@@ -109,11 +109,11 @@ export default function Header({
 
           {/* <!-- Desktop Link (> 760px) --> */}
           <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              handleWhatsapp("Contact");
-            }}
+            href="tel:09380498256"
+            // onClick={(e) => {
+            //   e.preventDefault();
+            //   handleWhatsapp("Contact");
+            // }}
             className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
           >
             <Image
