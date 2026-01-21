@@ -264,7 +264,7 @@ export default async function DoctorProfile({ params }: Props) {
     heading: "Our Top Doctors",
 
     topDoctors: [
-      {
+       {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
@@ -281,16 +281,24 @@ export default async function DoctorProfile({ params }: Props) {
         img: "/doctorshreedevicard.png",
       },
       {
-        name: "Dr. Padmanabh R Bhat",
-        designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
-        qualification: "General Surgeon",
-        experience: "28 Years",
+        name: "Dr. Prithvija Chakravarthy",
+        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
+        qualification: "Proctologist",
+        experience: "10 Years",
         reviews: "99%",
-        img: "/doctorpadmanabhcard.png",
+        img: "/doctorprithvicard.png",
       },
     ],
 
     moreDoctors: [
+      {
+        name: "Dr. Suchitra N Adiga",
+        designation: "BAMS, MS(Ayu)",
+        qualification: "Proctologist",
+        experience: "8 Years",
+        reviews: "99%",
+        img: "/doctorsuchithracard.png",
+      },
       {
         name: "Dr.Jyotsna Vemulapalli",
         designation: "MBBS, MS(Gen Surgery)",
@@ -299,21 +307,13 @@ export default async function DoctorProfile({ params }: Props) {
         reviews: "99%",
         img: "/doctorjyotsnacard.png",
       },
-       {
-        name: "Dr. Prithvija Chakravarthy",
-        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
-        qualification: "Proctologist",
-        experience: "10 Years",
-        reviews: "99%",
-        img: "/doctorprithvicard.png",
-      },
       {
-        name: "Dr. Suchitra N Adiga",
-        designation: "BAMS, MS(Ayu)",
-        qualification: "Proctologist",
-        experience: "8 Years",
+        name: "Dr. Padmanabh R Bhat",
+        designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
+        qualification: "General Surgeon",
+        experience: "28 Years",
         reviews: "99%",
-        img: "/doctorsuchithracard.png",
+        img: "/doctorpadmanabhcard.png",
       },
     ],
 

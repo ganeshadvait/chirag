@@ -83,7 +83,7 @@ export default function Doctordetailspagehero({
                 className="w-full h-[45px] text-white rounded-full mb-2 bg-[#F8B956]"
                 onClick={openModal}
               >
-                Book an Appointment
+                Book Appointment
               </button>
               {/* <div className="flex items-center justify-center gap-2 text-sm">
                 <span className="text-gray-700">

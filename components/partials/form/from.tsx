@@ -282,7 +282,7 @@ export default function ConsultationForm({
           !showForm ? "hidden" : "block"
         }`}
       >
-        Book An Appointment
+        Book Appointment
       </h2>
 
       {/* Success/Error Message */}
