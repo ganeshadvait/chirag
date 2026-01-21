@@ -25,7 +25,7 @@ const data = {
   contactus: {
     address:
       "103, 6th Cross Rd, Dollar Layout, BTM 2nd Stage, Bengaluru, Karnataka 560076",
-    phone: "09380498256",
+    phone: "08065916415",
     email: "info@chiragglobalhospitals.com",
     website: "www.chiragglobalhospitals.com",
   },

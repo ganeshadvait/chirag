@@ -9,7 +9,7 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
       if (window.innerWidth >= 768) {
         openModal();
       } else {
-        window.open("tel:09380498256", "_self");
+        window.open("tel:08065916415", "_self");
       }
     }
   };
