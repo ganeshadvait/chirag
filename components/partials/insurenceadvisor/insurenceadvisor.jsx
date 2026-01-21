@@ -9,7 +9,7 @@ export default function InsuranceAdvisorSection({ cards }) {
       if (window.innerWidth >= 768) {
         openModal();
       } else {
-        window.open("tel:+919380498256", "_self"); 
+        window.open("tel:08065916415", "_self"); 
       }
     }
   };
