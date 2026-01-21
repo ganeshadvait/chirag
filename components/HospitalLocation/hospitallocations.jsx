@@ -79,7 +79,7 @@ export default function HospitalLocation({ locationsectionheading }) {
                   height={28}  // matches h-7
                   className="w-7 h-7"
                 />
-                Reviews
+                Google Reviews
               </a>
             </div>
           </div>

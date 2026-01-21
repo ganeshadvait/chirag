@@ -1,6 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
+import { useState } from "react";
+
 export default function DoctorsSection({
   heading,
   topDoctors,
@@ -8,76 +11,112 @@ export default function DoctorsSection({
   banner,
 }) {
   const { openModal, FormModal } = useFormModal();
+  const [showMore, setShowMore] = useState(false);
+
   return (
-    <div id="doctors" className="w-full  mx-auto px-4 py-6">
+    <section
+      id="doctors"
+      className="w-full max-w-[1200px] mx-auto px-4 py-4"
+    >
       {/* TITLE */}
       <h2 className="text-[24px] sm:text-[30px] text-[#625587] text-center font-semibold mb-8">
-        Our Top Doctors
+        {heading}
       </h2>
 
-      {/* TOP DOCTORS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2 mb-4">
+      {/* DOCTORS GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Top Doctors */}
         {topDoctors.map((doc, idx) => (
-          <DoctorCard key={idx} doctor={doc} openModal={openModal} />
+          <DoctorCard key={`top-${idx}`} doctor={doc} openModal={openModal} />
+        ))}
+
+        {/* More Doctors
+            - Always visible on desktop
+            - Toggle only on mobile */}
+        {moreDoctors.map((doc, idx) => (
+          <div
+            key={`more-${idx}`}
+            className={`${showMore ? "block" : "hidden"} sm:block`}
+          >
+            <DoctorCard doctor={doc} openModal={openModal} />
+          </div>
         ))}
       </div>
 
-      {/* MORE DOCTORS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
-        {moreDoctors.map((doc, idx) => (
-          <DoctorCard key={idx} doctor={doc} openModal={openModal} />
-        ))}
-      </div>
-      {/* CONSULT BANNER */}
+      {moreDoctors.length > 0 && (
+        <div className="flex justify-center mt-8 sm:hidden">
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="border-2 border-[#625587] text-[#625587]
+            rounded-full px-8 py-2 text-sm font-semibold
+            hover:bg-[#625587] hover:text-white transition"
+          >
+            {showMore ? "View Less" : "View More Doctors"}
+          </button>
+        </div>
+      )}
+
       <ConsultBanner {...banner} openModal={openModal} />
 
-      {/* Form Modal */}
+      
       <FormModal />
-    </div>
+    </section>
   );
 }
 
-/* ------------------ Doctor Card ------------------ */
+/* ===================== Doctor Card (OLD UI + FULL HEIGHT IMAGE) ===================== */
 
 function DoctorCard({ doctor, openModal }) {
   return (
-    <div className="flex flex-col gap-3 justify-between items-center bg-white rounded-2xl shadow-md px-5 py-4">
-      <div className="flex items-start gap-4 w-full">
-        <img
-          src={doctor.img}
-          alt={doctor.name}
-          className="w-20 h-20 rounded-xl object-cover object-top"
-        />
+    <div className="bg-white rounded-2xl shadow-md px-5 py-4 h-full">
+      <div className="flex gap-4 items-stretch h-full">
+        {/* IMAGE – FULL HEIGHT */}
+        <div className="w-20 flex-shrink-0 self-stretch">
+          <img
+            src={doctor.img}
+            alt={doctor.name}
+            className="w-full h-full rounded-xl object-cover object-top"
+          />
+        </div>
 
-        <div className="flex-1">
-          <p className="text-md font-semibold text-gray-900">{doctor.name}</p>
-          <p className="text-gray-700 mt-1 leading-snug text-[12px]">
-            {doctor.designation}
-          </p>
-          <p className="text-gray-700 mt-1 leading-snug text-[12px]">
-            {doctor.qualification}
-          </p>
-          <p className="text-[12px] text-gray-500 mt-1">
-            Experience:{" "}
-            <span className="text-gray-900 text-[12px]">
-              {doctor.experience}
-            </span>
-          </p>
+        {/* CONTENT */}
+        <div className="flex flex-col justify-between">
+          <div>
+            <p className="text-[15px] font-semibold text-gray-900">
+              {doctor.name}
+            </p>
+
+            <p className="text-gray-700 mt-1 text-[12px] leading-snug">
+              {doctor.designation}
+            </p>
+
+            <p className="text-gray-700 mt-1 text-[12px] leading-snug">
+              {doctor.qualification}
+            </p>
+
+            <p className="text-[12px] text-gray-500 mt-1">
+              Experience:{" "}
+              <span className="text-gray-900">{doctor.experience}</span>
+            </p>
+          </div>
+
+          {/* CTA – LEFT ALIGNED */}
+          <button
+            onClick={openModal}
+            className="mt-3 self-start
+            border-2 border-[#625587] text-[#625587]
+            rounded-full px-4 py-2 text-sm font-medium
+            hover:bg-[#625587] hover:text-white transition"
+          >
+            Book Appointment
+          </button>
         </div>
       </div>
-
-      {/* CTA BUTTON */}
-      <button
-        onClick={openModal}
-        className="border-2 border-[#625587] text-[#625587] rounded-full px-6 py-2 mt-4 md:mt-0 text-center font-semibold leading-tight hover:bg-[#625587] hover:text-white transition flex items-center gap-2 w-full text-center flex justify-center items-center"
-      >
-        <span className="text-base text-center">Book Appointment</span>
-      </button>
     </div>
   );
 }
 
-/* ------------------ Consult Banner ------------------ */
+/* ======================= Consult Banner ======================= */
 
 function ConsultBanner({
   heading = "",
@@ -87,39 +126,37 @@ function ConsultBanner({
   openModal,
 }) {
   return (
-    <div className="w-full bg-[#9e8dce] rounded-2xl my-6">
+    <div className="w-full bg-[#9e8dce] rounded-2xl my-12">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-        {/* Left Section */}
+        {/* LEFT */}
         <div className="flex flex-col items-start gap-4 max-w-md p-6">
-          {/* <div className="flex h-22 w-22 items-center justify-center rounded-full bg-white ">
-                <span className="text-xl">🏪</span>
-              </div> */}
+          <h2 className="text-[28px] sm:text-[32px] font-semibold text-white">
+            {heading}
+          </h2>
 
-          <div>
-            <h2 className="text-[30px] sm:text-[32px] font-semibold text-white mb-4">
-              {heading}
-            </h2>
-            <ul className="mt-2 text-white text-[16px] sm:text-[18px] list-disc list-outside pl-4 sm:pl-6 space-y-2">
-              {points.length > 0 &&
-                points.map((point, i) => <li key={i}>{point}</li>)}
-            </ul>
-          </div>
+          <ul className="text-white text-[16px] sm:text-[18px] list-disc pl-5 space-y-2">
+            {points.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+
           <button
             onClick={openModal}
-            className="mt-3 rounded-full bg-[#f8b956] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+            className="rounded-full bg-[#f8b956] px-8 py-4 text-sm font-medium text-white
+            hover:bg-[#e0a644] transition"
           >
             {buttonText}
           </button>
         </div>
 
-        {/* Right Card */}
-        <div className="hidden md:block w-full max-w-md rounded-2xl text-center">
-          <div className="relative mx-auto w-[80%] aspect-[5/4]">
+        {/* RIGHT IMAGE */}
+        <div className="hidden md:block w-full max-w-md p-6">
+          <div className="relative w-full aspect-[5/4]">
             <Image
               src={imageSrc}
               alt={heading}
               fill
-              className="rounded-lg object-contain"
+              className="object-contain"
             />
           </div>
         </div>

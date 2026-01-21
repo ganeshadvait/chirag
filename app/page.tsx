@@ -146,7 +146,7 @@ export default function NewDesign() {
         "Modern laser treatment methods",
         "Proven treatment outcomes",
       ],
-      buttonText: "Book Doctor Appointment",
+      buttonText: "Book Appointment",
       imageSrc: "/consultthedoctor.png",
     },
   };
@@ -177,7 +177,7 @@ export default function NewDesign() {
         icon: "/contact.png",
       },
     ],
-    ctaText: "Talk with Our Expert",
+    ctaText: "Chat with Our Expert",
   };
   const insuranceAdvisorData = {
     cards: [
@@ -323,7 +323,7 @@ export default function NewDesign() {
         rating: 5,
       },
     ],
-    ctaText: "Google Review",
+    ctaText: "Google Reviews",
     ctaLink:
       "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };

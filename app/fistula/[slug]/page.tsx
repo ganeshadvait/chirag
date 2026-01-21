@@ -68,7 +68,7 @@ export default function FistualConditions({
     heading: "Our Top Doctors",
 
     topDoctors: [
-      {
+       {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
@@ -79,37 +79,10 @@ export default function FistualConditions({
       {
         name: "Dr. Shreedevi KN",
         designation: "MBBS, MS, FSGE",
-        qualification: "Surgical Gastroenterologist and Colorectal Surgeon",
+        qualification: "Surgical Gastroenterologist and Colorectal surgeon",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorshreedevicard.png",
-      },
-      {
-        name: "Dr. Prithvija Chakravarthy",
-        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
-        qualification: "Proctologist",
-        experience: "10 Years",
-        reviews: "99%",
-        img: "/doctorprithvicard.png",
-      },
-    ],
-
-    moreDoctors: [
-      {
-        name: "Dr. Suchitra N Adiga",
-        designation: "BAMS, MS(Ayu)",
-        qualification: "Proctologist",
-        experience: "8 Years",
-        reviews: "99%",
-        img: "/doctorsuchithracard.png",
-      },
-      {
-        name: "Dr.Jyotsna Vemulapalli",
-        designation: "MBBS, MS(Gen Surgery)",
-        qualification: "General Surgeon",
-        experience: "4 Years",
-        reviews: "99%",
-        img: "/doctorjyotsnacard.png",
       },
       {
         name: "Dr. Padmanabh R Bhat",
@@ -121,6 +94,33 @@ export default function FistualConditions({
       },
     ],
 
+    moreDoctors: [
+      {
+        name: "Dr.Jyotsna Vemulapalli",
+        designation: "MBBS, MS(Gen Surgery)",
+        qualification: "General Surgeon",
+        experience: "4 Years",
+        reviews: "99%",
+        img: "/doctorjyotsnacard.png",
+      },
+       {
+        name: "Dr. Prithvija Chakravarthy",
+        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
+        qualification: "Proctologist",
+        experience: "10 Years",
+        reviews: "99%",
+        img: "/doctorprithvicard.png",
+      },
+      
+      {
+        name: "Dr. Suchitra N Adiga",
+        designation: "BAMS, MS(Ayu)",
+        qualification: "Proctologist",
+        experience: "8 Years",
+        reviews: "99%",
+        img: "/doctorsuchithracard.png",
+      },
+    ],
     banner: {
       heading: "Consult The Doctor Now",
       points: [
@@ -128,7 +128,7 @@ export default function FistualConditions({
         "Modern laser treatment methods",
         "Proven treatment outcomes",
       ],
-      buttonText: "Book Doctor Appointment",
+      buttonText: "Book Appointment",
       imageSrc: "/consultthedoctor.png",
     },
   };
@@ -160,7 +160,7 @@ export default function FistualConditions({
         icon: "/contact.png",
       },
     ],
-    ctaText: "Talk with Our Expert",
+    ctaText: "Chat with Our Expert",
   };
 
   const insuranceAdvisorData = {
@@ -315,7 +315,7 @@ export default function FistualConditions({
         rating: 5,
       },
     ],
-    ctaText: "Google Review",
+    ctaText: "Google Reviews",
       ctaLink: "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
 

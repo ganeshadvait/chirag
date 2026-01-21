@@ -81,7 +81,7 @@ const DoctorsData: DoctorsDataType = {
 
   Urology: {
     "Dr. Priyank Salecha": {
-      url: "/doctorprithvijachakravarthyimg.png", // Image to be added
+      url: "/doctorprithvijachakravarthyimg.png", 
       name: "Dr. Priyank Salecha",
       qualification: "MBBS, MS, MCH, DNB",
       designation: "Consultant Urologist & Andrologist",
