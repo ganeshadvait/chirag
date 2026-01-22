@@ -220,6 +220,8 @@ export default function FistualConditions({
   };
 
   const InfoData = {
+    aboveContetn: "For the first time in India",
+    aboveContetna: "CEREG – Circumferential Endoanal Real-Time Echo-Guided Procedures",
     aboutTitle: "Symptoms of Fistula",
     aboutText:
       "Common fistula symptoms include pain near the anus, pus or discharge, swelling, irritation, and recurring infections.",
@@ -229,6 +231,7 @@ export default function FistualConditions({
       "Medication for infection control",
       "Laser fistula treatment",
       "Surgical treatment if required",
+      "LIFT, Fistulectomy, Seton, PREFACT, VAAFT,Kshara Sutra, SLOFT, Fistulotomy, Glue Plug, Mucosal Flaps, Fibrin Glue.",
     ],
 
     costTitle: "Why laser is the best treatment at Chirag Global Hospital",
