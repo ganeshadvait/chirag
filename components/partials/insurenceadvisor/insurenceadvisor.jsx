@@ -4,13 +4,22 @@ import { useFormModal } from "@/hooks/useFormModal";
 export default function InsuranceAdvisorSection({ cards }) {
   const { openModal, FormModal } = useFormModal();
 
-  const handleCTAClick = () => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth >= 768) {
-        openModal();
-      } else {
-        window.open("tel:08065916415", "_self"); 
-      }
+  const handleCTAClick = (card) => {
+    if (typeof window === "undefined") return;
+
+    const isDesktop = window.innerWidth >= 768;
+
+    if (isDesktop) {
+      // Desktop: always open modal
+      openModal();
+      return;
+    }
+
+    // Mobile behavior
+    if (card.ctaType === "modal") {
+      openModal();
+    } else if (card.ctaType === "call") {
+      window.open("tel:08065916415", "_self");
     }
   };
 
@@ -26,9 +35,7 @@ export default function InsuranceAdvisorSection({ cards }) {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 leading-snug">
                 {card.titlePrefix}{" "}
-                <span className="text-[#625587]">
-                  {card.titleHighlight}
-                </span>
+                <span className="text-[#625587]">{card.titleHighlight}</span>
               </h2>
 
               <p className="mt-3 text-gray-700 text-lg leading-relaxed">
@@ -46,7 +53,7 @@ export default function InsuranceAdvisorSection({ cards }) {
 
             {/* CTA */}
             <button
-              onClick={handleCTAClick}
+              onClick={() => handleCTAClick(card)}
               className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center"
             >
               {card.buttonText}

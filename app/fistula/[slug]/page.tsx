@@ -19,7 +19,7 @@ import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 import { image } from "motion/react-client";
 
 const HospitalComparisond = dynamic(
-  () => import("@/components/dynamictable/dynamictables")
+  () => import("@/components/dynamictable/dynamictables"),
 );
 
 export default function FistualConditions({
@@ -68,7 +68,7 @@ export default function FistualConditions({
     heading: "Our Top Doctors",
 
     topDoctors: [
-       {
+      {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
@@ -85,24 +85,16 @@ export default function FistualConditions({
         img: "/doctorshreedevicard.png",
       },
       {
-        name: "Dr. Prithvija Chakravarthy",
-        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
-        qualification: "Proctologist",
-        experience: "10 Years",
+        name: "Dr. Padmanabh R Bhat",
+        designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
+        qualification: "General Surgeon",
+        experience: "28 Years",
         reviews: "99%",
-        img: "/doctorprithvicard.png",
+        img: "/doctorpadmanabhcard.png",
       },
     ],
 
     moreDoctors: [
-      {
-        name: "Dr. Suchitra N Adiga",
-        designation: "BAMS, MS(Ayu)",
-        qualification: "Proctologist",
-        experience: "8 Years",
-        reviews: "99%",
-        img: "/doctorsuchithracard.png",
-      },
       {
         name: "Dr.Jyotsna Vemulapalli",
         designation: "MBBS, MS(Gen Surgery)",
@@ -112,14 +104,23 @@ export default function FistualConditions({
         img: "/doctorjyotsnacard.png",
       },
       {
-        name: "Dr. Padmanabh R Bhat",
-        designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
-        qualification: "General Surgeon",
-        experience: "28 Years",
+        name: "Dr. Prithvija Chakravarthy",
+        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
+        qualification: "Proctologist",
+        experience: "10 Years",
         reviews: "99%",
-        img: "/doctorpadmanabhcard.png",
+        img: "/doctorprithvicard.png",
+      },
+      {
+        name: "Dr. Suchitra N Adiga",
+        designation: "BAMS, MS(Ayu)",
+        qualification: "Proctologist",
+        experience: "8 Years",
+        reviews: "99%",
+        img: "/doctorsuchithracard.png",
       },
     ],
+
     banner: {
       heading: "Consult The Doctor Now",
       points: [
@@ -172,6 +173,7 @@ export default function FistualConditions({
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
+        ctaType: "modal",
       },
       {
         titlePrefix: "Talk To",
@@ -181,6 +183,7 @@ export default function FistualConditions({
         image: "/talktohealthadvaiser.png",
         imageAlt: "Health advisor illustration",
         buttonText: "Call Our Advisors",
+        ctaType: "call",
       },
     ],
   };
@@ -315,7 +318,8 @@ export default function FistualConditions({
       },
     ],
     ctaText: "Google Reviews",
-      ctaLink: "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    ctaLink:
+      "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
 
   return (

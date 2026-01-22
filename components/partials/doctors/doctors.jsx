@@ -150,7 +150,7 @@ function ConsultBanner({
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="hidden md:block w-full max-w-md p-6">
+        <div className="hidden md:block w-full max-w-md">
           <div className="relative w-full aspect-[5/4]">
             <Image
               src={imageSrc}
