@@ -4,21 +4,17 @@ import { useFormModal } from "@/hooks/useFormModal";
 export default function InsuranceAdvisorSection({ cards }) {
   const { openModal, FormModal } = useFormModal();
 
-  const handleCTAClick = (card) => {
+  const handleCTAClick = (card, idx) => {
     if (typeof window === "undefined") return;
 
-    const isDesktop = window.innerWidth >= 768;
-
-    if (isDesktop) {
-      // Desktop: always open modal
+    // First card → modal
+    if (idx === 0) {
       openModal();
       return;
     }
 
-    // Mobile behavior
-    if (card.ctaType === "modal") {
-      openModal();
-    } else if (card.ctaType === "call") {
+    // Second card → call
+    if (idx === 1) {
       window.open("tel:08065916415", "_self");
     }
   };
@@ -51,9 +47,10 @@ export default function InsuranceAdvisorSection({ cards }) {
               )}
             </div>
 
-            {/* CTA */}
+            {/* CTA  here if button is second one lets make like  navigate to call or whatsapp  */}
+            {/* {index === 1 && <div className="flex-grow" />}  */}
             <button
-              onClick={() => handleCTAClick(card)}
+              onClick={() => handleCTAClick(card, idx)}
               className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center"
             >
               {card.buttonText}

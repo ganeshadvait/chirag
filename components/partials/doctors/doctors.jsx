@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
 import { useState } from "react";
+import { SUPPORT_PHONE_TEL } from "@/constants/contact";
 
 export default function DoctorsSection({
   heading,
@@ -14,10 +15,7 @@ export default function DoctorsSection({
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section
-      id="doctors"
-      className="w-full max-w-[1200px] mx-auto px-4 py-4"
-    >
+    <section id="doctors" className="w-full max-w-[1200px] mx-auto px-4 py-4">
       {/* TITLE */}
       <h2 className="text-[24px] sm:text-[30px] text-[#625587] text-center font-semibold mb-8">
         {heading}
@@ -58,7 +56,6 @@ export default function DoctorsSection({
 
       <ConsultBanner {...banner} openModal={openModal} />
 
-      
       <FormModal />
     </section>
   );
@@ -101,15 +98,17 @@ function DoctorCard({ doctor, openModal }) {
           </div>
 
           {/* CTA – LEFT ALIGNED */}
-          <button
-            onClick={openModal}
-            className="mt-3 self-start
-            border-2 border-[#625587] text-[#625587]
-            rounded-full px-4 py-2 text-sm font-medium
-            hover:bg-[#625587] hover:text-white transition"
+          {/* CTA – LEFT ALIGNED */}
+
+          <a
+            href={SUPPORT_PHONE_TEL}
+            className="mt-3 self-start inline-block
+    border-2 border-[#625587] text-[#625587]
+    rounded-full px-4 py-2 text-sm font-medium
+    hover:bg-[#625587] hover:text-white transition"
           >
             Book Appointment
-          </button>
+          </a>
         </div>
       </div>
     </div>
