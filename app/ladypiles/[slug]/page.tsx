@@ -131,7 +131,7 @@ export default function LadyPilesConditions({
         "Proven treatment outcomes",
       ],
       buttonText: "Book Appointment",
-      imageSrc: "/consultthedoctor.png",
+      imageSrc: "/ladypilesconsultthedoctor.png",
     },
   };
 

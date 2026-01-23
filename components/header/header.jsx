@@ -85,53 +85,69 @@ export default function Header({
           </ul>
         </nav>
 
-        <div className="header__cta">
-          {/* <!-- Mobile Link (≤ 760px) --> */}
-          <a
-            href={mobileNumberHeader}
-            className="header_cta_type_one mobile-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
-          >
-            <Image
-              src="/phone-call-icon svg.svg"
-              alt="Call Icon"
-              width={20} // default size
-              height={20} // default size
-              className="w-4 h-4 md:w-5 md:h-5 ringing"
-            />
-            <span className="phone_number">{PhoneNumber}</span>
-            <span
-              data-cta="header cta call button"
-              className="call_now gtm-cta"
-            >
-              Call Now
-            </span>
-          </a>
+              <div className="header__cta flex items-center gap-3">
+        {/* WhatsApp Icon (separate) */}
+        <a
+          href="https://wa.me/919019954658"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center"
+        >
+          <Image
+            src="/chirag whatsapp icon.png"
+            alt="WhatsApp icon"
+            width={20}
+            height={20}
+            className="w-5 h-5 md:w-8 md:h-8"
+          />
+        </a>
 
-          {/* <!-- Desktop Link (> 760px) --> */}
-          <a
-            href="tel:08065916415"
-            // onClick={(e) => {
-            //   e.preventDefault();
-            //   handleWhatsapp("Contact");
-            // }}
-            className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
+        {/* <!-- Mobile Link (≤ 760px) --> */}
+        <a
+          href={mobileNumberHeader}
+          className="header_cta_type_one mobile-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
+        >
+          <Image
+            src="/phone-call-icon svg.svg"
+            alt="Call Icon"
+            width={20}
+            height={20}
+            className="w-4 h-4 md:w-5 md:h-5 ringing"
+          />
+
+          <span className="phone_number">{PhoneNumber}</span>
+
+          <span
+            data-cta="header cta call button"
+            className="call_now gtm-cta"
           >
-            <Image
-              src="/phone-call-icon svg.svg"
-              alt="Call Icon"
-              width={20} // base size (matches md:w-5 / 20px)
-              height={20}
-              className="w-4 h-4 md:w-5 md:h-5 ringing"
-            />
-            <span className="phone_number">{PhoneNumber}</span>
-            <span
-              data-cta="header cta call button"
-              className="call_now gtm-cta"
-            >
-              Message on WhatsApp
-            </span>
-          </a>
-        </div>
+            Call Now
+          </span>
+        </a>
+
+        {/* <!-- Desktop Link (> 760px) --> */}
+        <a
+          href="tel:08065916415"
+          className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
+        >
+          <Image
+            src="/phone-call-icon svg.svg"
+            alt="Call Icon"
+            width={20}
+            height={20}
+            className="w-4 h-4 md:w-5 md:h-5 ringing"
+          />
+
+          <span className="phone_number">{PhoneNumber}</span>
+
+          <span
+            data-cta="header cta call button"
+            className="call_now gtm-cta"
+          >
+            Message on WhatsApp
+          </span>
+        </a>
+      </div>
       </header>
       {showModal && (
         <LoaderModal
