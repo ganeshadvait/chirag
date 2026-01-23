@@ -57,7 +57,7 @@ export default function Header({
           />
           <img
             className="logo-fade header__logotwo"
-            src="/logos/chitrag 38+_transparent logo.png"
+            src="/logos/chirag38+yearslogo.png"
           />
           <img
             className="logo-fade header__logothree"
