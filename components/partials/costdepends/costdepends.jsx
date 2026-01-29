@@ -1,21 +1,9 @@
 "use client";
-import { useFormModal } from "@/hooks/useFormModal";
 
 export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
-  const { openModal, FormModal } = useFormModal();
-
+  // Always open WhatsApp
   const handleButtonClick = () => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth >= 768) {
-      // Desktop → WhatsApp
-      window.open(
-        "https://wa.me/919019954658?",
-        "_blank"
-      );
-    } else {
-        window.open("tel:08065916415", "_self");
-      }
-    }
+    window.open("https://wa.me/919019954658", "_blank");
   };
 
   return (
@@ -59,8 +47,6 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
         </button>
       </div>
 
-      {/* Form Modal */}
-      <FormModal />
     </section>
   );
 }

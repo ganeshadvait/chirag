@@ -42,7 +42,7 @@ export default function Doctordetailspagehero({
 }: DoctorHeroProps) {
   const merged = { ...DEFAULT_DOCTOR, ...doctor };
 
-  const { openModal, FormModal } = useFormModal();
+  const { handleButtonClick, FormModal } = useFormModal();
 
   return (
     <section>
@@ -81,7 +81,7 @@ export default function Doctordetailspagehero({
               </div>
               <button
                 className="w-full h-[45px] text-white rounded-full mb-2 bg-[#F8B956]"
-                onClick={openModal}
+                onClick={handleButtonClick}
               >
                 Book Appointment
               </button>

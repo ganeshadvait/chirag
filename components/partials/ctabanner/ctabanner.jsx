@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
 
 export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
-  const { openModal, FormModal } = useFormModal();
+  const { handleButtonClick, FormModal } = useFormModal();
 
   return (
     <section className="px-0 md:p-6">
@@ -14,7 +14,7 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
             <h2 className="text-[32px] font-bold text-gray-900">{heading}</h2>
 
             <button
-              onClick={openModal}
+              onClick={handleButtonClick}
               className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
             >
               {buttonText}

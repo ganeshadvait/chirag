@@ -5,7 +5,7 @@ import { useFormModal } from "@/hooks/useFormModal";
 
 
 export default function LadyHeroSection({ heading, points, buttonText, imageSrc, name, qualifications, designation, experience }) {
-  const { openModal, FormModal } = useFormModal();
+  const { handleButtonClick, FormModal } = useFormModal();
 
 
 
@@ -32,7 +32,7 @@ export default function LadyHeroSection({ heading, points, buttonText, imageSrc,
           </ul>
 
           <button
-            onClick={openModal}
+            onClick={handleButtonClick}
             className="mt-6 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-8 py-3 text-lg"
           >
             {buttonText}

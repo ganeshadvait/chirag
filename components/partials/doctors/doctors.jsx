@@ -11,7 +11,7 @@ export default function DoctorsSection({
   moreDoctors,
   banner,
 }) {
-  const { openModal, FormModal } = useFormModal();
+  const { handleButtonClick, FormModal } = useFormModal();
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ export default function DoctorsSection({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Top Doctors */}
         {topDoctors.map((doc, idx) => (
-          <DoctorCard key={`top-${idx}`} doctor={doc} openModal={openModal} />
+          <DoctorCard key={`top-${idx}`} doctor={doc} />
         ))}
 
         {/* More Doctors
@@ -36,7 +36,7 @@ export default function DoctorsSection({
             key={`more-${idx}`}
             className={`${showMore ? "block" : "hidden"} sm:block`}
           >
-            <DoctorCard doctor={doc} openModal={openModal} />
+            <DoctorCard doctor={doc} />
           </div>
         ))}
       </div>
@@ -54,7 +54,7 @@ export default function DoctorsSection({
         </div>
       )}
 
-      <ConsultBanner {...banner} openModal={openModal} />
+      <ConsultBanner {...banner} handleButtonClick={handleButtonClick} />
 
       <FormModal />
     </section>
@@ -63,7 +63,7 @@ export default function DoctorsSection({
 
 /* ===================== Doctor Card (OLD UI + FULL HEIGHT IMAGE) ===================== */
 
-function DoctorCard({ doctor, openModal }) {
+function DoctorCard({ doctor }) {
   return (
     <div className="bg-white rounded-2xl shadow-md px-5 py-4 h-full">
       <div className="flex gap-4 items-stretch h-full">
@@ -122,7 +122,7 @@ function ConsultBanner({
   points = [],
   buttonText = "",
   imageSrc = "",
-  openModal,
+  handleButtonClick,
 }) {
   return (
     <div className="w-full bg-[#9e8dce] rounded-2xl my-12">
@@ -140,7 +140,7 @@ function ConsultBanner({
           </ul>
 
           <button
-            onClick={openModal}
+            onClick={handleButtonClick}
             className="rounded-full bg-[#f8b956] px-8 py-4 text-sm font-medium text-white
             hover:bg-[#e0a644] transition"
           >
