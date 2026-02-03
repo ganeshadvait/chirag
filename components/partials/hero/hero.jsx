@@ -25,7 +25,7 @@ export default function HeroSection({
   };
 
   return (
-    <section className="w-full bg-white pt-4 pb-8 my-4">
+    <section className="w-full bg-white pt-4 pb-4 my-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4 md:px-6">
         {/* LEFT CONTENT */}
         <div>
