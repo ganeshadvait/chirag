@@ -42,6 +42,8 @@ export default function FistualConditions({
   };
 
   const statsSectionData = {
+    aboveContetn: "For the first time in India",
+    aboveContetna: "CEREG – Circumferential Endoanal Real-Time Echo-Guided Procedures",
     heading: "Trusted by Patients\nWorldwide",
     description:
       "Patients receive safe fistula treatment with shorter hospital stays, quick discharge, and dedicated medical support.",
@@ -220,8 +222,8 @@ export default function FistualConditions({
   };
 
   const InfoData = {
-    aboveContetn: "For the first time in India",
-    aboveContetna: "CEREG – Circumferential Endoanal Real-Time Echo-Guided Procedures",
+    // aboveContetn: "For the first time in India",
+    // aboveContetna: "CEREG – Circumferential Endoanal Real-Time Echo-Guided Procedures",
     aboutTitle: "Symptoms of Fistula",
     aboutText:
       "Common fistula symptoms include pain near the anus, pus or discharge, swelling, irritation, and recurring infections.",

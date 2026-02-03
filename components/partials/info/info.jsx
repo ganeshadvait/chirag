@@ -10,8 +10,8 @@ export default function LaserPilesInfo({
   costIntro,
   costPoints,
   expandedContent,
-  aboveContetn="",
-  aboveContetna="",
+  // aboveContetn = "",
+  // aboveContetna = "",
   readMoreText = "Read more",
   readLessText = "Read less",
 }) {
@@ -20,25 +20,12 @@ export default function LaserPilesInfo({
   return (
     <section className="w-full max-w-5xl mx-auto px-4 py-6">
       <div className="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-6 md:p-8">
-        {/* Above Content */}
-        {aboveContetn && (
-          <div className="mb-6 text-gray-700 leading-relaxed bg-[#625587] p-4 rounded-lg">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
-               {aboveContetn}
-            </h2>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white ">
-               {aboveContetna}
-            </h2>
-          </div>
-        )}
 
         {/* About Section */}
         <h2 className="text-2xl font-semibold text-gray-900 mb-2">
           {aboutTitle}
         </h2>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          {aboutText}
-        </p>
+        <p className="text-gray-700 leading-relaxed mb-6">{aboutText}</p>
 
         {/* Advantages Section */}
         <h3 className="text-2xl font-semibold text-gray-900 mb-2">
@@ -54,9 +41,7 @@ export default function LaserPilesInfo({
         <h3 className="text-2xl font-semibold text-gray-900 mb-2">
           {costTitle}
         </h3>
-        <p className="text-gray-700 leading-relaxed mb-3">
-          {costIntro}
-        </p>
+        <p className="text-gray-700 leading-relaxed mb-3">{costIntro}</p>
 
         <ol className="list-decimal list-inside text-gray-700 space-y-1 mb-4">
           {costPoints.map((item, idx) => (
@@ -82,7 +67,6 @@ export default function LaserPilesInfo({
             {expanded ? readLessText : readMoreText}
           </button>
         )}
-
       </div>
     </section>
   );
