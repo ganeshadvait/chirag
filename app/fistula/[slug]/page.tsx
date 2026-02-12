@@ -1,4 +1,8 @@
 //File :  app/fistula/[slug]/page.tsx
+
+"use client";
+import { useParams } from "next/navigation";
+
 import dynamic from "next/dynamic";
 
 import Hero from "@/components/partials/hero/hero";
@@ -16,18 +20,83 @@ import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
-import { image } from "motion/react-client";
 
 const HospitalComparisond = dynamic(
   () => import("@/components/dynamictable/dynamictables"),
 );
 
-export default function FistualConditions({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
+
+type HeroDataType = {
+  heading: string;
+  points: string[];
+  buttonText: string;
+  imageSrc: string;
+};
+
+const contentMap: Record<
+  string,
+  {
+    hero?: Partial<HeroDataType>;
+    faqs?: { faqTitle: string; faqAnswer: string }[];
+  }
+> = {
+  "anal-fistula-surgery-cost-in-bangalore": {
+    hero: {
+      heading: "Affordable Fistula Treatment in Bangalore",
+      points: [
+        "Procedures starting from ₹50,000",
+        "Cost varies by complexity, explained upfront.",
+        "Advanced laser treatment options available.",
+        "No unnecessary procedures or add-ons.",
+        "Fast recovery-focused approach.",
+        "Payment options available (EMI/insurance).",
+      ],
+    },
+    faqs: [
+      {
+        faqTitle: "How much does anal fistula surgery cost at Chirag Global Hospitals?",
+        faqAnswer:
+          "At Chirag Global Hospitals, fistula surgery packages are structured and all-inclusive, covering options from basic laser procedures to advanced techniques such as TROPIS or VAAFT. A detailed and personalized cost estimate is shared after clinical evaluation and diagnosis.",
+      },
+      {
+        faqTitle: "Is the surgery covered under insurance?",
+        faqAnswer:
+          "Yes, Chirag Global Hospitals supports cashless treatment with most major insurance providers. Our team will assist you with approvals and documentation.",
+      },
+      {
+        faqTitle: "What’s included in the surgery cost?",
+        faqAnswer:
+          "Our packages cover consultation, surgeon fee, anesthesia, laser or surgical equipment, hospital stay (if any), and follow-up care. No hidden charges.",
+      },
+      {
+        faqTitle: "What factors affect the cost of fistula surgery?",
+        faqAnswer:
+          "Complexity of the fistula, choice of surgical technique (laser/TROPIS/LIFT), use of technology, and insurance eligibility all play a role in determining cost.",
+      },
+      {
+        faqTitle: "How do I get a detailed estimate before surgery?",
+        faqAnswer:
+          "Call 08065916427 or WhatsApp us. We’ll schedule your consultation, review your condition, and provide a transparent cost breakdown with or without insurance.",
+      },
+    ],
+  },
+};
+
+
+
+
+
+export default function FistualConditions() {
+  const params = useParams<{ slug?: string }>();
+  const slug = params?.slug ?? "";
+
+const normalizedSlug = decodeURIComponent(String(slug))
+  .trim()
+  .replace(/\/+$/, "")
+  .toLowerCase();
+
+const pageContent = contentMap[normalizedSlug];
+
   const HeroData = {
     heading: "Best Fistula Treatment In Bangalore",
     points: [
@@ -40,6 +109,13 @@ export default function FistualConditions({
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
   };
+
+  const finalHeroData = {
+  ...HeroData,
+  ...(pageContent?.hero ?? {}),
+  heading: pageContent?.hero?.heading ?? HeroData.heading,
+  points: pageContent?.hero?.points ?? HeroData.points,
+};
 
   const statsSectionData = {
     aboveContetn: "For the first time in India",
@@ -299,6 +375,10 @@ export default function FistualConditions({
         "Chirag Hospitals is trusted for advanced treatment methods, experienced doctors, and patient-focused care.",
     },
   ];
+
+  const finalFaqs = pageContent?.faqs ?? faqs;
+
+
   const testimonialSectionData = {
     testimonials: [
       {
@@ -343,7 +423,7 @@ export default function FistualConditions({
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
         {/* LEFT SIDE 70% */}
         <div className="space-y-10">
-          <Hero {...HeroData} />
+          <Hero {...finalHeroData} />
           <Number {...statsSectionData} />
           {/* <Cost
             title={costSectionData.title}
@@ -365,11 +445,11 @@ export default function FistualConditions({
           <HospitalComparisond {...InfoContent} />
           <Info {...InfoData} />
           <CtaBanner {...BannerData} />
-          {faqs.length > 0 && (
+          {finalFaqs.length > 0 && (
             <Faqs
               className="md:!w-[95%] w-full mx-[unset]"
               // fheading={fheading}
-              faqs={faqs.map((faq) => ({
+              faqs={finalFaqs.map((faq) => ({
                 faqquestion: faq.faqTitle,
                 faqanswer: faq.faqAnswer,
               }))}

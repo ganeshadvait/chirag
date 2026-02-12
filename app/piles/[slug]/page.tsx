@@ -1,4 +1,6 @@
+"use client";
 // File :  app/piles/[slug]/page.tsx
+import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
@@ -16,6 +18,13 @@ import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 
+type HeroDataType = {
+  heading: string;
+  points: string[];
+  buttonText: string;
+  imageSrc: string;
+};
+
 type PilesPageProps = {
   params: {
     slug: string;
@@ -25,12 +34,74 @@ const HospitalComparisond = dynamic(
   () => import("@/components/dynamictable/dynamictables"),
 );
 
-export default function PilesConditions({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const slug = params.slug;
+const contentMap: Record<
+    string,
+    {
+      hero?: Partial<HeroDataType>;
+      faqs?: { faqTitle: string; faqAnswer: string }[];
+    }
+  > = {
+    "piles-laser-treatment-cost-in-bangalore": {
+      hero: {
+        heading: "Affordable Piles Treatment in Bangalore",
+        points: [
+          "Packages starting from ₹50,000*",
+          "Transparent pricing, no surprises",
+          "Laser & advanced options available",
+          "Faster recovery-focused care",
+          "Easy payment options available",
+        ],
+      },
+      faqs: [
+        {
+          faqTitle: "How much does Piles laser treatment cost in Bangalore?",
+          faqAnswer:
+            "The cost ranges from ₹50,000, depending on the complexity of the treatment and hospital charges.",
+        },
+        {
+          faqTitle: "Are there any hidden costs for laser piles treatment?",
+          faqAnswer:
+            "No, Chirag Global Hospitals provides transparent pricing, and all costs will be discussed upfront. We offer no hidden charges.",
+        },
+        {
+          faqTitle: "Is Piles laser treatment covered under insurance?",
+          faqAnswer:
+            "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+        },
+        {
+          faqTitle: "Can I pay for the treatment in installments?",
+          faqAnswer:
+            "Yes, Chirag Global Hospitals offers zero-interest EMI options for your convenience.",
+        },
+        {
+          faqTitle: "Is laser treatment for piles worth the cost?",
+          faqAnswer:
+            "Yes, laser treatment provides quick recovery, minimal pain, and a higher success rate with fewer complications compared to traditional surgery.",
+        },
+        {
+          faqTitle:
+            "Will the treatment cost be higher if the condition is severe?",
+          faqAnswer:
+            "Yes, in some cases, if the piles are advanced, the cost may vary slightly depending on the additional procedures required. Contact us today to get a personalized quotation and learn more about your treatment options.",
+        },
+      ],
+    },
+  };
+
+export default function PilesConditions() {
+  const params = useParams<{ slug?: string }>();
+  const slug = params?.slug ?? "";
+
+  
+  const normalizedSlug = decodeURIComponent(String(slug))
+  .trim()
+  .replace(/\/+$/, "")
+  .toLowerCase();
+
+  
+
+  const pageContent = contentMap[normalizedSlug];
+
   const HeroData = {
     heading: "Best Piles Treatment In Bangalore",
     points: [
@@ -43,6 +114,14 @@ export default function PilesConditions({
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
   };
+
+  const finalHeroData = {
+    ...HeroData,
+    ...(pageContent?.hero ?? {}),
+    heading: pageContent?.hero?.heading ?? HeroData.heading,
+    points: pageContent?.hero?.points ?? HeroData.points,
+  };
+
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",
     description:
@@ -116,7 +195,6 @@ export default function PilesConditions({
         reviews: "99%",
         img: "/doctorpadmanabhcard.png",
       },
-      
     ],
 
     moreDoctors: [
@@ -307,6 +385,8 @@ export default function PilesConditions({
     },
   ];
 
+  const finalFaqs = pageContent?.faqs ?? faqs;
+
   const testimonialSectionData = {
     testimonials: [
       {
@@ -344,7 +424,7 @@ export default function PilesConditions({
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
         {/* LEFT SIDE 70% */}
         <div className="space-y-10">
-          <Hero {...HeroData} />
+          <Hero {...finalHeroData} />
           <Number {...statsSectionData} />
           {/* <Cost
             title={costSectionData.title}
@@ -366,11 +446,11 @@ export default function PilesConditions({
           <HospitalComparisond {...InfoContent} />
           <Info {...InfoData} />
           <CtaBanner {...BannerData} />
-          {faqs.length > 0 && (
+          {finalFaqs.length > 0 && (
             <Faqs
               className="md:!w-[95%] w-full mx-[unset]"
               // fheading={fheading}
-              faqs={faqs.map((faq) => ({
+              faqs={finalFaqs.map((faq) => ({
                 faqquestion: faq.faqTitle,
                 faqanswer: faq.faqAnswer,
               }))}
