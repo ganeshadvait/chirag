@@ -39,11 +39,13 @@ const HospitalComparisond = dynamic(
 const contentMap: Record<
   string,
   {
+    phone?: string;
     hero?: Partial<HeroDataType>;
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
   "piles-laser-treatment-cost-in-bangalore": {
+    phone: "08065916427",
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
       points: [
@@ -100,6 +102,11 @@ export default function PilesConditions() {
     .toLowerCase();
 
   const pageContent = contentMap[normalizedSlug];
+
+  const defaultPhone = "08065916415";
+  const finalPhone = pageContent?.phone ?? defaultPhone;
+
+  const finalPhoneTel = `tel:${finalPhone}`;
 
   const HeroData = {
     heading: "Best Piles Treatment In Bangalore",
@@ -420,9 +427,9 @@ export default function PilesConditions() {
   return (
     <>
       <Header
-        PhoneNumber={"08065916415"}
+        PhoneNumber={finalPhone}
         mobilectatext={"Call Now"}
-        mobileNumberHeader={"tel:08065916415"}
+        mobileNumberHeader={finalPhoneTel}
       />
       <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
         {/* 2-Column Layout */}
@@ -481,7 +488,7 @@ export default function PilesConditions() {
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"
         extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
-        footernumber="08065916415"
+        footernumber={finalPhone}
       />
     </>
   );
