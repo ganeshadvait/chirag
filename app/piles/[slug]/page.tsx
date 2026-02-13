@@ -2,6 +2,7 @@
 // File :  app/piles/[slug]/page.tsx
 import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
+import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
@@ -17,6 +18,7 @@ import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
+import FooterComponent from "@/components/footer/footer";
 
 type HeroDataType = {
   heading: string;
@@ -35,70 +37,67 @@ const HospitalComparisond = dynamic(
 );
 
 const contentMap: Record<
-    string,
-    {
-      hero?: Partial<HeroDataType>;
-      faqs?: { faqTitle: string; faqAnswer: string }[];
-    }
-  > = {
-    "piles-laser-treatment-cost-in-bangalore": {
-      hero: {
-        heading: "Affordable Piles Treatment in Bangalore",
-        points: [
-          "Packages starting from ₹50,000*",
-          "Transparent pricing, no surprises",
-          "Laser & advanced options available",
-          "Faster recovery-focused care",
-          "Easy payment options available",
-        ],
-      },
-      faqs: [
-        {
-          faqTitle: "How much does Piles laser treatment cost in Bangalore?",
-          faqAnswer:
-            "The cost ranges from ₹50,000, depending on the complexity of the treatment and hospital charges.",
-        },
-        {
-          faqTitle: "Are there any hidden costs for laser piles treatment?",
-          faqAnswer:
-            "No, Chirag Global Hospitals provides transparent pricing, and all costs will be discussed upfront. We offer no hidden charges.",
-        },
-        {
-          faqTitle: "Is Piles laser treatment covered under insurance?",
-          faqAnswer:
-            "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
-        },
-        {
-          faqTitle: "Can I pay for the treatment in installments?",
-          faqAnswer:
-            "Yes, Chirag Global Hospitals offers zero-interest EMI options for your convenience.",
-        },
-        {
-          faqTitle: "Is laser treatment for piles worth the cost?",
-          faqAnswer:
-            "Yes, laser treatment provides quick recovery, minimal pain, and a higher success rate with fewer complications compared to traditional surgery.",
-        },
-        {
-          faqTitle:
-            "Will the treatment cost be higher if the condition is severe?",
-          faqAnswer:
-            "Yes, in some cases, if the piles are advanced, the cost may vary slightly depending on the additional procedures required. Contact us today to get a personalized quotation and learn more about your treatment options.",
-        },
+  string,
+  {
+    hero?: Partial<HeroDataType>;
+    faqs?: { faqTitle: string; faqAnswer: string }[];
+  }
+> = {
+  "piles-laser-treatment-cost-in-bangalore": {
+    hero: {
+      heading: "Affordable Piles Treatment in Bangalore",
+      points: [
+        "Packages starting from ₹50,000*",
+        "Transparent pricing, no surprises",
+        "Laser & advanced options available",
+        "Faster recovery-focused care",
+        "Easy payment options available",
       ],
     },
-  };
+    faqs: [
+      {
+        faqTitle: "How much does Piles laser treatment cost in Bangalore?",
+        faqAnswer:
+          "The cost ranges from ₹50,000, depending on the complexity of the treatment and hospital charges.",
+      },
+      {
+        faqTitle: "Are there any hidden costs for laser piles treatment?",
+        faqAnswer:
+          "No, Chirag Global Hospitals provides transparent pricing, and all costs will be discussed upfront. We offer no hidden charges.",
+      },
+      {
+        faqTitle: "Is Piles laser treatment covered under insurance?",
+        faqAnswer:
+          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+      },
+      {
+        faqTitle: "Can I pay for the treatment in installments?",
+        faqAnswer:
+          "Yes, Chirag Global Hospitals offers zero-interest EMI options for your convenience.",
+      },
+      {
+        faqTitle: "Is laser treatment for piles worth the cost?",
+        faqAnswer:
+          "Yes, laser treatment provides quick recovery, minimal pain, and a higher success rate with fewer complications compared to traditional surgery.",
+      },
+      {
+        faqTitle:
+          "Will the treatment cost be higher if the condition is severe?",
+        faqAnswer:
+          "Yes, in some cases, if the piles are advanced, the cost may vary slightly depending on the additional procedures required. Contact us today to get a personalized quotation and learn more about your treatment options.",
+      },
+    ],
+  },
+};
 
 export default function PilesConditions() {
   const params = useParams<{ slug?: string }>();
   const slug = params?.slug ?? "";
 
-  
   const normalizedSlug = decodeURIComponent(String(slug))
-  .trim()
-  .replace(/\/+$/, "")
-  .toLowerCase();
-
-  
+    .trim()
+    .replace(/\/+$/, "")
+    .toLowerCase();
 
   const pageContent = contentMap[normalizedSlug];
 
@@ -419,59 +418,71 @@ export default function PilesConditions() {
       "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
   return (
-    <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
-      {/* 2-Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
-        {/* LEFT SIDE 70% */}
-        <div className="space-y-10">
-          <Hero {...finalHeroData} />
-          <Number {...statsSectionData} />
-          {/* <Cost
+    <>
+      <Header
+        PhoneNumber={"08065916415"}
+        mobilectatext={"Call Now"}
+        mobileNumberHeader={"tel:08065916415"}
+      />
+      <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
+        {/* 2-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
+          {/* LEFT SIDE 70% */}
+          <div className="space-y-10">
+            <Hero {...finalHeroData} />
+            <Number {...statsSectionData} />
+            {/* <Cost
             title={costSectionData.title}
             points={costSectionData.points}
             buttonText={costSectionData.buttonText}
             imageSrc={costSectionData.imageSrc}
           /> */}
-          <Risk {...risksOfDelayData} />
-          <Doctors {...doctorsSectionData} />
-          <HospitalLocation locationsectionheading={defaultLocationHeading} />
-          <CostDepends
-            heading={treatmentCostDependsData.heading}
-            items={treatmentCostDependsData.items}
-            ctaText={treatmentCostDependsData.ctaText}
-          />
-          <InsurenceAdvisor {...insuranceAdvisorData} />
-
-          <Why {...whyChooseData} />
-          <HospitalComparisond {...InfoContent} />
-          <Info {...InfoData} />
-          <CtaBanner {...BannerData} />
-          {finalFaqs.length > 0 && (
-            <Faqs
-              className="md:!w-[95%] w-full mx-[unset]"
-              // fheading={fheading}
-              faqs={finalFaqs.map((faq) => ({
-                faqquestion: faq.faqTitle,
-                faqanswer: faq.faqAnswer,
-              }))}
+            <Risk {...risksOfDelayData} />
+            <Doctors {...doctorsSectionData} />
+            <HospitalLocation locationsectionheading={defaultLocationHeading} />
+            <CostDepends
+              heading={treatmentCostDependsData.heading}
+              items={treatmentCostDependsData.items}
+              ctaText={treatmentCostDependsData.ctaText}
             />
-          )}
-        </div>
+            <InsurenceAdvisor {...insuranceAdvisorData} />
 
-        {/* RIGHT SIDE 30% (Sticky Form) */}
-        <div className="relative">
-          {/* Desktop: sticky, Mobile: fixed bottom */}
-          <div className="hidden lg:block sticky top-24">
-            <Form reviewsData={testimonialSectionData} />
+            <Why {...whyChooseData} />
+            <HospitalComparisond {...InfoContent} />
+            <Info {...InfoData} />
+            <CtaBanner {...BannerData} />
+            {finalFaqs.length > 0 && (
+              <Faqs
+                className="md:!w-[95%] w-full mx-[unset]"
+                // fheading={fheading}
+                faqs={finalFaqs.map((faq) => ({
+                  faqquestion: faq.faqTitle,
+                  faqanswer: faq.faqAnswer,
+                }))}
+              />
+            )}
           </div>
-          <div
-            className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
-            style={{ maxWidth: "1500px", margin: "0 auto" }}
-          >
-            <Form reviewsData={testimonialSectionData} />
+
+          {/* RIGHT SIDE 30% (Sticky Form) */}
+          <div className="relative">
+            {/* Desktop: sticky, Mobile: fixed bottom */}
+            <div className="hidden lg:block sticky top-24">
+              <Form reviewsData={testimonialSectionData} />
+            </div>
+            <div
+              className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
+              style={{ maxWidth: "1500px", margin: "0 auto" }}
+            >
+              <Form reviewsData={testimonialSectionData} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <FooterComponent
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
+        footernumber="08065916415"
+      />
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Header from "@/components/header/header";
 import LadyHeroSection from "@/components/partials/hero/ladypileshero";
 import Number from "@/components/partials/number/number";
 import Risk from "@/components/partials/risks/risk";
@@ -12,17 +13,18 @@ import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import DoctorsData from "@/app/doctorsdata/doctorsdata";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
-
+import FooterComponent from "@/components/footer/footer";
 
 const HospitalComparisond = dynamic(
   () => import("@/components/dynamictable/dynamictables"),
 );
 
 export default function LadyPilesConditions({
-    params,
-}: {  params: { slug: string };
+  params,
+}: {
+  params: { slug: string };
 }) {
-    const slug = params.slug;
+  const slug = params.slug;
   const doctor = DoctorsData.Proctology["Dr. Shreedevi KN"];
 
   const HeroData = {
@@ -93,7 +95,6 @@ export default function LadyPilesConditions({
         reviews: "99%",
         img: "/doctorpadmanabhcard.png",
       },
-      
     ],
 
     moreDoctors: [
@@ -316,59 +317,71 @@ export default function LadyPilesConditions({
   };
 
   return (
-    <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
-      {/* 2-Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
-        {/* LEFT SIDE 70% */}
-        <div className="space-y-10">
-          <LadyHeroSection {...HeroData} />
-          <Number {...statsSectionData} />
-          {/* <Cost
+    <>
+      <Header
+        PhoneNumber={"08065916415"}
+        mobilectatext={"Call Now"}
+        mobileNumberHeader={"tel:08065916415"}
+      />
+      <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
+        {/* 2-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
+          {/* LEFT SIDE 70% */}
+          <div className="space-y-10">
+            <LadyHeroSection {...HeroData} />
+            <Number {...statsSectionData} />
+            {/* <Cost
             title={costSectionData.title}
             points={costSectionData.points}
             buttonText={costSectionData.buttonText}
             imageSrc={costSectionData.imageSrc}
           /> */}
-          <Risk {...risksOfDelayData} />
-          <Doctors {...doctorsSectionData} />
-          <HospitalLocation locationsectionheading={defaultLocationHeading} />
-          <CostDepends
-            heading={treatmentCostDependsData.heading}
-            items={treatmentCostDependsData.items}
-            ctaText={treatmentCostDependsData.ctaText}
-          />
-          <InsurenceAdvisor {...insuranceAdvisorData} />
-
-          <Why {...whyChooseData} />
-          <HospitalComparisond {...InfoContent} />
-          <Info {...InfoData} />
-          <CtaBanner {...BannerData} />
-          {faqs.length > 0 && (
-            <Faqs
-              className="md:!w-[95%] w-full mx-[unset]"
-              // fheading={fheading}
-              faqs={faqs.map((faq) => ({
-                faqquestion: faq.faqTitle,
-                faqanswer: faq.faqAnswer,
-              }))}
+            <Risk {...risksOfDelayData} />
+            <Doctors {...doctorsSectionData} />
+            <HospitalLocation locationsectionheading={defaultLocationHeading} />
+            <CostDepends
+              heading={treatmentCostDependsData.heading}
+              items={treatmentCostDependsData.items}
+              ctaText={treatmentCostDependsData.ctaText}
             />
-          )}
-        </div>
+            <InsurenceAdvisor {...insuranceAdvisorData} />
 
-        {/* RIGHT SIDE 30% (Sticky Form) */}
-        <div className="relative">
-          {/* Desktop: sticky, Mobile: fixed bottom */}
-          <div className="hidden lg:block sticky top-24">
-            <Form reviewsData={testimonialSectionData} />
+            <Why {...whyChooseData} />
+            <HospitalComparisond {...InfoContent} />
+            <Info {...InfoData} />
+            <CtaBanner {...BannerData} />
+            {faqs.length > 0 && (
+              <Faqs
+                className="md:!w-[95%] w-full mx-[unset]"
+                // fheading={fheading}
+                faqs={faqs.map((faq) => ({
+                  faqquestion: faq.faqTitle,
+                  faqanswer: faq.faqAnswer,
+                }))}
+              />
+            )}
           </div>
-          <div
-            className="block lg:hidden fixed bottom-0 left-0 w-full z-200 bg-transparent   px-4 py-1"
-            style={{ maxWidth: "1500px", margin: "0 auto" }}
-          >
-            <Form reviewsData={testimonialSectionData} />
+
+          {/* RIGHT SIDE 30% (Sticky Form) */}
+          <div className="relative">
+            {/* Desktop: sticky, Mobile: fixed bottom */}
+            <div className="hidden lg:block sticky top-24">
+              <Form reviewsData={testimonialSectionData} />
+            </div>
+            <div
+              className="block lg:hidden fixed bottom-0 left-0 w-full z-200 bg-transparent   px-4 py-1"
+              style={{ maxWidth: "1500px", margin: "0 auto" }}
+            >
+              <Form reviewsData={testimonialSectionData} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <FooterComponent
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
+        footernumber="08065916415"
+      />
+    </>
   );
 }

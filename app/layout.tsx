@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Header from "@/components/header/header";
-import FooterComponent from "@/components/footer/footer";
+// import Header from "@/components/header/header";
+// import FooterComponent from "@/components/footer/footer";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
@@ -48,18 +48,18 @@ export default function RootLayout({
           ></iframe>
         </noscript>
 
-        <Header
+        {/* <Header
           PhoneNumber={"08065916415"}
           mobilectatext={"Call Now"}
           mobileNumberHeader={"tel:08065916415"}
-        />
+        /> */}
         {children}
       </body>
-      <FooterComponent
+      {/* <FooterComponent
         footerdesc="About Chirag Global Hospitals"
         extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
         footernumber="08065916415"
-      />
+      /> */}
     </html>
   );
 }

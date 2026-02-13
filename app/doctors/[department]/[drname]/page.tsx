@@ -1,9 +1,12 @@
+import Header from "@/components/header/header";
 import DoctorsData, { DoctorDetails } from "../../../doctorsdata/doctorsdata";
 import Doctordetailspagehero from "@/components/doctorscomponents/doctorhero";
 import ConditionsWeTreat from "@/components/doctorscomponents/whatwetreat";
 import Doctors from "@/components/partials/doctors/doctors";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
+import FooterComponent from "@/components/footer/footer";
+
 
 interface Props {
   params: {
@@ -372,6 +375,11 @@ export default async function DoctorProfile({ params }: Props) {
 
   return (
     <>
+    <Header
+            PhoneNumber={"08065916415"}
+            mobilectatext={"Call Now"}
+            mobileNumberHeader={"tel:08065916415"}
+          />
       <Doctordetailspagehero doctor={doctorInfo} />
       <ConditionsWeTreat conditions={conditionsData} />
       <section id="doctors" className="my-10 px-4">
@@ -407,6 +415,11 @@ export default async function DoctorProfile({ params }: Props) {
           }))}
         />
       )}
+      <FooterComponent
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
+        footernumber="08065916415"
+      />
     </>
   );
 }
