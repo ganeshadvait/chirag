@@ -3,20 +3,23 @@
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import FormModal from "@/components/FormModal/FormModal";
-import {
-  SUPPORT_PHONE_DEFAULT,
-  SUPPORT_PHONE_FISTULA,
-  toTel,
-} from "@/constants/contact";
+import { SUPPORT_PHONE_DEFAULT, toTel } from "@/constants/contact";
+
+const SUPPORT_PHONE_BLR = "08065916427";
+
+const SUPPORT_PHONE_ROUTES = new Set([
+  "/piles/piles-laser-treatment-cost-in-Bangalore",
+  "/fistula/anal-fistula-surgery-cost-in-Bangalore",
+]);
 
 export function useFormModal() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   const supportPhone = useMemo(() => {
-    // match ONLY this exact route
-    if (pathname === "/fistula/anal-fistula-surgery-cost-in-Bangalore") {
-      return SUPPORT_PHONE_FISTULA;
+    // match ONLY these exact routes
+    if (pathname && SUPPORT_PHONE_ROUTES.has(pathname)) {
+      return SUPPORT_PHONE_BLR;
     }
     return SUPPORT_PHONE_DEFAULT;
   }, [pathname]);
@@ -43,6 +46,6 @@ export function useFormModal() {
     closeModal,
     handleButtonClick,
     FormModal: FormModalComponent,
-    supportPhone, // optional: expose it if you want to display it
+    supportPhone,
   };
 }
