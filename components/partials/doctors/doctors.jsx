@@ -70,7 +70,7 @@ function DoctorCard({ doctor, supportPhone }) {
   return (
     <div className="bg-white rounded-2xl shadow-md px-5 py-4 h-full">
       <div className="flex gap-4 items-stretch h-full">
-        {/* IMAGE – FULL HEIGHT */}
+        {/* IMAGE */}
         <div className="w-20 flex-shrink-0 self-stretch">
           <img
             src={doctor.img}
@@ -125,7 +125,7 @@ function ConsultBanner({
   buttonText = "",
   imageSrc = "",
   handleButtonClick,
-}) {w
+}) {
   return (
     <div className="w-full bg-[#9e8dce] rounded-2xl my-12">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
