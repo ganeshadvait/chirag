@@ -14,7 +14,7 @@ export default function DoctorsSection({
   moreDoctors,
   banner,
 }) {
-  const { handleButtonClick, FormModal } = useFormModal();
+  const { handleButtonClick, FormModal, supportPhone } = useFormModal();
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -28,7 +28,7 @@ export default function DoctorsSection({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Top Doctors */}
         {topDoctors.map((doc, idx) => (
-          <DoctorCard key={`top-${idx}`} doctor={doc} />
+          <DoctorCard key={`top-${idx}`} doctor={doc} supportPhone={supportPhone}/>
         ))}
 
         {/* More Doctors
@@ -39,7 +39,7 @@ export default function DoctorsSection({
             key={`more-${idx}`}
             className={`${showMore ? "block" : "hidden"} sm:block`}
           >
-            <DoctorCard doctor={doc} />
+            <DoctorCard doctor={doc} supportPhone={supportPhone}/>
           </div>
         ))}
       </div>
@@ -66,7 +66,7 @@ export default function DoctorsSection({
 
 /* ===================== Doctor Card (OLD UI + FULL HEIGHT IMAGE) ===================== */
 
-function DoctorCard({ doctor }) {
+function DoctorCard({ doctor, supportPhone }) {
   return (
     <div className="bg-white rounded-2xl shadow-md px-5 py-4 h-full">
       <div className="flex gap-4 items-stretch h-full">
@@ -101,10 +101,9 @@ function DoctorCard({ doctor }) {
           </div>
 
           {/* CTA – LEFT ALIGNED */}
-          {/* CTA – LEFT ALIGNED */}
 
           <a
-            href={toTel(SUPPORT_PHONE_DEFAULT)}
+            href={toTel(supportPhone)}
             className="mt-3 self-start inline-block
     border-2 border-[#625587] text-[#625587]
     rounded-full px-4 py-2 text-sm font-medium
@@ -126,7 +125,7 @@ function ConsultBanner({
   buttonText = "",
   imageSrc = "",
   handleButtonClick,
-}) {
+}) {w
   return (
     <div className="w-full bg-[#9e8dce] rounded-2xl my-12">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
