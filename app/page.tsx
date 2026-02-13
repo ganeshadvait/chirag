@@ -1,7 +1,7 @@
 import React from "react";
 
 import dynamic from "next/dynamic";
-import Header from "@/components/partials/header/header";
+import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
@@ -17,6 +17,7 @@ import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
+import FooterComponent from "@/components/footer/footer";
 
 const HospitalComparisond = dynamic(
   () => import("@/components/dynamictable/dynamictables"),
@@ -328,6 +329,12 @@ export default function NewDesign() {
       "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
   return (
+    <>
+    <Header
+        PhoneNumber={"08065916415"}
+        mobilectatext={"Call Now"}
+        mobileNumberHeader={"tel:08065916415"}
+      />
     <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
       {/* 2-Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
@@ -382,5 +389,12 @@ export default function NewDesign() {
         </div>
       </div>
     </div>
+    <FooterComponent
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
+        footernumber="08065916415"
+      />
+    </>
+    
   );
 }

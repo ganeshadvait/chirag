@@ -49,7 +49,7 @@ const contentMap: Record<
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
       points: [
-        "Packages starting from ₹50,000*",
+        "Packages starting from ₹50,000",
         "Transparent pricing, no surprises",
         "Laser & advanced options available",
         "Faster recovery-focused care",
