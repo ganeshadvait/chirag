@@ -1,19 +1,44 @@
 "use client";
 import { useFormModal } from "@/hooks/useFormModal";
+import { usePathname } from "next/navigation";
 
 export default function InsuranceAdvisorSection({ cards }) {
   const { handleButtonClick, FormModal } = useFormModal();
+  const pathname = usePathname();
+
+  // Pages that should use the alternate number
+  const specialPages = new Set([
+    "/piles/piles-laser-treatment-cost-in-Bangalore",
+    "/fistula/anal-fistula-surgery-cost-in-Bangalore",
+  ]);
+
+  const phoneNumber = specialPages.has(pathname)
+    ? "08065916427"
+    : "08065916415";
+
+  const isMobile = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 767px)").matches;
+
+  const callNow = () => {
+    window.location.href = `tel:${phoneNumber}`;
+  };
 
   const handleCTAClick = (idx) => {
-    // First card → modal on desktop, call on mobile
+    // First card:
+    // Desktop -> open modal
+    // Mobile  -> call
     if (idx === 0) {
-      handleButtonClick();
+      if (isMobile()) callNow();
+      else handleButtonClick();
       return;
     }
 
-    // Second card → always call
+    // Second card:
+    // Desktop + Mobile -> call
     if (idx === 1) {
-      window.open("tel:08065916415", "_self");
+      callNow();
+      return;
     }
   };
 
@@ -25,7 +50,6 @@ export default function InsuranceAdvisorSection({ cards }) {
             key={idx}
             className="flex flex-col rounded-3xl bg-white border border-gray-100 px-6 md:px-10 py-6 shadow-sm gap-4"
           >
-            {/* Content */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 leading-snug">
                 {card.titlePrefix}{" "}
@@ -45,8 +69,6 @@ export default function InsuranceAdvisorSection({ cards }) {
               )}
             </div>
 
-            {/* CTA  here if button is second one lets make like  navigate to call or whatsapp  */}
-            {/* {index === 1 && <div className="flex-grow" />}  */}
             <button
               onClick={() => handleCTAClick(idx)}
               className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center"
@@ -57,7 +79,6 @@ export default function InsuranceAdvisorSection({ cards }) {
         ))}
       </div>
 
-      {/* Form Modal */}
       <FormModal />
     </section>
   );

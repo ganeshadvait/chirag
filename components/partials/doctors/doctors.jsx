@@ -3,7 +3,10 @@
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
 import { useState } from "react";
-import { SUPPORT_PHONE_TEL } from "@/constants/contact";
+import {
+  SUPPORT_PHONE_DEFAULT,
+  toTel,
+} from "@/constants/contact";
 
 export default function DoctorsSection({
   heading,
@@ -101,7 +104,7 @@ function DoctorCard({ doctor }) {
           {/* CTA – LEFT ALIGNED */}
 
           <a
-            href={SUPPORT_PHONE_TEL}
+            href={toTel(SUPPORT_PHONE_DEFAULT)}
             className="mt-3 self-start inline-block
     border-2 border-[#625587] text-[#625587]
     rounded-full px-4 py-2 text-sm font-medium

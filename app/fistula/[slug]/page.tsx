@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 
 import dynamic from "next/dynamic";
 
+import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
@@ -20,11 +21,11 @@ import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
+import FooterComponent from "@/components/footer/footer";
 
 const HospitalComparisond = dynamic(
   () => import("@/components/dynamictable/dynamictables"),
 );
-
 
 type HeroDataType = {
   heading: string;
@@ -36,11 +37,13 @@ type HeroDataType = {
 const contentMap: Record<
   string,
   {
+    phone?: string;
     hero?: Partial<HeroDataType>;
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
   "anal-fistula-surgery-cost-in-bangalore": {
+    phone: "08065916427",
     hero: {
       heading: "Affordable Fistula Treatment in Bangalore",
       points: [
@@ -54,7 +57,8 @@ const contentMap: Record<
     },
     faqs: [
       {
-        faqTitle: "How much does anal fistula surgery cost at Chirag Global Hospitals?",
+        faqTitle:
+          "How much does anal fistula surgery cost at Chirag Global Hospitals?",
         faqAnswer:
           "At Chirag Global Hospitals, fistula surgery packages are structured and all-inclusive, covering options from basic laser procedures to advanced techniques such as TROPIS or VAAFT. A detailed and personalized cost estimate is shared after clinical evaluation and diagnosis.",
       },
@@ -82,20 +86,21 @@ const contentMap: Record<
   },
 };
 
-
-
-
-
 export default function FistualConditions() {
   const params = useParams<{ slug?: string }>();
   const slug = params?.slug ?? "";
 
-const normalizedSlug = decodeURIComponent(String(slug))
-  .trim()
-  .replace(/\/+$/, "")
-  .toLowerCase();
+  const normalizedSlug = decodeURIComponent(String(slug))
+    .trim()
+    .replace(/\/+$/, "")
+    .toLowerCase();
 
-const pageContent = contentMap[normalizedSlug];
+  const pageContent = contentMap[normalizedSlug];
+
+  const defaultPhone = "08065916415";
+  const finalPhone = pageContent?.phone ?? defaultPhone;
+
+  const finalPhoneTel = `tel:${finalPhone}`;
 
   const HeroData = {
     heading: "Best Fistula Treatment In Bangalore",
@@ -111,15 +116,16 @@ const pageContent = contentMap[normalizedSlug];
   };
 
   const finalHeroData = {
-  ...HeroData,
-  ...(pageContent?.hero ?? {}),
-  heading: pageContent?.hero?.heading ?? HeroData.heading,
-  points: pageContent?.hero?.points ?? HeroData.points,
-};
+    ...HeroData,
+    ...(pageContent?.hero ?? {}),
+    heading: pageContent?.hero?.heading ?? HeroData.heading,
+    points: pageContent?.hero?.points ?? HeroData.points,
+  };
 
   const statsSectionData = {
     aboveContetn: "For the first time in India",
-    aboveContetna: "CEREG – Circumferential Endoanal Real-Time Echo-Guided Procedures",
+    aboveContetna:
+      "CEREG – Circumferential Endoanal Real-Time Echo-Guided Procedures",
     heading: "Trusted by Patients\nWorldwide",
     description:
       "Patients receive safe fistula treatment with shorter hospital stays, quick discharge, and dedicated medical support.",
@@ -309,16 +315,16 @@ const pageContent = contentMap[normalizedSlug];
       "Medication for infection control",
       "Laser fistula treatment",
       "Surgical treatment if required",
-      "LIFT", 
-      "Fistulectomy", 
-      "Seton", 
-      "PREFACT", 
+      "LIFT",
+      "Fistulectomy",
+      "Seton",
+      "PREFACT",
       "VAAFT",
-      "Kshara Sutra", 
-      "SLOFT", 
-      "Fistulotomy", 
-      "Glue Plug", 
-      "Mucosal Flaps", 
+      "Kshara Sutra",
+      "SLOFT",
+      "Fistulotomy",
+      "Glue Plug",
+      "Mucosal Flaps",
       "Fibrin Glue",
     ],
 
@@ -378,7 +384,6 @@ const pageContent = contentMap[normalizedSlug];
 
   const finalFaqs = pageContent?.faqs ?? faqs;
 
-
   const testimonialSectionData = {
     testimonials: [
       {
@@ -418,59 +423,72 @@ const pageContent = contentMap[normalizedSlug];
   };
 
   return (
-    <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
-      {/* 2-Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
-        {/* LEFT SIDE 70% */}
-        <div className="space-y-10">
-          <Hero {...finalHeroData} />
-          <Number {...statsSectionData} />
-          {/* <Cost
+    <>
+      <Header
+        PhoneNumber={finalPhone}
+        mobilectatext={"Call Now"}
+        mobileNumberHeader={finalPhoneTel}
+      />
+      <div className="w-full max-w-[1500px] mx-auto px-4 py-8">
+        {/* 2-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
+          {/* LEFT SIDE 70% */}
+          <div className="space-y-10">
+            <Hero {...finalHeroData} />
+            <Number {...statsSectionData} />
+            {/* <Cost
             title={costSectionData.title}
             points={costSectionData.points}
             buttonText={costSectionData.buttonText}
             imageSrc={costSectionData.imageSrc}
           /> */}
-          <Risk {...risksOfDelayData} />
-          <Doctors {...doctorsSectionData} />
-          <HospitalLocation locationsectionheading={defaultLocationHeading} />
-          <CostDepends
-            heading={treatmentCostDependsData.heading}
-            items={treatmentCostDependsData.items}
-            ctaText={treatmentCostDependsData.ctaText}
-          />
-          <InsurenceAdvisor {...insuranceAdvisorData} />
-
-          <Why {...whyChooseData} />
-          <HospitalComparisond {...InfoContent} />
-          <Info {...InfoData} />
-          <CtaBanner {...BannerData} />
-          {finalFaqs.length > 0 && (
-            <Faqs
-              className="md:!w-[95%] w-full mx-[unset]"
-              // fheading={fheading}
-              faqs={finalFaqs.map((faq) => ({
-                faqquestion: faq.faqTitle,
-                faqanswer: faq.faqAnswer,
-              }))}
+            <Risk {...risksOfDelayData} />
+            <Doctors {...doctorsSectionData} />
+            <HospitalLocation locationsectionheading={defaultLocationHeading} />
+            <CostDepends
+              heading={treatmentCostDependsData.heading}
+              items={treatmentCostDependsData.items}
+              ctaText={treatmentCostDependsData.ctaText}
             />
-          )}
-        </div>
+            <InsurenceAdvisor {...insuranceAdvisorData} />
 
-        {/* RIGHT SIDE 30% (Sticky Form) */}
-        <div className="relative">
-          {/* Desktop: sticky, Mobile: fixed bottom */}
-          <div className="hidden lg:block sticky top-24">
-            <Form reviewsData={testimonialSectionData} />
+            <Why {...whyChooseData} />
+            <HospitalComparisond {...InfoContent} />
+            <Info {...InfoData} />
+            <CtaBanner {...BannerData} />
+            {finalFaqs.length > 0 && (
+              <Faqs
+                className="md:!w-[95%] w-full mx-[unset]"
+                // fheading={fheading}
+                faqs={finalFaqs.map((faq) => ({
+                  faqquestion: faq.faqTitle,
+                  faqanswer: faq.faqAnswer,
+                }))}
+              />
+            )}
           </div>
-          <div
-            className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
-            style={{ maxWidth: "1500px", margin: "0 auto" }}
-          >
-            <Form reviewsData={testimonialSectionData} />
+
+          {/* RIGHT SIDE 30% (Sticky Form) */}
+          <div className="relative">
+            {/* Desktop: sticky, Mobile: fixed bottom */}
+            <div className="hidden lg:block sticky top-24">
+              <Form reviewsData={testimonialSectionData} />
+            </div>
+            <div
+              className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
+              style={{ maxWidth: "1500px", margin: "0 auto" }}
+            >
+              <Form reviewsData={testimonialSectionData} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <FooterComponent
+        footerdesc="About Chirag Global Hospitals"
+        extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
+        footernumber={finalPhone}
+      />
+    </>
   );
 }
