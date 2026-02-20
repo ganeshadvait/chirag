@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import TestimonialSlider from "@/components/partials/reviews/reviews";
+import { contactAction } from "@/hooks/contact";
 
 import type { Review } from "@/components/reviews-carousel";
 import ReviewsCarousel from "@/components/reviews-carousel";
@@ -414,7 +415,8 @@ export default function ConsultationForm({
       <div className="flex flex-row gap-3 mt-0 md:mt-5 w-full items-center">
         <button
           className="group flex-1 bg-[#F8B956] hover:bg-transparent border-2 border-transparent hover:border-[#F8B956] hover:text-black transition text-white text-sm font-semibold rounded-full shadow min-w-[80px] px-2 py-3 md:py-4 flex items-center justify-center gap-2"
-          onClick={() => setShowForm((v: boolean) => !v)}
+          // onClick={() => setShowForm((v: boolean) => !v)}
+          onClick={contactAction}
         >
           <img
             src="/uil_calender.svg"

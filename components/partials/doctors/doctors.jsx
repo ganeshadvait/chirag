@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
 import { useState } from "react";
+import { contactAction } from "@/hooks/contact";
 import {
   SUPPORT_PHONE_DEFAULT,
   toTel,
@@ -57,7 +58,7 @@ export default function DoctorsSection({
         </div>
       )}
 
-      <ConsultBanner {...banner} handleButtonClick={handleButtonClick} />
+      <ConsultBanner {...banner} handleButtonClick={contactAction} />
 
       <FormModal />
     </section>

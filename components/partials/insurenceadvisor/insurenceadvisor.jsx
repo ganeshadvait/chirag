@@ -1,6 +1,7 @@
 "use client";
 import { useFormModal } from "@/hooks/useFormModal";
 import { usePathname } from "next/navigation";
+import { contactAction } from "@/hooks/contact";
 
 export default function InsuranceAdvisorSection({ cards }) {
   const { handleButtonClick, FormModal } = useFormModal();
@@ -30,7 +31,7 @@ export default function InsuranceAdvisorSection({ cards }) {
     // Mobile  -> call
     if (idx === 0) {
       if (isMobile()) callNow();
-      else handleButtonClick();
+      else contactAction();
       return;
     }
 
