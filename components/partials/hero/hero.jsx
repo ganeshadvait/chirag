@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
 import DoctorsData from "@/app/doctorsdata/doctorsdata";
+import { contactAction } from "@/hooks/contact";
 
 export default function HeroSection({
   heading,
@@ -47,7 +48,7 @@ export default function HeroSection({
           </ul>
 
           <button
-            onClick={handleButtonClick}
+            onClick={contactAction}
             className="mt-6 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-8 py-3 text-lg"
           >
             {buttonText}
