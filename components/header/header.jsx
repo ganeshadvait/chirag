@@ -50,7 +50,7 @@ export default function Header({
   return (
     <>
       <header className="header w-[96%] h-[90px] mx-auto my-2 flex items-center justify-between p-5 border border-[#ebeff6] bg-white sticky top-[10px] z-[1000] transition-all duration-300 ease-in-out max-w-[1500px] shadow-lg rounded-xl">
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-1 md:gap-4 items-center">
           <img
             className="w-[100px] md:w-[140px] h-[80px] md:h-[100px] object-contain md:object-cover"
             src="https://www.chiragglobalhospitals.com/wp-content/uploads/2026/01/chirag-logo-2048x1170.png"
@@ -85,7 +85,7 @@ export default function Header({
           </ul>
         </nav>
 
-              <div className="header__cta flex items-center gap-3">
+              <div className="header__cta flex items-center gap-1 md:gap-3">
         {/* WhatsApp Icon (separate) */}
         <a
           href="https://wa.me/919019954658"
@@ -98,7 +98,7 @@ export default function Header({
             alt="WhatsApp icon"
             width={20}
             height={20}
-            className="w-8 h-8 md:w-8 md:h-8"
+            className="w-6 h-6 md:w-8 md:h-8"
           />
         </a>
 
