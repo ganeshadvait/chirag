@@ -25,6 +25,6 @@ export const contactAction = () => {
     window.location.href = `tel:${phoneNumber}`;
   } else {
     // Desktop → WhatsApp
-    window.open("https://wa.me/919019954658", "_blank");
+    window.open("https://wa.me/919380498256", "_blank");
   }
 };

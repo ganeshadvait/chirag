@@ -3,7 +3,7 @@
 export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
   // Always open WhatsApp
   const handleButtonClick = () => {
-    window.open("https://wa.me/919019954658", "_blank");
+    window.open("https://wa.me/919380498256", "_blank");
   };
 
   return (

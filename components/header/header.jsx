@@ -88,7 +88,7 @@ export default function Header({
               <div className="header__cta flex items-center gap-1 md:gap-3">
         {/* WhatsApp Icon (separate) */}
         <a
-          href="https://wa.me/919019954658"
+          href="https://wa.me/919380498256"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center"
