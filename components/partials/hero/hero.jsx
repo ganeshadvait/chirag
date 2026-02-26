@@ -37,7 +37,7 @@ export default function HeroSection({
           <ul className="mt-6 space-y-6">
             {points.map((item, idx) => (
               <li key={idx} className="flex items-center gap-3">
-                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#625587] text-white text-sm">
+                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#625587] text-white text-sm shrink-0">
                   ✓
                 </span>
                 <span className="text-lg text-gray-700 font-semibold">
@@ -73,7 +73,7 @@ export default function HeroSection({
             <ul className="text-gray-800 font-medium space-y-1 flex flex-col items-center justify-center">
               <li>{doctorInfo.name}</li>
               <li>{doctorInfo.qualifications}</li>
-              <li>{doctorInfo.designation}</li>
+              <li className="text-center">{doctorInfo.designation}</li>
               <li>{doctorInfo.experience}</li>
             </ul>
           </div>
