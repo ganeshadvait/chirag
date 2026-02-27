@@ -43,13 +43,13 @@ const contentMap: Record<
   "colorectal-laser-treatment-cost-in-bangalore": {
     phone: "08065916427",
     hero: {
-      heading: "Affordable Colorectal Cancer Treatment in Bangalore",
+      heading: "Best Colorectal Cancer Treatment in Bangalore",
       points: [
-        "Packages starting from ₹50,000",
-        "Transparent pricing, no surprises",
-        "Laser & advanced options available",
-        "Faster recovery-focused care",
-        "Easy payment options available",
+        "Stage 0: Abnormal cells are only in the lining of the colon or rectum",
+        "Stage 1: Cancer grows into the muscle layer but hasn't spread to other parts",
+        "Stage 2: Cancer spreads to walls of the colon/rectum or nearby tissue but not to lymph nodes",
+        "Stage 3: Cancer spreads to nearby lymph nodes but not to other organs",
+        "Stage 4: Cancer spreads to other parts of the body, like the liver or lungs",
       ],
     },
     faqs: [
@@ -101,11 +101,11 @@ export default function PilesConditions() {
   const HeroData = {
     heading: "Best Colorectal Cancer Treatment in Bangalore",
     points: [
-      "Experienced colorectal specialists",
-      "30-Min Laser Treatment for Piles",
-      "Personalized patient-focused care",
-      "Same-day discharge & faster recovery",
-      "No Cuts, No Bleeding, No Stitches",
+      "Stage 0: Abnormal cells are only in the lining of the colon or rectum",
+      "Stage 1: Cancer grows into the muscle layer but hasn't spread to other parts",
+      "Stage 2: Cancer spreads to walls of the colon/rectum or nearby tissue but not to lymph nodes",
+      "Stage 3: Cancer spreads to nearby lymph nodes but not to other organs",
+      "Stage 4: Cancer spreads to other parts of the body, like the liver or lungs",
     ],
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
