@@ -1,23 +1,23 @@
+//File :- app/colorectal-cancer/[slug]/page.tsx
 "use client";
-// File :  app/piles/[slug]/page.tsx
+
 import { useParams } from "next/navigation";
-import dynamic from "next/dynamic";
 import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
-import Risk from "@/components/partials/risks/risk";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
 import Why from "@/components/partials/why/why";
 import Google from "@/components/partials/google/google";
-import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
+import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
+import SymptomsInfo from "@/components/partials/symptomsinfo/symptomsinfo";
 import FooterComponent from "@/components/footer/footer";
 
 type HeroDataType = {
@@ -32,10 +32,6 @@ type PilesPageProps = {
     slug: string;
   };
 };
-const HospitalComparisond = dynamic(
-  () => import("@/components/dynamictable/dynamictables"),
-);
-
 const contentMap: Record<
   string,
   {
@@ -44,10 +40,10 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "piles-laser-treatment-cost-in-bangalore": {
+  "colorectal-laser-treatment-cost-in-bangalore": {
     phone: "08065916427",
     hero: {
-      heading: "Affordable Piles Treatment in Bangalore",
+      heading: "Affordable Colorectal Cancer Treatment in Bangalore",
       points: [
         "Packages starting from ₹50,000",
         "Transparent pricing, no surprises",
@@ -58,35 +54,29 @@ const contentMap: Record<
     },
     faqs: [
       {
-        faqTitle: "How much does Piles laser treatment cost in Bangalore?",
+        faqTitle: "Is colorectal cancer treatable?",
         faqAnswer:
-          "The cost ranges from ₹50,000, depending on the complexity of the treatment and hospital charges.",
+          "Early-stage colorectal cancer can be treated effectively, often with surgery and/or chemotherapy. The treatment plan depends on the stage and location of the cancer.",
       },
       {
-        faqTitle: "Are there any hidden costs for laser piles treatment?",
+        faqTitle: "Will I need surgery?",
         faqAnswer:
-          "No, Chirag Global Hospitals provides transparent pricing, and all costs will be discussed upfront. We offer no hidden charges.",
+          "Surgery is often a part of the treatment for colorectal cancer, but it depends on the stage and type of tumor. Our specialists will discuss options with you.",
       },
       {
-        faqTitle: "Is Piles laser treatment covered under insurance?",
+        faqTitle: "How soon do I need to act?",
         faqAnswer:
-          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+          "If you're experiencing symptoms or have been diagnosed, we recommend getting evaluated as soon as possible to confirm staging and prevent delays in treatment.",
       },
       {
-        faqTitle: "Can I pay for the treatment in installments?",
+        faqTitle: "What can I expect during chemotherapy?",
         faqAnswer:
-          "Yes, Chirag Global Hospitals offers zero-interest EMI options for your convenience.",
+          "Chemotherapy is a common treatment for colorectal cancer. Side effects vary, but we provide detailed guidance on what to expect and how to manage them.",
       },
       {
-        faqTitle: "Is laser treatment for piles worth the cost?",
+        faqTitle: "Can I get a second opinion?",
         faqAnswer:
-          "Yes, laser treatment provides quick recovery, minimal pain, and a higher success rate with fewer complications compared to traditional surgery.",
-      },
-      {
-        faqTitle:
-          "Will the treatment cost be higher if the condition is severe?",
-        faqAnswer:
-          "Yes, in some cases, if the piles are advanced, the cost may vary slightly depending on the additional procedures required. Contact us today to get a personalized quotation and learn more about your treatment options.",
+          "Yes, we offer second opinions to confirm treatment plans and help guide you to the best possible care.",
       },
     ],
   },
@@ -173,6 +163,22 @@ export default function PilesConditions() {
       "Risk of Anaemia",
     ],
   };
+
+  const symptomsInfoData = {
+    symptomsHeading: "Symptoms You Shouldn't Ignore",
+    symptoms: [
+      "Blood in stool or rectal bleeding",
+      "Unexplained weight loss or fatigue",
+      "Persistent change in bowel habits",
+      "Abdominal discomfort, bloating, or cramps",
+      "Feeling of incomplete evacuation",
+      "Low hemoglobin (anemia) or weakness",
+    ],
+    ctaText: "Book a Specialist Consultation",
+    diagnosisHeading: "Why Early Diagnosis Matters",
+    diagnosisText:
+      "If you notice any of the above symptoms, early evaluation can help guide your next steps for treatment, reducing delays and improving outcome.",
+  };
   const doctorsSectionData = {
     heading: "Our Top Doctors",
 
@@ -244,6 +250,38 @@ export default function PilesConditions() {
   const defaultLocationHeading =
     "Chirag Global Hospital - Best Colorectal Hospital in Bangalore";
 
+  const treatmentOptionsData = {
+    heading: "Treatment Options",
+    options: [
+      {
+        title: "Surgery",
+        description:
+          "When appropriate, surgery will be considered for tumor removal, depending on staging.",
+      },
+      {
+        title: "Chemotherapy",
+        description:
+          "Often recommended as part of the treatment plan to shrink tumors or after surgery to reduce recurrence.",
+      },
+      {
+        title: "Radiation Therapy",
+        description:
+          "Can be used pre-surgery for rectal cancer to shrink the tumor or post-surgery for better results.",
+      },
+      {
+        title: "Targeted / Immunotherapy",
+        description:
+          "Used based on the tumor's biological makeup. This may be suitable for certain cases with metastasis.",
+      },
+      {
+        title: "Supportive Care",
+        description:
+          "Nutritional counseling, pain management, and emotional support to guide you through treatment.",
+      },
+    ],
+    ctaText: "Book An Appointment",
+  };
+
   const treatmentCostDependsData = {
     heading: "Treatment Cost Depends On",
     items: [
@@ -296,13 +334,13 @@ export default function PilesConditions() {
   };
 
   const whyChooseData = {
-    heading: "Why Choose Chirag Hospitals for Piles Treatment in Bangalore",
+    heading: "Why Choose Chirag Hospital Colorectal Cancer",
     points: [
-      "Top specialist with 38 years experience",
-      "High patient satisfaction",
-      "Affordable treatment options",
-      "Complete pre and post care",
-      "Patient-friendly hospital support",
+      "Specialized Team: Expert oncologists, colorectal surgeons, and radiologists with years of experience",
+      "Comprehensive Care: We guide you from diagnosis through recovery, focusing on personalized treatment plans",
+      "Cutting-Edge Treatments: Including the latest in laser surgery and immunotherapy",
+      "Patient-Centered Approach: Clear communication, coordinated care, and ongoing support through every stage of treatment",
+      "Privacy & Comfort: Confidential consultations and a caring, supportive team",
     ],
   };
   const InfoContent = {
@@ -353,41 +391,36 @@ export default function PilesConditions() {
   };
 
   const BannerData = {
-    heading: "Get Relief from Piles – Book Now",
+    heading: "Get Relief from colorectal cancer  – Book Now",
     buttonText: "Book An Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };
 
   const faqs = [
     {
-      faqTitle: "What are the common symptoms of piles?",
+      faqTitle: "Is colorectal cancer treatable?",
       faqAnswer:
-        "Piles commonly cause bleeding during bowel movements, pain, itching, swelling, or a lump around the anus.",
+        "Early-stage colorectal cancer can be treated effectively, often with surgery and/or chemotherapy. The treatment plan depends on the stage and location of the cancer.",
     },
     {
-      faqTitle: "Is laser treatment effective for piles?",
+      faqTitle: "Will I need surgery?",
       faqAnswer:
-        "Yes, laser treatment is a modern and effective option that helps reduce pain, bleeding, and recovery time.",
+        "Surgery is often a part of the treatment for colorectal cancer, but it depends on the stage and type of tumor. Our specialists will discuss options with you.",
     },
     {
-      faqTitle: "When should I consult a doctor for piles?",
+      faqTitle: "How soon do I need to act?",
       faqAnswer:
-        "You should consult a doctor if symptoms persist, worsen, or bleeding continues for several days.",
+        "If you're experiencing symptoms or have been diagnosed, we recommend getting evaluated as soon as possible to confirm staging and prevent delays in treatment.",
     },
     {
-      faqTitle: "Is the doctor experienced in treating piles?",
+      faqTitle: "What can I expect during chemotherapy?",
       faqAnswer:
-        "Yes, the doctor has decades of experience in diagnosing and treating different stages of piles.",
+        "Chemotherapy is a common treatment for colorectal cancer. Side effects vary, but we provide detailed guidance on what to expect and how to manage them.",
     },
     {
-      faqTitle: "How much does piles treatment cost at Chirag Hospitals?",
+      faqTitle: "Can I get a second opinion?",
       faqAnswer:
-        "The cost varies based on treatment type and condition severity, with EMI options available for convenience.",
-    },
-    {
-      faqTitle: "Why is Chirag Hospitals trusted for piles treatment?",
-      faqAnswer:
-        "Chirag Hospitals is known for safe treatment, modern facilities, and consistent patient care.",
+        "Yes, we offer second opinions to confirm treatment plans and help guide you to the best possible care.",
     },
   ];
 
@@ -397,7 +430,7 @@ export default function PilesConditions() {
     testimonials: [
       {
         // title: "Laser treatment for my dad's piles",
-        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I've had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital's billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
         name: "Abddul",
         rating: 5,
       },
@@ -415,7 +448,7 @@ export default function PilesConditions() {
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It’s been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
+        text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It's been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
         name: "Syam",
         rating: 5,
       },
@@ -444,9 +477,12 @@ export default function PilesConditions() {
             buttonText={costSectionData.buttonText}
             imageSrc={costSectionData.imageSrc}
           /> */}
-            <Risk {...risksOfDelayData} />
+            {/* <Risk {...risksOfDelayData} /> */}
+            <SymptomsInfo {...symptomsInfoData} />
             <Doctors {...doctorsSectionData} />
             <HospitalLocation locationsectionheading={defaultLocationHeading} />
+            <TreatmentOptions {...treatmentOptionsData} />
+
             <CostDepends
               heading={treatmentCostDependsData.heading}
               items={treatmentCostDependsData.items}
@@ -455,8 +491,8 @@ export default function PilesConditions() {
             <InsurenceAdvisor {...insuranceAdvisorData} />
 
             <Why {...whyChooseData} />
-            <HospitalComparisond {...InfoContent} />
-            <Info {...InfoData} />
+            {/* <HospitalComparisond {...InfoContent} /> */}
+            {/* <Info {...InfoData} /> */}
             <CtaBanner {...BannerData} />
             {finalFaqs.length > 0 && (
               <Faqs
