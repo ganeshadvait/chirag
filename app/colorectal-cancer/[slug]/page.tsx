@@ -239,8 +239,8 @@ export default function PilesConditions() {
     banner: {
       heading: "Consult The Doctor Now",
       points: [
-        "Experienced colorectal specialists",
-        "Modern laser treatment methods",
+        "Experienced oncologists",
+        "Various treatment methods",
         "Proven treatment outcomes",
       ],
       buttonText: "Book Appointment",
