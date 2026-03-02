@@ -7,7 +7,7 @@ import { contactAction } from "@/hooks/contact";
 
 export default function HeroSection({
   heading,
-  subheading,
+  subheading = "",
   points,
   buttonText,
   imageSrc,
@@ -34,7 +34,9 @@ export default function HeroSection({
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
             {heading}
           </h1>
-          <p className="text-gray-700 mt-2">{subheading}</p>
+          {subheading && (
+            <p className="text-gray-700 mt-2">{subheading}</p>
+          )}
 
           <ul className="mt-6 space-y-6">
             {points.map((item, idx) => {
