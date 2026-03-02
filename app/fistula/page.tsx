@@ -2,7 +2,7 @@
 export default function FistualDetailPage() {
   return (
     <>
-      <p>Piles all page</p>
+      <p>Fistula all page</p>
     </>
   );
 }

@@ -7,6 +7,7 @@ import { contactAction } from "@/hooks/contact";
 
 export default function HeroSection({
   heading,
+  subheading = "",
   points,
   buttonText,
   imageSrc,
@@ -33,18 +34,27 @@ export default function HeroSection({
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
             {heading}
           </h1>
+          {subheading && (
+            <p className="text-gray-700 mt-2">{subheading}</p>
+          )}
 
           <ul className="mt-6 space-y-6">
-            {points.map((item, idx) => (
-              <li key={idx} className="flex items-center gap-3">
-                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#625587] text-white text-sm shrink-0">
-                  ✓
-                </span>
-                <span className="text-lg text-gray-700 font-semibold">
-                  {item}.
-                </span>
-              </li>
-            ))}
+            {points.map((item, idx) => {
+              const colonIdx = item.indexOf(": ");
+              const label = colonIdx !== -1 ? item.slice(0, colonIdx) : null;
+              const rest = colonIdx !== -1 ? item.slice(colonIdx + 2) : item;
+              return (
+                <li key={idx} className="flex items-center gap-3">
+                  <span className="w-6 h-6 flex items-center justify-center rounded-full bg-[#625587] text-white text-sm shrink-0">
+                    ✓
+                  </span>
+                  <span className="text-lg text-gray-700">
+                    {label && <strong>{label}: </strong>}
+                    {rest}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
 
           <button
