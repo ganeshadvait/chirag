@@ -35,7 +35,7 @@ export default function HeroSection({
             {heading}
           </h1>
           {subheading && (
-            <p className="text-gray-700 mt-2">{subheading}</p>
+            <p className="text-gray-700 mt-2 font-bold text-[20px]">{subheading}</p>
           )}
 
           <ul className="mt-6 space-y-6">
