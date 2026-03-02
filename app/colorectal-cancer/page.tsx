@@ -397,26 +397,32 @@ export default function PilesConditions() {
     testimonials: [
       {
         // title: "Laser treatment for my dad's piles",
-        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+        text: "Dr Rajshekhar is a specialist in colorectal cancer. He explained my condition clearly and discussed the treatment options in simple language. I felt comfortable asking questions and was satisfied with the care.",
         name: "Abddul",
         rating: 5,
       },
       {
         // title: "Smooth and painless",
-        text: "I had a wonderful experience with Dr. Rajasekhar sir and his team a wonderful surgeons at Chirag hospital. His entire team is always helpful and kind. Dr. Rajasekar treated me for piles and he made sure I was comfortable. The staff in the hospital were very cooperative and soft spoken. They ensured I am prepared for the entire treatment. Dr. rajasekhar sir is friendly and approachable at any time in case of need. I feel much better and happy that I chose Dr. rajasekar sir to do my piles treatment. I would highly recommend anyone who wants to undergo piles treatment without undergoing any surgery.",
+        text: "I consulted Dr Rajshekhar for colorectal cancer treatment. He reviewed my reports carefully and suggested the right treatment plan. He is calm, patient, and supportive.",
         name: "Sai",
         rating: 5,
       },
       {
         // title: "Colorectal Diseases",
-        text: "I had piles issues for the last 2 years. even though I got surgery before, the problem came back again. Rajasekhar sir did surgery on me 4 months back. till now, no problem. treatment is good. fees are high but very good doctors. If treatment is more important than anything else, everyone should visit this hospital for piles and fistula problems.",
+        text: "Dr Rajshekhar handled my colorectal cancer surgery. The procedure went well, and he monitored my recovery closely. I am thankful for his guidance during the treatment.",
         name: "Kasireddy",
         rating: 5,
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It’s been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
+        text: "We met Dr Rajshekhar after my diagnosis of colorectal cancer. He explained the stage of the disease and what steps were needed next. The overall treatment process was smooth.",
         name: "Syam",
+        rating: 5,
+      },
+      {
+        // title: "Admitted for my fistula surgery",
+        text: "Dr Rajshekhar is experienced in treating colorectal cancer. He answers questions clearly and makes sure the patient understands the treatment plan. I would recommend him for colorectal cancer care.",
+        name: "Priyank",
         rating: 5,
       },
     ],
