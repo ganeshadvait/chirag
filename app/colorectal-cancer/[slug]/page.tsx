@@ -22,6 +22,7 @@ import FooterComponent from "@/components/footer/footer";
 
 type HeroDataType = {
   heading: string;
+  subheading?: string;
   points: string[];
   buttonText: string;
   imageSrc: string;
@@ -41,7 +42,7 @@ const contentMap: Record<
   }
 > = {
   "colorectal-laser-treatment-cost-in-bangalore": {
-    phone: "08065916427",
+    phone: "08065916415",
     hero: {
       heading: "Best Colorectal Cancer Treatment in Bangalore",
       points: [
@@ -100,6 +101,7 @@ export default function PilesConditions() {
 
   const HeroData = {
     heading: "Best Colorectal Cancer Treatment in Bangalore",
+    subheading: "Stages of colorectal Cancer",
     points: [
       "Stage 0: Abnormal cells are only in the lining of the colon or rectum",
       "Stage 1: Cancer grows into the muscle layer but hasn't spread to other parts",
