@@ -158,7 +158,7 @@ export default function PilesConditions() {
       "Feeling of incomplete evacuation",
       "Low hemoglobin (anemia) or weakness",
     ],
-    ctaText: "Book a Specialist Consultation",
+    ctaText: " Book An Appointment",
     diagnosisHeading: "Why Early Diagnosis Matters",
     diagnosisText:
       "If you notice any of the above symptoms, early evaluation can help guide your next steps for treatment, reducing delays and improving outcome.",
