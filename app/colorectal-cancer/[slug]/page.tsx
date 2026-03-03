@@ -38,11 +38,12 @@ const contentMap: Record<
     hero: {
       heading: "Best Colorectal Cancer Treatment in Bangalore",
       points: [
-        "Stage 0: Abnormal cells are only in the lining of the colon or rectum",
-        "Stage 1: Cancer grows into the muscle layer but hasn't spread to other parts",
-        "Stage 2: Cancer spreads to walls of the colon/rectum or nearby tissue but not to lymph nodes",
-        "Stage 3: Cancer spreads to nearby lymph nodes but not to other organs",
-        "Stage 4: Cancer spreads to other parts of the body, like the liver or lungs",
+        "Early detection and precise diagnosis",
+        "Experienced colorectal cancer specialists",
+        "Surgical and medical oncologists",
+        "Personalised patient-focussed care",
+        "Early stage endoscopic treatment",
+        "Palliative care facility",
       ],
     },
     faqs: [
