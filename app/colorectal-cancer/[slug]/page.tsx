@@ -5,16 +5,13 @@ import { useParams } from "next/navigation";
 import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
-import Cost from "@/components/partials/cost/cost";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
 import Why from "@/components/partials/why/why";
-import Google from "@/components/partials/google/google";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
-import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
 import SymptomsInfo from "@/components/partials/symptomsinfo/symptomsinfo";
@@ -28,11 +25,6 @@ type HeroDataType = {
   imageSrc: string;
 };
 
-type PilesPageProps = {
-  params: {
-    slug: string;
-  };
-};
 const contentMap: Record<
   string,
   {
@@ -101,13 +93,13 @@ export default function PilesConditions() {
 
   const HeroData = {
     heading: "Best Colorectal Cancer Treatment in Bangalore",
-    subheading: "Stages of colorectal Cancer",
     points: [
-      "Stage 0: Abnormal cells are only in the lining of the colon or rectum",
-      "Stage 1: Cancer grows into the muscle layer but hasn't spread to other parts",
-      "Stage 2: Cancer spreads to walls of the colon/rectum or nearby tissue but not to lymph nodes",
-      "Stage 3: Cancer spreads to nearby lymph nodes but not to other organs",
-      "Stage 4: Cancer spreads to other parts of the body, like the liver or lungs",
+      "Early detection and precise diagnosis",
+      "Experienced colorectal cancer specialists",
+      "Surgical and medical oncologists",
+      "Personalised patient-focussed care",
+      "Early stage endoscopic treatment",
+      "Palliative care facility",
     ],
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
@@ -154,17 +146,6 @@ export default function PilesConditions() {
   //   buttonText: "Calculate Surgery Cost",
   //   imageSrc: "/chiraggpt.png",
   // };
-
-  const risksOfDelayData = {
-    heading: "Risks of Delaying Piles Treatment",
-    risks: [
-      "Severe pain",
-      "Excessive Blood in Stool",
-      "Infection risk",
-      "Chronic discomfort",
-      "Risk of Anaemia",
-    ],
-  };
 
   const symptomsInfoData = {
     symptomsHeading: "Symptoms You Shouldn't Ignore",
@@ -343,52 +324,6 @@ export default function PilesConditions() {
       "Cutting-Edge Treatments: Including the latest in laser surgery and immunotherapy",
       "Patient-Centered Approach: Clear communication, coordinated care, and ongoing support through every stage of treatment",
       "Privacy & Comfort: Confidential consultations and a caring, supportive team",
-    ],
-  };
-  const InfoContent = {
-    theading: "Piles Treatment at Chirag Hospitals",
-    videoSrc: "/chirag-piles-video.mp4",
-
-    title: "What Are Piles or Hemorrhoids?",
-    description: (
-      <>
-        Piles, also called hemorrhoids, are swollen veins in the anal area that
-        cause pain, bleeding, and discomfort. Medical treatment helps relieve
-        symptoms and prevents complications.
-      </>
-    ),
-
-    points: [
-      "Internal Piles – Piles inside the rectum",
-      "External Piles – Piles outside the anus",
-      "Thrombosed Piles – Piles with blood clots",
-    ],
-  };
-  const InfoData = {
-    aboutTitle: "Symptoms of Piles",
-    aboutText:
-      "Piles commonly cause bleeding during bowel movements, pain, itching, swelling, or a lump around the anus that needs medical attention.",
-
-    advantagesTitle: "Treatment Options for Piles",
-    advantages: [
-      "Laser piles treatment",
-      "Lifestyle and dietary guidance",
-      "Advanced DGHAL procedure for piles",
-      "Ultrasonic shears excision for minimal pain and faster recovery",
-    ],
-
-    costTitle: "Why Laser Is Best Treatment",
-    costIntro: "Laser piles treatment is preferred because it offers:",
-    costPoints: [
-      "Minimally invasive procedure",
-      "Less pain and bleeding",
-      "Same-day discharge possible",
-      "Faster recovery time",
-    ],
-
-    expandedContent: [
-      "Laser piles treatment is a modern option for patients seeking effective relief with minimal discomfort and shorter recovery time.",
-      "Treatment plan and cost are decided after medical evaluation based on the severity and individual patient condition.",
     ],
   };
 
