@@ -111,7 +111,7 @@ export default function PilesConditions() {
       "Early detection and precise diagnosis",
       "Experienced colorectal cancer specialists",
       "Surgical and medical oncologists",
-      "Personalised patient-focussed care",
+      "Personalised patient-focused care",
       "Early stage endoscopic treatment",
       "Palliative care facility",
     ],
