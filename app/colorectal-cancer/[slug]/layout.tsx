@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Piles Treatment in Bangalore | Laser Piles Surgery | Chirag Hospitals",
+  title: "Colorectal Cancer Treatment in Bangalore | Colorectal Cancer Surgery | Chirag Hospitals",
   description:
-    "Get advanced laser treatment for piles in Bangalore at Chirag Hospitals. Experienced specialists, minimal pain procedure, fast recovery, EMI options available.",
+    "Get advanced colorectal cancer treatment in Bangalore at Chirag Hospitals. Experienced colorectal specialists, early detection, surgical and medical oncology, personalised patient care.",
 };
 
 interface LayoutProps {
