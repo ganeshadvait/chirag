@@ -4,6 +4,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
+import { contactAction } from "@/hooks/contact";
 
 export interface DoctorInfo {
   image?: string;
@@ -81,7 +82,7 @@ export default function Doctordetailspagehero({
               </div>
               <button
                 className="w-full h-[45px] text-white rounded-full mb-2 bg-[#F8B956]"
-                onClick={handleButtonClick}
+                onClick={contactAction}
               >
                 Book Appointment
               </button>
