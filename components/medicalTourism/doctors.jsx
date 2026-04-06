@@ -2,32 +2,32 @@
 
 const doctors = [
   {
-    name: "Dr. Rajasekhar M.R.",
+    name: "Dr. Rajashekar M R",
     qualification: "MBBS, MS",
-    role: "Chief Proctologist & Colorectal Surgeon",
-    experience: "38+ Years · 50,000+ Procedures",
+    role: "Founder & Chief Proctologist",
+    experience: "42+ Years",
     badge: "Founder",
-    avatar: "👨‍⚕️",
+    image: "/doctorchiragcard.png",
     whatsappText:
       "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Rajasekhar",
   },
   {
     name: "Dr. Shreedevi K.N.",
-    qualification: "MBBS, MS, FSGE",
-    role: "Surgical Gastroenterology & Colorectal Surgeon",
-    experience: "Senior Specialist",
-    avatar: "👩‍⚕️",
+    qualification: "MBBS, MS, FSGE Surgical",
+    role: "Gastroenterology & Colorectal Surgeon",
+    experience: "12+ Years",
+    image: "/doctorshreedevicard.png",
     whatsappText:
       "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Shreedevi",
   },
   {
-    name: "Dr. Suchitra N. Adiga",
-    qualification: "BAMS, MS",
-    role: "Proctologist — Integrative & Minimally Invasive",
-    experience: "Integrative Care Specialist",
-    avatar: "👩‍⚕️",
+    name: "Dr. Padmanabh R Bhat",
+    qualification: "MBBS, MS(Gen Surgery), FRCS(Edin)",
+    role: "General Surgeon",
+    experience: "28+ Years",
+    image: "/Dr. Padmanabh R Bhat.png",
     whatsappText:
-      "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Suchitra",
+      "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Padmanabh",
   },
 ];
 
@@ -48,9 +48,9 @@ export default function MtDoctorsStrip() {
           </h2>
 
           <p className="mt-3 text-sm leading-7 text-[#5A7078] sm:text-base">
-            Led by Dr. Rajasekhar Mysore — 38+ years, 50,000+ successful
-            procedures. You&apos;ll be treated by the specialist, not handed off
-            to a junior.
+            Led by Dr. Rajasekhar Mysore — 38+ years, 180k+ Patients Treated.
+            You&apos;ll be treated by the specialist, not handed off to a
+            junior.
           </p>
         </div>
 
@@ -68,8 +68,12 @@ export default function MtDoctorsStrip() {
                 </div>
               )}
 
-              <div className="mx-auto mb-4 flex h-[100px] w-[100px] items-center justify-center rounded-full border-[3px] border-[#C8963E]/25 bg-gradient-to-br from-[#625587] to-[#1A6B7A] text-5xl shadow-[0_4px_20px_rgba(11,79,90,0.15)]">
-                {doctor.avatar}
+              <div className="mx-auto mb-4 h-[110px] w-[110px] overflow-hidden rounded-full border-[3px] border-[#C8963E]/25 shadow-[0_4px_20px_rgba(11,79,90,0.15)]">
+                <img
+                  src={doctor.image}
+                  alt={doctor.name}
+                  className="h-full w-full object-cover"
+                />
               </div>
 
               <div className="text-xl font-bold text-[#625587]">
@@ -95,7 +99,7 @@ export default function MtDoctorsStrip() {
                 rel="noreferrer"
                 className="mt-4 block rounded-4xl bg-[#625587] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#F8B956]"
               >
-                📅 Book Consultation
+                Book Consultation
               </a>
             </div>
           ))}

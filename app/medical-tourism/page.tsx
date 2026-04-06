@@ -28,7 +28,7 @@ export default function MedicalTourismPage() {
       <Services />
       <Testimonials />
       <FAQs />
-      <MtBottomCta />
+      {/* <MtBottomCta /> */}
       <WhatsAppFloat />
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"

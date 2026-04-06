@@ -2,56 +2,56 @@
 
 const treatments = [
   {
-    icon: "🔴",
+    svg: "/medicaltourism/Piles.svg",
     title: "Piles / Hemorrhoids",
     description:
       "Advanced laser treatment — painless, daycare procedure, back to travel in 48 hrs.",
     link: "https://chiragglobalhospitals.com/piles-laser-treatment-in-bangalore/",
   },
   {
-    icon: "🩺",
+    svg: "/medicaltourism/Fistula.svg",
     title: "Fistula Surgery",
     description:
       "Complex fistulotomy & fistulectomy with India's most experienced proctologist.",
     link: "https://chiragglobalhospitals.com/top-fistula-laser-treatment-hospital-in-bangalore/",
   },
   {
-    icon: "⚡",
+    svg: "/medicaltourism/fissure.svg",
     title: "Fissure Treatment",
     description:
       "Laser-based, no-cut procedure with minimal downtime and long-term relief.",
     link: "https://chiragglobalhospitals.com/best-fissure-laser-treatment-in-bangalore/",
   },
   {
-    icon: "🎯",
+    svg: "/medicaltourism/Pilonidal sinus.svg",
     title: "Pilonidal Sinus",
     description:
       "Precision surgery with minimal scar, faster healing — ideal for travelling patients.",
     link: "https://chiragglobalhospitals.com/pilonidal-sinus-specialists-in-bangalore/",
   },
   {
-    icon: "🔬",
+    svg: "/medicaltourism/Colon cancer.svg",
     title: "Colon Cancer",
     description:
       "Multi-disciplinary oncology & surgical care with world-class outcomes.",
     link: "https://chiragglobalhospitals.com/colon-cancer-experts-in-bangalore/",
   },
   {
-    icon: "💧",
+    svg: "/medicaltourism/Ulcerative Colitis.svg",
     title: "Ulcerative Colitis",
     description:
       "Specialised medical management and surgical options for IBD patients.",
     link: "https://chiragglobalhospitals.com/ulcerative-colitis-treatment-in-bangalore/",
   },
   {
-    icon: "🌿",
+    svg: "/medicaltourism/Rectal prolapse.svg",
     title: "Rectal Prolapse",
     description:
       "Minimally invasive correction for complete or partial rectal prolapse.",
     link: "https://chiragglobalhospitals.com/top-specialists-for-rectal-prolapse-treatment-in-bangalore/",
   },
   {
-    icon: "🌀",
+    svg: "/medicaltourism/Constipation.svg",
     title: "Constipation & IBD",
     description:
       "Comprehensive diagnosis and treatment plans for chronic bowel conditions.",
@@ -85,7 +85,13 @@ export default function MtTreatments() {
               key={treatment.title}
               className="rounded-[14px] border border-transparent bg-white px-5 py-6 text-center shadow-[0_2px_16px_rgba(11,79,90,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#625587] hover:shadow-[0_4px_32px_rgba(11,79,90,0.10)]"
             >
-              <div className="mb-3 text-[2rem] leading-none">{treatment.icon}</div>
+              <div className="mb-6">
+                <img
+                  src={treatment.svg}
+                  alt={treatment.title}
+                  className="w-15 h-15 mx-auto"
+                />
+              </div>
 
               <h4 className="text-lg font-bold text-[#625587]">
                 {treatment.title}

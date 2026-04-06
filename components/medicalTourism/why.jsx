@@ -3,56 +3,51 @@
 const costRows = [
   {
     treatment: "Piles Surgery",
-    ukUs: "$6,000–12,000",
-    gulf: "$3,000–5,000",
+    ukUs: "$3,000–10,000+",
+    gulf: "$1,300–4,000+",
     chirag: "$800–1,200",
-    saving: "SAVE 85%",
   },
   {
     treatment: "Fistula Surgery",
-    ukUs: "$8,000–15,000",
-    gulf: "$4,000–7,000",
+    ukUs: "$5,000–15,000+",
+    gulf: "$1,300–5,500+",
     chirag: "$1,000–1,800",
-    saving: "SAVE 80%",
   },
   {
     treatment: "Fissure Treatment",
-    ukUs: "$4,000–8,000",
-    gulf: "$2,000–4,000",
+    ukUs: "$4,000–9,000+",
+    gulf: "$1,350–4,000+",
     chirag: "$600–1,000",
-    saving: "SAVE 82%",
   },
   {
     treatment: "Pilonidal Sinus",
-    ukUs: "$5,000–10,000",
-    gulf: "$2,500–5,000",
+    ukUs: "$2,500–4,800+",
+    gulf: "$4,000–10,800+",
     chirag: "$800–1,400",
-    saving: "SAVE 80%",
   },
   {
     treatment: "Colon Cancer",
-    ukUs: "$30,000–80,000",
-    gulf: "$15,000–30,000",
+    ukUs: "$28,000–100,000+",
+    gulf: "$8,000–50,000+",
     chirag: "$4,000–9,000",
-    saving: "SAVE 88%",
   },
 ];
 
 const whyPoints = [
   {
-    icon: "🎯",
+    icon: "/medicaltourism/India's Only Dedicated Colorectal Specialist Hospital.svg",
     title: "India's Only Dedicated Colorectal Specialist Hospital",
     description:
       "Unlike multi-specialty chains, we focus 100% on proctology & colorectal care — giving you deeper expertise and better outcomes.",
   },
   {
-    icon: "🤝",
+    icon: "/medicaltourism/Personalized, Not Assembly-Line Care.svg",
     title: "Personalized, Not Assembly-Line Care",
     description:
       "Your senior doctor is also your treating specialist. Not an intern. Not a rotation. The same trusted face from consultation to discharge.",
   },
   {
-    icon: "✈️",
+    icon: "/medicaltourism/End-to-End International Patient Support.svg",
     title: "End-to-End International Patient Support",
     description:
       "Medical visa guidance, airport pickup, accommodation, interpreter services, and post-treatment follow-up — all handled by our dedicated team.",
@@ -76,9 +71,9 @@ export default function MtWhyIndia() {
           </h2>
 
           <p className="mt-4 max-w-2xl text-base leading-7 text-[#5A7078]">
-            The same surgery that costs $8,000 in the UK or $12,000 in the US
-            can be done at Chirag Global Hospitals for a fraction of the price —
-            with equal or superior outcomes.
+            Save more on world-class treatment. At Chirag Global Hospitals,
+            patients receive advanced surgical care with outcomes that meet or
+            surpass leading international standards.
           </p>
 
           <div className="mt-8 flex flex-col gap-5">
@@ -87,7 +82,9 @@ export default function MtWhyIndia() {
                 key={point.title}
                 className="flex items-start gap-4 rounded-xl border-l-[3px] border-[#C8963E] bg-[#FAF7F3] p-[18px]"
               >
-                <div className="text-2xl leading-none">{point.icon}</div>
+                <div className="text-2xl leading-none">
+                  <img src={point.icon} alt="icon" className="w-10 h-10" />
+                </div>
                 <div>
                   <h4 className="text-lg font-bold text-[#625587]">
                     {point.title}

@@ -2,37 +2,37 @@
 
 const includedServices = [
   {
-    icon: "🛂",
+    icon: "/medicaltourism/Medical Visa Support.svg",
     title: "Medical Visa Support",
     description:
       "We provide official invitation letters, medical certificates and documentation to secure your India medical visa.",
   },
   {
-    icon: "🏨",
+    icon: "/medicaltourism/Accommodation Guidance.svg",
     title: "Accommodation Guidance",
     description:
       "Curated hotels near the hospital at all budgets — from budget guesthouses to 5-star options.",
   },
   {
-    icon: "📱",
+    icon: "/medicaltourism/WhatsApp-First Communication.svg",
     title: "WhatsApp-First Communication",
     description:
       "Send reports, X-rays and queries directly on WhatsApp. We respond within hours, not days.",
   },
   {
-    icon: "💰",
+    icon: "/medicaltourism/Transparent Cost Estimates.svg",
     title: "Transparent Cost Estimates",
     description:
       "Detailed written treatment plan with all-inclusive pricing before you book flights. No hidden charges.",
   },
   {
-    icon: "📹",
+    icon: "/medicaltourism/Remote Pre-Consultation.svg",
     title: "Remote Pre-Consultation",
     description:
       "Video call with the treating doctor before you travel. Get your questions answered by the specialist directly.",
   },
   {
-    icon: "🩺",
+    icon: "/medicaltourism/Post-Treatment Follow-Up.svg",
     title: "Post-Treatment Follow-Up",
     description:
       "Online consultations and medical reports shared with your home doctor. Lifetime WhatsApp access to our team.",
@@ -66,7 +66,7 @@ export default function MtIncluded() {
               className="flex items-start gap-4 rounded-[14px] border border-[#E2EDF0] p-6 transition duration-300 hover:border-[#625587] hover:bg-[#FAF7F3]"
             >
               <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#fff] to-[#F8B956] text-xl text-white">
-                {service.icon}
+                <img src={service.icon} alt="icon" className="w-6 h-6" />
               </div>
 
               <div>

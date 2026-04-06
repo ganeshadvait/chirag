@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "Is the treatment safe? What is your success rate?",
     answer:
-      "Chirag Global Hospitals has a 99.5% success rate across 50,000+ procedures. We are NABH accredited — the highest quality standard for Indian hospitals — and use the latest laser and minimally invasive techniques.",
+      "chirag Global Hospitals has a 99.5% success rate on colorectal surgeries. We are NABH accredited — the highest quality standard for Indian hospitals — and use the latest laser and minimally invasive techniques.",
   },
   {
     question: "What happens if I need follow-up after returning home?",
