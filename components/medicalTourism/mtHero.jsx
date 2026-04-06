@@ -1,32 +1,12 @@
 // File: components/medicalTourism/mtHero.jsx
+"use client";
 
-const countries = [
-  "United Arab Emirates",
-  "United Kingdom",
-  "United States",
-  "Saudi Arabia",
-  "Kenya",
-  "Nigeria",
-  "Tanzania",
-  "Bangladesh",
-  "Sri Lanka",
-  "Afghanistan",
-  "Other",
-];
-
-const treatments = [
-  "Piles / Hemorrhoids",
-  "Fistula",
-  "Fissure",
-  "Pilonidal Sinus",
-  "Colon Cancer",
-  "Ulcerative Colitis",
-  "Rectal Prolapse",
-  "Constipation",
-  "Not Sure / Need Diagnosis",
-];
+import { useState } from "react";
+import ConsultationForm from "./form";
 
 export default function MtHero() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <section className="relative overflow-hidden px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-20">
       {/* Background video */}
@@ -96,14 +76,12 @@ export default function MtHero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="https://wa.me/+919380498256?text=I'm%20an%20international%20patient%20and%20want%20to%20book%20a%20consultation%20at%20Chirag%20Global%20Hospitals"
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={() => setShowForm(true)}
               className="inline-flex items-center justify-center rounded-4xl bg-[#F8B956] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#625587]"
             >
               Book Consultation
-            </a>
+            </button>
 
             <a
               href="#journey"
@@ -145,7 +123,7 @@ export default function MtHero() {
         </div>
 
         <div className="rounded-[20px] bg-white p-7 text-[#1C2B30] shadow-[0_12px_64px_rgba(11,79,90,0.16)] sm:p-8">
-          <h3 className="text-2xl font-bold text-[#0B4F5A]">
+          <h3 className="text-2xl font-bold text-[#625587]">
             Book Your Consultation
           </h3>
           <p className="mt-1 text-sm text-[#5A7078]">
@@ -153,71 +131,39 @@ export default function MtHero() {
             estimate.
           </p>
 
-          <form className="mt-6 flex flex-col gap-4">
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-semibold text-[#0B4F5A]">
-                Full Name
-              </label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="rounded-lg border border-[#D8E4E7] bg-[#FAF7F3] px-4 py-3 text-sm text-[#1C2B30] outline-none focus:border-[#2A8A9E]"
-              />
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-semibold text-[#0B4F5A]">
-                Country
-              </label>
-              <select className="rounded-lg border border-[#D8E4E7] bg-[#FAF7F3] px-4 py-3 text-sm text-[#1C2B30] outline-none focus:border-[#2A8A9E]">
-                <option value="">Select your country</option>
-                {countries.map((country) => (
-                  <option key={country} value={country}>
-                    {country}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-semibold text-[#0B4F5A]">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                placeholder="+1 000 000 0000"
-                className="rounded-lg border border-[#D8E4E7] bg-[#FAF7F3] px-4 py-3 text-sm text-[#1C2B30] outline-none focus:border-[#2A8A9E]"
-              />
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-semibold text-[#0B4F5A]">
-                Condition / Treatment Needed
-              </label>
-              <select className="rounded-lg border border-[#D8E4E7] bg-[#FAF7F3] px-4 py-3 text-sm text-[#1C2B30] outline-none focus:border-[#2A8A9E]">
-                <option value="">Select treatment</option>
-                {treatments.map((treatment) => (
-                  <option key={treatment} value={treatment}>
-                    {treatment}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <button
-              type="submit"
-              className="mt-1 w-full rounded-4xl bg-[#F8B956] px-4 py-3.5 text-base font-bold text-white transition hover:bg-[#625587]"
-            >
-              Book My Consultation →
-            </button>
-
-            <p className="text-center text-xs text-[#5A7078]">
-              🔒 100% private. No spam. A coordinator will contact you within 2
-              hours.
-            </p>
-          </form>
+          <ConsultationForm source="hero_sidebar_form" />
         </div>
       </div>
+      {/* Consultation Form Modal */}
+      {showForm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 pt-20 backdrop-blur-sm"
+          onClick={() => setShowForm(false)}
+        >
+          <div
+            className="relative w-full max-w-md rounded-[20px] bg-white p-7 text-[#1C2B30] shadow-[0_12px_64px_rgba(11,79,90,0.16)] sm:p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowForm(false)}
+              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-[#5A7078] transition hover:bg-gray-100 hover:text-[#1C2B30]"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+
+            <h3 className="text-2xl font-bold text-[#625587]">
+              Book Your Consultation
+            </h3>
+            <p className="mt-1 text-sm text-[#5A7078]">
+              We&apos;ll respond within 2 hours with a detailed plan &amp; cost
+              estimate.
+            </p>
+
+            <ConsultationForm source="hero_popup_button" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

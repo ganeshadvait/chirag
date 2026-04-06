@@ -1,4 +1,8 @@
 // File: components/medicalTourism/mtDoctorsStrip.jsx
+"use client";
+
+import { useState } from "react";
+import ConsultationForm from "./form";
 
 const doctors = [
   {
@@ -32,6 +36,8 @@ const doctors = [
 ];
 
 export default function MtDoctorsStrip() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <section
       id="doctors"
@@ -93,18 +99,46 @@ export default function MtDoctorsStrip() {
                 <span>{doctor.experience}</span>
               </div>
 
-              <a
-                href={`https://wa.me/+919380498256?text=${doctor.whatsappText}`}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 block rounded-4xl bg-[#625587] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#F8B956]"
+              <button
+                onClick={() => setShowForm(true)}
+                className="mt-4 block w-full rounded-4xl bg-[#625587] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#F8B956]"
               >
                 Book Consultation
-              </a>
+              </button>
             </div>
           ))}
         </div>
       </div>
+      {/* Consultation Form Modal */}
+      {showForm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 pt-20 backdrop-blur-sm"
+          onClick={() => setShowForm(false)}
+        >
+          <div
+            className="relative w-full max-w-md rounded-[20px] bg-white p-7 text-[#1C2B30] shadow-[0_12px_64px_rgba(11,79,90,0.16)] sm:p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowForm(false)}
+              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-[#5A7078] transition hover:bg-gray-100 hover:text-[#1C2B30]"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+
+            <h3 className="text-2xl font-bold text-[#625587]">
+              Book Your Consultation
+            </h3>
+            <p className="mt-1 text-sm text-[#5A7078]">
+              We&apos;ll respond within 2 hours with a detailed plan &amp; cost
+              estimate.
+            </p>
+
+            <ConsultationForm source="doctors_section" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
