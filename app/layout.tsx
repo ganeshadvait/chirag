@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import FloatingLanguageSwitcher from "@/components/GoogleTranslate/GoogleTranslate";
 // ✅ Load fonts via next/font/local (optimized)
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -38,6 +39,24 @@ export default function RootLayout({
       </Script>
 
       <body className={`${dmSans.variable} antialiased`}>
+        {/* Google Translate */}
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,kn,te',
+                autoDisplay: false,
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+              }, 'google_translate_element');
+            }
+          `}
+        </Script>
+
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -54,6 +73,7 @@ export default function RootLayout({
           mobileNumberHeader={"tel:08065916415"}
         /> */}
         {children}
+        <FloatingLanguageSwitcher />
       </body>
       {/* <FooterComponent
         footerdesc="About Chirag Global Hospitals"

@@ -2871,3 +2871,30 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* ===== Google Translate: hide default UI ===== */
+
+body > .skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* ===== Language Switcher Keyframes (Tailwind can't do these inline) ===== */
+
+@keyframes lswPanelIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes lswCheckPop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes lswPulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.15); }
+}
