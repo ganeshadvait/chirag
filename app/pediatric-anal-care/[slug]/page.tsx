@@ -1,28 +1,34 @@
-//File :- app/colorectal-cancer/page.tsx
 "use client";
-
+// File :  app/piles/[slug]/page.tsx
 import { useParams } from "next/navigation";
+import dynamic from "next/dynamic";
 import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
+import WhatIsPediatric from "@/components/partials/whatispediatric/whatispediatric";
+import PediatricConditions from "@/components/partials/pediatricconditions/pediatricconditions";
+import WhenConsult from "@/components/partials/whenconsult/whenconsult";
+import TreatmentApproach from "@/components/partials/treatmentapproach/treatmentapproach";
+import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
+import WhyChoosePediatric from "@/components/partials/whychoosepediatric/whychoosepediatric";
+import RisksOfDelayPediatric from "@/components/partials/risksofdelaypediatric/risksofdelaypediatric";
 import Number from "@/components/partials/number/number";
 import Cost from "@/components/partials/cost/cost";
+import Risk from "@/components/partials/risks/risk";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
 import Why from "@/components/partials/why/why";
 import Google from "@/components/partials/google/google";
+import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
-import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
-import SymptomsInfo from "@/components/partials/symptomsinfo/symptomsinfo";
 import FooterComponent from "@/components/footer/footer";
 
 type HeroDataType = {
   heading: string;
-  subheading?: string;
   points: string[];
   buttonText: string;
   imageSrc: string;
@@ -33,6 +39,10 @@ type PilesPageProps = {
     slug: string;
   };
 };
+const HospitalComparisond = dynamic(
+  () => import("@/components/dynamictable/dynamictables"),
+);
+
 const contentMap: Record<
   string,
   {
@@ -41,10 +51,10 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "colerectal-cancer-laser-treatment-cost-in-bangalore": {
-    phone: "08065916415",
+  "piles-laser-treatment-cost-in-bangalore": {
+    phone: "08065916427",
     hero: {
-      heading: "Affordable Colorectal Cancer Treatment in Bangalore",
+      heading: "Affordable Piles Treatment in Bangalore",
       points: [
         "Packages starting from ₹50,000",
         "Transparent pricing, no surprises",
@@ -106,14 +116,13 @@ export default function PilesConditions() {
   const finalPhoneTel = `tel:${finalPhone}`;
 
   const HeroData = {
-    heading: "Best Colorectal Cancer Treatment in Bangalore",
+    heading: "Expert Pediatric Anal Care Treatment in Bangalore",
     points: [
-      "Early detection and precise diagnosis",
-      "Experienced colorectal cancer specialists",
-      "Surgical and medical oncologists",
-      "Personalised patient-focused care",
-      "Early stage endoscopic treatment",
-      "Palliative care facility",
+      "Child-friendly treatment environment",
+      "Minimally invasive & painless procedures",
+      "Experienced pediatric colorectal specialists",
+      "Same-day discharge & rapid recovery",
+      "Comprehensive pre & post treatment support",
     ],
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
@@ -124,6 +133,44 @@ export default function PilesConditions() {
     ...(pageContent?.hero ?? {}),
     heading: pageContent?.hero?.heading ?? HeroData.heading,
     points: pageContent?.hero?.points ?? HeroData.points,
+  };
+
+  const whatIsPediatricData = {
+    heading: "What Is Pediatric Anal Care?",
+    emoji: "👶",
+    paragraphs: [
+      [
+        "Pediatric anal care refers to the specialized diagnosis and treatment of anorectal conditions in infants, children, and adolescents. These conditions — including ",
+        { text: "anal fissures" },
+        ", ",
+        { text: "perianal abscess" },
+        ", ",
+        { text: "rectal prolapse" },
+        ", ",
+        { text: "hemorrhoids" },
+        ", and ",
+        { text: "congenital anorectal malformations" },
+        " — require a ",
+        { text: "gentle" },
+        ", ",
+        { text: "child-specific approach" },
+        " that differs significantly from adult treatment.",
+      ],
+      [
+        "Children often cannot communicate their discomfort clearly, making expert evaluation essential. At Chirag Global Hospitals, our colorectal specialists are experienced in treating the unique anatomical and emotional needs of pediatric patients, ensuring minimal pain and maximum comfort throughout the process.",
+      ],
+      [
+        "Early intervention is critical. Untreated pediatric anorectal issues can lead to ",
+        { text: "chronic constipation" },
+        ", ",
+        { text: "behavioral changes" },
+        ", ",
+        { text: "feeding difficulties" },
+        ", and ",
+        { text: "long-term complications" },
+        " that affect your child's quality of life.",
+      ],
+    ],
   };
 
   const statsSectionData = {
@@ -170,22 +217,6 @@ export default function PilesConditions() {
       "Chronic discomfort",
       "Risk of Anaemia",
     ],
-  };
-
-  const symptomsInfoData = {
-    symptomsHeading: "Symptoms You Shouldn't Ignore",
-    symptoms: [
-      "Blood in stool or rectal bleeding",
-      "Unexplained weight loss or fatigue",
-      "Persistent change in bowel habits",
-      "Abdominal discomfort, bloating, or cramps",
-      "Feeling of incomplete evacuation",
-      "Low hemoglobin (anemia) or weakness",
-    ],
-    ctaText: " Book An Appointment",
-    diagnosisHeading: "Why Early Diagnosis Matters",
-    diagnosisText:
-      "If you notice any of the above symptoms, early evaluation can help guide your next steps for treatment, reducing delays and improving outcome.",
   };
   const doctorsSectionData = {
     heading: "Our Top Doctors",
@@ -247,8 +278,8 @@ export default function PilesConditions() {
     banner: {
       heading: "Consult The Doctor Now",
       points: [
-        "Experienced oncologists",
-        "Various treatment methods",
+        "Experienced colorectal specialists",
+        "Modern laser treatment methods",
         "Proven treatment outcomes",
       ],
       buttonText: "Book Appointment",
@@ -257,43 +288,6 @@ export default function PilesConditions() {
   };
   const defaultLocationHeading =
     "Chirag Global Hospital - Best Colorectal Hospital in Bangalore";
-
-  const treatmentOptionsData = {
-    heading: "Treatment Options",
-    options: [
-      {
-        icon: "wrench",
-        title: "Surgery",
-        description:
-          "When appropriate, surgery will be considered for tumor removal, depending on staging.",
-      },
-      {
-        icon: "shield",
-        title: "Chemotherapy",
-        description:
-          "Often recommended as part of the treatment plan to shrink tumors or after surgery to reduce recurrence.",
-      },
-      {
-        icon: "clock",
-        title: "Radiation Therapy",
-        description:
-          "Can be used pre-surgery for rectal cancer to shrink the tumor or post-surgery for better results.",
-      },
-      {
-        icon: "shield",
-        title: "Targeted / Immunotherapy",
-        description:
-          "Used based on the tumor's biological makeup. This may be suitable for certain cases with metastasis.",
-      },
-      {
-        icon: "clock",
-        title: "Supportive Care",
-        description:
-          "Nutritional counseling, pain management, and emotional support to guide you through treatment.",
-      },
-    ],
-    ctaText: "Book An Appointment",
-  };
 
   const treatmentCostDependsData = {
     heading: "Treatment Cost Depends On",
@@ -347,13 +341,13 @@ export default function PilesConditions() {
   };
 
   const whyChooseData = {
-    heading: "Why Choose Chirag Hospital Colorectal Cancer",
+    heading: "Why Choose Chirag Hospitals for Piles Treatment in Bangalore",
     points: [
-      "Specialized Team: Expert oncologists, colorectal surgeons, and radiologists with years of experience",
-      "Comprehensive Care: We guide you from diagnosis through recovery, focusing on personalized treatment plans",
-      "Cutting-Edge Treatments: Including the latest in laser surgery and immunotherapy",
-      "Patient-Centered Approach: Clear communication, coordinated care, and ongoing support through every stage of treatment",
-      "Privacy & Comfort: Confidential consultations and a caring, supportive team",
+      "Top specialist with 38 years experience",
+      "High patient satisfaction",
+      "Affordable treatment options",
+      "Complete pre and post care",
+      "Patient-friendly hospital support",
     ],
   };
   const InfoContent = {
@@ -404,36 +398,51 @@ export default function PilesConditions() {
   };
 
   const BannerData = {
-    heading: "Get Relief from colorectal cancer  – Book Now",
+    heading: "Get Relief from Pediatric Anal – Book Now",
     buttonText: "Book An Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };
 
   const faqs = [
     {
-      faqTitle: "Is colorectal cancer treatable?",
+      faqTitle: "What are the most common anal problems in children?",
       faqAnswer:
-        "Early-stage colorectal cancer can be treated effectively, often with surgery and/or chemotherapy. The treatment plan depends on the stage and location of the cancer.",
+        "The most common pediatric anorectal conditions include anal fissures (small tears caused by hard stools), perianal abscess (infected lumps near the anus, especially in infants), chronic constipation, rectal prolapse, and rectal bleeding. Anal fissures and constipation account for the majority of pediatric proctology visits.",
     },
     {
-      faqTitle: "Will I need surgery?",
+      faqTitle: "At what age can children develop anal fissures?",
       faqAnswer:
-        "Surgery is often a part of the treatment for colorectal cancer, but it depends on the stage and type of tumor. Our specialists will discuss options with you.",
+        "Anal fissures can occur at any age, including infancy. They are most common in children between 6 months to 2 years during the introduction of solid foods, and again around toilet-training age (2–4 years). Dietary changes and constipation are the primary triggers.",
     },
     {
-      faqTitle: "How soon do I need to act?",
+      faqTitle: "Is surgery always needed for pediatric anal conditions?",
       faqAnswer:
-        "If you're experiencing symptoms or have been diagnosed, we recommend getting evaluated as soon as possible to confirm staging and prevent delays in treatment.",
+        "No. The majority of pediatric anorectal conditions respond well to conservative treatment including dietary modifications, stool softeners, topical medications, and sitz baths. Surgery is only recommended when conservative measures fail or for conditions like congenital malformations that require surgical correction.",
     },
     {
-      faqTitle: "What can I expect during chemotherapy?",
+      faqTitle: "How can I prevent recurring anal fissures in my child?",
       faqAnswer:
-        "Chemotherapy is a common treatment for colorectal cancer. Side effects vary, but we provide detailed guidance on what to expect and how to manage them.",
+        "Prevention focuses on maintaining soft, regular bowel movements through a high-fiber diet (fruits, vegetables, whole grains), adequate water intake, regular toilet habits, and avoiding stool withholding. Your doctor may also recommend a maintenance dose of stool softener for a period after healing.",
     },
     {
-      faqTitle: "Can I get a second opinion?",
+      faqTitle: "Is blood in my child's stool a medical emergency?",
       faqAnswer:
-        "Yes, we offer second opinions to confirm treatment plans and help guide you to the best possible care.",
+        "While any rectal bleeding should be evaluated, most cases in children are caused by anal fissures and are not emergencies. However, you should seek immediate medical attention if there is heavy bleeding, blood mixed throughout the stool, the child appears pale or lethargic, or there is associated fever and abdominal pain.",
+    },
+    {
+      faqTitle: "How long does recovery take after pediatric anal treatment?",
+      faqAnswer:
+        "For conservative treatments, improvement is typically seen within 1–2 weeks. For minor procedures like abscess drainage, recovery takes 3–5 days. Surgical procedures may require 1–2 weeks for full recovery. Our team provides detailed aftercare instructions and follow-up appointments to ensure smooth healing.",
+    },
+    {
+      faqTitle: "How much does pediatric anal care treatment cost at Chirag Hospitals?",
+      faqAnswer:
+        "Treatment costs vary depending on the condition and approach. Conservative management is very affordable, while procedures may vary. We offer cashless insurance processing, EMI options through GMoney with zero interest, and transparent pricing. Contact our health advisors at 08065916415 for a personalized cost estimate.",
+    },
+    {
+      faqTitle: "Why is Chirag Hospitals trusted for pediatric anal care?",
+      faqAnswer:
+        "Chirag Global Hospitals brings 38+ years of colorectal expertise, 180K+ successfully treated patients, a child-friendly treatment environment, and a conservative-first philosophy that prioritizes your child's comfort. Our team of specialized colorectal surgeons ensures the highest standard of care for pediatric patients.",
     },
   ];
 
@@ -443,32 +452,26 @@ export default function PilesConditions() {
     testimonials: [
       {
         // title: "Laser treatment for my dad's piles",
-        text: "Dr Rajshekhar is a specialist in colorectal cancer. He explained my condition clearly and discussed the treatment options in simple language. I felt comfortable asking questions and was satisfied with the care.",
+        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
         name: "Abddul",
         rating: 5,
       },
       {
         // title: "Smooth and painless",
-        text: "I consulted Dr Rajshekhar for colorectal cancer treatment. He reviewed my reports carefully and suggested the right treatment plan. He is calm, patient, and supportive.",
+        text: "I had a wonderful experience with Dr. Rajasekhar sir and his team a wonderful surgeons at Chirag hospital. His entire team is always helpful and kind. Dr. Rajasekar treated me for piles and he made sure I was comfortable. The staff in the hospital were very cooperative and soft spoken. They ensured I am prepared for the entire treatment. Dr. rajasekhar sir is friendly and approachable at any time in case of need. I feel much better and happy that I chose Dr. rajasekar sir to do my piles treatment. I would highly recommend anyone who wants to undergo piles treatment without undergoing any surgery.",
         name: "Sai",
         rating: 5,
       },
       {
         // title: "Colorectal Diseases",
-        text: "Dr Rajshekhar handled my colorectal cancer surgery. The procedure went well, and he monitored my recovery closely. I am thankful for his guidance during the treatment.",
+        text: "I had piles issues for the last 2 years. even though I got surgery before, the problem came back again. Rajasekhar sir did surgery on me 4 months back. till now, no problem. treatment is good. fees are high but very good doctors. If treatment is more important than anything else, everyone should visit this hospital for piles and fistula problems.",
         name: "Kasireddy",
         rating: 5,
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "We met Dr Rajshekhar after my diagnosis of colorectal cancer. He explained the stage of the disease and what steps were needed next. The overall treatment process was smooth.",
+        text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It’s been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
         name: "Syam",
-        rating: 5,
-      },
-      {
-        // title: "Admitted for my fistula surgery",
-        text: "Dr Rajshekhar is experienced in treating colorectal cancer. He answers questions clearly and makes sure the patient understands the treatment plan. I would recommend him for colorectal cancer care.",
-        name: "Priyank",
         rating: 5,
       },
     ],
@@ -490,29 +493,28 @@ export default function PilesConditions() {
           <div className="space-y-10">
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
+            <WhatIsPediatric {...whatIsPediatricData} />
+            <PediatricConditions />
+            <WhenConsult />
+            <Doctors {...doctorsSectionData} />
+            <TreatmentOptions />
+            <CostDepends
+              heading={treatmentCostDependsData.heading}
+              items={treatmentCostDependsData.items}
+              ctaText={treatmentCostDependsData.ctaText}
+            />
+            <TreatmentApproach />
+            <InsurenceAdvisor {...insuranceAdvisorData} />
+            <RisksOfDelayPediatric />
+            <WhyChoosePediatric />
             {/* <Cost
             title={costSectionData.title}
             points={costSectionData.points}
             buttonText={costSectionData.buttonText}
             imageSrc={costSectionData.imageSrc}
           /> */}
-            {/* <Risk {...risksOfDelayData} /> */}
-            <SymptomsInfo {...symptomsInfoData} />
-            <Doctors {...doctorsSectionData} />
             <HospitalLocation locationsectionheading={defaultLocationHeading} />
-            <TreatmentOptions {...treatmentOptionsData} />
-
-            <CostDepends
-              heading={treatmentCostDependsData.heading}
-              items={treatmentCostDependsData.items}
-              ctaText={treatmentCostDependsData.ctaText}
-            />
-            <InsurenceAdvisor {...insuranceAdvisorData} />
-
-            <Why {...whyChooseData} />
-            {/* <HospitalComparisond {...InfoContent} /> */}
-            {/* <Info {...InfoData} /> */}
-            <CtaBanner {...BannerData} />
+            {/* <CtaBanner {...BannerData} /> */}
             {finalFaqs.length > 0 && (
               <Faqs
                 className="md:!w-[95%] w-full mx-[unset]"
