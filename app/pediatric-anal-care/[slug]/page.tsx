@@ -51,7 +51,7 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "piles-laser-treatment-cost-in-bangalore": {
+  "pediatric-anal-care-treatment in Bangalore": {
     phone: "08065916427",
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
