@@ -238,26 +238,31 @@ export default function PilesConditions() {
     heading: "Treatment Options",
     options: [
       {
+        icon: "wrench",
         title: "Surgery",
         description:
           "When appropriate, surgery will be considered for tumor removal, depending on staging.",
       },
       {
+        icon: "shield",
         title: "Chemotherapy",
         description:
           "Often recommended as part of the treatment plan to shrink tumors or after surgery to reduce recurrence.",
       },
       {
+        icon: "clock",
         title: "Radiation Therapy",
         description:
           "Can be used pre-surgery for rectal cancer to shrink the tumor or post-surgery for better results.",
       },
       {
+        icon: "shield",
         title: "Targeted / Immunotherapy",
         description:
           "Used based on the tumor's biological makeup. This may be suitable for certain cases with metastasis.",
       },
       {
+        icon: "clock",
         title: "Supportive Care",
         description:
           "Nutritional counseling, pain management, and emotional support to guide you through treatment.",
