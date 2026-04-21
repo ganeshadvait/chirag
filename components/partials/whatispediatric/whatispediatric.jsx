@@ -17,13 +17,15 @@ export default function WhatIsPediatric({
           <div className="space-y-5 text-gray-700 leading-relaxed text-[15px] md:text-base">
             {items.map((para, idx) => (
               <p key={idx}>
-                {(para || []).map((chunk, i) =>
-                  typeof chunk === "string" ? (
-                    <span key={i}>{chunk}</span>
-                  ) : (
-                    <span key={i}>{chunk.text}</span>
-                  ),
-                )}
+                {typeof para === "string"
+                  ? para
+                  : (para || []).map((chunk, i) =>
+                      typeof chunk === "string" ? (
+                        <span key={i}>{chunk}</span>
+                      ) : (
+                        <span key={i}>{chunk.text}</span>
+                      ),
+                    )}
               </p>
             ))}
           </div>

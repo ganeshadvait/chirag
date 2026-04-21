@@ -1,34 +1,34 @@
 const DEFAULT_RISKS = [
   {
-    title: "Chronic pain and behavioral changes:",
+    title: "Worsening incontinence:",
     description:
-      "Untreated anal fissures and constipation cause children to withhold stool, creating a vicious cycle of pain, harder stools, and worsening tears.",
+      "As the prolapse progresses, the anal sphincter muscles stretch further, leading to increasingly severe fecal incontinence that may become permanent even after surgical repair.",
   },
   {
-    title: "Recurrent infections:",
+    title: "Strangulation and emergency:",
     description:
-      "Perianal abscesses that aren't properly drained can develop into complex fistula tracts requiring more extensive surgery later.",
+      "Prolapsed tissue can become trapped outside the anus (incarcerated), cutting off blood supply. This is a surgical emergency that requires immediate intervention.",
   },
   {
-    title: "Growth and development impact:",
+    title: "Ulceration and bleeding:",
     description:
-      "Chronic pain, poor appetite from constipation, and iron deficiency from rectal bleeding can affect your child's growth milestones.",
+      "Chronically exposed rectal tissue develops ulcers (solitary rectal ulcer syndrome), causing persistent bleeding, discharge, and pain.",
   },
   {
-    title: "Psychological effects:",
+    title: "More complex surgery needed:",
     description:
-      "Toilet anxiety, fecal soiling, and social embarrassment can severely impact a child's confidence and emotional wellbeing.",
+      "Early-stage prolapse can often be managed with simpler, perineal approaches. Advanced prolapse requires more extensive abdominal surgery with longer recovery.",
   },
   {
-    title: "Complex surgical needs:",
+    title: "Severe quality of life impact: ",
     description:
-      "Conditions caught early are often manageable with conservative treatment, but delayed cases may require surgical intervention.",
+      "Fecal incontinence, constant discharge, and the psychological burden of prolapse lead to social isolation, depression, and avoidance of activities.",
   },
 ];
 
 export default function RisksOfDelayPediatric({
-  heading = "Risks of Delaying Pediatric Anal Treatment",
-  intro = "Many parents hesitate to seek specialized care for their child's anorectal issues, often hoping the problem will resolve on its own. However, delayed treatment can lead to serious complications:",
+  heading = "Risks of Delaying Rectal Prolapse Treatment",
+  intro = "Rectal prolapse is progressive and will not improve without intervention. Delaying treatment leads to:",
   image = "/ladypilestypes.png",
   imageAlt = "Risks of delaying pediatric anal treatment",
   risks = DEFAULT_RISKS,

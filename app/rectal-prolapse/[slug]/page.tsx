@@ -6,6 +6,8 @@ import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import WhatIsPediatric from "@/components/partials/whatispediatric/whatispediatric";
 import PediatricConditions from "@/components/partials/pediatricconditions/pediatricconditions";
+import StagesOfRectalProlapse from "@/components/partials/stagesofrectalprolapse/stagesofrectalprolapse";
+import CausesRiskFactors from "@/components/partials/causesriskfactors/causesriskfactors";
 import WhenConsult from "@/components/partials/whenconsult/whenconsult";
 import TreatmentApproach from "@/components/partials/treatmentapproach/treatmentapproach";
 import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
@@ -51,7 +53,7 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "pediatric-anal-care-treatment-in-bangalore": {
+  "best-rectal-prolapse-treatment-in-bangalore": {
     phone: "08065916427",
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
@@ -116,13 +118,13 @@ export default function PilesConditions() {
   const finalPhoneTel = `tel:${finalPhone}`;
 
   const HeroData = {
-    heading: "Expert Pediatric Anal Care Treatment in Bangalore",
+    heading: "Best Rectal Prolapse Treatment in Bangalore",
     points: [
-      "Child-friendly treatment environment",
-      "Minimally invasive & painless procedures",
-      "Experienced pediatric colorectal specialists",
-      "Same-day discharge & rapid recovery",
-      "Comprehensive pre & post treatment support",
+      "Experienced colorectal surgery specialists",
+      "Advanced laparoscopic (keyhole) surgery",
+      "Personalized treatment for every stage",
+      "Short hospital stay & quick recovery",
+      "Complete pre, surgical & post care support",
     ],
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
@@ -136,42 +138,13 @@ export default function PilesConditions() {
   };
 
   const whatIsPediatricData = {
-    heading: "What Is Pediatric Anal Care?",
-    emoji: "👶",
-    image: "/pediatricanalacare/what is pediatric anal care.png",
-    imageAlt: "Pediatric anal care",
+    heading: "What Is Rectal Prolapse?",
+    image: "/rectalprolapse/what is rectal prolapse.png",
+    imageAlt: "Rectal prolapse illustration",
     paragraphs: [
-      [
-        "Pediatric anal care refers to the specialized diagnosis and treatment of anorectal conditions in infants, children, and adolescents. These conditions — including ",
-        { text: "anal fissures" },
-        ", ",
-        { text: "perianal abscess" },
-        ", ",
-        { text: "rectal prolapse" },
-        ", ",
-        { text: "hemorrhoids" },
-        ", and ",
-        { text: "congenital anorectal malformations" },
-        " — require a ",
-        { text: "gentle" },
-        ", ",
-        { text: "child-specific approach" },
-        " that differs significantly from adult treatment.",
-      ],
-      [
-        "Children often cannot communicate their discomfort clearly, making expert evaluation essential. At Chirag Global Hospitals, our colorectal specialists are experienced in treating the unique anatomical and emotional needs of pediatric patients, ensuring minimal pain and maximum comfort throughout the process.",
-      ],
-      [
-        "Early intervention is critical. Untreated pediatric anorectal issues can lead to ",
-        { text: "chronic constipation" },
-        ", ",
-        { text: "behavioral changes" },
-        ", ",
-        { text: "feeding difficulties" },
-        ", and ",
-        { text: "long-term complications" },
-        " that affect your child's quality of life.",
-      ],
+      "Rectal prolapse is a condition where the rectum — the last section of the large intestine — turns inside out and protrudes through the anus. It occurs when the supporting muscles and ligaments of the pelvic floor weaken, allowing the rectal wall to slide downward and eventually emerge outside the body.",
+      "The condition can affect people of any age but is most common in women over 50 and in young children. In adults, it's often associated with chronic constipation, straining during bowel movements, weakened pelvic floor muscles (from childbirth, aging, or neurological conditions), and conditions that increase abdominal pressure.",
+      "Rectal prolapse is a progressive condition — it typically starts as an internal prolapse (intussusception) where the rectum folds in on itself, and gradually worsens to a full-thickness external prolapse. Early treatment prevents progression and avoids the need for more complex surgery.",
     ],
   };
 
@@ -210,209 +183,238 @@ export default function PilesConditions() {
   //   imageSrc: "/chiraggpt.png",
   // };
 
-  const pediatricConditionsData = {
-    heading: "Pediatric Anorectal Conditions We Treat",
+  const stagesData = {
+    heading: "Types & Stages of Rectal Prolapse",
     subheading:
-      "Our team of specialists provides expert diagnosis and treatment for a comprehensive range of pediatric anal and rectal conditions.",
-    conditions: [
+      "Understanding the stage of prolapse is critical for determining the right treatment approach.",
+    stages: [
       {
-        icon: "heart",
-        title: "Anal Fissures in Children",
+        stageLabel: "STAGE 1 — MILD",
+        borderColor: "#22C55E",
+        badgeBg: "#DCFCE7",
+        badgeText: "#15803D",
+        title: "Internal Prolapse (Intussusception)",
         description:
-          "Small tears in the lining of the anus, usually caused by passing hard stools. The most common pediatric anorectal condition, causing pain, crying during bowel movements, and bright red blood on the stool or toilet tissue.",
+          "The rectal lining begins to fold inward but does not protrude outside the anus. Patients may feel a sense of incomplete evacuation, difficulty passing stool, and mild discomfort. Often manageable with conservative measures including dietary changes, pelvic floor exercises, and biofeedback therapy.",
       },
       {
-        icon: "shield",
-        title: "Perianal Abscess",
+        stageLabel: "STAGE 2 — MODERATE",
+        borderColor: "#F59E0B",
+        badgeBg: "#FEF3C7",
+        badgeText: "#B45309",
+        title: "Mucosal Prolapse",
         description:
-          "A painful, infected lump near the anus — most common in infants under 1 year. Presents as a red, swollen area with fever and irritability. Requires prompt drainage and, in some cases, fistula management.",
+          "Only the inner lining (mucosa) of the rectum protrudes through the anus, typically during straining. The tissue may retract on its own or need gentle manual reduction. Causes mucus discharge, bleeding, and a feeling of a lump. May respond to non-surgical treatment but often benefits from procedural intervention.",
       },
       {
-        icon: "activity",
-        title: "Pediatric Rectal Prolapse",
+        stageLabel: "STAGE 3 — SEVERE",
+        borderColor: "#EF4444",
+        badgeBg: "#FEE2E2",
+        badgeText: "#B91C1C",
+        title: "Full-Thickness External Prolapse",
         description:
-          "Protrusion of the rectal lining through the anus during straining, most common in children aged 1–5 years. Usually resolves with conservative treatment; surgical correction is rarely needed.",
+          "The entire rectal wall protrudes through the anus, initially only during straining but eventually becoming permanent. Causes fecal incontinence, constant mucus discharge, bleeding, pain, and significant quality of life impact. Requires surgical correction for definitive treatment.",
+      },
+    ],
+  };
+
+  const causesRiskFactorsData = {
+    heading: "Causes & Risk Factors",
+    intro:
+      "Rectal prolapse develops when the structures supporting the rectum weaken. Understanding the causes helps in both treatment and prevention:",
+    causes: [
+      {
+        title: "Chronic constipation & straining:",
+        description:
+          "Years of straining during bowel movements is the most common contributing factor, gradually weakening the pelvic floor muscles and rectal supports.",
       },
       {
-        icon: "clock",
-        title: "Chronic Constipation",
+        title: "Childbirth & pregnancy:",
         description:
-          "Persistent difficulty passing stools with hard, infrequent bowel movements. A leading cause of many pediatric anorectal conditions; managed through dietary changes, stool softeners, and behavioral therapy.",
+          "Multiple vaginal deliveries, prolonged labor, and large babies can damage the pelvic floor muscles and nerves, making women particularly susceptible.",
       },
       {
-        icon: "book",
-        title: "Pediatric Hemorrhoids",
+        title: "Aging & muscle weakness:",
         description:
-          "Rare in children but can occur with chronic constipation or portal hypertension. Usually managed conservatively with dietary and lifestyle modifications rather than surgery.",
+          "Natural weakening of pelvic floor muscles with age is a significant factor, especially in women over 50.",
       },
       {
-        icon: "settings",
-        title: "Congenital Anorectal Malformations",
+        title: "Neurological conditions:",
         description:
-          "Birth defects affecting the anus and rectum, ranging from imperforate anus to complex cloacal malformations. Require specialized surgical reconstruction and long-term follow-up.",
+          "Conditions affecting nerve supply to the pelvic floor, including spinal cord injuries, MS, and diabetic neuropathy, increase risk.",
+      },
+      {
+        title: "Previous pelvic surgery:",
+        description:
+          "Prior hysterectomy or other pelvic surgeries can weaken supporting structures.",
+      },
+      {
+        title: "Chronic cough/COPD:",
+        description:
+          "Persistent coughing increases intra-abdominal pressure, straining the pelvic floor over time.",
       },
     ],
   };
 
   const whenConsultData = {
-    heading: "When to Consult a Pediatric Specialist",
+    heading: "Symptoms of Rectal Prolapse",
     subheading:
-      "Recognize these warning signs early — timely evaluation prevents complications and ensures your child's comfort.",
+      "Recognize these warning signs and seek expert evaluation early for best outcomes.",
     signs: [
-      "Crying or screaming during bowel movements",
-      "Bright red blood on stool or toilet tissue",
-      "Visible tear, lump, or swelling near the anus",
-      "Persistent constipation lasting more than 2 weeks",
-      "Child withholding stools due to pain",
-      "Fever with a red, tender area near the anus",
-      "Discharge of pus or mucus from the anal area",
-      "Tissue protruding from the anus during bowel movements",
-      "Loss of appetite or unexplained weight loss",
-      "Irritability or behavioral changes in infants",
+      "Tissue visibly protruding from the anus during or after bowel movements",
+      "Feeling of a lump or mass coming out of the rectum",
+      "Fecal incontinence — inability to control bowel movements",
+      "Mucus or bloody discharge from the rectum",
+      "Feeling of incomplete evacuation after bowel movements",
+      "Chronic constipation and excessive straining",
+      "Rectal pain or discomfort, especially when sitting",
+      "Need to manually push tissue back inside after passing stool",
+      "Rectal bleeding during or after bowel movements",
+      "Ulceration or skin irritation around the anal area",
     ],
   };
 
   const treatmentOptionsData = {
-    heading: "Treatment Options for Pediatric Anal Care",
+    heading: "Treatment Options for Rectal Prolapse",
     subheading:
-      "A conservative-first, child-friendly approach — surgery only when absolutely necessary.",
+      "From conservative management to advanced laparoscopic surgery — comprehensive care for every stage.",
     options: [
       {
         icon: "heart",
-        title: "Dietary & Lifestyle Guidance",
+        title: "Conservative Management",
         description:
-          "High-fiber diet, adequate hydration, and regular toilet habits form the foundation of treatment for most pediatric anorectal conditions. Age-appropriate counseling for parents and children.",
+          "For early internal prolapse and mucosal prolapse. Includes high-fiber diet, stool softeners, pelvic floor physiotherapy, biofeedback training, and avoiding straining. Effective for mild symptoms and in patients unfit for surgery.",
       },
       {
         icon: "clock",
-        title: "Stool Softeners & Laxatives",
+        title: "Laparoscopic Rectopexy (Keyhole Surgery)",
         description:
-          "Pediatric-safe stool softeners help pass soft, painless stools while fissures heal. Dosage is tailored to your child's age and weight, and gradually reduced as symptoms resolve.",
-      },
-      {
-        icon: "shield",
-        title: "Topical Medications",
-        description:
-          "Soothing ointments, healing creams, and topical anesthetics provide fast symptom relief for anal fissures and minor irritation. Used alongside dietary changes for complete healing.",
+          "The gold standard for adult rectal prolapse. The rectum is mobilized and secured (fixed) to the sacrum through small keyhole incisions. Offers excellent cure rates (over 95%), preserves bowel function, minimal scarring, shorter hospital stay (2–3 days), and faster recovery compared to open surgery.",
       },
       {
         icon: "zap",
-        title: "Sitz Baths & Hygiene Care",
+        title: "Ventral Mesh Rectopexy",
         description:
-          "Warm sitz baths promote healing, relieve pain, and maintain hygiene. Simple, effective, and easily done at home with guidance from our pediatric team.",
+          "A modern laparoscopic technique where a mesh is placed on the front of the rectum and attached to the sacrum, lifting and supporting the rectum. Avoids nerve damage, preserves bowel function, and has excellent long-term results. Particularly effective for women with associated pelvic organ prolapse.",
       },
       {
         icon: "wrench",
-        title: "Minor Office Procedures",
+        title: "Delorme's Procedure (Perineal Approach)",
         description:
-          "Drainage of perianal abscesses, banding for pediatric hemorrhoids, and reduction of rectal prolapse are performed under mild sedation or local anesthesia, with same-day discharge.",
+          "A perineal (from below) approach where the excess mucosal lining is removed and the muscle wall is plicated (folded). Performed without abdominal incisions, ideal for elderly or high-risk patients who cannot tolerate abdominal surgery. Lower recurrence than Altemeier's procedure.",
       },
       {
-        icon: "smile",
-        title: "Surgical Correction",
+        icon: "hexagon",
+        title: "Altemeier's Procedure (Perineal Proctosigmoidectomy)",
         description:
-          "For congenital anorectal malformations, recurrent fistula, or refractory conditions — performed by experienced pediatric colorectal surgeons with a focus on long-term function and comfort.",
+          "A perineal procedure where the prolapsed rectum and sigmoid colon are removed from below and reconnected. Suitable for elderly patients with large prolapse and significant comorbidities. Can be performed under regional anesthesia.",
+      },
+      {
+        icon: "shield",
+        title: "STARR Procedure",
+        description:
+          "Stapled Transanal Rectal Resection — a minimally invasive technique for internal prolapse (intussusception) and obstructed defecation syndrome. Uses a circular stapler to remove the prolapsing tissue from inside, with no external incisions. Quick recovery and effective symptom relief.",
       },
     ],
   };
 
   const treatmentApproachData = {
-    heading: "Our Pediatric Treatment Journey",
+    heading: "Your Rectal Prolapse Treatment Journey",
     subheading:
-      "A gentle, step-by-step approach designed to minimize discomfort and build trust with every child.",
+      "A comprehensive, patient-centered approach from diagnosis through complete recovery.",
     steps: [
       {
-        title: "Child-Friendly Consultation",
+        title: "Specialist Consultation",
         description:
-          "A relaxed, patient conversation with you and your child in a calm environment. We take a detailed history, assess symptoms, and plan an examination that respects your child's comfort.",
+          "Detailed clinical examination including digital rectal exam, assessment of sphincter function, and evaluation of prolapse grade. We take time to understand your symptoms, history, and concerns.",
       },
       {
-        title: "Gentle Examination & Diagnosis",
+        title: "Advanced Diagnostics",
         description:
-          "Minimally invasive clinical examination, with age-appropriate diagnostics — avoiding unnecessary tests. We only perform investigations essential for an accurate diagnosis.",
+          "Defecography (MRI or video), anorectal manometry to assess sphincter pressure, colonoscopy to rule out other pathology, and pelvic floor assessment to plan the optimal surgical approach.",
       },
       {
-        title: "Conservative-First Treatment",
+        title: "Surgical Treatment",
         description:
-          "Most pediatric conditions respond to diet, medications, and home care. Surgery is a last resort and is only recommended when conservative care is insufficient.",
+          "Procedure tailored to your age, health status, and prolapse severity. Most patients receive laparoscopic rectopexy — small incisions, 1–3 day hospital stay, and excellent outcomes.",
       },
       {
-        title: "Ongoing Support & Follow-Up",
+        title: "Recovery & Rehabilitation",
         description:
-          "Regular follow-ups to monitor healing, dietary guidance, and parent education to prevent recurrence. We stay with you throughout your child's recovery.",
+          "Post-operative pelvic floor rehabilitation, dietary guidance, follow-up appointments to monitor recovery, and long-term lifestyle recommendations to prevent recurrence.",
       },
     ],
   };
 
   const whyChooseData = {
-    heading: "Why Choose Chirag Hospitals for Pediatric Anal Care",
+    heading: "Why Choose Chirag Hospitals for Rectal Prolapse Treatment",
     subheading:
-      "A trusted, child-friendly colorectal team dedicated to the unique needs of pediatric patients.",
+      "Bangalore's most experienced colorectal team for complex rectal prolapse management.",
     features: [
       {
         title: "38+ Years of Colorectal Expertise",
         description:
-          "Led by Dr. Rajasekhar M R, our senior colorectal team brings decades of experience in treating complex pediatric anorectal conditions with a child-first philosophy.",
+          "Dr. Rajasekhar M R and team have extensive experience in all surgical approaches for rectal prolapse, from laparoscopic rectopexy to perineal procedures.",
       },
       {
-        title: "Conservative-First Philosophy",
+        title: "Advanced Laparoscopic Surgery",
         description:
-          "We avoid unnecessary procedures. Most pediatric anorectal issues heal with dietary guidance, medications, and parental education — and we commit to non-surgical care wherever possible.",
+          "Keyhole surgery with minimal scarring, shorter hospital stay, and faster recovery — performed by high-volume laparoscopic colorectal surgeons.",
       },
       {
-        title: "Child-Friendly Environment",
+        title: "Comprehensive Diagnostics",
         description:
-          "Kid-friendly consultation rooms, gentle examination techniques, and a warm, patient team make every visit reassuring for both child and parent.",
+          "In-house access to MRI defecography, anorectal manometry, and colonoscopy for accurate staging and treatment planning.",
       },
       {
-        title: "Comprehensive Pediatric Diagnostics",
+        title: "Individualized Treatment Plans",
         description:
-          "Age-appropriate imaging, anorectal assessment, and detailed evaluation — avoiding unnecessary tests while ensuring accurate diagnosis.",
+          "No one-size-fits-all approach. Treatment is tailored to your age, overall health, prolapse stage, and presence of associated conditions like incontinence or constipation.",
       },
       {
         title: "180K+ Patients Trusted Us",
         description:
-          "Families across India trust Chirag Hospitals for colorectal care, with a 99.5% success rate and transparent, compassionate treatment.",
+          "With a 99.5% success rate across all colorectal conditions, families from across India trust Chirag Hospitals for expert care.",
       },
       {
         title: "Affordable & Insurance-Friendly",
         description:
-          "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges for all pediatric procedures.",
+          "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
       },
     ],
   };
 
   const risksOfDelayData = {
-    heading: "Risks of Delaying Pediatric Anal Care",
+    heading: "Risks of Delaying Rectal Prolapse Treatment",
     intro:
-      "Untreated pediatric anorectal conditions can have significant short- and long-term consequences for your child:",
-    image: "/pediatricanalacare/risk of pediatric anal care.png",
-    imageAlt: "Risks of delaying pediatric anal care",
+      "Rectal prolapse is progressive and will not improve without intervention. Delaying treatment leads to:",
+    image: "/rectalprolapse/risk delaying rectal prolapse.png",
+    imageAlt: "Risks of delaying rectal prolapse treatment",
     risks: [
       {
-        title: "Chronic constipation & stool withholding:",
+        title: "Worsening incontinence:",
         description:
-          "Pain during bowel movements leads children to hold stools, worsening constipation and creating a painful cycle that can last into adulthood if untreated.",
+          "As the prolapse progresses, the anal sphincter muscles stretch further, leading to increasingly severe fecal incontinence that may become permanent even after surgical repair.",
       },
       {
-        title: "Behavioral & emotional impact:",
+        title: "Strangulation and emergency:",
         description:
-          "Persistent pain and distress around toileting can cause anxiety, sleep disturbance, regression in toilet training, and long-term toileting avoidance.",
+          "Prolapsed tissue can become trapped outside the anus (incarcerated), cutting off blood supply. This is a surgical emergency that requires immediate intervention.",
       },
       {
-        title: "Recurrent infections:",
+        title: "Ulceration and bleeding:",
         description:
-          "Untreated perianal abscesses can develop into fistulas and cause repeated, painful infections requiring more complex surgical management later.",
+          "Chronically exposed rectal tissue develops ulcers (solitary rectal ulcer syndrome), causing persistent bleeding, discharge, and pain.",
       },
       {
-        title: "Feeding difficulties & growth issues:",
+        title: "More complex surgery needed:",
         description:
-          "Chronic pain and constipation reduce appetite and nutritional intake, potentially affecting growth and development in infants and young children.",
+          "Early-stage prolapse can often be managed with simpler, perineal approaches. Advanced prolapse requires more extensive abdominal surgery with longer recovery.",
       },
       {
-        title: "Progression to complex conditions:",
+        title: "Severe quality of life impact:",
         description:
-          "Early, simple conditions often become chronic and complex when delayed. Early treatment avoids surgery and ensures your child grows up comfortable and confident.",
+          "Fecal incontinence, constant discharge, and the psychological burden of prolapse lead to social isolation, depression, and avoidance of activities.",
       },
     ],
   };
@@ -481,7 +483,7 @@ export default function PilesConditions() {
         "Proven treatment outcomes",
       ],
       buttonText: "Book Appointment",
-      imageSrc: "/pediatricanalacare/pediatric lady doctor consult.png",
+      imageSrc: "/consultthedoctor.png",
     },
   };
   const defaultLocationHeading =
@@ -593,44 +595,44 @@ export default function PilesConditions() {
 
   const faqs = [
     {
-      faqTitle: "What are the most common anal problems in children?",
+      faqTitle: "What is the difference between hemorrhoids (piles) and rectal prolapse?",
       faqAnswer:
-        "The most common pediatric anorectal conditions include anal fissures (small tears caused by hard stools), perianal abscess (infected lumps near the anus, especially in infants), chronic constipation, rectal prolapse, and rectal bleeding. Anal fissures and constipation account for the majority of pediatric proctology visits.",
+        "While both can cause a protrusion from the anus, they are different conditions. Hemorrhoids are swollen blood vessels in the anal canal, while rectal prolapse involves the actual rectal wall turning inside out. Rectal prolapse produces concentric circular folds of tissue, whereas prolapsed hemorrhoids appear as separate grape-like swellings. A specialist can distinguish between them through clinical examination.",
     },
     {
-      faqTitle: "At what age can children develop anal fissures?",
+      faqTitle: "Can rectal prolapse be cured without surgery?",
       faqAnswer:
-        "Anal fissures can occur at any age, including infancy. They are most common in children between 6 months to 2 years during the introduction of solid foods, and again around toilet-training age (2–4 years). Dietary changes and constipation are the primary triggers.",
+        "Early internal prolapse (Stage 1) may improve with conservative measures including dietary changes, pelvic floor exercises, and biofeedback. However, external rectal prolapse (Stages 2-3) requires surgical correction for lasting relief. Conservative measures alone cannot fix a full-thickness prolapse, though they play an important role in post-surgical recovery.",
     },
     {
-      faqTitle: "Is surgery always needed for pediatric anal conditions?",
+      faqTitle: "What is laparoscopic rectopexy and why is it preferred?",
       faqAnswer:
-        "No. The majority of pediatric anorectal conditions respond well to conservative treatment including dietary modifications, stool softeners, topical medications, and sitz baths. Surgery is only recommended when conservative measures fail or for conditions like congenital malformations that require surgical correction.",
+        "Laparoscopic rectopexy is a keyhole surgery where the rectum is mobilized and fixed (attached) to the sacrum through 3–4 small incisions (5–10mm each). It's preferred because it offers over 95% cure rate, preserves bowel and sexual function, causes less pain than open surgery, requires a shorter hospital stay (2–3 days), and allows faster return to normal activities (2–3 weeks).",
     },
     {
-      faqTitle: "How can I prevent recurring anal fissures in my child?",
+      faqTitle: "How long does recovery take after rectal prolapse surgery?",
       faqAnswer:
-        "Prevention focuses on maintaining soft, regular bowel movements through a high-fiber diet (fruits, vegetables, whole grains), adequate water intake, regular toilet habits, and avoiding stool withholding. Your doctor may also recommend a maintenance dose of stool softener for a period after healing.",
+        "After laparoscopic rectopexy, most patients go home within 2–3 days. Return to light activities takes 1–2 weeks, and full recovery including return to heavy lifting takes 4–6 weeks. Perineal procedures often have shorter initial recovery. Your surgeon will provide specific guidelines based on your procedure.",
     },
     {
-      faqTitle: "Is blood in my child's stool a medical emergency?",
+      faqTitle: "Will I regain bowel control after rectal prolapse surgery?",
       faqAnswer:
-        "While any rectal bleeding should be evaluated, most cases in children are caused by anal fissures and are not emergencies. However, you should seek immediate medical attention if there is heavy bleeding, blood mixed throughout the stool, the child appears pale or lethargic, or there is associated fever and abdominal pain.",
+        "Many patients experience significant improvement in bowel control after prolapse repair. When the prolapse is corrected, the anal sphincter muscles are no longer stretched and can regain tone. However, if incontinence has been present for a long time, full recovery may take several months and may benefit from pelvic floor physiotherapy. This is why early treatment is important.",
     },
     {
-      faqTitle: "How long does recovery take after pediatric anal treatment?",
+      faqTitle: "Can rectal prolapse come back after surgery?",
       faqAnswer:
-        "For conservative treatments, improvement is typically seen within 1–2 weeks. For minor procedures like abscess drainage, recovery takes 3–5 days. Surgical procedures may require 1–2 weeks for full recovery. Our team provides detailed aftercare instructions and follow-up appointments to ensure smooth healing.",
+        "Recurrence rates vary by procedure. Laparoscopic rectopexy has a recurrence rate of 2–5%, while perineal procedures have higher rates (10–20%). Following post-operative dietary advice, performing pelvic floor exercises, avoiding straining, and maintaining a healthy weight all help prevent recurrence.",
     },
     {
-      faqTitle: "How much does pediatric anal care treatment cost at Chirag Hospitals?",
+      faqTitle: "Is rectal prolapse common in women?",
       faqAnswer:
-        "Treatment costs vary depending on the condition and approach. Conservative management is very affordable, while procedures may vary. We offer cashless insurance processing, EMI options through GMoney with zero interest, and transparent pricing. Contact our health advisors at 08065916415 for a personalized cost estimate.",
+        "Yes, rectal prolapse is approximately 6 times more common in women than men, particularly after age 50. Multiple vaginal deliveries, hormonal changes after menopause, and associated pelvic organ prolapse (bladder, uterus) are contributing factors. Women may also have concurrent rectocele or cystocele that can be addressed simultaneously.",
     },
     {
-      faqTitle: "Why is Chirag Hospitals trusted for pediatric anal care?",
+      faqTitle: "How much does rectal prolapse treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Chirag Global Hospitals brings 38+ years of colorectal expertise, 180K+ successfully treated patients, a child-friendly treatment environment, and a conservative-first philosophy that prioritizes your child's comfort. Our team of specialized colorectal surgeons ensures the highest standard of care for pediatric patients.",
+        "Treatment costs depend on the procedure type and complexity. We offer cashless insurance processing, interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916415 for a detailed cost estimate based on your specific condition.",
     },
   ];
 
@@ -640,26 +642,26 @@ export default function PilesConditions() {
     testimonials: [
       {
         // title: "Laser treatment for my dad's piles",
-        text: "We visited the hospital for our child’s anal fissure treatment, and the care was excellent from start to finish. The doctors were very patient, explained everything clearly, and made us feel comfortable. My child recovered well, and we are very thankful for the support.",
-        name: "Ananya",
+        text: "I visited this hospital for rectal prolapse treatment and received excellent care. The doctor explained my condition clearly and guided me through the treatment options. The procedure went smoothly, and my recovery has been very comfortable.",
+        name: "Ramesh K.",
         rating: 5,
       },
       {
         // title: "Smooth and painless",
-        text: "Highly satisfied with the pediatric care team. Our baby was having pain and discomfort, and the doctor handled the case with great care and kindness. The treatment was effective, and the staff were very supportive throughout the process.",
-        name: "Rohini",
+        text: "Very thankful to Dr. Rajashekar and the staff for their support during my rectal prolapse treatment. I was nervous in the beginning, but the team handled everything professionally and made me feel at ease. The results have been very good.",
+        name: "Lakshmi P.",
         rating: 5,
       },
       {
         // title: "Colorectal Diseases",
-        text: "A very good experience for pediatric anal care treatment. The doctors were experienced, gentle, and knew how to handle children calmly. The hospital was clean, organized, and the treatment helped our child recover quickly.",
-        name: "vrishika Reddy",
+        text: "Highly recommend this hospital for rectal prolapse treatment. The specialists were experienced, the facilities were clean, and the entire process was well organized. I also appreciated the follow-up care after treatment.",
+        name: "Suresh M.",
         rating: 5,
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "We were worried about our child’s condition, but the hospital team guided us very well. The pediatric specialist was professional, caring, and answered all our questions patiently. Excellent treatment and compassionate care.",
-        name: "Sahana",
+        text: "I had a positive experience here for rectal prolapse treatment. Dr. Rajashekar was patient, answered all my questions, and gave me confidence before the procedure. Recovery was smooth, and I’m feeling much better now.",
+        name: "Anitha R.",
         rating: 5,
       },
     ],
@@ -682,7 +684,8 @@ export default function PilesConditions() {
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
-            <PediatricConditions {...pediatricConditionsData} />
+            <StagesOfRectalProlapse {...stagesData} />
+            <CausesRiskFactors {...causesRiskFactorsData} />
             <WhenConsult {...whenConsultData} />
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
@@ -691,8 +694,8 @@ export default function PilesConditions() {
               items={treatmentCostDependsData.items}
               ctaText={treatmentCostDependsData.ctaText}
             />
-            <TreatmentApproach {...treatmentApproachData} />
             <InsurenceAdvisor {...insuranceAdvisorData} />
+            <TreatmentApproach {...treatmentApproachData} />
             <RisksOfDelayPediatric {...risksOfDelayData} />
             <WhyChoosePediatric {...whyChooseData} />
             {/* <Cost

@@ -2,38 +2,38 @@ const DEFAULT_FEATURES = [
   {
     title: "38+ Years of Colorectal Expertise",
     description:
-      "Led by Dr. Rajasekhar M R, one of Bangalore's most experienced colorectal surgeons with decades of handling complex pediatric cases.",
+      "Dr. Rajasekhar M R and team have extensive experience in all surgical approaches for rectal prolapse, from laparoscopic rectopexy to perineal procedures.",
   },
   {
-    title: "Child-Friendly Environment",
+    title: "Advanced Laparoscopic Surgery",
     description:
-      "Our facility is designed to reduce anxiety in young patients with a comforting atmosphere, gentle staff, and age-appropriate communication.",
+      "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
   },
   {
-    title: "Conservative-First Philosophy",
+    title: "Comprehensive Diagnostics",
     description:
-      "We always exhaust non-surgical options before recommending procedures, ensuring your child receives the least invasive treatment possible.",
+      "In-house access to MRI defecography, anorectal manometry, and colonoscopy for accurate staging and treatment planning.",
   },
   {
-    title: "Parent Education & Support",
+    title: "Individualized Treatment Plans",
     description:
-      "Comprehensive guidance for parents on home care, dietary changes, and preventive measures to ensure lasting recovery and prevent recurrence.",
+      "No one-size-fits-all approach. Treatment is tailored to your age, overall health, prolapse stage, and presence of associated conditions like incontinence or constipation.",
   },
   {
-    title: "High Patient Satisfaction",
+    title: "180K+ Patients Trusted Us",
     description:
-      "180K+ patients treated with a 99.5% success rate. Trusted by families across Bangalore and beyond for expert pediatric colorectal care.",
+      "With a 99.5% success rate across all colorectal conditions, families from across India trust Chirag Hospitals for expert care.",
   },
   {
     title: "Affordable & Insurance-Friendly",
     description:
-      "Hassle-free cashless treatment and insurance support through GMoney with zero processing fees and interest-free finance options.",
+      "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
   },
 ];
 
 export default function WhyChoosePediatric({
-  heading = "Why Choose Chirag Hospitals for Pediatric Anal Care",
-  subheading = "Bangalore's most experienced colorectal team, now with specialized pediatric expertise.",
+  heading = "Why Choose Chirag Hospitals for Rectal Prolapse Treatment",
+  subheading = "Bangalore's most experienced colorectal team for complex rectal prolapse management.",
   features = DEFAULT_FEATURES,
 }) {
   return (
