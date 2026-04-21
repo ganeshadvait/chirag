@@ -19,39 +19,21 @@ const ICON_MAP = {
 const DEFAULT_CONDITIONS = [
   {
     icon: "clock",
-    title: "Anal Fissures in Children",
+    title: "Acute Pilonidal Abscess",
     description:
-      "Small tears in the anal lining causing pain during bowel movements, bleeding, and irritability. Often caused by hard stools or chronic constipation. We offer dietary management, topical therapies, and gentle procedures when needed.",
+      "A sudden, painful swelling near the tailbone caused by an infected pilonidal sinus. The area becomes red, hot, and tender, often with fever. Requires urgent incision and drainage followed by definitive treatment to prevent recurrence.",
   },
   {
     icon: "shield",
-    title: "Perianal Abscess & Fistula",
+    title: "Chronic Pilonidal Sinus",
     description:
-      "Painful, swollen lumps near the anus caused by infected glands, common in infants under 2 years. Our specialists perform safe incision and drainage with meticulous wound care for quick healing.",
+      "A long-standing tract or tunnel beneath the skin with one or more openings (pits) along the natal cleft. Causes persistent or intermittent discharge (pus or blood-tinged), foul odor, and dull discomfort. This is the most common presentation.",
   },
   {
     icon: "activity",
-    title: "Rectal Bleeding",
+    title: "Recurrent Pilonidal Sinus",
     description:
-      "Blood in a child's stool can be alarming. Causes range from fissures and polyps to allergic colitis. Our team provides thorough evaluation to identify the cause and deliver targeted, gentle treatment.",
-  },
-  {
-    icon: "settings",
-    title: "Rectal Prolapse",
-    description:
-      "When part of the rectal lining protrudes through the anus, common in children aged 1–3. We offer conservative management and, when needed, minimally invasive surgical correction with excellent outcomes.",
-  },
-  {
-    icon: "book",
-    title: "Chronic Constipation",
-    description:
-      "Persistent constipation in children can lead to fissures, fecal impaction, and behavioral issues. We provide holistic management including dietary guidance, medications, and behavioral therapy approaches.",
-  },
-  {
-    icon: "heart",
-    title: "Congenital Anorectal Malformations",
-    description:
-      "Birth defects affecting the anus and rectum, including imperforate anus. Our surgical team has extensive experience in reconstructive procedures with careful long-term follow-up for optimal development.",
+      "Pilonidal sinus that returns after previous treatment, often due to incomplete removal of sinus tracts or continued hair ingrowth. Requires advanced techniques like laser ablation or flap procedures for definitive cure.",
   },
 ];
 

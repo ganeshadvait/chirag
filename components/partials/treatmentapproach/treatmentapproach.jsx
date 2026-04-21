@@ -1,29 +1,29 @@
 const DEFAULT_STEPS = [
   {
-    title: "Child-Friendly Consultation",
+    title: "Specialist Consultation",
     description:
-      "Thorough evaluation in a comfortable, non-intimidating environment. Our specialists take time to understand your child's history and symptoms while keeping them at ease.",
+      "Detailed clinical examination including digital rectal exam, assessment of sphincter function, and evaluation of prolapse grade. We take time to understand your symptoms, history, and concerns.",
   },
   {
-    title: "Gentle Diagnosis",
+    title: "Advanced Diagnostics",
     description:
-      "Minimally uncomfortable diagnostic approaches using age-appropriate examination techniques, ultrasound, and other non-invasive tests to accurately identify the condition.",
+      "Defecography (MRI or video), anorectal manometry to assess sphincter pressure, colonoscopy to rule out other pathology, and pelvic floor assessment to plan the optimal surgical approach.",
   },
   {
-    title: "Personalized Treatment",
+    title: "Surgical Treatment",
     description:
-      "Customized treatment plan that may include dietary changes, medications, topical therapies, or minimally invasive procedures — always prioritizing the least invasive option first.",
+      "Procedure tailored to your age, health status, and prolapse severity. Most patients receive laparoscopic rectopexy — small incisions, 1–3 day hospital stay, and excellent outcomes.",
   },
   {
-    title: "Recovery & Follow-Up",
+    title: "Recovery & Rehabilitation",
     description:
-      "Detailed home care instructions for parents, scheduled follow-ups to monitor healing, and ongoing dietary and lifestyle guidance to prevent recurrence.",
+      "Post-operative pelvic floor rehabilitation, dietary guidance, follow-up appointments to monitor recovery, and long-term lifestyle recommendations to prevent recurrence.",
   },
 ];
 
 export default function TreatmentApproach({
-  heading = "Our Treatment Approach",
-  subheading = "A gentle, step-by-step process designed specifically for the comfort and safety of young patients.",
+  heading = "Your Treatment Journey",
+  subheading = "A comprehensive, patient-centered approach from diagnosis through complete recovery.",
   steps = DEFAULT_STEPS,
 }) {
   return (

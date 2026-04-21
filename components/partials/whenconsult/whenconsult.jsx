@@ -1,19 +1,19 @@
 const DEFAULT_SIGNS = [
-  "Crying or screaming during bowel movements",
-  "Blood spots on the diaper or in stool",
-  "Swelling, redness, or lump near the anus",
-  "Chronic constipation lasting more than 2 weeks",
-  "Stool withholding behavior or fear of toilet",
-  "Tissue protruding from the anus after passing stool",
-  "Fever with a painful perianal lump",
-  "Persistent itching or irritation around the anal area",
-  "Fecal soiling or incontinence in toilet-trained child",
-  "Recurring anal fissures that don't heal with home care",
+  "Tissue visibly protruding from the anus during or after bowel movements",
+  "Feeling of a lump or mass coming out of the rectum",
+  "Fecal incontinence — inability to control bowel movements",
+  "Mucus or bloody discharge from the rectum",
+  "Feeling of incomplete evacuation after bowel movements",
+  "Chronic constipation and excessive straining",
+  "Rectal pain or discomfort, especially when sitting",
+  "Need to manually push tissue back inside after passing stool",
+  "Rectal bleeding during or after bowel movements",
+  "Ulceration or skin irritation around the anal area",
 ];
 
 export default function WhenConsult({
-  heading = "When Should You Consult a Pediatric Anal Care Specialist?",
-  subheading = "Don't ignore these signs in your child. Early consultation ensures faster relief and prevents complications.",
+  heading = "Symptoms of Rectal Prolapse",
+  subheading = "Recognize these warning signs and seek expert evaluation early for best outcomes.",
   signs = DEFAULT_SIGNS,
 }) {
   return (

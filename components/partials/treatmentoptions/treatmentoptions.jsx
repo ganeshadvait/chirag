@@ -1,35 +1,58 @@
-import { Clock, Wrench, Shield } from "lucide-react";
+import { Clock, Wrench, Shield, Zap, FileText, Hexagon, Smile, Heart } from "lucide-react";
 
 const ICON_MAP = {
   clock: Clock,
   wrench: Wrench,
   shield: Shield,
+  zap: Zap,
+  filetext: FileText,
+  hexagon: Hexagon,
+  smile: Smile,
+  heart: Heart,
 };
 
 const DEFAULT_OPTIONS = [
   {
-    icon: "clock",
+    icon: "heart",
     title: "Conservative Management",
     description:
-      "First-line approach including high-fiber diet modifications, stool softeners, sitz baths, topical creams, and behavioral toilet training techniques. Effective for most early-stage conditions like mild fissures and constipation.",
+      "For early internal prolapse and mucosal prolapse. Includes high-fiber diet, stool softeners, pelvic floor physiotherapy, biofeedback training, and avoiding straining. Effective for mild symptoms and in patients unfit for surgery.",
+  },
+  {
+    icon: "clock",
+    title: "Laparoscopic Rectopexy (Keyhole Surgery)",
+    description:
+      "The gold standard for adult rectal prolapse. The rectum is mobilized and secured (fixed) to the sacrum through small keyhole incisions. Offers excellent cure rates (over 95%), preserves bowel function, minimal scarring, shorter hospital stay (2–3 days), and faster recovery compared to open surgery.",
+  },
+  {
+    icon: "zap",
+    title: "Ventral Mesh Rectopexy",
+    description:
+      "A modern laparoscopic technique where a mesh is placed on the front of the rectum and attached to the sacrum, lifting and supporting the rectum. Avoids nerve damage, preserves bowel function, and has excellent long-term results. Particularly effective for women with associated pelvic organ prolapse.",
   },
   {
     icon: "wrench",
-    title: "Minimally Invasive Procedures",
+    title: "Delorme's Procedure (Perineal Approach)",
     description:
-      "When conservative methods are insufficient, our specialists perform gentle procedures such as botox injection for fissures, examination under anesthesia (EUA), and incision & drainage for abscesses — all optimized for pediatric anatomy.",
+      "A perineal (from below) approach where the excess mucosal lining is removed and the muscle wall is plicated (folded). Performed without abdominal incisions, ideal for elderly or high-risk patients who cannot tolerate abdominal surgery. Lower recurrence than Altemeier's procedure.",
+  },
+  {
+    icon: "hexagon",
+    title: "Altemeier's Procedure (Perineal Proctosigmoidectomy)",
+    description:
+      "A perineal procedure where the prolapsed rectum and sigmoid colon are removed from below and reconnected. Suitable for elderly patients with large prolapse and significant comorbidities. Can be performed under regional anesthesia.",
   },
   {
     icon: "shield",
-    title: "Surgical Correction",
+    title: "STARR Procedure",
     description:
-      "For complex conditions like congenital malformations, chronic fistulas, or recurrent prolapse, our experienced surgical team performs advanced reconstructive procedures with pediatric anesthesia support and meticulous post-operative care.",
+      "Stapled Transanal Rectal Resection — a minimally invasive technique for internal prolapse (intussusception) and obstructed defecation syndrome. Uses a circular stapler to remove the prolapsing tissue from inside, with no external incisions. Quick recovery and effective symptom relief.",
   },
 ];
 
 export default function TreatmentOptions({
-  heading = "Treatment Options for Pediatric Anorectal Conditions",
-  subheading = "From conservative management to advanced surgical care, we offer the full spectrum of treatments tailored for children.",
+  heading = "Treatment Options for Rectal Prolapse",
+  subheading = "From conservative management to advanced laparoscopic surgery — comprehensive care for every stage.",
   options = DEFAULT_OPTIONS,
 }) {
   return (
