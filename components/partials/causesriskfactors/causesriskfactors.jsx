@@ -36,7 +36,7 @@ const DEFAULT_CAUSES = [
 export default function CausesRiskFactors({
   heading = "Causes & Risk Factors",
   intro = "Rectal prolapse develops when the structures supporting the rectum weaken. Understanding the causes helps in both treatment and prevention:",
-  image = "/rectalprolapse/causes of rectal prolapse.png",
+  image = "/rectalprolapse/causes and risk factor rectal prolapse.png",
   imageAlt = "Causes and risk factors illustration",
   causes = DEFAULT_CAUSES,
 }) {
