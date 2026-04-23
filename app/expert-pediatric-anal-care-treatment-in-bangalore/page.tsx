@@ -51,7 +51,7 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "pediatric-anal-care-treatment-in-bangalore": {
+  "expert-pediatric-anal-care-treatment-in-bangalore": {
     phone: "08065916427",
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
@@ -255,7 +255,7 @@ export default function PilesConditions() {
   };
 
   const whenConsultData = {
-    heading: "When to Consult a Pediatric Specialist",
+    heading: "When Should You Consult a Pediatric Anal Care Specialist?",
     subheading:
       "Recognize these warning signs early — timely evaluation prevents complications and ensures your child's comfort.",
     signs: [
@@ -317,7 +317,7 @@ export default function PilesConditions() {
   };
 
   const treatmentApproachData = {
-    heading: "Our Pediatric Treatment Journey",
+    heading: "Our Treatment Approach",
     subheading:
       "A gentle, step-by-step approach designed to minimize discomfort and build trust with every child.",
     steps: [
@@ -682,8 +682,10 @@ export default function PilesConditions() {
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
-            <PediatricConditions {...pediatricConditionsData} />
             <WhenConsult {...whenConsultData} />
+            <PediatricConditions {...pediatricConditionsData} />
+            {/* <RisksOfDelayPediatric {...risksOfDelayData} /> */}
+            
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
             <CostDepends
@@ -693,7 +695,7 @@ export default function PilesConditions() {
             />
             <TreatmentApproach {...treatmentApproachData} />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-            <RisksOfDelayPediatric {...risksOfDelayData} />
+            
             <WhyChoosePediatric {...whyChooseData} />
             {/* <Cost
             title={costSectionData.title}

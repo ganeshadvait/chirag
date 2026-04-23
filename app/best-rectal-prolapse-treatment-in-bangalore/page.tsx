@@ -684,9 +684,10 @@ export default function PilesConditions() {
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
+            <WhenConsult {...whenConsultData} />
             <StagesOfRectalProlapse {...stagesData} />
             <CausesRiskFactors {...causesRiskFactorsData} />
-            <WhenConsult {...whenConsultData} />
+            <RisksOfDelayPediatric {...risksOfDelayData} />
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
             <CostDepends
@@ -696,7 +697,7 @@ export default function PilesConditions() {
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
             <TreatmentApproach {...treatmentApproachData} />
-            <RisksOfDelayPediatric {...risksOfDelayData} />
+            
             <WhyChoosePediatric {...whyChooseData} />
             {/* <Cost
             title={costSectionData.title}
