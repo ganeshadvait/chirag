@@ -51,7 +51,7 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "pediatric-anal-care-treatment-in-bangalore": {
+  "expert-pediatric-anal-care-treatment-in-bangalore": {
     phone: "08065916427",
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
@@ -317,7 +317,7 @@ export default function PilesConditions() {
   };
 
   const treatmentApproachData = {
-    heading: "Our Pediatric Treatment Journey",
+    heading: "Our Treatment Approach",
     subheading:
       "A gentle, step-by-step approach designed to minimize discomfort and build trust with every child.",
     steps: [
@@ -683,6 +683,7 @@ export default function PilesConditions() {
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
             <PediatricConditions {...pediatricConditionsData} />
+            <RisksOfDelayPediatric {...risksOfDelayData} />
             <WhenConsult {...whenConsultData} />
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
@@ -693,7 +694,7 @@ export default function PilesConditions() {
             />
             <TreatmentApproach {...treatmentApproachData} />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-            <RisksOfDelayPediatric {...risksOfDelayData} />
+            
             <WhyChoosePediatric {...whyChooseData} />
             {/* <Cost
             title={costSectionData.title}

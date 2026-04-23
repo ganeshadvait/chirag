@@ -693,12 +693,15 @@ export default function PilesConditions() {
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
+             <WhenConsult {...whenConsultData} />
+             <RisksOfDelayPediatric {...risksOfDelayData} />
             <PediatricConditions {...pediatricConditionsData} />
-            <WhenConsult {...whenConsultData} />
+           <LaserVsTraditional {...laserVsTraditionalData} />
+            <WhyLaserBest {...whyLaserBestData} />
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
-            <WhyLaserBest {...whyLaserBestData} />
-            <LaserVsTraditional {...laserVsTraditionalData} />
+           
+            
             <CostDepends
               heading={treatmentCostDependsData.heading}
               items={treatmentCostDependsData.items}
@@ -706,7 +709,7 @@ export default function PilesConditions() {
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
             <TreatmentApproach {...treatmentApproachData} />
-            <RisksOfDelayPediatric {...risksOfDelayData} />
+            
             <WhyChoosePediatric {...whyChooseData} />
             {/* <Cost
             title={costSectionData.title}
