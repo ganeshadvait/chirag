@@ -53,7 +53,7 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "beest-fistula-treatment-in-bangalore": {
+  "best-fistula-treatment-in-bangalore": {
     phone: "08065916427",
     hero: {
       heading: "Best Fistula Treatment in Bangalore",
