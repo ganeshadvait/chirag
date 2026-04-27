@@ -333,8 +333,8 @@ export default function PilesConditions() {
     heading: "Why Laser Is the Best Treatment for Pilonidal Sinus",
     subheading:
       "Laser pilonidal sinus treatment represents a paradigm shift from traditional open surgery. Here's why our patients and surgeons prefer it:",
-    image: "",
-    imageAlt: "",
+    image: "/pilonidalsinus/why pilonidal sinus.png",
+    imageAlt: "Laser pilonidal sinus treatment illustration",
     points: [
       {
         title: "Minimally invasive",
@@ -693,15 +693,12 @@ export default function PilesConditions() {
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
-             <WhenConsult {...whenConsultData} />
-             <RisksOfDelayPediatric {...risksOfDelayData} />
             <PediatricConditions {...pediatricConditionsData} />
-           <LaserVsTraditional {...laserVsTraditionalData} />
-            <WhyLaserBest {...whyLaserBestData} />
+            <WhenConsult {...whenConsultData} />
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
-           
-            
+            <WhyLaserBest {...whyLaserBestData} />
+            <LaserVsTraditional {...laserVsTraditionalData} />
             <CostDepends
               heading={treatmentCostDependsData.heading}
               items={treatmentCostDependsData.items}
@@ -709,7 +706,7 @@ export default function PilesConditions() {
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
             <TreatmentApproach {...treatmentApproachData} />
-            
+            <RisksOfDelayPediatric {...risksOfDelayData} />
             <WhyChoosePediatric {...whyChooseData} />
             {/* <Cost
             title={costSectionData.title}

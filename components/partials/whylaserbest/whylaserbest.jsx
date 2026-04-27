@@ -36,7 +36,11 @@ export default function WhyLaserBest({
   return (
     <section className="w-full py-8 sm:py-10 md:py-14 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 md:gap-10 lg:gap-12 items-center">
+        <div
+          className={`grid grid-cols-1 ${
+            image ? "lg:grid-cols-[1.2fr_1fr]" : ""
+          } gap-8 md:gap-10 lg:gap-12 items-center`}
+        >
           {/* LEFT: Text content */}
           <div className="order-2 lg:order-1">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold text-[#1E1B4B] mb-3 md:mb-4 leading-snug">
@@ -62,15 +66,17 @@ export default function WhyLaserBest({
           </div>
 
           {/* RIGHT: Illustration card */}
-          <div className="order-1 lg:order-2 flex justify-center">
-            <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] aspect-[4/3] rounded-2xl overflow-hidden">
-              <img
-                src={image}
-                alt={imageAlt}
-                className="w-full h-full object-cover"
-              />
+          {image && (
+            <div className="order-1 lg:order-2 flex justify-center">
+              <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] aspect-[4/3] rounded-2xl overflow-hidden">
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

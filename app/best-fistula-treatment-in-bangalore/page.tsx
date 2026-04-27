@@ -53,10 +53,10 @@ const contentMap: Record<
     faqs?: { faqTitle: string; faqAnswer: string }[];
   }
 > = {
-  "best-pilonidal-sinus-treatment-in-bangalore": {
+  "best-fistula-treatment-in-bangalore": {
     phone: "08065916427",
     hero: {
-      heading: "Affordable Pilonidal Sinus Treatment in Bangalore",
+      heading: "Best Fistula Treatment in Bangalore",
       points: [
         "Packages starting from ₹50,000",
         "Transparent pricing, no surprises",
@@ -118,13 +118,13 @@ export default function PilesConditions() {
   const finalPhoneTel = `tel:${finalPhone}`;
 
   const HeroData = {
-    heading: "Best Pilonidal Sinus Treatment in Bangalore",
+    heading: "Best Fistula Treatment in Bangalore",
     points: [
-      "Advanced laser & minimally invasive treatment",
-      "30-minute procedure under local anesthesia",
-      "Same-day discharge & rapid recovery",
-      "No large cuts, no stitches, minimal scarring",
-      "Low recurrence rate with expert care",
+      "Experienced colorectal specialists",
+      "Advanced laser treatment for fistula",
+      "Personalized patient-focused care",
+      "Same-day discharge & faster recovery",
+      "Minimal pain, no stitches",
     ],
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
@@ -138,38 +138,29 @@ export default function PilesConditions() {
   };
 
   const whatIsPediatricData = {
-    heading: "What Is Pilonidal Sinus?",
+    heading: "What is Fistula ?",
     emoji: "🩺",
-    image: "/pilonidalsinus/what is pilonidal sinus.png",
-    imageAlt: "Pilonidal sinus illustration",
+    image: "/fistula/what is fistula.png",
+    imageAlt: "Fistula",
     paragraphs: [
-      "A pilonidal sinus is a small cyst or abscess that forms in the cleft at the top of the buttocks, near the tailbone (coccyx). It typically contains hair, debris, and skin fragments, and develops when loose hairs penetrate the skin and become embedded, triggering an inflammatory reaction.",
-      "The condition most commonly affects young adults aged 15–35, particularly males, and is prevalent among people with sedentary lifestyles, excessive body hair, or occupations requiring prolonged sitting. It can also develop after local trauma or friction to the area.",
-      "A pilonidal sinus may remain dormant for months or years before becoming infected, at which point it forms a painful pilonidal abscess. Without proper treatment, the condition often becomes recurrent, with repeated infections, discharge, and significant impact on daily life and work productivity.",
+      "Anal fistulas are the result of an infection that starts in an anal gland. The infection results in an abscess which is a collection of pus inside. When there is a single opening inside the anal canal, it is called the sinus. When it opens outside and pus starts coming out, it is called Fistula.",
+      "In simpler terms, Fistula is a tract that opens from the rectum creating a hole in the walls of the bottoms. The tract exposes the faecal matter to escape through it. As these tracts do not have sphincters to control the flow, pus & other faecal matter flows without control of the patient. This creates a difficult & awkward situation for the patient in daily life.",
+      " If not treated at an early stage, the infection may spread and multiple tracts can form, which makes it a complex fistula. Get treated for your fistulas by experts only for effective treatment.",
     ],
   };
 
   const statsSectionData = {
+    aboveContetn: "For the first time in India",
+    aboveContetna:
+      "CEREG – Circumferential Endoanal Real-Time Echo-Guided Procedures",
     heading: "Trusted by Patients\nWorldwide",
     description:
-      "Patients receive safe treatment, quick discharge, shorter hospital stays, and faster recovery with continuous medical care and support.",
+      "Patients receive safe fistula treatment with shorter hospital stays, quick discharge, and dedicated medical support.",
     stats: [
-      {
-        value: "24 hr",
-        label: "Discharge",
-      },
-      {
-        value: "180K+",
-        label: "Patient Treated",
-      },
-      {
-        value: "3 Days",
-        label: "Recovery Time",
-      },
-      {
-        value: "99.5%",
-        label: "Success Rate",
-      },
+      { value: "24 hr", label: "Discharge" },
+      { value: "180K", label: "Patient Treated" },
+      { value: "3 Days", label: "Recovery Time" },
+      { value: "99.5%", label: "Success Rate" },
     ],
   };
 
@@ -185,46 +176,60 @@ export default function PilesConditions() {
   // };
 
   const pediatricConditionsData = {
-    heading: "Types of Pilonidal Sinus We Treat",
+    heading: "Symptoms of Fistula",
     subheading:
-      "From acute abscess to complex recurrent disease — we offer expert care for every presentation of pilonidal sinus.",
+      "Common fistula symptoms include pain near the anus, pus or discharge, swelling, irritation, and recurring infections",
     conditions: [
       {
         icon: "clock",
-        title: "Acute Pilonidal Abscess",
+        title: "Pain Near Anus",
         description:
-          "A sudden, painful swelling near the tailbone caused by an infected pilonidal sinus. The area becomes red, hot, and tender, often with fever. Requires urgent incision and drainage followed by definitive treatment to prevent recurrence.",
+          "Constant or intermittent pain in the anal area, especially when sitting or during bowel movements",
       },
       {
         icon: "shield",
-        title: "Chronic Pilonidal Sinus",
+        title: "Pus or Discharge",
         description:
-          "A long-standing tract or tunnel beneath the skin with one or more openings (pits) along the natal cleft. Causes persistent or intermittent discharge (pus or blood-tinged), foul odor, and dull discomfort. The most common presentation.",
+          "Foul-smelling pus or bloody discharge from the fistula opening, often staining clothing",
       },
       {
         icon: "activity",
-        title: "Recurrent Pilonidal Sinus",
+        title: "Swelling & Redness",
         description:
-          "Pilonidal sinus that returns after previous treatment, often due to incomplete removal of sinus tracts or continued hair ingrowth. Requires advanced techniques like laser ablation or flap procedures for definitive cure.",
+          "Swollen, tender area around the anal opening with visible redness or irritation",
+      },
+      {
+        icon: "activity",
+        title: "Recurrent Infections",
+        description:
+          "Repeated infections with fever, chills, and general malaise if left untreated",
+      },
+      {
+        icon: "activity",
+        title: "Itching & Irritation",
+        description:
+          "Persistent itching and skin irritation around the affected area",
+      },
+      {
+        icon: "activity",
+        title: "Difficulty with Activities",
+        description:
+          "Pain and discomfort affecting daily activities, exercise, and quality of life",
       },
     ],
   };
 
   const whenConsultData = {
-    heading: "Symptoms of Pilonidal Sinus",
+    heading: "Symptoms of Fistula",
     subheading:
-      "Early treatment prevents abscess, infection, and long-term complications — recognize these warning signs.",
+      "Common fistula symptoms include pain near the anus, pus or discharge, swelling, irritation, and recurring infections",
     signs: [
-      "Pain or discomfort at the top of the buttock crease (near the tailbone)",
-      "Visible small opening (pit) in the natal cleft",
-      "Swelling, redness, or warmth near the coccyx",
-      "Discharge of pus, blood, or foul-smelling fluid",
-      "Painful lump that makes sitting uncomfortable",
-      "Fever, chills, or feeling unwell (sign of abscess)",
-      "Recurrent infections in the same area",
-      "Hair protruding from a small opening in the skin",
-      "Persistent itching or irritation in the natal cleft",
-      "Difficulty sitting for long periods or while driving",
+      "Pain Near Anus",
+      "Pus or Discharge",
+      "Swelling & Redness",
+      "Recurrent Infections",
+      "Itching & Irritation",
+      "Difficulty with Activities",
     ],
   };
 
@@ -257,109 +262,104 @@ export default function PilesConditions() {
   };
 
   const whyChooseData = {
-    heading: "Why Choose Chirag Hospitals for Pilonidal Sinus Treatment",
+    heading: "Why Choose Chirag Hospitals for Fistula Treatment",
     subheading:
-      "Bangalore's most experienced colorectal team for modern, laser-based pilonidal sinus care.",
+      "Bangalore's Leading Hospital for Fistula Management and Surgery",
     features: [
       {
-        title: "38+ Years of Colorectal Expertise",
+        title: "30+ Years of Expertise in Fistula Treatment",
         description:
-          "Dr. Rajasekhar M R and our senior colorectal team have decades of experience in all pilonidal techniques — from laser (SiLaC / FiLaC) to advanced flap reconstruction.",
+          "Dr. Rajasekhar M R and his team have extensive experience in treating complex fistulas using advanced surgical methods like fistulectomy, fistula-in-ano, and seton procedures.",
       },
       {
-        title: "Modern Laser (SiLaC / FiLaC) Treatment",
+        title: "Advanced Surgical Techniques",
         description:
-          "Minimally invasive, 30-minute procedure under local anesthesia. No large wounds, no daily packing, same-day discharge, and rapid return to work.",
+          "At Chirag Hospitals, we offer the most effective and advanced procedures for fistula treatment, including LIFT (Low Interventional Fistula Treatment), VAAFT (Video Assisted Anal Fistula Treatment).",
       },
       {
-        title: "Expertise in Recurrent & Complex Cases",
+        title: "Comprehensive Diagnostic Tools",
         description:
-          "We treat complex, branching, and previously-operated pilonidal sinuses using endoscopic (EPSiT), Limberg, and Karydakis flap techniques with low recurrence rates.",
+          "We utilize cutting-edge diagnostic tools, including CEREG – Circumferential Endoanal Real-Time Echo Guided Procedures, to provide accurate staging and treatment planning. This procedure, along with high-resolution anoscopy, MRI, and endoscopic evaluation, ensures precise mapping of the fistula for a tailored treatment approach.",
       },
       {
-        title: "Low Recurrence Focus",
+        title: "Personalized Treatment Plans",
         description:
-          "A structured aftercare program — hair removal guidance, hygiene counseling, lifestyle changes — to minimize recurrence risk long after the procedure.",
+          "No one-size-fits-all approach. Treatment is customized based on your specific condition, including the type and complexity of the fistula, your overall health, and any associated conditions such as incontinence or abscesses.",
       },
       {
-        title: "180K+ Patients Trusted Us",
+        title: "Trusted by 180K+ Patients",
         description:
-          "With a 99.5% success rate across colorectal conditions, patients from across India choose Chirag Hospitals for expert pilonidal care.",
+          "Chirag Hospitals boasts a 99.5% success rate across all fistula treatments. Families from across India trust us for expert care in managing complex colorectal conditions.",
       },
       {
         title: "Affordable & Insurance-Friendly",
         description:
-          "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
+          "Cashless treatment options, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges make it easier to access the best care.",
       },
     ],
   };
 
   const risksOfDelayData = {
-    heading: "Risks of Delaying Pilonidal Sinus Treatment",
+    heading: "Risks of Delaying Fistula Treatment",
     intro:
-      "Pilonidal sinus does not heal on its own. Delaying treatment leads to progressive, and often severe, complications:",
-    image: "/pilonidalsinus/risk of pilonidal sinus.png",
-    imageAlt: "Risks of delaying pilonidal sinus treatment",
+      "Fistula is a progressive condition that requires prompt medical attention. Delaying treatment leads to serious complications.",
+    image: "/fistula/risks of delaying fistula treatment.png",
+    imageAlt: "Risks of Delaying Fistula Treatment",
     risks: [
       {
-        title: "Recurrent abscess formation:",
+        title: "Severe Pain",
         description:
-          "Untreated sinuses develop into painful, infected abscesses that may burst spontaneously. Each episode leaves scarring and increases the risk of chronic disease.",
+          "Progressive worsening of pain that significantly impacts daily activities and sleep quality",
       },
       {
-        title: "Chronic infection & discharge:",
+        title: "Persistent Discharge",
         description:
-          "Persistent drainage of pus and blood-tinged fluid causes skin irritation, foul odor, hygiene difficulties, and significant impact on quality of life.",
+          "Continuous foul-smelling discharge affecting hygiene and causing social embarrassment",
       },
       {
-        title: "Expansion of sinus tracts:",
+        title: "Recurrent Infections",
         description:
-          "Over time, simple sinuses branch into complex networks of tracts. Early treatable cases become advanced conditions requiring more extensive surgery.",
+          "Repeated bacterial infections leading to fever, abscess formation, and systemic complications",
       },
       {
-        title: "Risk of malignant transformation:",
+        title: "Worsening Fistula Tract",
         description:
-          "Rare but serious — long-standing, untreated pilonidal sinus can undergo malignant change (squamous cell carcinoma) after many years of chronic inflammation.",
+          "The fistula tract may enlarge or develop multiple branches, making treatment more complex",
       },
       {
-        title: "Lost work & social impact:",
+        title: "Surgical Complications",
         description:
-          "Recurrent pain, discharge, and inability to sit comfortably lead to missed work, avoidance of travel, and psychological distress.",
+          "Advanced fistulas may require more invasive procedures with longer recovery times",
       },
     ],
   };
 
   const whyLaserBestData = {
-    heading: "Why Laser Is the Best Treatment for Pilonidal Sinus",
+    heading: "Why Laser is the Best Treatment",
     subheading:
-      "Laser pilonidal sinus treatment represents a paradigm shift from traditional open surgery. Here's why our patients and surgeons prefer it:",
-    image: "",
-    imageAlt: "",
+      "",
+    image: "/fistula/why laser is best treatment.png",
+    imageAlt: "Laser fistula treatment",
     points: [
       {
-        title: "Minimally invasive",
+        title: "Minimally Invasive Procedure",
         description:
-          "The laser fiber is inserted through a tiny opening — no large wounds or extensive tissue removal. This preserves healthy tissue and dramatically reduces post-operative pain.",
+          "Laser treatment uses precise light energy to seal fistula tracts without requiring traditional surgical incisions",
       },
       {
-        title: "Precision destruction",
+        title: "Less Tissue Damage",
         description:
-          "The laser energy specifically targets and destroys the sinus lining while sealing the tract, leaving surrounding tissue undamaged.",
+          "Focused laser energy minimizes damage to surrounding healthy tissue and anal sphincter",
       },
       {
-        title: "Rapid recovery",
+        title: "Lower Recurrence Risk",
         description:
-          "Most patients return to normal activities within 3–5 days compared to weeks of painful wound care with traditional surgery.",
+          "Laser therapy achieves 95%+ success rate with significantly lower recurrence compared to traditional methods",
       },
       {
-        title: "Office-friendly",
+        title: "Faster Recovery Time",
         description:
-          "Can often be performed under local anesthesia, making it suitable for patients who want to avoid general anesthesia.",
-      },
-      {
-        title: "Cosmetic advantage",
-        description:
-          "Minimal to no visible scarring, which is particularly important for younger patients concerned about appearance.",
+          "Same-day discharge with minimal pain and quick return to normal activities within 3 days",
       },
     ],
   };
@@ -506,45 +506,45 @@ export default function PilesConditions() {
   };
 
   const treatmentOptionsData = {
-    heading: "Treatment Options for Pilonidal Sinus",
+    heading: "Treatment Options for Fistula",
     subheading:
-      "From laser ablation to advanced flap techniques — we offer the full range of modern pilonidal sinus treatments.",
+      "From medication to advanced laser therapy—comprehensive care for every stage of fistula",
     options: [
       {
         icon: "zap",
-        title: "Laser Pilonidal Sinus Treatment (SiLaC/FiLaC)",
+        title: "Medication",
         description:
-          "The gold standard in modern pilonidal sinus care. A laser fiber is inserted into the sinus tract to destroy the lining and seal the tract from inside. Benefits include 30-minute procedure, no large incisions, minimal scarring, same-day discharge, and 3–5 day recovery. Ideal for primary and uncomplicated sinuses.",
+          "Initial infection control with antibiotics and anti-inflammatory medications to manage symptoms",
       },
       {
         icon: "wrench",
-        title: "Endoscopic Pilonidal Sinus Treatment (EPSiT)",
+        title: "Laser Fistula Treatment",
         description:
-          "A video-assisted minimally invasive technique where a small endoscope is inserted into the sinus for direct visualization. The surgeon cleans, debrides, and destroys the tract under camera guidance. Excellent for complex or branching sinuses with very small incisions.",
+          "Minimally invasive laser therapy for precise, effective treatment with minimal tissue damage",
       },
       {
         icon: "shield",
-        title: "Pit Picking (Minimally Invasive)",
+        title: "LIFT Procedure",
         description:
-          "A targeted approach for simple sinuses with limited tracts. Small pits are excised under local anesthesia with minimal tissue removal. Very quick recovery (1–2 days) with small wounds that heal rapidly. Best suited for early-stage pilonidal disease.",
+          "Ligation of Intersphincteric Fistula Tract—preserves sphincter function with high success rate",
       },
       {
         icon: "filetext",
-        title: "Wide Excision & Primary Closure",
+        title: "Fistulectomy",
         description:
-          "Complete surgical removal of the entire sinus tract and affected tissue. The wound is closed with sutures for faster healing compared to open wounds. Suitable for moderate-sized sinuses and offers good cure rates when performed by experienced surgeons.",
+          "Surgical removal of the fistula tract with reconstruction of affected tissue",
       },
       {
         icon: "hexagon",
-        title: "Flap Procedures (Limberg / Karydakis)",
+        title: "Seton Placement",
         description:
-          "Advanced reconstructive techniques for complex, recurrent, or large pilonidal sinuses. Tissue flaps are used to flatten the natal cleft, eliminating the conditions that cause recurrence. The Limberg rhomboid flap and Karydakis flap have the lowest recurrence rates (under 3%) for complex cases.",
+          "Gradual fistula drainage using a specialized thread to promote healing and reduce pain",
       },
       {
         icon: "smile",
-        title: "Incision & Drainage (Emergency)",
+        title: "Glue Plug or Fibrin",
         description:
-          "For acute pilonidal abscess with severe pain and infection. Quick relief through drainage of the abscess under local anesthesia, followed by antibiotics. This is a temporary measure — definitive treatment is planned once the acute infection settles.",
+          "Minimally invasive biologic approach using specialized adhesives to seal fistula tracts",
       },
     ],
   };
@@ -604,44 +604,34 @@ export default function PilesConditions() {
 
   const faqs = [
     {
-      faqTitle: "What causes pilonidal sinus?",
+      faqTitle: "What are the common symptoms of fistula?",
       faqAnswer:
-        "Pilonidal sinus is primarily caused by loose hairs that penetrate the skin in the natal cleft (buttock crease) and trigger an inflammatory reaction. Risk factors include excessive body hair, prolonged sitting (desk jobs, long drives), obesity, deep natal cleft, poor hygiene, and family history. Friction and sweating worsen the condition.",
+        "Common fistula symptoms include pain, pus or discharge near the anus, swelling, and repeated infections. Some patients experience itching, a foul smell, or difficulty sitting. If you notice any of these signs, seek medical attention promptly to prevent complications.",
     },
     {
-      faqTitle: "Can pilonidal sinus heal on its own without treatment?",
+      faqTitle: "Is laser treatment effective for fistula?",
       faqAnswer:
-        "No. Pilonidal sinus does not resolve spontaneously. While symptoms may temporarily improve after an abscess drains naturally, the underlying sinus tract remains and will inevitably cause recurrent infections. Early professional treatment is essential for permanent cure and to prevent the condition from becoming more complex.",
+        "Yes, laser treatment is highly effective for fistula with a 95%+ success rate. It's a safe, minimally invasive procedure that offers faster recovery, minimal pain, and lower recurrence compared to traditional surgery. Most patients achieve symptom relief within 3 days and return to normal activities quickly.",
     },
     {
-      faqTitle: "Is laser treatment effective for pilonidal sinus?",
+      faqTitle: "When should I consult a doctor for fistula?",
       faqAnswer:
-        "Yes. Laser treatment is highly effective for pilonidal sinus, offering a minimally invasive option with reduced pain, bleeding, and recovery time compared to traditional surgery.",
+        "You should consult a colorectal specialist if you notice pain, discharge, or recurrent infections near the anus. Don't wait for symptoms to worsen—early consultation allows for simpler treatment options and prevents complications. Contact us at 08065916415 for a free consultation.",
     },
     {
-      faqTitle: "How long does recovery take after laser pilonidal sinus treatment?",
+      faqTitle: "Is the doctor experienced in treating fistula?",
       faqAnswer:
-        "Most patients return to normal activities within 3–5 days after laser treatment. You can sit comfortably within 2–3 days, and return to work within a week. In contrast, traditional open surgery may require 4–8 weeks of recovery with daily wound care.",
+        "Yes, our team includes Dr. Rajasekhar M R with 38 years of colorectal surgery experience, supported by highly trained colorectal specialists. All treatments are provided by board-certified surgeons with extensive fistula management expertise and proven track records.",
     },
     {
-      faqTitle: "Will my pilonidal sinus come back after treatment?",
+      faqTitle: "How much does fistula treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Recurrence rates depend on the treatment method and post-operative care. Laser treatment has a 5–10% recurrence rate, while flap procedures have the lowest rates (under 3%). Following aftercare instructions — including regular hair removal, good hygiene, and weight management — significantly reduces recurrence risk.",
+        "Treatment cost depends on the fistula type, severity, and treatment method. We offer flexible payment options including EMI through GMoney, insurance support, and cashless treatment. Contact our health advisors for a personalized cost estimate based on your specific condition.",
     },
     {
-      faqTitle: "How much does pilonidal sinus treatment cost at Chirag Hospitals?",
+      faqTitle: "Why is Chirag Hospitals trusted for fistula treatment?",
       faqAnswer:
-        "Treatment costs vary based on the complexity and technique used. Laser treatment is competitively priced, and we offer cashless insurance processing, zero-interest EMI through GMoney, and transparent pricing with no hidden charges. Contact 08065916415 for a personalized cost estimate.",
-    },
-    {
-      faqTitle: "Who is at highest risk for pilonidal sinus?",
-      faqAnswer:
-        "Young males between 15–35 years are most commonly affected. Risk is higher for those with sedentary occupations (IT professionals, drivers, students), excessive body hair, obesity, deep natal cleft, and family history. The condition is rare before puberty and after age 45.",
-    },
-    {
-      faqTitle: "Is pilonidal sinus surgery painful?",
-      faqAnswer:
-        "With modern laser treatment, pain is minimal. The procedure is performed under local anesthesia or short general anesthesia, and most patients report only mild discomfort for 1–2 days after, manageable with standard pain medication. Traditional open surgery involves more significant post-operative pain.",
+        "Chirag Hospitals is trusted for advanced treatment methods, experienced doctors, patient-focused care, and proven outcomes. With 180K+ patients treated and a 99.5% success rate, we've built a reputation for excellence in colorectal care. Our commitment to affordability and compassionate treatment sets us apart.",
     },
   ];
 
@@ -651,26 +641,32 @@ export default function PilesConditions() {
     testimonials: [
       {
         // title: "Laser treatment for my dad's piles",
-        text: "I visited this hospital for pilonidal sinus treatment and had a very positive experience. The doctor explained the condition clearly and suggested the best treatment option. The procedure was smooth, recovery was faster than expected, and the staff were supportive throughout.",
-        name: "Rahul K.",
+        text: "Good hospitality and very best doctors Dr.Suchitra madam, Dr Rajasekhar sir and all staff are friendly and supportive, YouTube videos are very good, informative. Recovery is very fast for fistula. This is the no.1 hospital for fistula treatment with best quality treatment without recurrence, Im from Bagalkot and very happy about service",
+        name: "Laxman",
         rating: 5,
       },
       {
         // title: "Smooth and painless",
-        text: "Excellent care for pilonidal sinus treatment. I was dealing with pain and repeated swelling for a long time, but the team handled everything professionally. The treatment was effective, and I feel much better now. Thank you to the doctors and staff.",
-        name: "Sneha R",
+        text: "Dr. Suchitra madam is very friendly and supportive, very best treatment for fistula in Bangalore. Thank you",
+        name: "Uppalapati",
         rating: 5,
       },
       {
         // title: "Colorectal Diseases",
-        text: "Highly recommend this hospital for pilonidal sinus treatment. The specialists were experienced, the diagnosis was accurate, and the treatment process was well managed. Clean facilities, caring staff, and good follow-up support after the procedure.",
-        name: "Arjun M.",
+        text: "My wife gone through fistula surgery we are very satisfactied with doctors and staff. Hospital environment also very good especially nursing staff is extremely good dr. Rajashekar sir is very experienced person and also dr suchitra mam treatment is like our family members thank to chirag hospital.",
+        name: "Naresh",
         rating: 5,
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "Very satisfied with my treatment for pilonidal sinus. From consultation to recovery, everything was handled with care and professionalism. The doctor answered all my concerns patiently, and the results have been excellent.",
-        name: "Priya S.",
+        text: "Recently, I underwent surgery for a fistula at Chirag Global Hospitals. Having previously experienced recurrence after a surgery elsewhere, I was pleased with the results here. Dr. Sri Devi performed the surgery, and subsequent follow-ups by Dr. Suchitra were exceptional. Their clear explanations and effective medical procedures contributed to faster wound healing.",
+        name: "Sudhakar",
+        rating: 5,
+      },
+      {
+        // title: "Fistula Surgery",
+        text: "I recently had a wonderful experience at chirag Hospital in Bangalore. The staff was incredibly helpful and accommodating throughout my stay. I also had the pleasure of being treated by DR.Rajasekhar sir, who is an expert in piles and fistula treatment. He took the time to explain my condition and recommended a treatment plan that worked perfectly for me. I highly recommend chirag Hospital to anyone seeking quality medical care",
+        name: "Indu",
         rating: 5,
       },
     ],
@@ -678,6 +674,7 @@ export default function PilesConditions() {
     ctaLink:
       "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
+
   return (
     <>
       <Header
@@ -691,12 +688,12 @@ export default function PilesConditions() {
           {/* LEFT SIDE 70% */}
           <div className="space-y-10">
             <Hero {...finalHeroData} />
-            <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
-             <WhenConsult {...whenConsultData} />
+            <Number {...statsSectionData} />
+             {/* <WhenConsult {...whenConsultData} /> */}
+             <PediatricConditions {...pediatricConditionsData} />
              <RisksOfDelayPediatric {...risksOfDelayData} />
-            <PediatricConditions {...pediatricConditionsData} />
-           <LaserVsTraditional {...laserVsTraditionalData} />
+           {/* <LaserVsTraditional {...laserVsTraditionalData} /> */}
             <WhyLaserBest {...whyLaserBestData} />
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
@@ -708,7 +705,7 @@ export default function PilesConditions() {
               ctaText={treatmentCostDependsData.ctaText}
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-            <TreatmentApproach {...treatmentApproachData} />
+            {/* <TreatmentApproach {...treatmentApproachData} /> */}
             
             <WhyChoosePediatric {...whyChooseData} />
             {/* <Cost
