@@ -110,7 +110,7 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916415";
+  const defaultPhone = "08065916418";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
@@ -625,7 +625,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does pediatric anal care treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs vary depending on the condition and approach. Conservative management is very affordable, while procedures may vary. We offer cashless insurance processing, EMI options through GMoney with zero interest, and transparent pricing. Contact our health advisors at 08065916415 for a personalized cost estimate.",
+        "Treatment costs vary depending on the condition and approach. Conservative management is very affordable, while procedures may vary. We offer cashless insurance processing, EMI options through GMoney with zero interest, and transparent pricing. Contact our health advisors at 08065916418 for a personalized cost estimate.",
     },
     {
       faqTitle: "Why is Chirag Hospitals trusted for pediatric anal care?",

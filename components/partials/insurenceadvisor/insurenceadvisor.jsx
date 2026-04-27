@@ -13,8 +13,22 @@ export default function InsuranceAdvisorSection({ cards }) {
     "/fistula/anal-fistula-surgery-cost-in-Bangalore",
   ]);
 
+  // Page trees that should use the 08065916418 number (matches base path and any /[slug] under it)
+  const altPhonePrefixes = [
+    "/colorectal-cancer",
+    "/best-pilonidal-sinus-treatment-in-bangalore",
+    "/best-rectal-prolapse-treatment-in-bangalore",
+    "/expert-pediatric-anal-care-treatment-in-bangalore",
+  ];
+
+  const matchesAltPrefix = altPhonePrefixes.some(
+    (p) => pathname === p || pathname.startsWith(p + "/")
+  );
+
   const phoneNumber = specialPages.has(pathname)
     ? "08065916427"
+    : matchesAltPrefix
+    ? "08065916418"
     : "08065916415";
 
   const isMobile = () =>

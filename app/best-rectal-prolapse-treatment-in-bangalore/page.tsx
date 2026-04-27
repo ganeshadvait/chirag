@@ -54,7 +54,7 @@ const contentMap: Record<
   }
 > = {
   "best-rectal-prolapse-treatment-in-bangalore": {
-    phone: "08065916427",
+    phone: "08065916418",
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
       points: [
@@ -112,7 +112,7 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916415";
+  const defaultPhone = "08065916418";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
@@ -632,7 +632,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does rectal prolapse treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs depend on the procedure type and complexity. We offer cashless insurance processing, interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916415 for a detailed cost estimate based on your specific condition.",
+        "Treatment costs depend on the procedure type and complexity. We offer cashless insurance processing, interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916418 for a detailed cost estimate based on your specific condition.",
     },
   ];
 
