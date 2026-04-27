@@ -333,8 +333,8 @@ export default function PilesConditions() {
     heading: "Why Laser Is the Best Treatment for Pilonidal Sinus",
     subheading:
       "Laser pilonidal sinus treatment represents a paradigm shift from traditional open surgery. Here's why our patients and surgeons prefer it:",
-    image: "/pilonidalsinus/why pilonidal sinus.png",
-    imageAlt: "Laser pilonidal sinus treatment illustration",
+    image: "",
+    imageAlt: "",
     points: [
       {
         title: "Minimally invasive",

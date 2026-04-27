@@ -140,8 +140,8 @@ export default function PilesConditions() {
   const whatIsPediatricData = {
     heading: "What is Fistula ?",
     emoji: "🩺",
-    image: "/pilonidalsinus/what is pilonidal sinus.png",
-    imageAlt: "Pilonidal sinus illustration",
+    image: "C:/fistula/what is fistula.png",
+    imageAlt: "Fistula",
     paragraphs: [
       "Anal fistulas are the result of an infection that starts in an anal gland. The infection results in an abscess which is a collection of pus inside. When there is a single opening inside the anal canal, it is called the sinus. When it opens outside and pus starts coming out, it is called Fistula.",
       "In simpler terms, Fistula is a tract that opens from the rectum creating a hole in the walls of the bottoms. The tract exposes the faecal matter to escape through it. As these tracts do not have sphincters to control the flow, pus & other faecal matter flows without control of the patient. This creates a difficult & awkward situation for the patient in daily life.",
@@ -303,8 +303,8 @@ export default function PilesConditions() {
     heading: "Risks of Delaying Fistula Treatment",
     intro:
       "Fistula is a progressive condition that requires prompt medical attention. Delaying treatment leads to serious complications.",
-    image: "/pilonidalsinus/risk of pilonidal sinus.png",
-    imageAlt: "Risks of delaying pilonidal sinus treatment",
+    image: "/fistula/risks of delaying fistula treatment.png",
+    imageAlt: "Risks of Delaying Fistula Treatment",
     risks: [
       {
         title: "Severe Pain",
@@ -338,8 +338,8 @@ export default function PilesConditions() {
     heading: "Why Laser is the Best Treatment",
     subheading:
       "",
-    image: "/pilonidalsinus/why pilonidal sinus.png",
-    imageAlt: "Laser pilonidal sinus treatment illustration",
+    image: "/fistula/why laser is best treatment.png",
+    imageAlt: "Laser fistula treatment",
     points: [
       {
         title: "Minimally Invasive Procedure",
