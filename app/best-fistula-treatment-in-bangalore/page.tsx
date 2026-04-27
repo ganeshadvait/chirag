@@ -140,7 +140,7 @@ export default function PilesConditions() {
   const whatIsPediatricData = {
     heading: "What is Fistula ?",
     emoji: "🩺",
-    image: "C:/fistula/what is fistula.png",
+    image: "/fistula/what is fistula.png",
     imageAlt: "Fistula",
     paragraphs: [
       "Anal fistulas are the result of an infection that starts in an anal gland. The infection results in an abscess which is a collection of pus inside. When there is a single opening inside the anal canal, it is called the sinus. When it opens outside and pus starts coming out, it is called Fistula.",
