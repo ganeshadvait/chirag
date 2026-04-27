@@ -54,7 +54,7 @@ const contentMap: Record<
   }
 > = {
   "best-pilonidal-sinus-treatment-in-bangalore": {
-    phone: "08065916427",
+    phone: "08065916418",
     hero: {
       heading: "Affordable Pilonidal Sinus Treatment in Bangalore",
       points: [
@@ -112,7 +112,7 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916415";
+  const defaultPhone = "08065916418";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
@@ -631,7 +631,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does pilonidal sinus treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs vary based on the complexity and technique used. Laser treatment is competitively priced, and we offer cashless insurance processing, zero-interest EMI through GMoney, and transparent pricing with no hidden charges. Contact 08065916415 for a personalized cost estimate.",
+        "Treatment costs vary based on the complexity and technique used. Laser treatment is competitively priced, and we offer cashless insurance processing, zero-interest EMI through GMoney, and transparent pricing with no hidden charges. Contact 08065916418 for a personalized cost estimate.",
     },
     {
       faqTitle: "Who is at highest risk for pilonidal sinus?",

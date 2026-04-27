@@ -4,11 +4,14 @@
 import { useParams } from "next/navigation";
 import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
+import WhatIsPediatric from "@/components/partials/whatispediatric/whatispediatric";
 import Number from "@/components/partials/number/number";
+import PediatricConditions from "@/components/partials/pediatricconditions/pediatricconditions";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
 import Why from "@/components/partials/why/why";
+import WhyChoosePediatric from "@/components/partials/whychoosepediatric/whychoosepediatric";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
@@ -16,7 +19,6 @@ import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
 import SymptomsInfo from "@/components/partials/symptomsinfo/symptomsinfo";
 import FooterComponent from "@/components/footer/footer";
-
 type HeroDataType = {
   heading: string;
   subheading?: string;
@@ -34,7 +36,7 @@ const contentMap: Record<
   }
 > = {
   "colorectal-laser-treatment-cost-in-bangalore": {
-    phone: "08065916415",
+    phone: "08065916418",
     hero: {
       heading: "Best Colorectal Cancer Treatment in Bangalore",
       points: [
@@ -87,7 +89,7 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916415";
+  const defaultPhone = "08065916418";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
@@ -104,6 +106,18 @@ export default function PilesConditions() {
     ],
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
+  };
+
+ const whatIsPediatricData = {
+    heading: "What Is Colon Cancer?",
+    emoji: "🩺",
+    image: "/coloncancer/colon cancer.png",
+    imageAlt: "colon cancer",
+    paragraphs: [
+      "Colon and rectal cancers are more commonly diagnosed in people between the ages of 65 and 74, with a median age at diagnosis of around 68 years. However, in recent years, cases have also been increasing in younger age groups. In many Western countries, colon cancer is more common than rectal cancer. In India, rectal cancer has historically been reported more often, with men affected more frequently than women.",
+      "Colorectal cancer usually begins in the innermost lining of the colon or rectum, called the mucosa. Over time, it can grow deeper into the wall through the submucosa, muscularis propria, and outermost layer known as the serosa (or surrounding tissues, depending on the location). The depth of spread, along with lymph node involvement and spread to other organs, helps determine the stage of the disease.",
+      "",
+    ],
   };
 
   const finalHeroData = {
@@ -133,6 +147,50 @@ export default function PilesConditions() {
       {
         value: "99.5%",
         label: "Success Rate",
+      },
+    ],
+  };
+
+  const pediatricConditionsData = {
+    heading: "Symptoms of Colon Cancer",
+    subheading:
+      "Common colon cancer symptoms may include blood in stool, changes in bowel habits, abdominal discomfort, fatigue, and unexplained weight loss.",
+    conditions: [
+      {
+        icon: "clock",
+        title: "Blood in Stool",
+        description:
+          "Red or dark blood in the stool, or bleeding from the rectum, should not be ignored.",
+      },
+      {
+        icon: "shield",
+        title: "Unexplained Weight Loss",
+        description:
+          "Losing weight without trying, often with reduced appetite or weakness.",
+      },
+      {
+        icon: "activity",
+        title: "Change in Bowel Habits",
+        description:
+          "Persistent constipation, diarrhea, narrower stools, or frequent changes in bowel movements.",
+      },
+      {
+        icon: "activity",
+        title: "Abdominal Discomfort",
+        description:
+          "Ongoing cramps, bloating, gas, pain, or a feeling of fullness in the abdomen.",
+      },
+      {
+        icon: "activity",
+        title: "Incomplete Evacuation",
+        description:
+          "A sensation that the bowel does not empty completely after passing stool.",
+      },
+      {
+        icon: "activity",
+        title: "Fatigue or Anemia",
+        description:
+          "Constant tiredness, weakness, or low hemoglobin caused by hidden blood loss.",
       },
     ],
   };
@@ -322,14 +380,42 @@ export default function PilesConditions() {
     ],
   };
 
+
   const whyChooseData = {
-    heading: "Why Choose Chirag Hospital Colorectal Cancer",
-    points: [
-      "Specialized Team: Expert oncologists, colorectal surgeons, and radiologists with years of experience",
-      "Comprehensive Care: We guide you from diagnosis through recovery, focusing on personalized treatment plans",
-      "Cutting-Edge Treatments: Including the latest in laser surgery and immunotherapy",
-      "Patient-Centered Approach: Clear communication, coordinated care, and ongoing support through every stage of treatment",
-      "Privacy & Comfort: Confidential consultations and a caring, supportive team",
+    heading: "Why Choose Chirag Hospital for Colon Cancer",
+    subheading:
+      "Comprehensive Care. Advanced Treatment. Better Outcomes.",
+    features: [
+      {
+        title: "Specialized Team of Experts",
+        description:
+          "Our experienced team includes colon surgeons, medical oncologists, radiologists, pathologists, anesthetists, and critical care specialists working together to deliver coordinated cancer care.",
+      },
+      {
+        title: "Comprehensive Care",
+        description:
+          "From evaluation and diagnosis to surgery, treatment, recovery, and follow-up, we provide complete care plans tailored to each patient’s condition and needs.",
+      },
+      {
+        title: "Advanced Treatment Options",
+        description:
+          "We offer modern colon cancer treatments including minimally invasive surgery, laparoscopic procedures, robotic-assisted surgery, chemotherapy, immunotherapy, and targeted therapies when appropriate.",
+      },
+      {
+        title: "Patient-Centered Approach",
+        description:
+          "We focus on clear communication, coordinated care, emotional support, and guidance at every stage of treatment to help patients and families feel informed and confident.",
+      },
+      {
+        title: "Advanced Technology & Diagnostics",
+        description:
+          "Our hospital is equipped with modern imaging, endoscopy, pathology support, and surgical infrastructure for accurate diagnosis, staging, and effective treatment planning.",
+      },
+      {
+        title: "Privacy & Comfort",
+        description:
+          "We maintain confidential consultations, respectful care, and a supportive environment designed for patient comfort, dignity, and peace of mind throughout treatment.",
+      },
     ],
   };
 
@@ -419,6 +505,7 @@ export default function PilesConditions() {
           {/* LEFT SIDE 70% */}
           <div className="space-y-10">
             <Hero {...finalHeroData} />
+             <WhatIsPediatric {...whatIsPediatricData} />
             <Number {...statsSectionData} />
             {/* <Cost
             title={costSectionData.title}
@@ -427,7 +514,8 @@ export default function PilesConditions() {
             imageSrc={costSectionData.imageSrc}
           /> */}
             {/* <Risk {...risksOfDelayData} /> */}
-            <SymptomsInfo {...symptomsInfoData} />
+             <PediatricConditions {...pediatricConditionsData} />
+            {/* <SymptomsInfo {...symptomsInfoData} /> */}
             <Doctors {...doctorsSectionData} />
             <HospitalLocation locationsectionheading={defaultLocationHeading} />
             <TreatmentOptions {...treatmentOptionsData} />
@@ -438,8 +526,7 @@ export default function PilesConditions() {
               ctaText={treatmentCostDependsData.ctaText}
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-
-            <Why {...whyChooseData} />
+            <WhyChoosePediatric {...whyChooseData} />
             {/* <HospitalComparisond {...InfoContent} /> */}
             {/* <Info {...InfoData} /> */}
             <CtaBanner {...BannerData} />

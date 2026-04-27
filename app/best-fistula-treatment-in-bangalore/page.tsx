@@ -292,9 +292,9 @@ export default function PilesConditions() {
           "Chirag Hospitals boasts a 99.5% success rate across all fistula treatments. Families from across India trust us for expert care in managing complex colorectal conditions.",
       },
       {
-        title: "Affordable & Insurance-Friendly",
+        title: "Easy EMI",
         description:
-          "Cashless treatment options, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges make it easier to access the best care.",
+          "zero-interest EMI through GMoney, and transparent pricing with no hidden charges make it easier to access the best care.",
       },
     ],
   };
