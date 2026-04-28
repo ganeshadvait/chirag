@@ -694,9 +694,9 @@ export default function PilesConditions() {
              <PediatricConditions {...pediatricConditionsData} />
              <RisksOfDelayPediatric {...risksOfDelayData} />
            {/* <LaserVsTraditional {...laserVsTraditionalData} /> */}
-            <WhyLaserBest {...whyLaserBestData} />
+           <TreatmentOptions {...treatmentOptionsData} />
             <Doctors {...doctorsSectionData} />
-            <TreatmentOptions {...treatmentOptionsData} />
+            <WhyLaserBest {...whyLaserBestData} />
            
             
             <CostDepends
