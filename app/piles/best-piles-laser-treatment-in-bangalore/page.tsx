@@ -487,11 +487,11 @@ const treatmentOptionsData = {
               ctaText={treatmentCostDependsData.ctaText}
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-            <WhyChoosePediatric {...whyChooseData} />
             <WhenConsult {...whenConsultData} />
             <TreatmentOptions {...treatmentOptionsData} />
             <WhyLaserBest {...whyLaserBestData} />
             <HospitalComparisond {...InfoContent} />
+            <WhyChoosePediatric {...whyChooseData} />
             <CtaBanner {...BannerData} />
             {finalFaqs.length > 0 && (
               <Faqs
