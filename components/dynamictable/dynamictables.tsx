@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface HospitalComparisonProps {
   theading: string;
@@ -23,12 +23,32 @@ export default function HospitalComparison({
   videoSrc,
 }: HospitalComparisonProps) {
   const [mounted, setMounted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    const tryPlay = () => {
+      const p = video.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+    tryPlay();
+    video.addEventListener("loadedmetadata", tryPlay);
+    return () => video.removeEventListener("loadedmetadata", tryPlay);
+  }, [mounted, videoSrc]);
+
   if (!mounted) return null;
+
+  const videoType = videoSrc?.endsWith(".webm")
+    ? "video/webm"
+    : videoSrc?.endsWith(".mov")
+    ? "video/quicktime"
+    : "video/mp4";
 
   const safeImageSrc =
     imageSrc && imageSrc.startsWith("/")
@@ -57,14 +77,20 @@ export default function HospitalComparison({
             </div>
           ) : videoSrc ? (
             <video
+              ref={videoRef}
               className="w-full max-w-[520px] h-[240px] lg:h-[280px] rounded-lg"
               autoPlay
               muted
               loop
               playsInline
               controls
+              preload="metadata"
+              {...({
+                "webkit-playsinline": "true",
+                "x5-playsinline": "true",
+              } as Record<string, string>)}
             >
-              <source src={videoSrc} type="video/webm" />
+              <source src={videoSrc} type={videoType} />
               Your browser does not support the video tag.
             </video>
           ) : null}
