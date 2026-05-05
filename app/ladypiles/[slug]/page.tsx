@@ -2,11 +2,12 @@ import dynamic from "next/dynamic";
 import Header from "@/components/header/header";
 import LadyHeroSection from "@/components/partials/hero/ladypileshero";
 import Number from "@/components/partials/number/number";
-import Risk from "@/components/partials/risks/risk";
+import RisksOfDelayPediatric from "@/components/partials/risksofdelaypediatric/risksofdelaypediatric";
+import WhenConsult from "@/components/partials/whenconsult/whenconsult";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
-import Why from "@/components/partials/why/why";
+import WhyChoosePediatric from "@/components/partials/whychoosepediatric/whychoosepediatric";
 import Info from "@/components/partials/info/info";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
@@ -14,6 +15,8 @@ import Form from "@/components/partials/form/from";
 import DoctorsData from "@/app/doctorsdata/doctorsdata";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 import FooterComponent from "@/components/footer/footer";
+import WhyLaserBest from "@/components/partials/whylaserbest/whylaserbest";
+import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
 
 const HospitalComparisond = dynamic(
   () => import("@/components/dynamictable/dynamictables"),
@@ -56,14 +59,38 @@ export default function LadyPilesConditions({
     ],
   };
 
-  const risksOfDelayData = {
-    heading: "Risks of Delaying Piles Treatment",
+const risksOfDelayData = {
+    heading: "Risks of Delaying Piles Treatment ",
+    intro:
+      "",
+    image: "/piles/risk of delaying piles.png",
+    imageAlt: "Risks of delaying piles treatment",
     risks: [
-      "Increased pain",
-      "Heavy bleeding",
-      "Risk of anemia",
-      "Chronic discomfort",
-      "Treatment complications",
+      {
+        title: "Severe Pain",
+        description:
+          "Untreated piles may become swollen, irritated, or thrombosed, leading to sharp pain that affects sitting, walking, and daily activities.",
+      },
+      {
+        title: "Excessive Bleeding",
+        description:
+          "Repeated bleeding during bowel movements can increase over time and should be medically evaluated, especially if it becomes frequent or heavy.",
+      },
+      {
+        title: "Risk of Anaemia",
+        description:
+          "Long-term or repeated blood loss may lead to low haemoglobin levels, causing tiredness, weakness, dizziness, and reduced energy.",
+      },
+      {
+        title: "Infection or Irritation",
+        description:
+          "Persistent swelling, discharge, itching, or skin irritation around the anal area may increase discomfort and require timely care.",
+      },
+      {
+        title: "Chronic Discomfort",
+        description:
+          "Delaying care can lead to ongoing itching, burning, pressure, and discomfort that affects hygiene, sleep, and quality of life.",
+      },
     ],
   };
 
@@ -192,13 +219,40 @@ export default function LadyPilesConditions({
   };
 
   const whyChooseData = {
-    heading: "Why Choose Chirag Hospitals for Women’s Piles Treatment",
-    points: [
-      "Experienced female piles specialists",
-      "High comfort and privacy standards",
-      "Affordable treatment options",
-      "Dedicated pre and post care",
-      "Women-friendly hospital environment",
+    heading: "Why Choose Chirag Hospitals for Piles Treatment",
+    subheading:
+      "Bangalore’s Leading Hospital for Advanced Piles Management and Surgery",
+    features: [
+      {
+        title: "30+ Years of Expertise in Piles Treatment",
+        description:
+          "Dr. Rajasekhar M R and his experienced proctology team provide specialised care for different grades of piles, including bleeding piles, painful piles, prolapsed piles, and recurrent piles.",
+      },
+      {
+        title: "Advanced Laser Piles Treatment",
+        description:
+          "Chirag Hospitals offers minimally invasive laser treatment for suitable piles cases. The procedure helps reduce pain, bleeding, tissue damage, and recovery time compared to conventional surgery.",
+      },
+      {
+        title: "Complete Diagnosis and Grading",
+        description:
+          "Every patient is carefully evaluated to understand the severity and type of piles. This helps the doctor recommend the right treatment plan based on symptoms, grade, bleeding, pain, and overall condition.",
+      },
+      {
+        title: "Personalised Treatment Plans",
+        description:
+          "There is no one-size-fits-all approach. Treatment is planned based on whether the patient has internal piles, external piles, thrombosed piles, bleeding piles, or advanced prolapsed piles.",
+      },
+      {
+        title: "Trusted Proctology Care",
+        description:
+          "Chirag Hospitals is known for specialised colorectal and proctology care. Patients receive treatment in a safe clinical setting with proper guidance before, during, and after the procedure.",
+      },
+      {
+        title: "Easy EMI and Transparent Pricing",
+        description:
+          "Flexible EMI options and clear pricing support make piles treatment more accessible, with proper guidance on procedure cost, recovery, and follow-up care.",
+      },
     ],
   };
 
@@ -222,38 +276,109 @@ export default function LadyPilesConditions({
     ],
   };
 
-  const InfoData = {
-    aboutTitle: "Symptoms of Piles in Women",
-    aboutText:
-      "Women may experience bleeding, pain, itching, swelling, or discomfort during bowel movements that require medical attention.",
-
-    advantagesTitle: "Treatment Options for Piles",
-    advantages: [
-      "Laser piles treatment",
-      "Lifestyle and dietary guidance",
-      "Advanced DGHAL procedure for piles",
-      "Ultrasonic shears excision for minimal pain and faster recovery",
+const treatmentOptionsData = {
+    heading: "Treatment Options for Piles ",
+    subheading:
+      "",
+    options: [
+      {
+        icon: "zap",
+        title: "Lifestyle and Dietary Guidance",
+        description:
+          "High-fibre diet, adequate water intake, stool-softening habits, and bowel routine guidance to reduce strain and prevent recurrence.",
+      },
+      {
+        icon: "wrench",
+        title: "Medication",
+        description:
+          "Creams, ointments, pain-relief medicines, and stool softeners may help reduce swelling, itching, pain, and discomfort in early-stage piles.",
+      },
+      {
+        icon: "shield",
+        title: "Laser Piles Treatment",
+        description:
+          "Minimally invasive laser procedure used to shrink piles with less bleeding, minimal tissue damage, and faster recovery.",
+      },
+      {
+        icon: "filetext",
+        title: "DGHAL Procedure",
+        description:
+          "Doppler-Guided Haemorrhoidal Artery Ligation helps reduce blood flow to piles and is useful for selected internal piles cases.",
+      },
+      {
+        icon: "hexagon",
+        title: "Ultrasonic Shears Excision",
+        description:
+          "Advanced surgical removal of piles using ultrasonic energy, designed for precise cutting with reduced bleeding and faster healing.",
+      },
+      {
+        icon: "smile",
+        title: "Haemorrhoidectomy",
+        description:
+          "Surgical removal of large, painful, or advanced piles when other treatments may not provide enough relief.",
+      },
     ],
+  };
 
-    costTitle: "Why Laser Is Best Treatment",
-    costIntro: "Laser piles treatment for women offers:",
-    costPoints: [
-      "Minimal pain procedure",
-      "No cuts or stitches",
-      "Same-day discharge",
-      "Faster recovery time",
+  const whyLaserBestData = {
+    heading: "Why Laser is the Best Treatment for Piles ",
+    subheading:
+      "",
+    image: "",
+    imageAlt: "",
+    points: [
+      {
+        title: "Minimally Invasive Procedure:",
+        description:
+          "Laser treatment uses focused energy to shrink or treat piles without large cuts or extensive tissue damage.",
+      },
+      {
+        title: "Less Pain and Bleeding:",
+        description:
+          "The laser seals blood vessels during the procedure, helping reduce bleeding, swelling, and post-treatment pain.",
+      },
+      {
+        title: "Faster Recovery Time:",
+        description:
+          "Most patients can return to normal activities sooner compared to conventional surgical methods.",
+      },
+      {
+        title: "Same-Day Discharge Possible:",
+        description:
+          "In many cases, laser piles treatment can be done as a daycare procedure, depending on the patient’s condition.",
+      },
+      {
+        title: "Minimal Tissue Damage:",
+        description:
+          "Focused laser energy targets the affected piles tissue while reducing damage to surrounding healthy tissue.",
+      },
+      {
+        title: "Better Comfort After Treatment:",
+        description:
+          "Patients usually experience less dressing care, fewer restrictions, and improved comfort during recovery.",
+      },
     ],
+  };
 
-    expandedContent: [
-      "Laser piles treatment is a safe and effective option for women seeking quick relief with minimal discomfort.",
-      "Treatment plan and cost are decided after consultation based on individual condition and severity.",
+  
+const whenConsultData = {
+    heading: "Symptoms of Piles",
+    subheading:
+      "",
+    signs: [
+      "Bleeding During Bowel Movements",
+      "Pain or Discomfort",
+      "Itching or Irritation",
+      "Swelling Around the Anus",
+      "Lump Near the Anus",
+      "Mucus Discharge",
     ],
   };
 
   const BannerData = {
     heading: "Expert  Piles Treatment for Women at Chirag Hospitals",
     buttonText: "Book Appointment",
-    imageSrc: "/scheduleyourvisit.png",
+    imageSrc: "/schedulevisit.png",
   };
 
   const faqs = [
@@ -336,7 +461,7 @@ export default function LadyPilesConditions({
             buttonText={costSectionData.buttonText}
             imageSrc={costSectionData.imageSrc}
           /> */}
-            <Risk {...risksOfDelayData} />
+            <RisksOfDelayPediatric {...risksOfDelayData} />
             <Doctors {...doctorsSectionData} />
             <HospitalLocation locationsectionheading={defaultLocationHeading} />
             <CostDepends
@@ -345,10 +470,11 @@ export default function LadyPilesConditions({
               ctaText={treatmentCostDependsData.ctaText}
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-
-            <Why {...whyChooseData} />
             <HospitalComparisond {...InfoContent} />
-            <Info {...InfoData} />
+            <WhenConsult {...whenConsultData} />
+            <TreatmentOptions {...treatmentOptionsData} />
+            <WhyLaserBest {...whyLaserBestData} />
+            <WhyChoosePediatric {...whyChooseData} />
             <CtaBanner {...BannerData} />
             {faqs.length > 0 && (
               <Faqs
