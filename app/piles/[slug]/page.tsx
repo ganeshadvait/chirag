@@ -5,18 +5,17 @@ import dynamic from "next/dynamic";
 import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
-import Cost from "@/components/partials/cost/cost";
-import Risk from "@/components/partials/risks/risk";
+import RisksOfDelayPediatric from "@/components/partials/risksofdelaypediatric/risksofdelaypediatric";
 import Doctors from "@/components/partials/doctors/doctors";
 import CostDepends from "@/components/partials/costdepends/costdepends";
 import InsurenceAdvisor from "@/components/partials/insurenceadvisor/insurenceadvisor";
-import Why from "@/components/partials/why/why";
-import Google from "@/components/partials/google/google";
-import Info from "@/components/partials/info/info";
+import WhyChoosePediatric from "@/components/partials/whychoosepediatric/whychoosepediatric";
+import WhenConsult from "@/components/partials/whenconsult/whenconsult";
+import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
+import WhyLaserBest from "@/components/partials/whylaserbest/whylaserbest";
 import CtaBanner from "@/components/partials/ctabanner/ctabanner";
 import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
-import Reviews from "@/components/partials/reviews/reviews";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 import FooterComponent from "@/components/footer/footer";
 
@@ -27,11 +26,6 @@ type HeroDataType = {
   imageSrc: string;
 };
 
-type PilesPageProps = {
-  params: {
-    slug: string;
-  };
-};
 const HospitalComparisond = dynamic(
   () => import("@/components/dynamictable/dynamictables"),
 );
@@ -105,7 +99,6 @@ export default function PilesConditions() {
 
   const defaultPhone = "08065916415";
   const finalPhone = pageContent?.phone ?? defaultPhone;
-
   const finalPhoneTel = `tel:${finalPhone}`;
 
   const HeroData = {
@@ -152,27 +145,40 @@ export default function PilesConditions() {
     ],
   };
 
-  // const costSectionData = {
-  //   title: "Check Surgery Cost",
-  //   points: [
-  //     "Find the total cost of Surgery at the best hospitals.",
-  //     "Compare surgery prices across top hospitals.",
-  //     "Get a clear estimate before visiting the hospital.",
-  //   ],
-  //   buttonText: "Calculate Surgery Cost",
-  //   imageSrc: "/chiraggpt.png",
-  // };
-
   const risksOfDelayData = {
     heading: "Risks of Delaying Piles Treatment",
+    intro: "",
+    image: "/piles/risk of delaying piles.png",
+    imageAlt: "Risks of delaying piles treatment",
     risks: [
-      "Severe pain",
-      "Excessive Blood in Stool",
-      "Infection risk",
-      "Chronic discomfort",
-      "Risk of Anaemia",
+      {
+        title: "Severe Pain",
+        description:
+          "Untreated piles may become swollen, irritated, or thrombosed, leading to sharp pain that affects sitting, walking, and daily activities.",
+      },
+      {
+        title: "Excessive Bleeding",
+        description:
+          "Repeated bleeding during bowel movements can increase over time and should be medically evaluated, especially if it becomes frequent or heavy.",
+      },
+      {
+        title: "Risk of Anaemia",
+        description:
+          "Long-term or repeated blood loss may lead to low haemoglobin levels, causing tiredness, weakness, dizziness, and reduced energy.",
+      },
+      {
+        title: "Infection or Irritation",
+        description:
+          "Persistent swelling, discharge, itching, or skin irritation around the anal area may increase discomfort and require timely care.",
+      },
+      {
+        title: "Chronic Discomfort",
+        description:
+          "Delaying care can lead to ongoing itching, burning, pressure, and discomfort that affects hygiene, sleep, and quality of life.",
+      },
     ],
   };
+
   const doctorsSectionData = {
     heading: "Our Top Doctors",
 
@@ -296,15 +302,137 @@ export default function PilesConditions() {
   };
 
   const whyChooseData = {
-    heading: "Why Choose Chirag Hospitals for Piles Treatment in Bangalore",
-    points: [
-      "Top specialist with 38 years experience",
-      "High patient satisfaction",
-      "Affordable treatment options",
-      "Complete pre and post care",
-      "Patient-friendly hospital support",
+    heading: "Why Choose Chirag Hospitals for Piles Treatment",
+    subheading:
+      "Bangalore’s Leading Hospital for Advanced Piles Management and Surgery",
+    features: [
+      {
+        title: "30+ Years of Expertise in Piles Treatment",
+        description:
+          "Dr. Rajasekhar M R and his experienced proctology team provide specialised care for different grades of piles, including bleeding piles, painful piles, prolapsed piles, and recurrent piles.",
+      },
+      {
+        title: "Advanced Laser Piles Treatment",
+        description:
+          "Chirag Hospitals offers minimally invasive laser treatment for suitable piles cases. The procedure helps reduce pain, bleeding, tissue damage, and recovery time compared to conventional surgery.",
+      },
+      {
+        title: "Complete Diagnosis and Grading",
+        description:
+          "Every patient is carefully evaluated to understand the severity and type of piles. This helps the doctor recommend the right treatment plan based on symptoms, grade, bleeding, pain, and overall condition.",
+      },
+      {
+        title: "Personalised Treatment Plans",
+        description:
+          "There is no one-size-fits-all approach. Treatment is planned based on whether the patient has internal piles, external piles, thrombosed piles, bleeding piles, or advanced prolapsed piles.",
+      },
+      {
+        title: "Trusted Proctology Care",
+        description:
+          "Chirag Hospitals is known for specialised colorectal and proctology care. Patients receive treatment in a safe clinical setting with proper guidance before, during, and after the procedure.",
+      },
+      {
+        title: "Easy EMI and Transparent Pricing",
+        description:
+          "Flexible EMI options and clear pricing support make piles treatment more accessible, with proper guidance on procedure cost, recovery, and follow-up care.",
+      },
     ],
   };
+  const whenConsultData = {
+    heading: "Symptoms of Piles",
+    subheading: "",
+    signs: [
+      "Bleeding During Bowel Movements",
+      "Pain or Discomfort",
+      "Itching or Irritation",
+      "Swelling Around the Anus",
+      "Lump Near the Anus",
+      "Mucus Discharge",
+    ],
+  };
+
+  const treatmentOptionsData = {
+    heading: "Treatment Options for Piles ",
+    subheading: "",
+    options: [
+      {
+        icon: "zap",
+        title: "Lifestyle and Dietary Guidance",
+        description:
+          "High-fibre diet, adequate water intake, stool-softening habits, and bowel routine guidance to reduce strain and prevent recurrence.",
+      },
+      {
+        icon: "wrench",
+        title: "Medication",
+        description:
+          "Creams, ointments, pain-relief medicines, and stool softeners may help reduce swelling, itching, pain, and discomfort in early-stage piles.",
+      },
+      {
+        icon: "shield",
+        title: "Laser Piles Treatment",
+        description:
+          "Minimally invasive laser procedure used to shrink piles with less bleeding, minimal tissue damage, and faster recovery.",
+      },
+      {
+        icon: "filetext",
+        title: "DGHAL Procedure",
+        description:
+          "Doppler-Guided Haemorrhoidal Artery Ligation helps reduce blood flow to piles and is useful for selected internal piles cases.",
+      },
+      {
+        icon: "hexagon",
+        title: "Ultrasonic Shears Excision",
+        description:
+          "Advanced surgical removal of piles using ultrasonic energy, designed for precise cutting with reduced bleeding and faster healing.",
+      },
+      {
+        icon: "smile",
+        title: "Haemorrhoidectomy",
+        description:
+          "Surgical removal of large, painful, or advanced piles when other treatments may not provide enough relief.",
+      },
+    ],
+  };
+
+  const whyLaserBestData = {
+    heading: "Why Laser is the Best Treatment for Piles ",
+    subheading: "",
+    image: "",
+    imageAlt: "",
+    points: [
+      {
+        title: "Minimally Invasive Procedure:",
+        description:
+          "Laser treatment uses focused energy to shrink or treat piles without large cuts or extensive tissue damage.",
+      },
+      {
+        title: "Less Pain and Bleeding:",
+        description:
+          "The laser seals blood vessels during the procedure, helping reduce bleeding, swelling, and post-treatment pain.",
+      },
+      {
+        title: "Faster Recovery Time:",
+        description:
+          "Most patients can return to normal activities sooner compared to conventional surgical methods.",
+      },
+      {
+        title: "Same-Day Discharge Possible:",
+        description:
+          "In many cases, laser piles treatment can be done as a daycare procedure, depending on the patient’s condition.",
+      },
+      {
+        title: "Minimal Tissue Damage:",
+        description:
+          "Focused laser energy targets the affected piles tissue while reducing damage to surrounding healthy tissue.",
+      },
+      {
+        title: "Better Comfort After Treatment:",
+        description:
+          "Patients usually experience less dressing care, fewer restrictions, and improved comfort during recovery.",
+      },
+    ],
+  };
+
   const InfoContent = {
     theading: "Piles Treatment at Chirag Hospitals",
     videoSrc: "/chirag-piles-video.mp4",
@@ -322,33 +450,6 @@ export default function PilesConditions() {
       "Internal Piles – Piles inside the rectum",
       "External Piles – Piles outside the anus",
       "Thrombosed Piles – Piles with blood clots",
-    ],
-  };
-  const InfoData = {
-    aboutTitle: "Symptoms of Piles",
-    aboutText:
-      "Piles commonly cause bleeding during bowel movements, pain, itching, swelling, or a lump around the anus that needs medical attention.",
-
-    advantagesTitle: "Treatment Options for Piles",
-    advantages: [
-      "Laser piles treatment",
-      "Lifestyle and dietary guidance",
-      "Advanced DGHAL procedure for piles",
-      "Ultrasonic shears excision for minimal pain and faster recovery",
-    ],
-
-    costTitle: "Why Laser Is Best Treatment",
-    costIntro: "Laser piles treatment is preferred because it offers:",
-    costPoints: [
-      "Minimally invasive procedure",
-      "Less pain and bleeding",
-      "Same-day discharge possible",
-      "Faster recovery time",
-    ],
-
-    expandedContent: [
-      "Laser piles treatment is a modern option for patients seeking effective relief with minimal discomfort and shorter recovery time.",
-      "Treatment plan and cost are decided after medical evaluation based on the severity and individual patient condition.",
     ],
   };
 
@@ -396,25 +497,21 @@ export default function PilesConditions() {
   const testimonialSectionData = {
     testimonials: [
       {
-        // title: "Laser treatment for my dad's piles",
         text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
         name: "Abddul",
         rating: 5,
       },
       {
-        // title: "Smooth and painless",
         text: "I had a wonderful experience with Dr. Rajasekhar sir and his team a wonderful surgeons at Chirag hospital. His entire team is always helpful and kind. Dr. Rajasekar treated me for piles and he made sure I was comfortable. The staff in the hospital were very cooperative and soft spoken. They ensured I am prepared for the entire treatment. Dr. rajasekhar sir is friendly and approachable at any time in case of need. I feel much better and happy that I chose Dr. rajasekar sir to do my piles treatment. I would highly recommend anyone who wants to undergo piles treatment without undergoing any surgery.",
         name: "Sai",
         rating: 5,
       },
       {
-        // title: "Colorectal Diseases",
         text: "I had piles issues for the last 2 years. even though I got surgery before, the problem came back again. Rajasekhar sir did surgery on me 4 months back. till now, no problem. treatment is good. fees are high but very good doctors. If treatment is more important than anything else, everyone should visit this hospital for piles and fistula problems.",
         name: "Kasireddy",
         rating: 5,
       },
       {
-        // title: "Admitted for my fistula surgery",
         text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It’s been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
         name: "Syam",
         rating: 5,
@@ -438,13 +535,7 @@ export default function PilesConditions() {
           <div className="space-y-10">
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
-            {/* <Cost
-            title={costSectionData.title}
-            points={costSectionData.points}
-            buttonText={costSectionData.buttonText}
-            imageSrc={costSectionData.imageSrc}
-          /> */}
-            <Risk {...risksOfDelayData} />
+            <RisksOfDelayPediatric {...risksOfDelayData} />
             <Doctors {...doctorsSectionData} />
             <HospitalLocation locationsectionheading={defaultLocationHeading} />
             <CostDepends
@@ -453,15 +544,15 @@ export default function PilesConditions() {
               ctaText={treatmentCostDependsData.ctaText}
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-
-            <Why {...whyChooseData} />
+            <WhenConsult {...whenConsultData} />
+            <TreatmentOptions {...treatmentOptionsData} />
+            <WhyLaserBest {...whyLaserBestData} />
             <HospitalComparisond {...InfoContent} />
-            <Info {...InfoData} />
+            <WhyChoosePediatric {...whyChooseData} />
             <CtaBanner {...BannerData} />
             {finalFaqs.length > 0 && (
               <Faqs
                 className="md:!w-[95%] w-full mx-[unset]"
-                // fheading={fheading}
                 faqs={finalFaqs.map((faq) => ({
                   faqquestion: faq.faqTitle,
                   faqanswer: faq.faqAnswer,
