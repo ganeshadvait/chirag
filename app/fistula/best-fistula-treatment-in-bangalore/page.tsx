@@ -105,9 +105,9 @@ export default function PilesConditions() {
   const finalPhoneTel = `tel:${finalPhone}`;
 
   const finalHeroData = {
-    heading: "Best Fistula Treatment in Bangalore",
+    heading: "Best Treatment for Recurrent & Complex Fistulas in Bangalore",
     points: [
-      "Best Fistula Treatment in Bangalore",
+      "2,500+ Recurrent Fistula Cases Treated",
       "Experienced colorectal specialists",
       "Advanced laser treatment for fistula",
       "Personalized patient-focused care",
