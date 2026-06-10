@@ -112,7 +112,7 @@ export default function FistualConditions() {
       "Minimal pain, no stitches",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: "/Chirag Doctors Main.png",
   };
 
   const finalHeroData = {

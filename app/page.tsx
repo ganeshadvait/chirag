@@ -33,7 +33,7 @@ export default function NewDesign() {
       "Personalized, Patient-First Care",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: "/Chirag Doctors Main.png",
   };
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",

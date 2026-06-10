@@ -33,7 +33,7 @@ export default function NewDesign() {
       "Pay Later Facility",
     ],
     buttonText: "Calculate Surgery Cost",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: "/Chirag Doctors Main.png",
   };
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",
