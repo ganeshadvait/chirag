@@ -125,7 +125,7 @@ export default function PilesConditions() {
       "Comprehensive pre & post treatment support",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: "/Chirag Doctors Main.png",
   };
 
   const finalHeroData = {

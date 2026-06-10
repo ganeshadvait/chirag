@@ -105,7 +105,7 @@ export default function PilesConditions() {
       "Palliative care facility",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: "/Chirag Doctors Main.png",
   };
 
  const whatIsPediatricData = {

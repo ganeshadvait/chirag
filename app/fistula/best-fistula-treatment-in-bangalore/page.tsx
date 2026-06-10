@@ -115,7 +115,7 @@ export default function PilesConditions() {
       "Minimal pain, no stitches",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: "/Chirag Doctors Main.png",
   };
 
   const whatIsPediatricData = {

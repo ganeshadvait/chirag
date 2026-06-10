@@ -127,7 +127,7 @@ export default function PilesConditions() {
       "Low recurrence rate with expert care",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/chiragheroimage.png",
+    imageSrc: "/Chirag Doctors Main.png",
   };
 
   const finalHeroData = {
