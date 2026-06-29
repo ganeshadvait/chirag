@@ -268,16 +268,16 @@ export default function NewDesign() {
     topDoctors: [
       {
         name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
-        qualification: "Founder and Senior Colorectal Surgeon",
+        designation: "MBBS, MS General Surgeon",
+        qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorchiragcard.png",
       },
       {
         name: "Dr. Shreedevi KN",
-        designation: "MBBS, MS, FSGE",
-        qualification: "Surgical Gastroenterologist and Colorectal Surgeon",
+        designation: "MBBS, MS General Surgery, FSGE (Surgical Gastroenterology)",
+        qualification: "Head Colorectal Surgery & Proctology",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorshreedevicard.png",

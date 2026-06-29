@@ -154,16 +154,16 @@ export default function FistualConditions() {
     topDoctors: [
       {
         name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
-        qualification: "Founder and Senior Colorectal Surgeon",
+        designation: "MBBS, MS General Surgeon",
+        qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
         experience: "38 Years",
         reviews: "99%",
         img: "/doctorchiragcard.png",
       },
       {
         name: "Dr. Shreedevi KN",
-        designation: "MBBS, MS, FSGE",
-        qualification: "Surgical Gastroenterologist and Colorectal surgeon",
+        designation: "MBBS, MS General Surgery, FSGE (Surgical Gastroenterology )",
+        qualification: "Head Colorectal Surgery & Proctology",
         experience: "12 Years",
         reviews: "99%",
         img: "/doctorshreedevicard.png",
@@ -181,27 +181,11 @@ export default function FistualConditions() {
     moreDoctors: [
       {
         name: "Dr.Jyotsna Vemulapalli",
-        designation: "MBBS, MS(Gen Surgery)",
-        qualification: "General Surgeon",
+        designation: "MMBS MS General Surgery",
+        qualification: "Colorectal Surgeon & Proctologist",
         experience: "4 Years",
         reviews: "99%",
         img: "/doctorjyotsnacard.png",
-      },
-      {
-        name: "Dr. Prithvija Chakravarthy",
-        designation: "BAMS, MD(Ayu),YIC (Yoga - SVYASA)",
-        qualification: "Proctologist",
-        experience: "10 Years",
-        reviews: "99%",
-        img: "/doctorprithvicard.png",
-      },
-      {
-        name: "Dr. Suchitra N Adiga",
-        designation: "BAMS, MS(Ayu)",
-        qualification: "Proctologist",
-        experience: "8 Years",
-        reviews: "99%",
-        img: "/doctorsuchithracard.png",
       },
     ],
 
