@@ -20,9 +20,9 @@ const DoctorsData: DoctorsDataType = {
     "Dr. Rajasekhar": {
       url: "/chiragheroimage.png",
       name: "Dr. Rajasekhar M R",
-      qualification: "MBBS, MS",
+      qualification: "MBBS, MS General Surgeon",
       experience: "38 years",
-      designation: "SENIOR COLORECTAL SURGEON",
+      designation: "Chairman, Chief Colorectal Surgeon & Proctologist",
       description:
         "Dr. Rajasekhar is one of Bangalore’s most respected and experienced colorectal surgeons, with over 38 years of clinical excellence. He is widely known for his expertise in the comprehensive management of colorectal and anorectal conditions, including piles, fissures, fistula, and other bowel disorders.",
       mobileNumberDoctor: "tel:9380498256",

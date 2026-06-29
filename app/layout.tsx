@@ -49,7 +49,7 @@ export default function RootLayout({
             function googleTranslateElementInit() {
               new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'en,kn,te',
+                includedLanguages: 'en,kn,hi',
                 autoDisplay: false,
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
               }, 'google_translate_element');
