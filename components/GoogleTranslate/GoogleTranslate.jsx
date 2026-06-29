@@ -5,8 +5,10 @@ import { useEffect, useState, useRef, useCallback } from "react";
 const languages = [
   { code: "en", label: "English", native: "EN", script: "Aa" },
   { code: "kn", label: "ಕನ್ನಡ", native: "Kannada", script: "ಕ" },
-  { code: "te", label: "తెలుగు", native: "Telugu", script: "తె" },
+  { code: "hi", label: "हिंदी", native: "Hindi", script: "हि" },
 ];
+
+const SUPPORTED = ["en", "kn", "hi"];
 
 const STORAGE_KEY = "chirag-lang";
 
@@ -24,55 +26,66 @@ function saveLangPreference(code) {
 function getSavedLang() {
   try {
     const ls = localStorage.getItem(STORAGE_KEY);
-    if (ls && ["en", "kn", "te"].includes(ls)) return ls;
+    if (ls && SUPPORTED.includes(ls)) return ls;
   } catch {
     // localStorage blocked
   }
   const match = document.cookie.match(new RegExp(`${STORAGE_KEY}=(\\w+)`));
-  if (match?.[1] && ["en", "kn", "te"].includes(match[1])) return match[1];
+  if (match?.[1] && SUPPORTED.includes(match[1])) return match[1];
   return "en";
 }
 
-// Wait for Google Translate to be ready, then trigger translation
+// Clear Google Translate's googtrans cookie on every host/domain variant
+function clearGoogTransCookie() {
+  const expired = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
+  const host = window.location.hostname;
+  document.cookie = `googtrans=; ${expired}; path=/;`;
+  document.cookie = `googtrans=; ${expired}; path=/; domain=${host}`;
+  document.cookie = `googtrans=; ${expired}; path=/; domain=.${host}`;
+}
+
+// Persist the chosen language in Google's googtrans cookie so the
+// translation survives page navigations / fresh loads.
+function setGoogTransCookie(langCode) {
+  clearGoogTransCookie();
+  if (langCode !== "en") {
+    const value = `/en/${langCode}`;
+    const host = window.location.hostname;
+    document.cookie = `googtrans=${value}; path=/`;
+    document.cookie = `googtrans=${value}; path=/; domain=${host}`;
+    document.cookie = `googtrans=${value}; path=/; domain=.${host}`;
+  }
+}
+
+// Drive Google Translate's hidden <select> to translate the current page
+// without a reload. Polls until the widget's combo box is in the DOM.
 function triggerGoogleTranslate(langCode) {
   const doTranslate = () => {
     const select = document.querySelector(".goog-te-combo");
     if (!select) return false;
-
-    if (langCode === "en") {
-      // Reset to English
-      select.value = "";
-      select.dispatchEvent(new Event("change"));
-      // Clear Google's cookie
-      document.cookie =
-        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie =
-        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." +
-        window.location.hostname;
-      // Try clicking "Show original" in the banner
-      try {
-        const frame = document.querySelector(".goog-te-banner-frame");
-        if (frame) {
-          const btn = frame.contentDocument?.querySelector(".goog-close-link");
-          if (btn) btn.click();
-        }
-      } catch {
-        // Cross-origin frame access blocked — cookie clear handles it
-      }
-    } else {
-      select.value = langCode;
-      select.dispatchEvent(new Event("change"));
-    }
+    select.value = langCode === "en" ? "" : langCode;
+    select.dispatchEvent(new Event("change"));
     return true;
   };
 
-  // Try immediately, if Google Translate isn't loaded yet, retry with polling
   if (!doTranslate()) {
     let attempts = 0;
     const interval = setInterval(() => {
       attempts++;
-      if (doTranslate() || attempts > 30) clearInterval(interval);
+      if (doTranslate() || attempts > 40) clearInterval(interval);
     }, 200);
+  }
+}
+
+// Apply a language change. For English we MUST reload after clearing the
+// cookie — Google Translate cannot cleanly revert an already-translated
+// page via the select. For other languages the select trigger works live.
+function applyGoogleTranslate(langCode) {
+  setGoogTransCookie(langCode);
+  if (langCode === "en") {
+    window.location.reload();
+  } else {
+    triggerGoogleTranslate(langCode);
   }
 }
 
@@ -82,13 +95,14 @@ export default function FloatingLanguageSwitcher() {
   const [mounted, setMounted] = useState(false);
   const ref = useRef(null);
 
-  // On mount: restore saved language and re-apply translation
+  // On mount: restore the saved language and re-apply translation. Google
+  // Translate resets to the source language on every fresh load, so we drive
+  // the select again once the widget has initialized.
   useEffect(() => {
     setMounted(true);
     const saved = getSavedLang();
     setActive(saved);
     if (saved !== "en") {
-      // Wait a bit for Google Translate script to initialize
       setTimeout(() => triggerGoogleTranslate(saved), 800);
     }
   }, []);
@@ -108,12 +122,19 @@ export default function FloatingLanguageSwitcher() {
     };
   }, [open]);
 
-  const handleSelect = useCallback((code) => {
-    setActive(code);
-    saveLangPreference(code);
-    triggerGoogleTranslate(code);
-    setOpen(false);
-  }, []);
+  const handleSelect = useCallback(
+    (code) => {
+      if (code === active) {
+        setOpen(false);
+        return;
+      }
+      setActive(code);
+      saveLangPreference(code);
+      setOpen(false);
+      applyGoogleTranslate(code); // sets googtrans cookie + reloads
+    },
+    [active],
+  );
 
   if (!mounted) return null;
 
@@ -151,7 +172,7 @@ export default function FloatingLanguageSwitcher() {
         <span className="absolute -inset-1 rounded-full border-2 border-violet-300 opacity-0 pointer-events-none -z-10 animate-[lswPulse_2s_ease-out_1s_2]" />
 
         {/* Globe icon */}
-        <span className={`relative z-10 w-[22px] h-[22px] shrink-0 transition-colors duration-300 max-md:w-[19px] max-md:h-[19px] ${open ? "text-white" : "text-[#625587] group-hover:text-white"}`}>
+        <span className={`relative z-10 w-[22px] h-[22px] shrink-0 transition-colors duration-300 max-md:w-[19px] max-md:h-[19px] `}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
             <circle cx="12" cy="12" r="10" />
             <path d="M2 12h20" />
@@ -160,12 +181,12 @@ export default function FloatingLanguageSwitcher() {
         </span>
 
         {/* Label */}
-        <span className={`relative z-10 whitespace-nowrap transition-colors duration-300 ${open ? "" : "group-hover:text-white"}`}>
+        <span className={`relative z-10 whitespace-nowrap transition-colors duration-300`}>
           {activeLang.label}
         </span>
 
         {/* Arrow */}
-        <span className={`relative z-10 flex items-center transition-all duration-300 ${open ? "rotate-180 text-white" : "text-slate-400 group-hover:text-white"}`}>
+        <span className={`relative z-10 flex items-center transition-all duration-300 `}>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
