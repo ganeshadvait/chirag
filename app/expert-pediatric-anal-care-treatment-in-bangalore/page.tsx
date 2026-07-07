@@ -77,7 +77,7 @@ const contentMap: Record<
       {
         faqTitle: "Is Piles laser treatment covered under insurance?",
         faqAnswer:
-          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+          "Yes, most major insurance plans cover laser treatment for piles.",
       },
       {
         faqTitle: "Can I pay for the treatment in installments?",
@@ -377,7 +377,7 @@ export default function PilesConditions() {
       {
         title: "Affordable & Insurance-Friendly",
         description:
-          "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges for all pediatric procedures.",
+          "Insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges for all pediatric procedures.",
       },
     ],
   };
@@ -503,7 +503,7 @@ export default function PilesConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
@@ -609,7 +609,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does pediatric anal care treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs vary depending on the condition and approach. Conservative management is very affordable, while procedures may vary. We offer cashless insurance processing, EMI options through GMoney with zero interest, and transparent pricing. Contact our health advisors at 08065916418 for a personalized cost estimate.",
+        "Treatment costs vary depending on the condition and approach. Conservative management is very affordable, while procedures may vary. EMI options through GMoney with zero interest, and transparent pricing. Contact our health advisors at 08065916418 for a personalized cost estimate.",
     },
     {
       faqTitle: "Why is Chirag Hospitals trusted for pediatric anal care?",

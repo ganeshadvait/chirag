@@ -65,7 +65,7 @@ const contentMap: Record<
       {
         faqTitle: "Is the surgery covered under insurance?",
         faqAnswer:
-          "Yes, Chirag Global Hospitals supports cashless treatment with most major insurance providers. Our team will assist you with approvals and documentation.",
+          "Yes, Chirag Global Hospitals supports insurance with most major insurance providers. Our team will assist you with approvals and documentation.",
       },
       {
         faqTitle: "What’s included in the surgery cost?",
@@ -237,7 +237,7 @@ export default function FistualConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",

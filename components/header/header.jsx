@@ -1,16 +1,48 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import LoaderModal from "../LoaderModal";
 import Image from "next/image";
 
+// ─── Dynamic phone number config ────────────────────────────────
+// Any page NOT listed below falls back to DEFAULT_PHONE.
+const DEFAULT_PHONE = "08065916415";
 
-export default function   Header({
+// Special pages → 08065916418
+const SPECIAL_PHONE = "08065916418";
+const SPECIAL_PHONE_PAGES = [
+  "/best-pilonidal-sinus-treatment-in-bangalore",
+  "/best-rectal-prolapse-treatment-in-bangalore",
+  "/expert-pediatric-anal-care-treatment-in-bangalore",
+];
+
+// Cost pages → 08065916427
+const COST_PHONE = "08065916427";
+const COST_PHONE_PAGES = [
+  "/piles/piles-laser-treatment-cost-in-Bangalore",
+  "/fistula/anal-fistula-surgery-cost-in-Bangalore",
+];
+// ────────────────────────────────────────────────────────────────
+
+export default function Header({
   PhoneNumber,
   mobilectatext,
   mobileNumberHeader,
 }) {
+  const pathname = usePathname();
+
+  // Strip a trailing slash so "/page/" still matches "/page".
+  const normalizedPath = (pathname ?? "").replace(/\/$/, "");
+
+  let phoneNumber = DEFAULT_PHONE;
+  if (COST_PHONE_PAGES.includes(normalizedPath)) {
+    phoneNumber = COST_PHONE;
+  } else if (SPECIAL_PHONE_PAGES.includes(normalizedPath)) {
+    phoneNumber = SPECIAL_PHONE;
+  }
+
   const scrollToSection = (id) => {
     if (!id) {
       window.history.pushState(null, "", `#${id}`);
@@ -105,7 +137,7 @@ export default function   Header({
 
         {/* <!-- Mobile Link (≤ 760px) --> */}
         <a
-          href={mobileNumberHeader}
+          href={`tel:${phoneNumber}`}
           className="header_cta_type_one mobile-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
         >
           <Image
@@ -116,7 +148,7 @@ export default function   Header({
             className="w-4 h-4 md:w-5 md:h-5 ringing"
           />
 
-          <span className="phone_number">{PhoneNumber}</span>
+          <span className="phone_number">{phoneNumber}</span>
 
           <span
             data-cta="header cta call button"
@@ -128,7 +160,7 @@ export default function   Header({
 
         {/* <!-- Desktop Link (> 760px) --> */}
         <a
-          href="tel:08065916415"
+          href={`tel:${phoneNumber}`}
           className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
         >
           <Image
@@ -139,7 +171,7 @@ export default function   Header({
             className="w-4 h-4 md:w-5 md:h-5 ringing"
           />
 
-          <span className="phone_number">{PhoneNumber}</span>
+          <span className="phone_number">{phoneNumber}</span>
 
           <span
             data-cta="header cta call button"

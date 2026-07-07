@@ -186,7 +186,7 @@ export default function NewDesign() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
@@ -244,7 +244,7 @@ export default function NewDesign() {
       "Latest Technology & Evidence-Based Practices",
       "Shorter Recovery & Faster Return to Daily Life",
       "Transparent Guidance & Ethical Care",
-      "Support for Insurance & Cashless Treatment",
+      "Support for Insurance",
     ],
 
     costTitle: "Not from India? No Problem!",
