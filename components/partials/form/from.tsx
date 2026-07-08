@@ -1,6 +1,7 @@
 // components/ConsultationForm.jsx
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import type { ChangeEvent, FormEvent } from "react";
 import TestimonialSlider from "@/components/partials/reviews/reviews";
 import { contactAction } from "@/hooks/contact";
@@ -28,6 +29,26 @@ type FormData = {
   phone_number: string;
 };
 
+// ─── Dynamic phone number config ────────────────────────────────
+// Any page NOT listed below falls back to DEFAULT_PHONE.
+const DEFAULT_PHONE = "08065916415";
+
+// Special pages → 08065916418
+const SPECIAL_PHONE = "08065916418";
+const SPECIAL_PHONE_PAGES = [
+  "/best-pilonidal-sinus-treatment-in-bangalore",
+  "/best-rectal-prolapse-treatment-in-bangalore",
+  "/expert-pediatric-anal-care-treatment-in-bangalore",
+];
+
+// Cost pages → 08065916427
+const COST_PHONE = "08065916427";
+const COST_PHONE_PAGES = [
+  "/piles/piles-laser-treatment-cost-in-Bangalore",
+  "/fistula/anal-fistula-surgery-cost-in-Bangalore",
+];
+// ────────────────────────────────────────────────────────────────
+
 // Simple up arrow SVG
 function UpIcon({ className = "" }: { className?: string }) {
   return (
@@ -53,6 +74,18 @@ function UpIcon({ className = "" }: { className?: string }) {
 export default function ConsultationForm({
   reviewsData,
 }: ConsultationFormProps) {
+  const pathname = usePathname();
+
+  // Strip a trailing slash so "/page/" still matches "/page".
+  const normalizedPath = (pathname ?? "").replace(/\/$/, "");
+
+  let phoneNumber = DEFAULT_PHONE;
+  if (COST_PHONE_PAGES.includes(normalizedPath)) {
+    phoneNumber = COST_PHONE;
+  } else if (SPECIAL_PHONE_PAGES.includes(normalizedPath)) {
+    phoneNumber = SPECIAL_PHONE;
+  }
+
   const [formData, setFormData] = useState<FormData>({
     full_name: "",
     phone_number: "",
@@ -248,7 +281,7 @@ export default function ConsultationForm({
         setSubmitMessage("Request timeout. Please try again.");
       } else {
         setSubmitMessage(
-          "An error occurred. Please try again or call us at +91 9999999999"
+          `An error occurred. Please try again or call us at +91 ${phoneNumber}`
         );
       }
     } finally {
@@ -424,7 +457,6 @@ export default function ConsultationForm({
             className="w-5 h-5 transition group-hover:invert"
           />
           {showForm ? "Close Form" : "Book Now"}
-          
         </button>
         {/* Mobile + Tablet: Get Directions */}
         <button
@@ -442,7 +474,7 @@ export default function ConsultationForm({
         {/* Desktop only: Call Now */}
         <button
           className="hidden lg:flex flex-1 bg-[#625587] hover:bg-transparent border-2 border-[#625587] hover:text-[#0b1b3f] text-white transition text-sm font-semibold rounded-full shadow px-2 py-3 md:py-4 items-center justify-center"
-          onClick={() => window.open("tel:08065916415", "_self")}
+          onClick={() => window.open(`tel:${phoneNumber}`, "_self")}
         >
           Call Now
         </button>

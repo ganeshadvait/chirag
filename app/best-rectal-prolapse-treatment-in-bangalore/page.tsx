@@ -79,7 +79,7 @@ const contentMap: Record<
       {
         faqTitle: "Is Piles laser treatment covered under insurance?",
         faqAnswer:
-          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+          "Yes, most major insurance plans cover laser treatment for piles.",
       },
       {
         faqTitle: "Can I pay for the treatment in installments?",
@@ -121,7 +121,7 @@ export default function PilesConditions() {
     heading: "Best Rectal Prolapse Treatment in Bangalore",
     points: [
       "Experienced colorectal surgery specialists",
-      "Advanced laparoscopic (keyhole) surgery",
+      "Minimally invasive perineal procedures",
       "Personalized treatment for every stage",
       "Short hospital stay & quick recovery",
       "Complete pre, surgical & post care support",
@@ -137,16 +137,16 @@ export default function PilesConditions() {
     points: pageContent?.hero?.points ?? HeroData.points,
   };
 
-  const whatIsPediatricData = {
-    heading: "What Is Rectal Prolapse?",
-    image: "/rectalprolapse/what is rectal prolapse.png",
-    imageAlt: "Rectal prolapse illustration",
-    paragraphs: [
-      "Rectal prolapse is a condition where the rectum — the last section of the large intestine — turns inside out and protrudes through the anus. It occurs when the supporting muscles and ligaments of the pelvic floor weaken, allowing the rectal wall to slide downward and eventually emerge outside the body.",
-      "The condition can affect people of any age but is most common in women over 50 and in young children. In adults, it's often associated with chronic constipation, straining during bowel movements, weakened pelvic floor muscles (from childbirth, aging, or neurological conditions), and conditions that increase abdominal pressure.",
-      "Rectal prolapse is a progressive condition — it typically starts as an internal prolapse (intussusception) where the rectum folds in on itself, and gradually worsens to a full-thickness external prolapse. Early treatment prevents progression and avoids the need for more complex surgery.",
-    ],
-  };
+ const whatIsPediatricData = {
+  heading: "What Is Rectal Prolapse?",
+  video: "/rectalprolapse/recatal prolapse dr video.mp4",
+  poster: "", // optional
+  imageAlt: "Rectal prolapse illustration",
+  paragraphs: [
+    "The rectum is the final part of the large intestine that stores stool before bowel movements. Normally, it is held securely in place by the pelvic floor muscles and supporting tissues. When these structures become weak, the rectum may gradually protrude through the anal opening, resulting in rectal prolapse.",
+    "Initially, the prolapse may occur only during bowel movements and return on its own. As the condition progresses, it may require manual repositioning and, in severe cases, protrude even while standing or walking.",
+  ],
+};
 
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",
@@ -261,16 +261,14 @@ export default function PilesConditions() {
     subheading:
       "Recognize these warning signs and seek expert evaluation early for best outcomes.",
     signs: [
-      "Tissue visibly protruding from the anus during or after bowel movements",
-      "Feeling of a lump or mass coming out of the rectum",
-      "Fecal incontinence — inability to control bowel movements",
-      "Mucus or bloody discharge from the rectum",
-      "Feeling of incomplete evacuation after bowel movements",
-      "Chronic constipation and excessive straining",
-      "Rectal pain or discomfort, especially when sitting",
-      "Need to manually push tissue back inside after passing stool",
-      "Rectal bleeding during or after bowel movements",
-      "Ulceration or skin irritation around the anal area",
+      "A fleshy mass protruding through the anus",
+      "Difficulty passing stools",
+      "Feeling of incomplete bowel evacuation",
+      "Leakage of stool or mucus",
+      "Rectal bleeding",
+      "Chronic constipation",
+      "Controlling bowel movementDifficulty s (fecal incontinence)",
+      "Discomfort or heaviness in the pelvic region",
     ],
   };
 
@@ -287,33 +285,15 @@ export default function PilesConditions() {
       },
       {
         icon: "clock",
-        title: "Laparoscopic Rectopexy (Keyhole Surgery)",
+        title: "Altemeier's Procedure (Perineal Proctosigmoidectomy)",
         description:
-          "The gold standard for adult rectal prolapse. The rectum is mobilized and secured (fixed) to the sacrum through small keyhole incisions. Offers excellent cure rates (over 95%), preserves bowel function, minimal scarring, shorter hospital stay (2–3 days), and faster recovery compared to open surgery.",
-      },
-      {
-        icon: "zap",
-        title: "Ventral Mesh Rectopexy",
-        description:
-          "A modern laparoscopic technique where a mesh is placed on the front of the rectum and attached to the sacrum, lifting and supporting the rectum. Avoids nerve damage, preserves bowel function, and has excellent long-term results. Particularly effective for women with associated pelvic organ prolapse.",
+          "A perineal procedure where the prolapsed rectum and sigmoid colon are removed from below and reconnected. Suitable for elderly patients with large prolapse and significant comorbidities. Can be performed under regional anesthesia.",
       },
       {
         icon: "wrench",
         title: "Delorme's Procedure (Perineal Approach)",
         description:
           "A perineal (from below) approach where the excess mucosal lining is removed and the muscle wall is plicated (folded). Performed without abdominal incisions, ideal for elderly or high-risk patients who cannot tolerate abdominal surgery. Lower recurrence than Altemeier's procedure.",
-      },
-      {
-        icon: "hexagon",
-        title: "Altemeier's Procedure (Perineal Proctosigmoidectomy)",
-        description:
-          "A perineal procedure where the prolapsed rectum and sigmoid colon are removed from below and reconnected. Suitable for elderly patients with large prolapse and significant comorbidities. Can be performed under regional anesthesia.",
-      },
-      {
-        icon: "shield",
-        title: "STARR Procedure",
-        description:
-          "Stapled Transanal Rectal Resection — a minimally invasive technique for internal prolapse (intussusception) and obstructed defecation syndrome. Uses a circular stapler to remove the prolapsing tissue from inside, with no external incisions. Quick recovery and effective symptom relief.",
       },
     ],
   };
@@ -331,7 +311,7 @@ export default function PilesConditions() {
       {
         title: "Advanced Diagnostics",
         description:
-          "Defecography (MRI or video), anorectal manometry to assess sphincter pressure, colonoscopy to rule out other pathology, and pelvic floor assessment to plan the optimal surgical approach.",
+          "Our colorectal specialists perform a thorough clinical examination and, when required, recommend investigations such as proctoscopy, colonoscopy, defecography, or pelvic floor assessment to determine the most appropriate treatment.",
       },
       {
         title: "Surgical Treatment",
@@ -379,7 +359,7 @@ export default function PilesConditions() {
       {
         title: "Affordable & Insurance-Friendly",
         description:
-          "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
+          "Insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
       },
     ],
   };
@@ -505,7 +485,7 @@ export default function PilesConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
@@ -616,7 +596,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does rectal prolapse treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs depend on the procedure type and complexity. We offer cashless insurance processing, interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916418 for a detailed cost estimate based on your specific condition.",
+        "Treatment costs depend on the procedure type and complexity. Interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916418 for a detailed cost estimate based on your specific condition.",
     },
   ];
 
@@ -669,7 +649,7 @@ export default function PilesConditions() {
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
             <WhenConsult {...whenConsultData} />
-            <StagesOfRectalProlapse {...stagesData} />
+            {/* <StagesOfRectalProlapse {...stagesData} /> */}
             <CausesRiskFactors {...causesRiskFactorsData} />
             <RisksOfDelayPediatric {...risksOfDelayData} />
             <Doctors {...doctorsSectionData} />

@@ -79,7 +79,7 @@ const contentMap: Record<
       {
         faqTitle: "Is Piles laser treatment covered under insurance?",
         faqAnswer:
-          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+          "Yes, most major insurance plans cover laser treatment for piles.",
       },
       {
         faqTitle: "Can I pay for the treatment in installments?",
@@ -470,7 +470,7 @@ export default function PilesConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
@@ -610,7 +610,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does fistula treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment cost depends on the fistula type, severity, and treatment method. We offer flexible payment options including EMI through GMoney, insurance support, and cashless treatment. Contact our health advisors for a personalized cost estimate based on your specific condition.",
+        "Treatment cost depends on the fistula type, severity, and treatment method. We offer flexible payment options including EMI through GMoney, insurance support. Contact our health advisors for a personalized cost estimate based on your specific condition.",
     },
     {
       faqTitle: "Why is Chirag Hospitals trusted for fistula treatment?",
