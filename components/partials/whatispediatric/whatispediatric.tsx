@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+
 type Chunk = string | { text: string };
 
 type WhatIsPediatricProps = {
@@ -18,6 +22,8 @@ export default function WhatIsPediatric({
   poster,
 }: WhatIsPediatricProps) {
   const items = paragraphs || [];
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   return (
     <section className="w-full max-w-6xl mx-auto px-4">
       <div className="rounded-3xl md:p-10">
@@ -48,6 +54,7 @@ export default function WhatIsPediatric({
             <div className="w-full max-w-[360px] aspect-[4/3] rounded-2xl overflow-hidden flex items-center justify-center">
               {video ? (
                 <video
+                  ref={videoRef}
                   src={video}
                   poster={poster}
                   className="w-full h-full object-cover"
@@ -55,7 +62,7 @@ export default function WhatIsPediatric({
                   muted
                   loop
                   playsInline
-                  aria-label={imageAlt}
+                  controls
                 />
               ) : (
                 <img
