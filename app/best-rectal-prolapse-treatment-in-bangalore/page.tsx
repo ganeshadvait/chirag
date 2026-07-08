@@ -137,15 +137,16 @@ export default function PilesConditions() {
     points: pageContent?.hero?.points ?? HeroData.points,
   };
 
-  const whatIsPediatricData = {
-    heading: "What Is Rectal Prolapse?",
-    image: "/rectalprolapse/what is rectal prolapse.png",
-    imageAlt: "Rectal prolapse illustration",
-    paragraphs: [
-      "The rectum is the final part of the large intestine that stores stool before bowel movements. Normally, it is held securely in place by the pelvic floor muscles and supporting tissues. When these structures become weak, the rectum may gradually protrude through the anal opening, resulting in rectal prolapse.",
-      "Initially, the prolapse may occur only during bowel movements and return on its own. As the condition progresses, it may require manual repositioning and, in severe cases, protrude even while standing or walking.",
-    ],
-  };
+ const whatIsPediatricData = {
+  heading: "What Is Rectal Prolapse?",
+  video: "/rectalprolapse/recatal prolapse dr video.mp4",
+  poster: "", // optional
+  imageAlt: "Rectal prolapse illustration",
+  paragraphs: [
+    "The rectum is the final part of the large intestine that stores stool before bowel movements. Normally, it is held securely in place by the pelvic floor muscles and supporting tissues. When these structures become weak, the rectum may gradually protrude through the anal opening, resulting in rectal prolapse.",
+    "Initially, the prolapse may occur only during bowel movements and return on its own. As the condition progresses, it may require manual repositioning and, in severe cases, protrude even while standing or walking.",
+  ],
+};
 
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",
@@ -284,9 +285,9 @@ export default function PilesConditions() {
       },
       {
         icon: "clock",
-        title: "Laparoscopic Rectopexy (Keyhole Surgery)",
+        title: "Altemeier's Procedure (Perineal Proctosigmoidectomy)",
         description:
-          "The gold standard for adult rectal prolapse. The rectum is mobilized and secured (fixed) to the sacrum through small keyhole incisions. Offers excellent cure rates (over 95%), preserves bowel function, minimal scarring, shorter hospital stay (2–3 days), and faster recovery compared to open surgery.",
+          "A perineal procedure where the prolapsed rectum and sigmoid colon are removed from below and reconnected. Suitable for elderly patients with large prolapse and significant comorbidities. Can be performed under regional anesthesia.",
       },
       {
         icon: "wrench",
