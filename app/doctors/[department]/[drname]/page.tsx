@@ -384,39 +384,71 @@ export default async function DoctorProfile({ params }: Props) {
       imageSrc: "/consultthedoctor.png",
     },
   };
+  const rajasekharTestimonials = [
+    {
+      title: "",
+      text: "This Hospital is one of the best hospitals in the world in terms of skill set mainly for fissure, fistula and for piles issue. Please don’t go by infrastructure and ambience.. Dr Rajshekhar is such a gem of the hospital, 70% recovery happens just by talking and interacting with him. Overall it’s a good systemic and highly skilled hospital which takes care even the post surgery recovery.. And the procedure is not really painful through laser…",
+      name: "NEERAJ ARORA",
+      rating: 5,
+    },
+    {
+      title: "",
+      text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+      name: "Abdul Khader",
+      rating: 5,
+    },
+    {
+      title: "",
+      text: "Dr. Rajashekar sir provides detailed consultation and report your condition very well. He makes good recommendation for you and is a gem in the medical community. When he observed my condition, he advised me for a consrvative management for treatment of piles. That means i do not require surgery for piles. I was so confident in his advice that I declared right away to pursue and follow his medication and other precautions. I completely recovered in a weeks’ time. I'm glad I found him through Google reviews and decided to visit him. Finally I am completely fine and cured from piles. Strongly suggest this hospital for piles as they treatment without surgery.",
+      name: "Reddeeswar Naidu",
+      rating: 4.5,
+    },
+    {
+      title: "",
+      text: "My grandfather was diagnosed with Piles and doctors suggested that surgery is the way out. Considering his age 78 years we all were worried. My aunt suggested us to visit Dr Rajasekhar sir as she has a good experience previously with him. We were hesitant for the surgery, but Dr. Rajasekhar checked and informed us that he can treat without doing any surgery. He did not do any surgery for my grandfather and it took some time of 10 days to recover but he is doing good now. His team did a really good job. Doctor and his staff took good care of my grandfather and helped us during our tough times. The best human being we ever met. Strongly suggest to the people suffering with piles and fistula for treatment without surgery",
+      name: "Malleswari Subhrmanyam",
+      rating: 4.7,
+    },
+    {
+      title: "",
+      text: "Dr Rajasekar is one of the best doctor and a very nice person. We have till date had best experience with him and chirag hospital. He makes the patient and family feel so comfortable despite of the complex situation whatsoever. Dr. Rajasekhar has treated two of my family members for piles problems. A year before to my father-in-Law and recent one to my sister-in-law for piles both of them recovered fast and doing good. Such is the confidence we have built with Dr. Rajasekhar sir. These days we even visit him for second opinion on any health-related issues. Best doctor and best service. The best part of chirag hospital is that they will not push the patient to get surgery. They will try their best in treatment without any surgery. I like their approach very much and i strongly suggest for any one suffering with piles to visit chirag hospital to get treatment for piles without any surgery. Thank you Sir!!",
+      name: "Anji Yadav",
+      rating: 4.8,
+    },
+  ];
+
+  const shreedeviTestimonials = [
+    {
+      title: "",
+      text: "I came for piles treatment which i have been suffering from last 4 years; i came 2 know about this hospitals through google and this hospital is super specialist hospital for piles. Hospital is very neat and clean, Dr. Shreedevi who is my consulting doctor she is very friendly, very polite and explain all the things regarding this. I went for latest laser surgery which was painless, also the nursing was very good, i was taken great care during my hospitalization. Thank to chirag hospital and their staff for great support and service.my experience with this hospital is very nice.",
+      name: "Sowjanya Chandrashekar",
+      rating: 5,
+    },
+    {
+      title: "",
+      text: "My mother-in-law was not keeping well for two weeks, she had severe pain and blood loss while passing motions. We were aware that it has something to do with piles. My colleague referred us to chirag hospital, we took appointment and met doctors there. Got all our questions answered by them, my family was very worried about the treatment, but the doctor gave us the good hope and he performed that without surgery the problem can be cured. Now she is doing absolutely good. Doctors in chirag hospital are excellent doctors with a pleasing personalities. We are thankful to them and the staff for giving best service.",
+      name: "Abhi Abhi D",
+      rating: 5,
+    },
+    {
+      title: "",
+      text: "In June 2021, I consulted several doctors for my piles condition, and most of them immediately recommended surgery, which I was not mentally prepared for at that time. I was specifically looking for a doctor who could help me manage the condition without surgery. With that hope, I visited Chirag Global Hospital and consulted Dr. Shreedevi. After a thorough evaluation and a few necessary tests, she explained my condition clearly and suggested a non-surgical treatment approach. The clarity and confidence with which she explained everything gave me a lot of reassurance.",
+      name: "Lakshmi Devi",
+      rating: 5,
+    },
+    {
+      title: "",
+      text: "I had severe pain and bleeding for a month and was diagnosed with piles. My family was worried, but after consulting Dr. Shreedevi at Chirag Global Hospital, I felt confident and reassured. She explained the condition clearly and treated me with medicines and minimal procedures, without major surgery. Today, I am doing well and living a normal life. I highly recommend Dr. Shreedevi and the Chirag Hospital team.",
+      name: "RAJESHWARI MANDURI",
+      rating: 5,
+    },
+  ];
+
   const testimonialSectionData = {
-    testimonials: [
-      {
-        title: "",
-        text: "This Hospital is one of the best hospitals in the world in terms of skill set mainly for fissure, fistula and for piles issue. Please don’t go by infrastructure and ambience.. Dr Rajshekhar is such a gem of the hospital, 70% recovery happens just by talking and interacting with him. Overall it’s a good systemic and highly skilled hospital which takes care even the post surgery recovery.. And the procedure is not really painful through laser…",
-        name: "NEERAJ ARORA",
-        rating: 5,
-      },
-      {
-        title: "",
-        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
-        name: "Abdul Khader",
-        rating: 5,
-      },
-      {
-        title: "",
-        text: "Dr. Rajashekar sir provides detailed consultation and report your condition very well. He makes good recommendation for you and is a gem in the medical community. When he observed my condition, he advised me for a consrvative management for treatment of piles. That means i do not require surgery for piles. I was so confident in his advice that I declared right away to pursue and follow his medication and other precautions. I completely recovered in a weeks’ time. I'm glad I found him through Google reviews and decided to visit him. Finally I am completely fine and cured from piles. Strongly suggest this hospital for piles as they treatment without surgery.",
-        name: "Reddeeswar Naidu",
-        rating: 4.5,
-      },
-      {
-        title: "",
-        text: "My grandfather was diagnosed with Piles and doctors suggested that surgery is the way out. Considering his age 78 years we all were worried. My aunt suggested us to visit Dr Rajasekhar sir as she has a good experience previously with him. We were hesitant for the surgery, but Dr. Rajasekhar checked and informed us that he can treat without doing any surgery. He did not do any surgery for my grandfather and it took some time of 10 days to recover but he is doing good now. His team did a really good job. Doctor and his staff took good care of my grandfather and helped us during our tough times. The best human being we ever met. Strongly suggest to the people suffering with piles and fistula for treatment without surgery",
-        name: "Malleswari Subhrmanyam",
-        rating: 4.7,
-      },
-      {
-        title: "",
-        text: "Dr Rajasekar is one of the best doctor and a very nice person. We have till date had best experience with him and chirag hospital. He makes the patient and family feel so comfortable despite of the complex situation whatsoever. Dr. Rajasekhar has treated two of my family members for piles problems. A year before to my father-in-Law and recent one to my sister-in-law for piles both of them recovered fast and doing good. Such is the confidence we have built with Dr. Rajasekhar sir. These days we even visit him for second opinion on any health-related issues. Best doctor and best service. The best part of chirag hospital is that they will not push the patient to get surgery. They will try their best in treatment without any surgery. I like their approach very much and i strongly suggest for any one suffering with piles to visit chirag hospital to get treatment for piles without any surgery. Thank you Sir!!",
-        name: "Anji Yadav",
-        rating: 4.8,
-      },
-    ],
+    testimonials:
+      details.name === "Dr. Shreedevi KN"
+        ? shreedeviTestimonials
+        : rajasekharTestimonials,
     ctaText: "Google Reviews",
     ctaLink:
       "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
@@ -427,17 +459,17 @@ export default async function DoctorProfile({ params }: Props) {
 
   const shreedeviExtraConditions = [
     {
-      src: "/treatmenticons/constipation chirag icon.svg",
+      src: "/Constipation icon.png",
       alt: "Constipation",
       label: "Constipation",
     },
     {
-      src: "/medicaltourism/Ulcerative Colitis.svg",
+      src: "/Gastrointestinal Disorders icon.png",
       alt: "Gastrointestinal Disorders",
       label: "Gastrointestinal Disorders",
     },
     {
-      src: "/treatmenticons/Colorective ulcer icon chirag.svg",
+      src: "/Colorectal Surgeries icon.png",
       alt: "Colorectal Surgeries",
       label: "Colorectal Surgeries",
     },
