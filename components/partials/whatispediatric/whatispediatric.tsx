@@ -1,10 +1,29 @@
+"use client";
+
+import { useRef } from "react";
+
+type Chunk = string | { text: string };
+
+type WhatIsPediatricProps = {
+  heading?: string;
+  paragraphs?: (string | Chunk[])[];
+  image?: string;
+  imageAlt?: string;
+  video?: string;
+  poster?: string;
+};
+
 export default function WhatIsPediatric({
   heading = "What Is Pediatric Anal Care?",
   paragraphs,
   image = "/ladypilestypes.png",
   imageAlt = "Pediatric anal care illustration",
-}) {
+  video,
+  poster,
+}: WhatIsPediatricProps) {
   const items = paragraphs || [];
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   return (
     <section className="w-full max-w-6xl mx-auto px-4">
       <div className="rounded-3xl md:p-10">
@@ -30,14 +49,28 @@ export default function WhatIsPediatric({
             ))}
           </div>
 
-          {/* RIGHT: Illustration card */}
+          {/* RIGHT: Illustration / video card */}
           <div className="flex justify-center">
             <div className="w-full max-w-[360px] aspect-[4/3] rounded-2xl overflow-hidden flex items-center justify-center">
-              <img
-                src={image}
-                alt={imageAlt}
-                className="w-full h-full object-cover"
-              />
+              {video ? (
+                <video
+                  ref={videoRef}
+                  src={video}
+                  poster={poster}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
           </div>
         </div>

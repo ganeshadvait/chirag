@@ -3,22 +3,31 @@
 export const contactAction = () => {
   if (typeof window === "undefined") return;
 
-  const pathname = window.location.pathname;
+  // Strip a trailing slash so "/page/" still matches "/page".
+  const pathname = window.location.pathname.replace(/\/$/, "");
 
-  // Special pages
+  // ─── Special pages → 08065916427 ────────────────────────────
   const specialPages = new Set([
     "/piles/piles-laser-treatment-cost-in-Bangalore",
     "/fistula/anal-fistula-surgery-cost-in-Bangalore",
   ]);
 
-  // Decide phone number
-  const phoneNumber = specialPages.has(pathname)
-    ? "08065916427"
-    : "08065916415";
+  // ─── Special pages → 08065916418 ────────────────────────────
+  const specialPagesTwo = new Set([
+    "/best-pilonidal-sinus-treatment-in-bangalore",
+    "/best-rectal-prolapse-treatment-in-bangalore",
+    "/expert-pediatric-anal-care-treatment-in-bangalore",
+  ]);
 
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(
-    navigator.userAgent
-  );
+  // Decide phone number
+  let phoneNumber = "08065916415"; // default
+  if (specialPages.has(pathname)) {
+    phoneNumber = "08065916427";
+  } else if (specialPagesTwo.has(pathname)) {
+    phoneNumber = "08065916418";
+  }
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isMobile) {
     // Mobile → Call

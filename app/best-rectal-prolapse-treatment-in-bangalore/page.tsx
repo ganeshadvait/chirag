@@ -77,7 +77,7 @@ const contentMap: Record<
       {
         faqTitle: "Is Piles laser treatment covered under insurance?",
         faqAnswer:
-          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+          "Yes, most major insurance plans cover laser treatment for piles.",
       },
       {
         faqTitle: "Can I pay for the treatment in installments?",
@@ -121,7 +121,7 @@ export default function PilesConditions() {
       "Advanced Diagnosis & Comprehensive Treatment for Rectal Prolapse",
     points: [
       "Experienced colorectal surgery specialists",
-      "Advanced laparoscopic (keyhole) surgery",
+      "Minimally invasive perineal procedures",
       "Personalized treatment for every stage",
       "Short hospital stay & quick recovery",
       "Complete pre, surgical & post care support",
@@ -137,17 +137,16 @@ export default function PilesConditions() {
     points: pageContent?.hero?.points ?? HeroData.points,
   };
 
-  const whatIsPediatricData = {
-    heading: "What is Rectal Prolapse?",
-    image: "/rectalprolapse/what is rectal prolapse.png",
-    imageAlt: "Rectal prolapse illustration",
-    paragraphs: [
-      "Rectal prolapse is a condition where the rectum (the last part of the large intestine) slips out through the anus due to weakness of the pelvic floor muscles and supporting ligaments. Although it is less common than piles, fissures, or fistulas, rectal prolapse can significantly affect bowel function, daily activities, and overall quality of life.",
-      "At Chirag Global Hospitals, our dedicated colorectal specialists bring over 30 years of expertise in diagnosing and treating both simple and complex rectal prolapse with advanced, patient-specific surgical techniques.",
-      "The rectum is the final portion of the large intestine that stores stool before bowel movements. Normally, strong pelvic floor muscles and supporting tissues keep the rectum securely in place.",
-      "When these supporting structures become weak, the rectum gradually slips downward and may protrude through the anal opening. In the early stages, the prolapse may occur only during bowel movements and return on its own. As the condition progresses, it may require manual repositioning and eventually remain outside even while standing, walking, or performing daily activities.",
-    ],
-  };
+ const whatIsPediatricData = {
+  heading: "What Is Rectal Prolapse?",
+  video: "/rectalprolapse/recatal prolapse dr video.mp4",
+  poster: "", // optional
+  imageAlt: "Rectal prolapse illustration",
+  paragraphs: [
+    "The rectum is the final part of the large intestine that stores stool before bowel movements. Normally, it is held securely in place by the pelvic floor muscles and supporting tissues. When these structures become weak, the rectum may gradually protrude through the anal opening, resulting in rectal prolapse.",
+    "Initially, the prolapse may occur only during bowel movements and return on its own. As the condition progresses, it may require manual repositioning and, in severe cases, protrude even while standing or walking.",
+  ],
+};
 
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",
@@ -255,26 +254,14 @@ export default function PilesConditions() {
     subheading:
       "At Chirag Global Hospitals, every patient undergoes a detailed evaluation to identify all associated pelvic floor disorders before surgery. Our assessment may include:",
     signs: [
-      "Detailed clinical examination",
-      "Proctoscopy",
-      "Colonoscopy",
-      "Defecography",
-      "Pelvic floor assessment",
-      "Anal sphincter evaluation",
-      "Imaging studies whenever required",
-    ],
-  };
-
-  const personalizedApproachData = {
-    heading: "Personalized Treatment Approach",
-    subheading: "Treatment depends on:",
-    signs: [
-      "Age",
-      "Severity of prolapse",
-      "Pelvic floor strength",
-      "Anal sphincter function",
-      "Associated pelvic organ prolapse",
-      "Overall health condition",
+      "A fleshy mass protruding through the anus",
+      "Difficulty passing stools",
+      "Feeling of incomplete bowel evacuation",
+      "Leakage of stool or mucus",
+      "Rectal bleeding",
+      "Chronic constipation",
+      "Controlling bowel movementDifficulty s (fecal incontinence)",
+      "Discomfort or heaviness in the pelvic region",
     ],
   };
 
@@ -286,22 +273,18 @@ export default function PilesConditions() {
       {
         title: "Conservative Management",
         description:
-          "Selected early-stage cases and children may benefit from a high-fibre diet, constipation management, pelvic floor strengthening exercises, and lifestyle modifications.",
+          "For early internal prolapse and mucosal prolapse. Includes high-fiber diet, stool softeners, pelvic floor physiotherapy, biofeedback training, and avoiding straining. Effective for mild symptoms and in patients unfit for surgery.",
+      },
+      {
+        icon: "clock",
+        title: "Altemeier's Procedure (Perineal Proctosigmoidectomy)",
+        description:
+          "A perineal procedure where the prolapsed rectum and sigmoid colon are removed from below and reconnected. Suitable for elderly patients with large prolapse and significant comorbidities. Can be performed under regional anesthesia.",
       },
       {
         title: "Delorme's Procedure",
         description:
           "A minimally invasive perineal procedure performed through the anal opening without abdominal incisions — suitable for selected patients.",
-      },
-      {
-        title: "Perineal Rectosigmoidectomy (Altemeier Procedure)",
-        description:
-          "A perineal procedure performed through the anal opening without abdominal incisions, offering faster recovery and an excellent cosmetic outcome.",
-      },
-      {
-        title: "Laparoscopic & Robotic Rectopexy",
-        description:
-          "For selected patients, advanced laparoscopic or robotic rectopexy may provide better long-term functional outcomes depending on the underlying pelvic floor abnormalities.",
       },
     ],
   };
@@ -309,27 +292,66 @@ export default function PilesConditions() {
   const perinealBenefitsData = {
     heading: "Benefits of Minimally Invasive Perineal Procedures",
     subheading:
-      "These procedures are performed through the anal opening without abdominal incisions, offering:",
-    signs: [
-      "Minimal postoperative pain",
-      "Faster recovery",
-      "Early bowel function",
-      "Short hospital stay",
-      "Early return to normal activities",
-      "Excellent cosmetic outcome",
+      "A comprehensive, patient-centered approach from diagnosis through complete recovery.",
+    steps: [
+      {
+        title: "Specialist Consultation",
+        description:
+          "Detailed clinical examination including digital rectal exam, assessment of sphincter function, and evaluation of prolapse grade. We take time to understand your symptoms, history, and concerns.",
+      },
+      {
+        title: "Advanced Diagnostics",
+        description:
+          "Our colorectal specialists perform a thorough clinical examination and, when required, recommend investigations such as proctoscopy, colonoscopy, defecography, or pelvic floor assessment to determine the most appropriate treatment.",
+      },
+      {
+        title: "Surgical Treatment",
+        description:
+          "Procedure tailored to your age, health status, and prolapse severity. Most patients receive laparoscopic rectopexy — small incisions, 1–3 day hospital stay, and excellent outcomes.",
+      },
+      {
+        title: "Recovery & Rehabilitation",
+        description:
+          "Post-operative pelvic floor rehabilitation, dietary guidance, follow-up appointments to monitor recovery, and long-term lifestyle recommendations to prevent recurrence.",
+      },
     ],
   };
 
   const whyExpertiseData = {
     heading: "Why Expertise Matters",
     subheading:
-      "Successful rectal prolapse treatment is not simply about removing the prolapse. The key to long-term success lies in:",
-    signs: [
-      "Identifying every associated pelvic floor disorder",
-      "Choosing the right procedure",
-      "Restoring pelvic floor support",
-      "Preserving bowel control",
-      "Preventing recurrence",
+      "Bangalore's most experienced colorectal team for complex rectal prolapse management.",
+    features: [
+      {
+        title: "38+ Years of Colorectal Expertise",
+        description:
+          "Dr. Rajasekhar M R and team have extensive experience in all surgical approaches for rectal prolapse, from laparoscopic rectopexy to perineal procedures.",
+      },
+      {
+        title: "Advanced Laparoscopic Surgery",
+        description:
+          "Keyhole surgery with minimal scarring, shorter hospital stay, and faster recovery — performed by high-volume laparoscopic colorectal surgeons.",
+      },
+      {
+        title: "Comprehensive Diagnostics",
+        description:
+          "In-house access to MRI defecography, anorectal manometry, and colonoscopy for accurate staging and treatment planning.",
+      },
+      {
+        title: "Individualized Treatment Plans",
+        description:
+          "No one-size-fits-all approach. Treatment is tailored to your age, overall health, prolapse stage, and presence of associated conditions like incontinence or constipation.",
+      },
+      {
+        title: "180K+ Patients Trusted Us",
+        description:
+          "With a 99.5% success rate across all colorectal conditions, families from across India trust Chirag Hospitals for expert care.",
+      },
+      {
+        title: "Affordable & Insurance-Friendly",
+        description:
+          "Insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
+      },
     ],
   };
 
@@ -446,7 +468,7 @@ export default function PilesConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
@@ -557,7 +579,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does rectal prolapse treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs depend on the procedure type and complexity. We offer cashless insurance processing, interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916418 for a detailed cost estimate based on your specific condition.",
+        "Treatment costs depend on the procedure type and complexity. Interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916418 for a detailed cost estimate based on your specific condition.",
     },
   ];
 
@@ -609,12 +631,11 @@ export default function PilesConditions() {
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
-            <WhenConsult {...symptomsData} />
-            <CausesRiskFactors {...whoAtRiskData} />
-            <WhenConsult {...associatedConditionsData} />
-            <RisksOfDelayPediatric {...pelvicDysfunctionData} />
-            <WhenConsult {...evaluationData} />
-            <WhenConsult {...personalizedApproachData} />
+            <WhenConsult {...whenConsultData} />
+            {/* <StagesOfRectalProlapse {...stagesData} /> */}
+            <CausesRiskFactors {...causesRiskFactorsData} />
+            <RisksOfDelayPediatric {...risksOfDelayData} />
+            <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
             <WhenConsult {...perinealBenefitsData} />
             <Doctors {...doctorsSectionData} />

@@ -7,7 +7,7 @@ const DEFAULT_FEATURES = [
   {
     title: "Advanced Laparoscopic Surgery",
     description:
-      "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
+      "Insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
   },
   {
     title: "Comprehensive Diagnostics",
@@ -27,7 +27,7 @@ const DEFAULT_FEATURES = [
   {
     title: "Affordable & Insurance-Friendly",
     description:
-      "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
+      "Insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
   },
 ];
 

@@ -79,7 +79,7 @@ const contentMap: Record<
       {
         faqTitle: "Is Piles laser treatment covered under insurance?",
         faqAnswer:
-          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+          "Yes, most major insurance plans cover laser treatment for piles.",
       },
       {
         faqTitle: "Can I pay for the treatment in installments?",
@@ -289,7 +289,7 @@ export default function PilesConditions() {
       {
         title: "Affordable & Insurance-Friendly",
         description:
-          "Cashless treatment, insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
+          "Insurance support, zero-interest EMI through GMoney, and transparent pricing with no hidden charges.",
       },
     ],
   };
@@ -470,7 +470,7 @@ export default function PilesConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
@@ -615,7 +615,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does pilonidal sinus treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs vary based on the complexity and technique used. Laser treatment is competitively priced, and we offer cashless insurance processing, zero-interest EMI through GMoney, and transparent pricing with no hidden charges. Contact 08065916418 for a personalized cost estimate.",
+        "Treatment costs vary based on the complexity and technique used. Laser treatment is competitively priced, and zero-interest EMI through GMoney, and transparent pricing with no hidden charges. Contact 08065916418 for a personalized cost estimate.",
     },
     {
       faqTitle: "Who is at highest risk for pilonidal sinus?",

@@ -36,7 +36,7 @@ const contentMap: Record<
   }
 > = {
   "colorectal-laser-treatment-cost-in-bangalore": {
-    phone: "08065916418",
+    phone: "08065916415",
     hero: {
       heading: "Best Colorectal Cancer Treatment in Bangalore",
       points: [
@@ -89,7 +89,7 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916418";
+  const defaultPhone = "08065916415";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
@@ -361,7 +361,7 @@ export default function PilesConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",

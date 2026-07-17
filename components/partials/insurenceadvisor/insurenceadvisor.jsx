@@ -15,7 +15,6 @@ export default function InsuranceAdvisorSection({ cards }) {
 
   // Page trees that should use the 08065916418 number (matches base path and any /[slug] under it)
   const altPhonePrefixes = [
-    "/colorectal-cancer",
     "/best-pilonidal-sinus-treatment-in-bangalore",
     "/best-rectal-prolapse-treatment-in-bangalore",
     "/expert-pediatric-anal-care-treatment-in-bangalore",

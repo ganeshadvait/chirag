@@ -64,7 +64,7 @@ const contentMap: Record<
       {
         faqTitle: "Is Piles laser treatment covered under insurance?",
         faqAnswer:
-          "Yes, most major insurance plans cover laser treatment for piles. Chirag Global Hospitals assists with cashless insurance claims.",
+          "Yes, most major insurance plans cover laser treatment for piles.",
       },
       {
         faqTitle: "Can I pay for the treatment in installments?",
@@ -266,7 +266,7 @@ export default function PilesConditions() {
         titlePrefix: "Easy",
         titleHighlight: "Payment Options",
         description:
-          "Enjoy hassle-free cashless treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
