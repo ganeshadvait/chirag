@@ -4,6 +4,7 @@ export interface DoctorDetails {
   name: string;
   qualification: string;
   designation: string;
+  subDesignation?: string;
   experience: string;
   description: string;
   mobileNumberDoctor?: string;
@@ -34,15 +35,22 @@ const DoctorsData: DoctorsDataType = {
         "Known for reliable, lasting treatment outcomes",
       ],
     },
-    "Dr. Shreedevi KN": {
+    "Dr. Shreedevi": {
       url: "/doctorshreedeviimage.png",
       name: "Dr. Shreedevi KN",
       qualification: "MBBS, MS, FSGE",
-      experience: "Experience: 12 years",
-      designation: "Surgical Gastroenterologist and Colorectal surgeon",
+      experience: "12 years",
+      designation: "CEO – Chirag Global Hospitals",
+      subDesignation: "Colorectal Surgeon & Surgical Gastroenterologist",
       description:
-        "Dr. Abhishek Katha, an experienced General and Laparoscopic Surgeon, specialises in hernia, gallbladder, appendix, cyst, lipoma, and corn surgeries using minimally invasive methods. A former Apollo surgeon, he holds an FMAS fellowship in laparoscopic care.",
+        "Dr. Shreedevi K N brings a unique combination of technical expertise and compassionate patient care to colorectal surgery. Her approach focuses on accurate diagnosis, minimally invasive treatment options, and faster recovery times. She specializes in advanced laser procedures and is committed to improving patient outcomes while maintaining affordability and accessibility of care.",
       mobileNumberDoctor: "tel:9380498256",
+      highlights: [
+        "Laser proctology and minimally invasive procedures",
+        "Active contributor to next-generation surgical education",
+        "Patient-centric care with precision surgical techniques",
+        "Complex colorectal and anorectal conditions",
+      ],
     },
   },
 

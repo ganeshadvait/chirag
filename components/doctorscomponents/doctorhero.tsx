@@ -11,6 +11,7 @@ export interface DoctorInfo {
   name?: string;
   qualifications?: string;
   designation?: string;
+  subDesignation?: string;
   experience?: string;
   booklink?: string;
   // insurance?: string;
@@ -76,6 +77,11 @@ export default function Doctordetailspagehero({
               <p className="text-sm text-gray-600 mb-1 text-center">
                 {merged.designation || "Specialist"}
               </p>
+              {merged.subDesignation && (
+                <p className="text-sm text-gray-600 mb-1 text-center">
+                  {merged.subDesignation}
+                </p>
+              )}
               <div className="flex items-center justify-center gap-2 text-gray-700 mb-2">
                 <Icon icon="lucide:briefcase" className="w-5 h-5" />
                 <span>Experience: {merged.experience || "N/A"}</span>

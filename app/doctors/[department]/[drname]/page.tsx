@@ -119,6 +119,50 @@ const faqs = [
     faqAnswer: "Usually around 20–30 minutes, depending on the case.",
   },
 ];
+
+const shreedeviFaqs = [
+  {
+    faqTitle: "What are piles?",
+    faqAnswer:
+      "Piles (hemorrhoids) are swollen veins in the anal area that may cause pain, itching, or bleeding during bowel movements. They can be internal or external and range from mild to severe.",
+  },
+  {
+    faqTitle: "How do I know if I have piles?",
+    faqAnswer:
+      "Common signs include bleeding during bowel movements, a lump near the anus, pain, itching, or irritation in the anal area. If you experience these symptoms, consult Dr. Shreedevi for accurate diagnosis.",
+  },
+  {
+    faqTitle: "Do all piles need surgery?",
+    faqAnswer:
+      "No. Early-stage piles can often be treated with medicines, dietary fiber, ointments, and lifestyle modifications like Sitz baths. Dr. Shreedevi will recommend surgery only when necessary for better outcomes.",
+  },
+  {
+    faqTitle: "What is laser treatment for piles?",
+    faqAnswer:
+      "Laser treatment is a minimally invasive procedure that uses controlled laser energy to seal and shrink swollen veins. It requires no major cuts or stitches, resulting in minimal pain and faster recovery.",
+  },
+  {
+    faqTitle: "Is laser treatment painful?",
+    faqAnswer:
+      "Most patients experience minimal discomfort during laser treatment compared to traditional surgery. Local anesthesia is used to ensure comfort throughout the procedure.",
+  },
+  {
+    faqTitle: "How long does the laser procedure take?",
+    faqAnswer:
+      "Usually around 20–30 minutes, depending on the severity and extent of the condition. Dr. Shreedevi will discuss the exact duration during your consultation.",
+  },
+  {
+    faqTitle: "What about fissure and fistula treatment?",
+    faqAnswer:
+      "Dr. Shreedevi specializes in laser proctology for fissures and fistulas as well. These minimally invasive procedures offer faster healing with minimal post-operative pain and better cosmetic outcomes.",
+  },
+  {
+    faqTitle: "When should I see a colorectal surgeon?",
+    faqAnswer:
+      "Consult Dr. Shreedevi if you experience bleeding, pain, or persistent discomfort in the anal area. Early diagnosis and treatment often prevent complications and reduce recovery time.",
+  },
+];
+
 export default async function DoctorProfile({ params }: Props) {
   const department = (await params)?.department ?? "";
   const drname = (await params)?.drname ?? "";
@@ -147,6 +191,7 @@ export default async function DoctorProfile({ params }: Props) {
     name: details.name,
     qualifications: details.qualification,
     designation: details.designation,
+    subDesignation: details.subDesignation,
     experience: details.experience,
     booklink: details.mobileNumberDoctor || "#",
     insurance: "Have Insurance?",
@@ -323,11 +368,18 @@ export default async function DoctorProfile({ params }: Props) {
 
     banner: {
       heading: "Consult The Doctor Now",
-      points: [
-        "Experienced colorectal specialists",
-        "Modern laser treatment methods",
-        "Proven treatment outcomes",
-      ],
+      points:
+        details.name === "Dr. Shreedevi KN"
+          ? [
+              "Expert colorectal surgeon with 12+ years of experience",
+              "Advanced laser and minimally invasive procedures",
+              "Consistent treatment outcomes and patient satisfaction",
+            ]
+          : [
+              "Experienced colorectal specialists",
+              "Modern laser treatment methods",
+              "Proven treatment outcomes",
+            ],
       buttonText: "Book Appointment",
       imageSrc: "/consultthedoctor.png",
     },
@@ -370,8 +422,31 @@ export default async function DoctorProfile({ params }: Props) {
       "https://www.google.com/maps/place/Chirag+Global+Hospital/@12.9059178,77.6037368,17z/data=!4m8!3m7!1s0x3bae150e6550b135:0xa07798be317297a5!8m2!3d12.9059178!4d77.6037368!9m1!1b1!16s%2Fg%2F11q4j4m7pw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
   };
 
-  const conditionsData =
+  const baseConditions =
     departmentConditions[department] || departmentConditions["Proctology"];
+
+  const shreedeviExtraConditions = [
+    {
+      src: "/treatmenticons/constipation chirag icon.svg",
+      alt: "Constipation",
+      label: "Constipation",
+    },
+    {
+      src: "/medicaltourism/Ulcerative Colitis.svg",
+      alt: "Gastrointestinal Disorders",
+      label: "Gastrointestinal Disorders",
+    },
+    {
+      src: "/treatmenticons/Colorective ulcer icon chirag.svg",
+      alt: "Colorectal Surgeries",
+      label: "Colorectal Surgeries",
+    },
+  ];
+
+  const conditionsData =
+    details.name === "Dr. Shreedevi KN"
+      ? [...baseConditions, ...shreedeviExtraConditions]
+      : baseConditions;
 
   return (
     <>
@@ -405,16 +480,22 @@ export default async function DoctorProfile({ params }: Props) {
           </div>
         </div>
       </section>
-      {faqs.length > 0 && (
-        <Faqs
-          className="md:!w-[95%] w-full mx-auto my-10"
-          // fheading={fheading}
-          faqs={faqs.map((faq) => ({
-            faqquestion: faq.faqTitle,
-            faqanswer: faq.faqAnswer,
-          }))}
-        />
-      )}
+      {(() => {
+        const activeFaqs =
+          details.name === "Dr. Shreedevi KN" ? shreedeviFaqs : faqs;
+        return (
+          activeFaqs.length > 0 && (
+            <Faqs
+              className="md:!w-[95%] w-full mx-auto my-10"
+              // fheading={fheading}
+              faqs={activeFaqs.map((faq) => ({
+                faqquestion: faq.faqTitle,
+                faqanswer: faq.faqAnswer,
+              }))}
+            />
+          )
+        );
+      })()}
       <FooterComponent
         footerdesc="About Chirag Global Hospitals"
         extradesc="Providing trusted care with decades of experience in diagnosing and treating colorectal and digestive health conditions."
