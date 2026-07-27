@@ -28,7 +28,7 @@ export default function LadyPilesConditions({
   params: { slug: string };
 }) {
   const slug = params.slug;
-  const doctor = DoctorsData.Proctology["Dr. Shreedevi KN"];
+  const doctor = DoctorsData.Proctology["Dr. Shreedevi"];
 
   const HeroData = {
     heading: "Best Piles & Fistula Treatment for Women in Bangalore",
