@@ -497,7 +497,7 @@ export default async function DoctorProfile({ params }: Props) {
           </div>
 
           {/* Right: Reviews/Form */}
-          <div className="flex-1 relative">
+          <div id="reviews" className="flex-1 relative scroll-mt-28">
             {/* Desktop: sticky */}
             <div className="hidden lg:block sticky top-24">
               <Form reviewsData={testimonialSectionData} />
