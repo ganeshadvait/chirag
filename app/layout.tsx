@@ -40,22 +40,22 @@ export default function RootLayout({
 
       <body className={`${dmSans.variable} antialiased`}>
         {/* Google Translate */}
-        <Script
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          strategy="afterInteractive"
-        />
-        <Script id="google-translate-init" strategy="afterInteractive">
+        <Script id="google-translate-init" strategy="beforeInteractive">
           {`
-            function googleTranslateElementInit() {
+            window.googleTranslateElementInit = function () {
               new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'en,kn,hi',
                 autoDisplay: false,
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
               }, 'google_translate_element');
-            }
+            };
           `}
         </Script>
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
 
         {/* Google Tag Manager (noscript) */}
         <noscript>
