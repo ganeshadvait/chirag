@@ -41,8 +41,14 @@ export default function TestimonialSlider(
   const mobileWrapperRef = useRef(null);
   const mobileContainerRef = useRef(null);
   const mobileTimerRef = useRef(null);
+  const resumeTimerRef = useRef(null);
+  // Set just before a wrap-around jump so the position effect repositions the
+  // strip instantly instead of animating backwards through every slide.
+  const snapRef = useRef(false);
+  const mobileSnapRef = useRef(false);
 
   const GAP = 16;
+  const SLIDE_MS = 500;
 
   const slides =
     testimonials.length > 0
@@ -82,13 +88,16 @@ export default function TestimonialSlider(
 
   // Desktop functions
   const updateWidth = () => {
-    if (containerRef.current) {
+    // offsetWidth is 0 while the desktop strip is `hidden` on small screens —
+    // measuring then would give every slide a bogus width.
+    if (containerRef.current && containerRef.current.offsetWidth > 0) {
       setSlideWidth(containerRef.current.offsetWidth + GAP);
     }
   };
 
   const startAuto = () => {
     stopAuto();
+    if (slides.length === 0) return;
     timerRef.current = setInterval(() => {
       setIndex((i) => i + 1);
     }, 5000);
@@ -133,6 +142,7 @@ export default function TestimonialSlider(
 
   const startMobileAuto = () => {
     stopMobileAuto();
+    if (slides.length === 0) return;
     mobileTimerRef.current = setInterval(() => {
       setMobileIndex((i) => i + 1);
     }, 3000);
@@ -176,83 +186,112 @@ export default function TestimonialSlider(
     return () => {
       window.removeEventListener("resize", updateWidth);
       stopAuto();
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     };
   }, []);
 
+  // Browsers throttle timers and freeze CSS transitions in background tabs.
+  // Pausing while hidden keeps the index and the strip position in step.
   useEffect(() => {
-    if (!wrapperRef.current) return;
-
-    wrapperRef.current.style.transition = "transform 0.5s ease-in-out";
-    wrapperRef.current.style.transform = `translateX(${-index * slideWidth}px)`;
-
-    const handleTransitionEnd = () => {
-      if (index === 0) {
-        wrapperRef.current.style.transition = "none";
-        setIndex(testimonials.length);
-        requestAnimationFrame(() => {
-          if (wrapperRef.current)
-            wrapperRef.current.style.transform = `translateX(${
-              -testimonials.length * slideWidth
-            }px)`;
-        });
-      } else if (index === slides.length - 1) {
-        wrapperRef.current.style.transition = "none";
-        setIndex(1);
-        requestAnimationFrame(() => {
-          if (wrapperRef.current)
-            wrapperRef.current.style.transform = `translateX(${-slideWidth}px)`;
-        });
+    const onVisibility = () => {
+      if (document.hidden) {
+        stopAuto();
+        stopMobileAuto();
+      } else {
+        startAuto();
+        if (showmReviews) startMobileAuto();
       }
     };
 
-    wrapperRef.current.addEventListener("transitionend", handleTransitionEnd);
-    return () => {
-      wrapperRef.current?.removeEventListener(
-        "transitionend",
-        handleTransitionEnd
-      );
-    };
-  }, [index, slideWidth]);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => document.removeEventListener("visibilitychange", onVisibility);
+  }, [showmReviews]);
 
-  // Mobile carousel effect
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper || slides.length === 0 || slideWidth <= 0) return;
+
+    // Safety net: if the index ever escapes the slide range, snap back into it
+    // rather than translating the strip off-screen (which showed a blank card).
+    if (index < 0 || index > slides.length - 1) {
+      snapRef.current = true;
+      setIndex(1);
+      return;
+    }
+
+    if (snapRef.current) {
+      snapRef.current = false;
+      wrapper.style.transition = "none";
+      wrapper.style.transform = `translateX(${-index * slideWidth}px)`;
+      void wrapper.offsetHeight; // flush, so the next move animates again
+      return;
+    }
+
+    wrapper.style.transition = `transform ${SLIDE_MS}ms ease-in-out`;
+    wrapper.style.transform = `translateX(${-index * slideWidth}px)`;
+
+    // Wrap on a timer instead of `transitionend`. That event never fires while
+    // the tab is backgrounded or the strip is display:none, which used to let
+    // `index` climb forever until the carousel scrolled past its last slide.
+    if (index === 0 || index === slides.length - 1) {
+      const wrapTimer = setTimeout(() => {
+        snapRef.current = true;
+        setIndex(index === 0 ? testimonials.length : 1);
+      }, SLIDE_MS + 20);
+      return () => clearTimeout(wrapTimer);
+    }
+  }, [index, slideWidth, slides.length, testimonials.length]);
+
+  // Mobile carousel effect — the strip is unmounted while the reviews are
+  // collapsed, so the timer must stop with it or the index runs away.
   useEffect(() => {
     updateMobileWidth();
+    if (!showmReviews) {
+      stopMobileAuto();
+      return;
+    }
     startMobileAuto();
 
     return () => {
       stopMobileAuto();
     };
-  }, []);
+  }, [showmReviews]);
 
   useEffect(() => {
-    if (!mobileWrapperRef.current) return;
+    const wrapper = mobileWrapperRef.current;
+    if (!wrapper || slides.length === 0 || mobileSlideWidth <= 0) return;
 
-    mobileWrapperRef.current.style.transition = "transform 0.5s ease-in-out";
-    mobileWrapperRef.current.style.transform = `translateY(${
+    if (mobileIndex < 0 || mobileIndex > slides.length - 1) {
+      mobileSnapRef.current = true;
+      setMobileIndex(1);
+      return;
+    }
+
+    if (mobileSnapRef.current) {
+      mobileSnapRef.current = false;
+      wrapper.style.transition = "none";
+      wrapper.style.transform = `translateY(${
+        -mobileIndex * mobileSlideWidth
+      }px)`;
+      void wrapper.offsetHeight;
+      return;
+    }
+
+    wrapper.style.transition = `transform ${SLIDE_MS}ms ease-in-out`;
+    wrapper.style.transform = `translateY(${
       -mobileIndex * mobileSlideWidth
     }px)`;
 
-    const handleTransitionEnd = () => {
-      if (mobileIndex === 0) {
-        mobileWrapperRef.current.style.transition = "none";
-        setMobileIndex(testimonials.length);
-      } else if (mobileIndex === slides.length - 1) {
-        mobileWrapperRef.current.style.transition = "none";
-        setMobileIndex(1);
-      }
-    };
-
-    mobileWrapperRef.current.addEventListener(
-      "transitionend",
-      handleTransitionEnd
-    );
-    return () => {
-      mobileWrapperRef.current?.removeEventListener(
-        "transitionend",
-        handleTransitionEnd
-      );
-    };
-  }, [mobileIndex, mobileSlideWidth]);
+    if (mobileIndex === 0 || mobileIndex === slides.length - 1) {
+      const wrapTimer = setTimeout(() => {
+        mobileSnapRef.current = true;
+        setMobileIndex(mobileIndex === 0 ? testimonials.length : 1);
+      }, SLIDE_MS + 20);
+      return () => clearTimeout(wrapTimer);
+    }
+    // `showmReviews` is a dependency because re-expanding remounts the strip
+    // with no inline transform — it has to be repositioned.
+  }, [mobileIndex, mobileSlideWidth, slides.length, testimonials.length, showmReviews]);
 
   const toggleReviews = () => {
     setShowmReviews((prev) => !prev);
@@ -263,7 +302,8 @@ export default function TestimonialSlider(
     stopAuto(); // Stop auto-slide immediately
 
     // Restart auto-slide after 7 seconds
-    setTimeout(() => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => {
       startAuto();
     }, 7000);
   };

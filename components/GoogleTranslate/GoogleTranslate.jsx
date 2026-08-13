@@ -35,13 +35,31 @@ function getSavedLang() {
   return "en";
 }
 
+// Every domain scope a googtrans cookie could have been written on.
+// Google's own widget writes it on the registrable domain (".example.com"),
+// which is NOT cleared by only targeting the current hostname — that is why
+// switching back to English used to leave the page translated.
+function cookieDomains() {
+  const host = window.location.hostname;
+  const domains = [null]; // host-only cookie (no domain attribute)
+  // Skip domain-scoped cookies for localhost / raw IPs — browsers reject them.
+  if (host === "localhost" || /^[\d.]+$/.test(host) || host.includes(":")) {
+    return domains;
+  }
+  const parts = host.split(".");
+  for (let i = 0; i < parts.length - 1; i++) {
+    const d = parts.slice(i).join(".");
+    domains.push(d, `.${d}`);
+  }
+  return domains;
+}
+
 // Clear Google Translate's googtrans cookie on every host/domain variant
 function clearGoogTransCookie() {
   const expired = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
-  const host = window.location.hostname;
-  document.cookie = `googtrans=; ${expired}; path=/;`;
-  document.cookie = `googtrans=; ${expired}; path=/; domain=${host}`;
-  document.cookie = `googtrans=; ${expired}; path=/; domain=.${host}`;
+  for (const domain of cookieDomains()) {
+    document.cookie = `googtrans=; ${expired}; path=/;${domain ? ` domain=${domain};` : ""}`;
+  }
 }
 
 // Persist the chosen language in Google's googtrans cookie so the
@@ -50,43 +68,19 @@ function setGoogTransCookie(langCode) {
   clearGoogTransCookie();
   if (langCode !== "en") {
     const value = `/en/${langCode}`;
-    const host = window.location.hostname;
-    document.cookie = `googtrans=${value}; path=/`;
-    document.cookie = `googtrans=${value}; path=/; domain=${host}`;
-    document.cookie = `googtrans=${value}; path=/; domain=.${host}`;
+    for (const domain of cookieDomains()) {
+      document.cookie = `googtrans=${value}; path=/;${domain ? ` domain=${domain};` : ""}`;
+    }
   }
 }
 
-// Drive Google Translate's hidden <select> to translate the current page
-// without a reload. Polls until the widget's combo box is in the DOM.
-function triggerGoogleTranslate(langCode) {
-  const doTranslate = () => {
-    const select = document.querySelector(".goog-te-combo");
-    if (!select) return false;
-    select.value = langCode === "en" ? "" : langCode;
-    select.dispatchEvent(new Event("change"));
-    return true;
-  };
-
-  if (!doTranslate()) {
-    let attempts = 0;
-    const interval = setInterval(() => {
-      attempts++;
-      if (doTranslate() || attempts > 40) clearInterval(interval);
-    }, 200);
-  }
-}
-
-// Apply a language change. For English we MUST reload after clearing the
-// cookie — Google Translate cannot cleanly revert an already-translated
-// page via the select. For other languages the select trigger works live.
+// Apply a language change. Google Translate can neither cleanly revert an
+// already-translated page nor re-translate translated text into a second
+// language, so every switch goes through the cookie + a reload — that is the
+// only path that works identically for English, Kannada and Hindi.
 function applyGoogleTranslate(langCode) {
   setGoogTransCookie(langCode);
-  if (langCode === "en") {
-    window.location.reload();
-  } else {
-    triggerGoogleTranslate(langCode);
-  }
+  window.location.reload();
 }
 
 export default function FloatingLanguageSwitcher() {
@@ -95,15 +89,19 @@ export default function FloatingLanguageSwitcher() {
   const [mounted, setMounted] = useState(false);
   const ref = useRef(null);
 
-  // On mount: restore the saved language and re-apply translation. Google
-  // Translate resets to the source language on every fresh load, so we drive
-  // the select again once the widget has initialized.
+  // On mount: restore the saved language. The googtrans cookie is what makes
+  // Google Translate apply it on load, so we only re-write the cookie when it
+  // has drifted out of sync with the saved preference (e.g. Google cleared it).
   useEffect(() => {
     setMounted(true);
     const saved = getSavedLang();
     setActive(saved);
-    if (saved !== "en") {
-      setTimeout(() => triggerGoogleTranslate(saved), 800);
+    const current = document.cookie.match(/googtrans=\/[^/]*\/(\w+)/)?.[1] || "en";
+    if (current !== saved) {
+      setGoogTransCookie(saved);
+      // Only reload if the cookie actually took — otherwise we'd loop forever.
+      const now = document.cookie.match(/googtrans=\/[^/]*\/(\w+)/)?.[1] || "en";
+      if (now === saved) window.location.reload();
     }
   }, []);
 

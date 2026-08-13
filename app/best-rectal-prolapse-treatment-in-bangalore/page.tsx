@@ -6,8 +6,10 @@ import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import WhatIsPediatric from "@/components/partials/whatispediatric/whatispediatric";
 import PediatricConditions from "@/components/partials/pediatricconditions/pediatricconditions";
+import StagesOfRectalProlapse from "@/components/partials/stagesofrectalprolapse/stagesofrectalprolapse";
 import CausesRiskFactors from "@/components/partials/causesriskfactors/causesriskfactors";
 import WhenConsult from "@/components/partials/whenconsult/whenconsult";
+import TreatmentApproach from "@/components/partials/treatmentapproach/treatmentapproach";
 import TreatmentOptions from "@/components/partials/treatmentoptions/treatmentoptions";
 import WhyChoosePediatric from "@/components/partials/whychoosepediatric/whychoosepediatric";
 import RisksOfDelayPediatric from "@/components/partials/risksofdelaypediatric/risksofdelaypediatric";
@@ -52,7 +54,7 @@ const contentMap: Record<
   }
 > = {
   "best-rectal-prolapse-treatment-in-bangalore": {
-    phone: "08065916418",
+    phone: "08065916427",
     hero: {
       heading: "Affordable Piles Treatment in Bangalore",
       points: [
@@ -110,18 +112,16 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916418";
+  const defaultPhone = "08065916415";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
 
   const HeroData = {
-    heading: "Rectal Prolapse Treatment at Chirag Global Hospitals",
-    subheading:
-      "Advanced Diagnosis & Comprehensive Treatment for Rectal Prolapse",
+    heading: "Best Rectal Prolapse Treatment in Bangalore",
     points: [
       "Experienced colorectal surgery specialists",
-      "Minimally invasive perineal procedures",
+      "Advanced laparoscopic (keyhole) surgery",
       "Personalized treatment for every stage",
       "Short hospital stay & quick recovery",
       "Complete pre, surgical & post care support",
@@ -137,16 +137,16 @@ export default function PilesConditions() {
     points: pageContent?.hero?.points ?? HeroData.points,
   };
 
- const whatIsPediatricData = {
-  heading: "What Is Rectal Prolapse?",
-  video: "/rectalprolapse/recatal prolapse dr video.mp4",
-  poster: "", // optional
-  imageAlt: "Rectal prolapse illustration",
-  paragraphs: [
-    "The rectum is the final part of the large intestine that stores stool before bowel movements. Normally, it is held securely in place by the pelvic floor muscles and supporting tissues. When these structures become weak, the rectum may gradually protrude through the anal opening, resulting in rectal prolapse.",
-    "Initially, the prolapse may occur only during bowel movements and return on its own. As the condition progresses, it may require manual repositioning and, in severe cases, protrude even while standing or walking.",
-  ],
-};
+  const whatIsPediatricData = {
+    heading: "What Is Rectal Prolapse?",
+    image: "/rectalprolapse/what is rectal prolapse.png",
+    imageAlt: "Rectal prolapse illustration",
+    paragraphs: [
+      "Rectal prolapse is a condition where the rectum — the last section of the large intestine — turns inside out and protrudes through the anus. It occurs when the supporting muscles and ligaments of the pelvic floor weaken, allowing the rectal wall to slide downward and eventually emerge outside the body.",
+      "The condition can affect people of any age but is most common in women over 50 and in young children. In adults, it's often associated with chronic constipation, straining during bowel movements, weakened pelvic floor muscles (from childbirth, aging, or neurological conditions), and conditions that increase abdominal pressure.",
+      "Rectal prolapse is a progressive condition — it typically starts as an internal prolapse (intussusception) where the rectum folds in on itself, and gradually worsens to a full-thickness external prolapse. Early treatment prevents progression and avoids the need for more complex surgery.",
+    ],
+  };
 
   const statsSectionData = {
     heading: "Trusted by Patients\nWorldwide",
@@ -183,114 +183,143 @@ export default function PilesConditions() {
   //   imageSrc: "/chiraggpt.png",
   // };
 
-  const symptomsData = {
-    heading: "Common Symptoms of Rectal Prolapse",
-    subheading: "Patients with rectal prolapse may experience:",
-    signs: [
-      "A fleshy mass protruding through the anus",
-      "Difficulty passing stools",
-      "Feeling of incomplete bowel evacuation",
-      "Leakage of stool or mucus",
-      "Rectal bleeding",
-      "Chronic constipation",
-      "Excessive straining during bowel movements",
-      "Difficulty controlling bowel movements (fecal incontinence)",
-      "Discomfort or heaviness in the pelvic region",
-    ],
-  };
-
-  const whoAtRiskData = {
-    heading: "Who is at Risk?",
-    intro: "Rectal prolapse is more commonly seen in:",
-    image: "/rectalprolapse/causes and risk factor rectal prolapse.png",
-    imageAlt: "Who is at risk of rectal prolapse",
-    causes: [
-      { title: "Elderly individuals, especially above 60 years", description: "" },
-      { title: "People suffering from chronic constipation", description: "" },
-      { title: "Women after multiple childbirths", description: "" },
-      { title: "Patients with weakened pelvic floor muscles", description: "" },
-      { title: "Individuals with chronic neurological disorders", description: "" },
-      { title: "Children (usually managed conservatively)", description: "" },
-    ],
-  };
-
-  const associatedConditionsData = {
-    heading: "Rectal Prolapse is More Than Just a Prolapsed Rectum",
+  const stagesData = {
+    heading: "Types & Stages of Rectal Prolapse",
     subheading:
-      "One of the most important aspects often overlooked is that rectal prolapse rarely occurs in isolation. Many patients also have:",
-    signs: [
-      "Weak pelvic floor muscles",
-      "Stretched or weakened anal sphincters",
-      "Urinary bladder prolapse (Cystocele)",
-      "Vaginal wall weakness",
-      "Uterine prolapse",
-      "Pelvic organ descent",
-      "Chronic constipation or obstructed defecation syndrome",
-      "Fecal incontinence",
-      "Urinary symptoms",
-    ],
-  };
-
-  const pelvicDysfunctionData = {
-    heading: "Pelvic Floor Dysfunction",
-    intro:
-      "These conditions together form Pelvic Floor Dysfunction, where multiple compartments of the pelvic outlet are affected. Simply correcting the protruding rectum without addressing these associated problems may lead to:",
-    image: "/rectalprolapse/risk delaying rectal prolapse.png",
-    imageAlt: "Pelvic floor dysfunction",
-    risks: [
-      { title: "Persistent symptoms", description: "" },
-      { title: "Poor functional outcomes", description: "" },
-      { title: "Recurrence of prolapse", description: "" },
-      { title: "New bowel or urinary complications", description: "" },
+      "Understanding the stage of prolapse is critical for determining the right treatment approach.",
+    stages: [
       {
-        title: "This is why rectal prolapse surgery should never be considered a routine procedure.",
-        description: "",
+        stageLabel: "STAGE 1 — MILD",
+        borderColor: "#22C55E",
+        badgeBg: "#DCFCE7",
+        badgeText: "#15803D",
+        title: "Internal Prolapse (Intussusception)",
+        description:
+          "The rectal lining begins to fold inward but does not protrude outside the anus. Patients may feel a sense of incomplete evacuation, difficulty passing stool, and mild discomfort. Often manageable with conservative measures including dietary changes, pelvic floor exercises, and biofeedback therapy.",
+      },
+      {
+        stageLabel: "STAGE 2 — MODERATE",
+        borderColor: "#F59E0B",
+        badgeBg: "#FEF3C7",
+        badgeText: "#B45309",
+        title: "Mucosal Prolapse",
+        description:
+          "Only the inner lining (mucosa) of the rectum protrudes through the anus, typically during straining. The tissue may retract on its own or need gentle manual reduction. Causes mucus discharge, bleeding, and a feeling of a lump. May respond to non-surgical treatment but often benefits from procedural intervention.",
+      },
+      {
+        stageLabel: "STAGE 3 — SEVERE",
+        borderColor: "#EF4444",
+        badgeBg: "#FEE2E2",
+        badgeText: "#B91C1C",
+        title: "Full-Thickness External Prolapse",
+        description:
+          "The entire rectal wall protrudes through the anus, initially only during straining but eventually becoming permanent. Causes fecal incontinence, constant mucus discharge, bleeding, pain, and significant quality of life impact. Requires surgical correction for definitive treatment.",
       },
     ],
   };
 
-  const evaluationData = {
-    heading: "Comprehensive Pelvic Floor Evaluation",
+  const causesRiskFactorsData = {
+    heading: "Causes & Risk Factors",
+    intro:
+      "Rectal prolapse develops when the structures supporting the rectum weaken. Understanding the causes helps in both treatment and prevention:",
+    causes: [
+      {
+        title: "Chronic constipation & straining:",
+        description:
+          "Years of straining during bowel movements is the most common contributing factor, gradually weakening the pelvic floor muscles and rectal supports.",
+      },
+      {
+        title: "Childbirth & pregnancy:",
+        description:
+          "Multiple vaginal deliveries, prolonged labor, and large babies can damage the pelvic floor muscles and nerves, making women particularly susceptible.",
+      },
+      {
+        title: "Aging & muscle weakness:",
+        description:
+          "Natural weakening of pelvic floor muscles with age is a significant factor, especially in women over 50.",
+      },
+      {
+        title: "Neurological conditions:",
+        description:
+          "Conditions affecting nerve supply to the pelvic floor, including spinal cord injuries, MS, and diabetic neuropathy, increase risk.",
+      },
+      {
+        title: "Previous pelvic surgery:",
+        description:
+          "Prior hysterectomy or other pelvic surgeries can weaken supporting structures.",
+      },
+      {
+        title: "Chronic cough/COPD:",
+        description:
+          "Persistent coughing increases intra-abdominal pressure, straining the pelvic floor over time.",
+      },
+    ],
+  };
+
+  const whenConsultData = {
+    heading: "Symptoms of Rectal Prolapse",
     subheading:
-      "At Chirag Global Hospitals, every patient undergoes a detailed evaluation to identify all associated pelvic floor disorders before surgery. Our assessment may include:",
+      "Recognize these warning signs and seek expert evaluation early for best outcomes.",
     signs: [
-      "A fleshy mass protruding through the anus",
-      "Difficulty passing stools",
-      "Feeling of incomplete bowel evacuation",
-      "Leakage of stool or mucus",
-      "Rectal bleeding",
-      "Chronic constipation",
-      "Controlling bowel movementDifficulty s (fecal incontinence)",
-      "Discomfort or heaviness in the pelvic region",
+      "Tissue visibly protruding from the anus during or after bowel movements",
+      "Feeling of a lump or mass coming out of the rectum",
+      "Fecal incontinence — inability to control bowel movements",
+      "Mucus or bloody discharge from the rectum",
+      "Feeling of incomplete evacuation after bowel movements",
+      "Chronic constipation and excessive straining",
+      "Rectal pain or discomfort, especially when sitting",
+      "Need to manually push tissue back inside after passing stool",
+      "Rectal bleeding during or after bowel movements",
+      "Ulceration or skin irritation around the anal area",
     ],
   };
 
   const treatmentOptionsData = {
-    heading: "Advanced Surgical Treatment",
+    heading: "Treatment Options for Rectal Prolapse",
     subheading:
-      "Complete rectal prolapse in adults generally requires surgery. Rather than performing the same procedure for every patient, our colorectal team carefully selects the most appropriate surgery based on the patient's overall pelvic floor condition.",
+      "From conservative management to advanced laparoscopic surgery — comprehensive care for every stage.",
     options: [
       {
+        icon: "heart",
         title: "Conservative Management",
         description:
           "For early internal prolapse and mucosal prolapse. Includes high-fiber diet, stool softeners, pelvic floor physiotherapy, biofeedback training, and avoiding straining. Effective for mild symptoms and in patients unfit for surgery.",
       },
       {
         icon: "clock",
+        title: "Laparoscopic Rectopexy (Keyhole Surgery)",
+        description:
+          "The gold standard for adult rectal prolapse. The rectum is mobilized and secured (fixed) to the sacrum through small keyhole incisions. Offers excellent cure rates (over 95%), preserves bowel function, minimal scarring, shorter hospital stay (2–3 days), and faster recovery compared to open surgery.",
+      },
+      {
+        icon: "zap",
+        title: "Ventral Mesh Rectopexy",
+        description:
+          "A modern laparoscopic technique where a mesh is placed on the front of the rectum and attached to the sacrum, lifting and supporting the rectum. Avoids nerve damage, preserves bowel function, and has excellent long-term results. Particularly effective for women with associated pelvic organ prolapse.",
+      },
+      {
+        icon: "wrench",
+        title: "Delorme's Procedure (Perineal Approach)",
+        description:
+          "A perineal (from below) approach where the excess mucosal lining is removed and the muscle wall is plicated (folded). Performed without abdominal incisions, ideal for elderly or high-risk patients who cannot tolerate abdominal surgery. Lower recurrence than Altemeier's procedure.",
+      },
+      {
+        icon: "hexagon",
         title: "Altemeier's Procedure (Perineal Proctosigmoidectomy)",
         description:
           "A perineal procedure where the prolapsed rectum and sigmoid colon are removed from below and reconnected. Suitable for elderly patients with large prolapse and significant comorbidities. Can be performed under regional anesthesia.",
       },
       {
-        title: "Delorme's Procedure",
+        icon: "shield",
+        title: "STARR Procedure",
         description:
-          "A minimally invasive perineal procedure performed through the anal opening without abdominal incisions — suitable for selected patients.",
+          "Stapled Transanal Rectal Resection — a minimally invasive technique for internal prolapse (intussusception) and obstructed defecation syndrome. Uses a circular stapler to remove the prolapsing tissue from inside, with no external incisions. Quick recovery and effective symptom relief.",
       },
     ],
   };
 
-  const perinealBenefitsData = {
-    heading: "Benefits of Minimally Invasive Perineal Procedures",
+  const treatmentApproachData = {
+    heading: "Your Rectal Prolapse Treatment Journey",
     subheading:
       "A comprehensive, patient-centered approach from diagnosis through complete recovery.",
     steps: [
@@ -302,7 +331,7 @@ export default function PilesConditions() {
       {
         title: "Advanced Diagnostics",
         description:
-          "Our colorectal specialists perform a thorough clinical examination and, when required, recommend investigations such as proctoscopy, colonoscopy, defecography, or pelvic floor assessment to determine the most appropriate treatment.",
+          "Defecography (MRI or video), anorectal manometry to assess sphincter pressure, colonoscopy to rule out other pathology, and pelvic floor assessment to plan the optimal surgical approach.",
       },
       {
         title: "Surgical Treatment",
@@ -317,8 +346,8 @@ export default function PilesConditions() {
     ],
   };
 
-  const whyExpertiseData = {
-    heading: "Why Expertise Matters",
+  const whyChooseData = {
+    heading: "Why Choose Chirag Hospitals for Rectal Prolapse Treatment",
     subheading:
       "Bangalore's most experienced colorectal team for complex rectal prolapse management.",
     features: [
@@ -355,29 +384,37 @@ export default function PilesConditions() {
     ],
   };
 
-  const whyChooseData = {
-    heading: "Why Choose Chirag Global Hospitals?",
-    subheading:
-      "At Chirag Global Hospitals, our comprehensive approach has helped thousands of patients achieve excellent functional outcomes and improved quality of life.",
-    features: [
-      { title: "30+ years of dedicated colorectal expertise", description: "" },
-      { title: "Highly experienced colorectal surgeons", description: "" },
-      { title: "Specialized pelvic floor evaluation", description: "" },
+  const risksOfDelayData = {
+    heading: "Risks of Delaying Rectal Prolapse Treatment",
+    intro:
+      "Rectal prolapse is progressive and will not improve without intervention. Delaying treatment leads to:",
+    image: "/rectalprolapse/risk delaying rectal prolapse.png",
+    imageAlt: "Risks of delaying rectal prolapse treatment",
+    risks: [
       {
-        title: "Comprehensive treatment for all pelvic outlet disorders",
-        description: "",
+        title: "Worsening incontinence:",
+        description:
+          "As the prolapse progresses, the anal sphincter muscles stretch further, leading to increasingly severe fecal incontinence that may become permanent even after surgical repair.",
       },
       {
-        title: "Advanced minimally invasive surgical techniques",
-        description: "",
+        title: "Strangulation and emergency:",
+        description:
+          "Prolapsed tissue can become trapped outside the anus (incarcerated), cutting off blood supply. This is a surgical emergency that requires immediate intervention.",
       },
-      { title: "Personalized treatment planning", description: "" },
-      { title: "High success rates", description: "" },
-      { title: "Excellent functional outcomes", description: "" },
-      { title: "Faster recovery with modern surgical care", description: "" },
       {
-        title: "Comprehensive pre-operative and post-operative support",
-        description: "",
+        title: "Ulceration and bleeding:",
+        description:
+          "Chronically exposed rectal tissue develops ulcers (solitary rectal ulcer syndrome), causing persistent bleeding, discharge, and pain.",
+      },
+      {
+        title: "More complex surgery needed:",
+        description:
+          "Early-stage prolapse can often be managed with simpler, perineal approaches. Advanced prolapse requires more extensive abdominal surgery with longer recovery.",
+      },
+      {
+        title: "Severe quality of life impact:",
+        description:
+          "Fecal incontinence, constant discharge, and the psychological burden of prolapse lead to social isolation, depression, and avoidance of activities.",
       },
     ],
   };
@@ -395,7 +432,7 @@ export default function PilesConditions() {
       },
       {
         name: "Dr. Shreedevi KN",
-        designation: "MBBS, MS General Surgery, FSGE (Surgical Gastroenterology )",
+        designation: "MBBS, MS General Surgery, FSGE (Surgical Gastroenterology)",
         qualification: "Head Colorectal Surgery & Proctology",
         experience: "12 Years",
         reviews: "99%",
@@ -535,7 +572,7 @@ export default function PilesConditions() {
   };
 
   const BannerData = {
-    heading: "Don't Ignore Rectal Prolapse — Book Your Consultation Today",
+    heading: "Get Relief from Pediatric Anal – Book Now",
     buttonText: "Book An Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };
@@ -579,7 +616,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does rectal prolapse treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs depend on the procedure type and complexity. Interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916418 for a detailed cost estimate based on your specific condition.",
+        "Treatment costs depend on the procedure type and complexity. Interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916415 for a detailed cost estimate based on your specific condition.",
     },
   ];
 
@@ -631,23 +668,20 @@ export default function PilesConditions() {
             <Hero {...finalHeroData} />
             <Number {...statsSectionData} />
             <WhatIsPediatric {...whatIsPediatricData} />
-            <WhenConsult {...whenConsultData} />
-            {/* <StagesOfRectalProlapse {...stagesData} /> */}
+            <StagesOfRectalProlapse {...stagesData} />
             <CausesRiskFactors {...causesRiskFactorsData} />
-            <RisksOfDelayPediatric {...risksOfDelayData} />
+            <WhenConsult {...whenConsultData} />
             <Doctors {...doctorsSectionData} />
             <TreatmentOptions {...treatmentOptionsData} />
-            <WhenConsult {...perinealBenefitsData} />
-            <Doctors {...doctorsSectionData} />
             <CostDepends
               heading={treatmentCostDependsData.heading}
               items={treatmentCostDependsData.items}
               ctaText={treatmentCostDependsData.ctaText}
             />
             <InsurenceAdvisor {...insuranceAdvisorData} />
-            <WhenConsult {...whyExpertiseData} />
+            <TreatmentApproach {...treatmentApproachData} />
+            <RisksOfDelayPediatric {...risksOfDelayData} />
             <WhyChoosePediatric {...whyChooseData} />
-            <CtaBanner {...BannerData} />
             {/* <Cost
             title={costSectionData.title}
             points={costSectionData.points}
@@ -655,6 +689,7 @@ export default function PilesConditions() {
             imageSrc={costSectionData.imageSrc}
           /> */}
             <HospitalLocation locationsectionheading={defaultLocationHeading} />
+            {/* <CtaBanner {...BannerData} /> */}
             {finalFaqs.length > 0 && (
               <Faqs
                 className="md:!w-[95%] w-full mx-[unset]"

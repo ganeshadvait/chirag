@@ -27,35 +27,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Google Tag Manager */}
-      <Script id="google-tag-manager" strategy="afterInteractive">
-        {`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-WFRRMC43');
-        `}
-      </Script>
-
       <body className={`${dmSans.variable} antialiased`}>
-        {/* Google Translate */}
-        <Script
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          strategy="afterInteractive"
-        />
-        <Script id="google-translate-init" strategy="afterInteractive">
+        {/* Google Tag Manager */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
           {`
-            function googleTranslateElementInit() {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WFRRMC43');
+          `}
+        </Script>
+
+        {/* Google Translate */}
+        <Script id="google-translate-init" strategy="beforeInteractive">
+          {`
+            window.googleTranslateElementInit = function () {
               new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'en,kn,hi',
                 autoDisplay: false,
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
               }, 'google_translate_element');
-            }
+            };
           `}
         </Script>
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
 
         {/* Google Tag Manager (noscript) */}
         <noscript>
