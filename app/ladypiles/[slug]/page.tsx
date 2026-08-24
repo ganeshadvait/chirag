@@ -127,7 +127,7 @@ const risksOfDelayData = {
     moreDoctors: [
       {
         name: "Dr.Jyotsna Vemulapalli",
-        designation: "MMBS MS General Surgery",
+        designation: "MBBS MS General Surgery",
         qualification: "Colorectal Surgeon & Proctologist",
         experience: "4 Years",
         reviews: "99%",
