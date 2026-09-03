@@ -19,7 +19,7 @@ export default function DoctorsSection({
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section id="doctors" className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-0 mb-0">
+    <section id="doctors" className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 mb-0">
       {/* TITLE */}
       <h2 className="text-[24px] sm:text-[28px] lg:text-[30px] text-[#625587] text-center font-semibold mb-8">
         {heading}
@@ -127,7 +127,7 @@ function ConsultBanner({
   handleButtonClick,
 }) {
   return (
-    <div className="w-full bg-[#9e8dce] rounded-2xl mt-12 mb-0 overflow-hidden">
+    <div className="w-full bg-[#9e8dce] rounded-2xl my-6 overflow-hidden">
       <div className="flex flex-col md:flex-row md:items-stretch items-center justify-between gap-6 lg:gap-8">
         {/* LEFT */}
         <div className="flex flex-col items-start justify-center gap-4 w-full md:w-[55%] lg:w-1/2 p-6 lg:p-8">
