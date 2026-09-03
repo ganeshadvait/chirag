@@ -19,7 +19,7 @@ export default function LaserVsTraditional({
   rows = DEFAULT_ROWS,
 }) {
   return (
-    <section className="w-full py-10 md:py-14 px-4 sm:px-6 md:px-8">
+    <section className="w-full px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold text-[#1E1B4B] mb-3 md:mb-4">

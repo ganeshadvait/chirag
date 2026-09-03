@@ -33,41 +33,50 @@ const data = {
 
 const FooterComponent = ({ footerdesc, footernumber, extradesc }) => {
   return (
-    <section id="contact" className="footer bg-white mb-[100px] md:mb-0">
-      <div className="inner_footer">
-        <div className="column c_one">
-          <Link href="#" className="footer_logo">
+    <section id="contact" className="footer bg-white mb-[100px] md:mb-0 border-t border-gray-100">
+      <div className="inner_footer max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 flex flex-col lg:flex-row gap-8 lg:gap-10">
+        {/* LOGO + DESCRIPTION */}
+        <div className="column c_one w-full lg:w-[38%] xl:w-[40%]">
+          <Link href="#" className="footer_logo inline-block">
             <Image
               src={data.logo}
-              alt="Logo"
+              alt="Chirag Global Hospitals logo"
               width={200}
               height={60}
-              className={`logo-fade `}
+              className="logo-fade w-[170px] md:w-[200px] h-auto"
             />
           </Link>
-          <p className="text-black-600 mt-2 footer_description">{footerdesc}</p>
-          <p>{extradesc}</p>
+          <p className="text-gray-600 mt-3 footer_description text-sm md:text-[15px] leading-relaxed max-w-md">
+            {footerdesc}
+          </p>
+          {extradesc && (
+            <p className="text-gray-600 mt-2 text-sm md:text-[15px] leading-relaxed max-w-md">
+              {extradesc}
+            </p>
+          )}
         </div>
 
-        <div className="inner_second_footer">
+        {/* LINK COLUMNS */}
+        <div className="inner_second_footer flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 lg:gap-8">
           <div className="column c_three">
-            <h3 className="font-semibold mb-2">Center of Excellence</h3>
-            <ul>
+            <h3 className="font-semibold mb-3 text-gray-900">
+              Center of Excellence
+            </h3>
+            <ul className="space-y-2">
               {data.centerofexcellence.map((item, index) => (
                 <li key={index} className="excellence_list">
-                  {/* <Link href={item.url}> */}
-                  <span className="text-black-700">
+                  <span className="text-gray-700 text-sm md:text-[15px]">
                     {item.text}
                   </span>
-                  {/* </Link> */}
                 </li>
               ))}
             </ul>
           </div>
+
           {/* Contact Us Section */}
           <div className="column c_four">
-            <h3 className="font-semibold mb-2">Contact Us</h3>
-            <p className="text-gray-700 mb-[10px]">
+            <h3 className="font-semibold mb-3 text-gray-900">Contact Us</h3>
+            <p className="text-gray-700 mb-3 text-sm md:text-[15px] leading-relaxed">
               <a
                 href="https://maps.app.goo.gl/3ox9s9tsJ9rD9tmu7"
                 className="hover:text-[#99509f]"
@@ -76,53 +85,44 @@ const FooterComponent = ({ footerdesc, footernumber, extradesc }) => {
               </a>
             </p>
 
-            <p className="flex flex-wrap items-center text-gray-700 mb-[10px] gap-2">
-              <span className="w-4 h-4">
+            <p className="flex items-center text-gray-700 mb-3 gap-2 text-sm md:text-[15px]">
+              <span className="w-4 h-4 shrink-0">
                 <Image
                   src="/Call Us.svg"
-                  alt="phone_icon"
+                  alt=""
                   width={16}
                   height={16}
                 />
               </span>
-              <a
-                href={`tel:${footernumber}`}
-                className="hover:text-[#99509f]"
-              >
+              <a href={`tel:${footernumber}`} className="hover:text-[#99509f]">
                 {footernumber}
               </a>
             </p>
 
-            <p className="flex flex-wrap items-center text-gray-700 mb-[10px] gap-2">
-              <span className="w-4 h-4">
+            <p className="flex items-center text-gray-700 mb-3 gap-2 text-sm md:text-[15px]">
+              <span className="w-4 h-4 shrink-0">
                 <Image
                   src="/Mail Us.svg"
-                  alt="phone_icon"
+                  alt=""
                   width={16}
                   height={16}
                 />
               </span>
-              <span
-              // href={`mailto:${data.contactus.email}`}
-              // className="hover:text-[#99509f]"
-              >
-                {data.contactus.email}
-              </span>
+              <span className="break-all">{data.contactus.email}</span>
             </p>
 
-            <p className="flex flex-wrap items-center text-gray-700 mb-[10px] gap-2">
-              <span className="w-4 h-4">
-                {" "}
+            <p className="flex items-center text-gray-700 mb-3 gap-2 text-sm md:text-[15px]">
+              <span className="w-4 h-4 shrink-0">
                 <Image
                   src="/website.svg"
-                  alt="phone_icon"
+                  alt=""
                   width={16}
                   height={16}
                 />
               </span>
               <Link
                 href="https://www.chiragglobalhospitals.com/"
-                className="hover:text-[#99509f]"
+                className="hover:text-[#99509f] break-all"
               >
                 {data.contactus.website}
               </Link>
