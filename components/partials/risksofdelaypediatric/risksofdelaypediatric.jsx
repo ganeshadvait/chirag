@@ -34,7 +34,7 @@ export default function RisksOfDelayPediatric({
   risks = DEFAULT_RISKS,
 }) {
   return (
-    <section className="w-full px-4 sm:px-6 md:px-8">
+    <section className="w-full pt-8 md:pt-10 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
           {/* LEFT: Image */}
