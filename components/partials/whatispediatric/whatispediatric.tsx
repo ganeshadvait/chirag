@@ -26,7 +26,7 @@ export default function WhatIsPediatric({
 
   return (
     <section className="w-full max-w-6xl mx-auto px-4">
-      <div className="rounded-3xl md:px-10 md:pt-10 md:pb-2">
+      <div className="rounded-3xl md:px-10 md:py-6">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1E1B4B] mb-6">
           {heading}
         </h2>
