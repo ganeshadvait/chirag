@@ -1223,12 +1223,12 @@ html {
 
 .header__menu ul {
   display: flex;
-  gap: 50px;
+  gap: 38px;
   margin: auto;
 }
 
 .header__menu li {
-  font-size: 18px;
+  font-size: 14px;
   /* color: #252B61; */
   transition: color 0.3s ease;
 }
