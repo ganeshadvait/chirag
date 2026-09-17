@@ -1,5 +1,6 @@
 "use client";
 // File :  app/piles/best-piles-laser-treatment-in-bangalore/page.tsx
+import dynamic from "next/dynamic";
 import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
 import Number from "@/components/partials/number/number";
@@ -16,6 +17,10 @@ import Faqs from "@/components/faqs/faq";
 import Form from "@/components/partials/form/from";
 import HospitalLocation from "@/components/HospitalLocation/hospitallocations";
 import FooterComponent from "@/components/footer/footer";
+
+const HospitalComparisond = dynamic(
+  () => import("@/components/dynamictable/dynamictables"),
+);
 
 export default function PilesConditions() {
   const finalPhone = "08065916415";
@@ -188,19 +193,19 @@ export default function PilesConditions() {
     cards: [
       {
         titlePrefix: "Easy",
-        titleHighlight: "Payment Options",
+        titleHighlight: "EMI Options",
         description:
-          "Enjoy hassle-free treatment and insurance support through GMoney, with zero processing fees and interest-free finance.",
+          "Hassle-free treatment with zero processing fees and interest-free financing through GMoney",
         image: "/checkinsurancecoverage.png",
         imageAlt: "Insurance coverage illustration",
         buttonText: "Check EMI Options",
         ctaType: "modal",
       },
       {
-        titlePrefix: "Talk To",
-        titleHighlight: "Health Advisor",
+        titlePrefix: "Health",
+        titleHighlight: "Advisor Support",
         description:
-          "Get clear guidance on treatment options, costs, and recovery process.",
+          "Get clear guidance on treatment options, costs, recovery timeline, and what to expect",
         image: "/talktohealthadvaiser.png",
         imageAlt: "Health advisor illustration",
         buttonText: "Call Our Advisors",
@@ -345,6 +350,28 @@ const treatmentOptionsData = {
   };
 
 
+  const InfoContent = {
+    theading: "Piles Treatment at Chirag Hospitals",
+    videoSrc: "/chirag-piles-video.mp4",
+    
+
+    title: "What Are Piles or Hemorrhoids?",
+    description: (
+      <>
+        Piles, also called hemorrhoids, are swollen veins in the anal area that
+        cause pain, bleeding, and discomfort. Medical treatment helps relieve
+        symptoms and prevents complications.
+      </>
+    ),
+
+    points: [
+      "Internal Piles – Piles inside the rectum",
+      "External Piles – Piles outside the anus",
+      "Thrombosed Piles – Piles with blood clots",
+    ],
+  };
+
+
   const BannerData = {
     heading: "Get Relief from Piles – Book Now",
     buttonText: "Book An Appointment",
@@ -449,39 +476,7 @@ const treatmentOptionsData = {
             <WhenConsult {...whenConsultData} />
             <TreatmentOptions {...treatmentOptionsData} />
             <WhyLaserBest {...whyLaserBestData} />
-            <section className="w-[95%] md:w-[96%] max-w-[1500px] mx-auto py-8">
-              <div className="grid grid-cols-1 gap-8 rounded-lg bg-[#f8f7fb] p-6 md:grid-cols-2 md:p-8">
-                <div>
-                  <h2 className="mb-5 text-xl font-bold text-[#625587] sm:text-2xl">
-                    Cost Factors
-                  </h2>
-                  <ul className="list-disc space-y-3 pl-6 text-base leading-relaxed text-gray-900 sm:text-lg">
-                    <li>Type of Procedure (Conservative, Botox, Laser, Surgical)</li>
-                    <li>Severity of Condition (Acute vs. Chronic)</li>
-                    <li>Past Medical History &amp; Comorbidities</li>
-                    <li>Contact for Exact Cost</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h2 className="mb-5 text-xl font-bold text-[#625587] sm:text-2xl">
-                    Payment &amp; Support
-                  </h2>
-                  <ul className="space-y-5 text-base leading-relaxed text-gray-900 sm:text-lg">
-                    <li>
-                      <strong>Easy EMI Options</strong> - Hassle-free treatment
-                      with zero processing fees and interest-free financing
-                      through GMoney
-                    </li>
-                    <li>
-                      <strong>Health Advisor Support</strong> - Get clear
-                      guidance on treatment options, costs, recovery timeline,
-                      and what to expect
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
+            {/* <HospitalComparisond {...InfoContent} /> */}
             <WhyChoosePediatric {...whyChooseData} />
             <CtaBanner {...BannerData} />
             {finalFaqs.length > 0 && (
