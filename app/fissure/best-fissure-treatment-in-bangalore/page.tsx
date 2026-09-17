@@ -31,7 +31,7 @@ export default function PilesConditions() {
       "No Cuts, No Bleeding, No Stitches",
     ],
     buttonText: "Book Appointment",
-    imageSrc: "/Chirag Doctors Main.png",
+    imageSrc: "/chiragheroimage.png",
   };
 
   const statsSectionData = {
