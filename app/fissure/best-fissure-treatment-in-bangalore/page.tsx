@@ -33,7 +33,7 @@ export default function PilesConditions() {
       "Painless laser & advanced treatments",
       "Same-day consultation & diagnosis",
       "Personalized treatment for quick relief",
-      "No Cuts, No Bleeding, No Stitches",
+      "Non-surgical options available",
     ],
     buttonText: "Book Appointment",
     imageSrc: "/chiragheroimage.png",
@@ -67,7 +67,7 @@ export default function PilesConditions() {
     heading: "Risks of Delaying Fissure Treatment",
     intro:
       "",
-    image: "/piles/risk of delaying piles.png",
+    image: "/fissures/fissure risks.png",
     imageAlt: "Risks of delaying piles treatment",
     risks: [
       {
@@ -417,26 +417,38 @@ const treatmentOptionsData = {
     testimonials: [
       {
         // title: "Laser treatment for my dad's piles",
-        text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
-        name: "Abddul",
+        text: "I consulted Dr. Rajashekar at Chirag Hospital for fissure treatment. He explained my condition clearly and guided me through the treatment process. The care and support provided by the doctor and hospital team made my experience comfortable.",
+        name: "Ananya Rao",
         rating: 5,
       },
       {
         // title: "Smooth and painless",
-        text: "I had a wonderful experience with Dr. Rajasekhar sir and his team a wonderful surgeons at Chirag hospital. His entire team is always helpful and kind. Dr. Rajasekar treated me for piles and he made sure I was comfortable. The staff in the hospital were very cooperative and soft spoken. They ensured I am prepared for the entire treatment. Dr. rajasekhar sir is friendly and approachable at any time in case of need. I feel much better and happy that I chose Dr. rajasekar sir to do my piles treatment. I would highly recommend anyone who wants to undergo piles treatment without undergoing any surgery.",
-        name: "Sai",
+        text: "I was suffering from fissure-related pain and discomfort for some time before consulting Dr. Rajashekar. He patiently listened to my concerns and explained the treatment options. The overall experience at Chirag Hospital was smooth and reassuring.",
+        name: "Rahul Nair",
         rating: 5,
       },
       {
         // title: "Colorectal Diseases",
-        text: "I had piles issues for the last 2 years. even though I got surgery before, the problem came back again. Rajasekhar sir did surgery on me 4 months back. till now, no problem. treatment is good. fees are high but very good doctors. If treatment is more important than anything else, everyone should visit this hospital for piles and fistula problems.",
-        name: "Kasireddy",
+        text: "I visited Chirag Hospital for fissure treatment and consulted Dr. Rajashekar. He provided clear guidance and answered all my questions patiently. I appreciate the professional care and support I received during my treatment.",
+        name: "Priya Shetty",
         rating: 5,
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "I am a software employee and had piles from last 7 months. I visited chirag hospital a month before to get treated for piles. And I am glad that I met very good doctors in chirag hospital,they are very friendly doctors. During my consultation they gave me clarity about my problem and the asked me to take few medicines and some precautions in terms of food and do. yogas.. By 1 week I was my pain was reduced a lot. It’s been 3 weeks now post-consultation and I am doing absolutely fine with few medications left. A very good doctors and a caring staff, highly recommend.",
-        name: "Syam",
+        text: "Dr. Rajashekar is approachable and explains medical concerns in a simple way. My fissure treatment experience at Chirag Hospital was well managed, and the staff was helpful throughout my visits.",
+        name: "Karthik Gowda",
+        rating: 5,
+      },
+      {
+        // title: "Admitted for my fistula surgery",
+        text: "I consulted Dr. Rajashekar for my fissure problem. The doctor diagnosed my condition properly and explained the next steps clearly. I am thankful for the care and attention provided by the team at Chirag Hospital.",
+        name: "Sneha Kulkarni",
+        rating: 5,
+      },
+      {
+        // title: "Admitted for my fistula surgery",
+        text: "I had a good experience at Chirag Hospital for fissure treatment. Dr. Rajashekar guided me throughout the process and explained the recovery steps properly. The hospital staff was supportive and professional.",
+        name: "Arjun Menon",
         rating: 5,
       },
     ],
