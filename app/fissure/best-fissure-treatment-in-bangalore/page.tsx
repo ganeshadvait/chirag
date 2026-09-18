@@ -68,7 +68,7 @@ export default function PilesConditions() {
     intro:
       "",
     image: "/fissures/fissure risks.png",
-    imageAlt: "Risks of delaying piles treatment",
+    imageAlt: "Risks of delaying Fissure treatment",
     risks: [
       {
         title: "Severe & Persistent Pain",
@@ -217,7 +217,7 @@ export default function PilesConditions() {
    const whyChooseData = {
     heading: "Why Choose Chirag Hospitals for Fissure Treatment",
     subheading:
-      "Bangalore’s Leading Hospital for Advanced Piles Management and Surgery",
+      "",
     features: [
       {
         title: "30+ Years in Colorectal & Proctology Care",
@@ -373,7 +373,7 @@ const treatmentOptionsData = {
 
 
   const BannerData = {
-    heading: "Get Relief from Piles – Book Now",
+    heading: "Get Relief from Fissures – Book Now",
     buttonText: "Book An Appointment",
     imageSrc: "/scheduleyourvisit.png",
   };
