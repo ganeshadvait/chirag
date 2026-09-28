@@ -60,6 +60,16 @@ export default function DoctorsSection({
   );
 }
 
+/* Mobile keeps the tel: link (call); desktop opens WhatsApp instead.
+   Same device check as contactAction. */
+function openWhatsAppOnDesktop(e) {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (!isMobile) {
+    e.preventDefault();
+    window.open("https://wa.me/919380498256", "_blank");
+  }
+}
+
 /* ===================== Doctor Card (OLD UI + FULL HEIGHT IMAGE) ===================== */
 
 function DoctorCard({ doctor, supportPhone }) {
@@ -101,6 +111,7 @@ function DoctorCard({ doctor, supportPhone }) {
           {/* CTA – never wider than the card */}
           <a
             href={toTel(supportPhone)}
+            onClick={openWhatsAppOnDesktop}
             className="mt-3 block w-full max-w-[180px] text-center
     border-2 border-[#625587] text-[#625587]
     rounded-full px-2 py-2 text-[12px] xl:text-[13px] font-medium

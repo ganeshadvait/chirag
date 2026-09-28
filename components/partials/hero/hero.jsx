@@ -1,6 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import DoctorsData from "@/app/doctorsdata/doctorsdata";
-import ContactButton from "@/components/partials/contactbutton/contactbutton";
+import { contactAction } from "@/hooks/contact";
 
 const doctor = DoctorsData.Proctology["Dr. Rajasekhar"];
 
@@ -52,9 +54,12 @@ export default function HeroSection({
             })}
           </ul>
 
-          <ContactButton className="mt-6 md:mt-8 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-6 md:px-8 py-3 text-base md:text-lg">
+          <button
+            onClick={contactAction}
+            className="mt-6 md:mt-8 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-6 md:px-8 py-3 text-base md:text-lg"
+          >
             {buttonText}
-          </ContactButton>
+          </button>
         </div>
 
         {/* RIGHT IMAGE */}

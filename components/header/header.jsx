@@ -138,9 +138,11 @@ export default function Header({
           </span>
         </a>
 
-        {/* <!-- Desktop Link (> 760px) --> */}
+        {/* <!-- Desktop Link (> 760px) → WhatsApp --> */}
         <a
-          href={`tel:${phoneNumber}`}
+          href="https://wa.me/919380498256"
+          target="_blank"
+          rel="noopener noreferrer"
           className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
         >
           <Image
