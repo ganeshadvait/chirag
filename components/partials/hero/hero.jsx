@@ -76,6 +76,7 @@ export default function HeroSection({
                 alt={heading}
                 fill
                 preload
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 32rem, 28rem"
                 className="object-cover"
               />

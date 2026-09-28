@@ -384,7 +384,9 @@ export default function NewDesign() {
             className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
             style={{ maxWidth: "1500px", margin: "0 auto" }}
           >
-            <Form reviewsData={testimonialSectionData} />
+            {/* Reviews only show at lg+, where this mobile form is hidden */}
+            {/* <Form reviewsData={testimonialSectionData} /> */}
+            <Form />
           </div>
         </div>
       </div>
