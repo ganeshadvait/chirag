@@ -84,9 +84,18 @@ export default function Header({
     <>
       <header className="header w-[96%] h-[90px] mx-auto my-2 flex items-center justify-between p-5 border border-[#ebeff6] bg-white sticky top-[10px] z-[1000] transition-all duration-300 ease-in-out max-w-[1500px] shadow-lg rounded-xl">
         <div className="flex gap-1 md:gap-4 items-center">
-          <img
+          {/* <img
             className="w-[100px] md:w-[140px] h-[80px] md:h-[100px] object-contain md:object-cover"
             src="https://www.chiragglobalhospitals.com/wp-content/uploads/2026/01/chirag-logo-2048x1170.png"
+          /> */}
+          {/* next/image serves a resized copy instead of the full 2048px PNG */}
+          <Image
+            className="w-[100px] md:w-[140px] h-[80px] md:h-[100px] object-contain md:object-cover"
+            src="https://www.chiragglobalhospitals.com/wp-content/uploads/2026/01/chirag-logo-2048x1170.png"
+            alt="Chirag Global Hospitals"
+            width={175}
+            height={100}
+            loading="eager"
           />
           <img
             className="logo-fade header__logotwo"
