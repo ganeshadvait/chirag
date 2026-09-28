@@ -1,22 +1,24 @@
 "use client";
+// import { useFormModal } from "@/hooks/useFormModal";
 import { usePathname } from "next/navigation";
 import { contactAction } from "@/hooks/contact";
 
-// Pages that should use the alternate number
-const specialPages = new Set([
-  "/piles/piles-laser-treatment-cost-in-Bangalore",
-  "/fistula/anal-fistula-surgery-cost-in-Bangalore",
-]);
-
-// Page trees that should use the 08065916418 number (matches base path and any /[slug] under it)
-const altPhonePrefixes = [
-  "/best-pilonidal-sinus-treatment-in-bangalore",
-  "/best-rectal-prolapse-treatment-in-bangalore",
-  "/expert-pediatric-anal-care-treatment-in-bangalore",
-];
-
 export default function InsuranceAdvisorSection({ cards }) {
+  // const { handleButtonClick, FormModal } = useFormModal();
   const pathname = usePathname();
+
+  // Pages that should use the alternate number
+  const specialPages = new Set([
+    "/piles/piles-laser-treatment-cost-in-Bangalore",
+    "/fistula/anal-fistula-surgery-cost-in-Bangalore",
+  ]);
+
+  // Page trees that should use the 08065916418 number (matches base path and any /[slug] under it)
+  const altPhonePrefixes = [
+    "/best-pilonidal-sinus-treatment-in-bangalore",
+    "/best-rectal-prolapse-treatment-in-bangalore",
+    "/expert-pediatric-anal-care-treatment-in-bangalore",
+  ];
 
   const matchesAltPrefix = altPhonePrefixes.some(
     (p) => pathname === p || pathname.startsWith(p + "/")
@@ -92,6 +94,8 @@ export default function InsuranceAdvisorSection({ cards }) {
           </div>
         ))}
       </div>
+
+      {/* <FormModal /> */}
     </section>
   );
 }

@@ -1,17 +1,9 @@
 "use client";
 
 import Image from "next/image";
+// import { useFormModal } from "@/hooks/useFormModal";
 import DoctorsData from "@/app/doctorsdata/doctorsdata";
 import { contactAction } from "@/hooks/contact";
-
-const doctor = DoctorsData.Proctology["Dr. Rajasekhar"];
-
-const doctorInfo = {
-  name: doctor.name,
-  qualifications: doctor.qualification,
-  designation: doctor.designation,
-  experience: doctor.experience,
-};
 
 export default function HeroSection({
   heading,
@@ -20,6 +12,19 @@ export default function HeroSection({
   buttonText,
   imageSrc,
 }) {
+  // const { handleButtonClick, FormModal } = useFormModal();
+
+  const doctor = DoctorsData.Proctology["Dr. Rajasekhar"];
+
+  const doctorInfo = {
+    image: doctor.url,
+    name: doctor.name,
+    qualifications: doctor.qualification,
+    designation: doctor.designation,
+    experience: doctor.experience,
+    booklink: doctor.mobileNumberDoctor || "#",
+    highlights: doctor.highlights || [],
+  };
 
   return (
     <section className="w-full bg-white pt-4 pb-4 my-4">
@@ -86,6 +91,9 @@ export default function HeroSection({
           </div>
         </div>
       </div>
+
+      {/* Form Modal */}
+      {/* <FormModal /> */}
     </section>
   );
 }

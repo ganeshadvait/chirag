@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
+// import { useFormModal } from "@/hooks/useFormModal";
 import { contactAction } from "@/hooks/contact";
 
 export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
+  // const { handleButtonClick, FormModal } = useFormModal();
+
   return (
     <section className="px-0 md:p-6">
       <div className="w-full border border-blue-300 rounded-3xl bg-blue-50 flex flex-col md:flex-row items-center justify-between ">
@@ -35,6 +38,9 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
           )}
         </div>
       </div>
+
+      {/* Form Modal */}
+      {/* <FormModal /> */}
     </section>
   );
 }

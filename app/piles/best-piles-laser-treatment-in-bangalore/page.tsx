@@ -1,3 +1,4 @@
+// "use client";
 // File :  app/piles/best-piles-laser-treatment-in-bangalore/page.tsx
 // Server Component: static data and static sections render on the server
 // and ship no JS; only the interactive sections hydrate on the client.
@@ -501,6 +502,7 @@ const treatmentOptionsData = {
               style={{ maxWidth: "1500px", margin: "0 auto" }}
             >
               {/* Reviews only show at lg+, where this mobile form is hidden */}
+              {/* <Form reviewsData={testimonialSectionData} /> */}
               <Form />
             </div>
           </div>
