@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
+import Script from "next/script";
 
 const languages = [
   { code: "en", label: "English", native: "EN", script: "Aa" },
@@ -87,6 +88,9 @@ export default function FloatingLanguageSwitcher() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("en");
   const [mounted, setMounted] = useState(false);
+  // Google Translate's script only has work to do when the googtrans cookie
+  // asks for a non-English language, so English visitors skip loading it.
+  const [loadTranslate, setLoadTranslate] = useState(false);
   const ref = useRef(null);
 
   // On mount: restore the saved language. The googtrans cookie is what makes
@@ -101,8 +105,13 @@ export default function FloatingLanguageSwitcher() {
       setGoogTransCookie(saved);
       // Only reload if the cookie actually took — otherwise we'd loop forever.
       const now = document.cookie.match(/googtrans=\/[^/]*\/(\w+)/)?.[1] || "en";
-      if (now === saved) window.location.reload();
+      if (now === saved) {
+        window.location.reload();
+        return;
+      }
     }
+    const cookieLang = document.cookie.match(/googtrans=\/[^/]*\/(\w+)/)?.[1] || "en";
+    setLoadTranslate(cookieLang !== "en");
   }, []);
 
   // Close on outside tap/click (works on iOS with touchstart)
@@ -142,6 +151,13 @@ export default function FloatingLanguageSwitcher() {
     <div ref={ref} className="fixed bottom-7 left-7 z-[9999] font-[var(--font-dmsans)] max-md:bottom-[115px] max-md:left-4">
       {/* Hidden Google Translate element */}
       <div id="google_translate_element" className="hidden" />
+      {/* Moved here from app/layout.tsx; loads only when a translation is needed */}
+      {loadTranslate && (
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+      )}
 
       {/* ── Floating Button ── */}
       <button

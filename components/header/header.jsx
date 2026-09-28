@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import LoaderModal from "../LoaderModal";
+// import Link from "next/link";
+// import LoaderModal from "../LoaderModal";
 import Image from "next/image";
 
 // ─── Dynamic phone number config ────────────────────────────────
@@ -63,30 +63,39 @@ export default function Header({
     }
   };
 
-  const handleCTAclick = (ctaLabel) => {
-    console.log("CTA Clicked:", ctaLabel); // First confirmation
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "cta_click",
-      cta_label: ctaLabel,
-    });
-    console.log("DataLayer now:", window.dataLayer); // Second confirmation
-  };
-  const [showModal, setShowModal] = useState(false);
-  const [showFallback, setShowFallback] = useState(false);
-  const [serviceTitle, setServiceTitle] = useState("");
-  const [onClosee, setClosee] = useState(false);
-  const handleWhatsapp = (title) => {
-    alert("WhatsApp feature is coming soon!");
-  };
+  // const handleCTAclick = (ctaLabel) => {
+  //   console.log("CTA Clicked:", ctaLabel); // First confirmation
+  //   window.dataLayer = window.dataLayer || [];
+  //   window.dataLayer.push({
+  //     event: "cta_click",
+  //     cta_label: ctaLabel,
+  //   });
+  //   console.log("DataLayer now:", window.dataLayer); // Second confirmation
+  // };
+  // const [showModal, setShowModal] = useState(false);
+  // const [showFallback, setShowFallback] = useState(false);
+  // const [serviceTitle, setServiceTitle] = useState("");
+  // const [onClosee, setClosee] = useState(false);
+  // const handleWhatsapp = (title) => {
+  //   alert("WhatsApp feature is coming soon!");
+  // };
 
   return (
     <>
       <header className="header w-[96%] h-[90px] mx-auto my-2 flex items-center justify-between p-5 border border-[#ebeff6] bg-white sticky top-[10px] z-[1000] transition-all duration-300 ease-in-out max-w-[1500px] shadow-lg rounded-xl">
         <div className="flex gap-1 md:gap-4 items-center">
-          <img
+          {/* <img
             className="w-[100px] md:w-[140px] h-[80px] md:h-[100px] object-contain md:object-cover"
             src="https://www.chiragglobalhospitals.com/wp-content/uploads/2026/01/chirag-logo-2048x1170.png"
+          /> */}
+          {/* next/image serves a resized copy instead of the full 2048px PNG */}
+          <Image
+            className="w-[100px] md:w-[140px] h-[80px] md:h-[100px] object-contain md:object-cover"
+            src="https://www.chiragglobalhospitals.com/wp-content/uploads/2026/01/chirag-logo-2048x1170.png"
+            alt="Chirag Global Hospitals"
+            width={175}
+            height={100}
+            loading="eager"
           />
           <img
             className="logo-fade header__logotwo"
@@ -158,9 +167,11 @@ export default function Header({
           </span>
         </a>
 
-        {/* <!-- Desktop Link (> 760px) --> */}
+        {/* <!-- Desktop Link (> 760px) → WhatsApp --> */}
         <a
-          href={`tel:${phoneNumber}`}
+          href="https://wa.me/919380498256"
+          target="_blank"
+          rel="noopener noreferrer"
           className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"
         >
           <Image
@@ -182,7 +193,7 @@ export default function Header({
         </a>
       </div>
       </header>
-      {showModal && (
+      {/* {showModal && (
         <LoaderModal
           serviceTitle={serviceTitle}
           showFallback={showFallback}
@@ -190,7 +201,7 @@ export default function Header({
             setShowModal(false);
           }}
         />
-      )}
+      )} */}
     </>
   );
 }

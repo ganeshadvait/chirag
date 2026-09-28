@@ -1,5 +1,7 @@
-"use client";
+// "use client";
 // File :  app/piles/best-piles-laser-treatment-in-bangalore/page.tsx
+// Server Component: static data and static sections render on the server
+// and ship no JS; only the interactive sections hydrate on the client.
 import dynamic from "next/dynamic";
 import Header from "@/components/header/header";
 import Hero from "@/components/partials/hero/hero";
@@ -118,7 +120,7 @@ export default function PilesConditions() {
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
         experience: "38 Years",
         reviews: "99%",
-        img: "/doctorchiragcard.png",
+        img: "/doctorchiragcard.avif",
       },
       {
         name: "Dr. Shreedevi KN",
@@ -126,7 +128,7 @@ export default function PilesConditions() {
         qualification: "Head Colorectal Surgery & Proctology",
         experience: "12 Years",
         reviews: "99%",
-        img: "/doctorshreedevicard.png",
+        img: "/doctorshreedevicard.avif",
       },
       {
         name: "Dr. Padmanabh R Bhat",
@@ -134,7 +136,7 @@ export default function PilesConditions() {
         qualification: "General Surgeon",
         experience: "28 Years",
         reviews: "99%",
-        img: "/doctorpadmanabhcard.png",
+        img: "/doctorpadmanabhcard.avif",
       },
     ],
 
@@ -145,7 +147,7 @@ export default function PilesConditions() {
         qualification: "Colorectal Surgeon & Proctologist",
         experience: "4 Years",
         reviews: "99%",
-        img: "/doctorjyotsnacard.png",
+        img: "/doctorjyotsnacard.avif",
       },
     ],
 
@@ -499,7 +501,9 @@ const treatmentOptionsData = {
               className="block lg:hidden fixed bottom-0 left-0 w-full z-50 bg-transparent   px-4 py-1"
               style={{ maxWidth: "1500px", margin: "0 auto" }}
             >
-              <Form reviewsData={testimonialSectionData} />
+              {/* Reviews only show at lg+, where this mobile form is hidden */}
+              {/* <Form reviewsData={testimonialSectionData} /> */}
+              <Form />
             </div>
           </div>
         </div>

@@ -72,6 +72,8 @@ export default function WhyLaserBest({
                 <img
                   src={image}
                   alt={imageAlt}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>

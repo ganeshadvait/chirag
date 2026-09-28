@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useFormModal } from "@/hooks/useFormModal";
+// import { useFormModal } from "@/hooks/useFormModal";
 import { contactAction } from "@/hooks/contact";
 
 export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
-  const { handleButtonClick, FormModal } = useFormModal();
+  // const { handleButtonClick, FormModal } = useFormModal();
 
   return (
     <section className="px-0 md:p-6">
@@ -30,6 +30,7 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
                   src={imageSrc}
                   alt="Health CTA"
                   fill
+                  sizes="(max-width: 1500px) 25vw, 380px"
                   className="rounded-lg "
                 />
               </div>
@@ -39,7 +40,7 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
       </div>
 
       {/* Form Modal */}
-      <FormModal />
+      {/* <FormModal /> */}
     </section>
   );
 }

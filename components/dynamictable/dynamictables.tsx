@@ -23,6 +23,9 @@ export default function HospitalComparison({
   videoSrc,
 }: HospitalComparisonProps) {
   const [mounted, setMounted] = useState(false);
+  // The video source is attached only when the section is near the viewport,
+  // so the large video file doesn't download during initial page load.
+  const [inView, setInView] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -31,8 +34,25 @@ export default function HospitalComparison({
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || inView) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [mounted, videoSrc, inView]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !inView) return;
     video.muted = true;
+    video.load();
     const tryPlay = () => {
       const p = video.play();
       if (p && typeof p.catch === "function") p.catch(() => {});
@@ -40,7 +60,7 @@ export default function HospitalComparison({
     tryPlay();
     video.addEventListener("loadedmetadata", tryPlay);
     return () => video.removeEventListener("loadedmetadata", tryPlay);
-  }, [mounted, videoSrc]);
+  }, [mounted, videoSrc, inView]);
 
   if (!mounted) return null;
 
@@ -90,7 +110,7 @@ export default function HospitalComparison({
                 "x5-playsinline": "true",
               } as Record<string, string>)}
             >
-              <source src={videoSrc} type={videoType} />
+              {inView && <source src={videoSrc} type={videoType} />}
               Your browser does not support the video tag.
             </video>
           ) : null}

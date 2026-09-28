@@ -426,7 +426,7 @@ export default function PilesConditions() {
         qualification: "Founder and Senior Colorectal Surgeon",
         experience: "38 Years",
         reviews: "99%",
-        img: "/doctorchiragcard.png",
+        img: "/doctorchiragcard.avif",
       },
       {
         name: "Dr. Shreedevi KN",
@@ -434,7 +434,7 @@ export default function PilesConditions() {
         qualification: "Surgical Gastroenterologist and Colorectal surgeon",
         experience: "12 Years",
         reviews: "99%",
-        img: "/doctorshreedevicard.png",
+        img: "/doctorshreedevicard.avif",
       },
       {
         name: "Dr. Padmanabh R Bhat",
@@ -442,7 +442,7 @@ export default function PilesConditions() {
         qualification: "General Surgeon",
         experience: "28 Years",
         reviews: "99%",
-        img: "/doctorpadmanabhcard.png",
+        img: "/doctorpadmanabhcard.avif",
       },
     ],
 
@@ -453,7 +453,7 @@ export default function PilesConditions() {
         qualification: "General Surgeon",
         experience: "4 Years",
         reviews: "99%",
-        img: "/doctorjyotsnacard.png",
+        img: "/doctorjyotsnacard.avif",
       },
       {
         name: "Dr. Prithvija Chakravarthy",
@@ -461,7 +461,7 @@ export default function PilesConditions() {
         qualification: "Proctologist",
         experience: "10 Years",
         reviews: "99%",
-        img: "/doctorprithvicard.png",
+        img: "/doctorprithvicard.avif",
       },
       {
         name: "Dr. Suchitra N Adiga",
@@ -469,7 +469,7 @@ export default function PilesConditions() {
         qualification: "Proctologist",
         experience: "8 Years",
         reviews: "99%",
-        img: "/doctorsuchithracard.png",
+        img: "/doctorsuchithracard.avif",
       },
     ],
 

@@ -104,7 +104,7 @@ const risksOfDelayData = {
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
         experience: "38 Years",
         reviews: "99%",
-        img: "/doctorchiragcard.png",
+        img: "/doctorchiragcard.avif",
       },
       {
         name: "Dr. Shreedevi KN",
@@ -112,7 +112,7 @@ const risksOfDelayData = {
         qualification: "Head Colorectal Surgery & Proctology",
         experience: "12 Years",
         reviews: "99%",
-        img: "/doctorshreedevicard.png",
+        img: "/doctorshreedevicard.avif",
       },
       {
         name: "Dr. Padmanabh R Bhat",
@@ -120,7 +120,7 @@ const risksOfDelayData = {
         qualification: "General Surgeon",
         experience: "28 Years",
         reviews: "99%",
-        img: "/doctorpadmanabhcard.png",
+        img: "/doctorpadmanabhcard.avif",
       },
     ],
 
@@ -131,7 +131,7 @@ const risksOfDelayData = {
         qualification: "Colorectal Surgeon & Proctologist",
         experience: "4 Years",
         reviews: "99%",
-        img: "/doctorjyotsnacard.png",
+        img: "/doctorjyotsnacard.avif",
       },
     ],
 

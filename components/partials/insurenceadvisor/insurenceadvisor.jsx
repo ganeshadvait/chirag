@@ -1,10 +1,10 @@
 "use client";
-import { useFormModal } from "@/hooks/useFormModal";
+// import { useFormModal } from "@/hooks/useFormModal";
 import { usePathname } from "next/navigation";
 import { contactAction } from "@/hooks/contact";
 
 export default function InsuranceAdvisorSection({ cards }) {
-  const { handleButtonClick, FormModal } = useFormModal();
+  // const { handleButtonClick, FormModal } = useFormModal();
   const pathname = usePathname();
 
   // Pages that should use the alternate number
@@ -78,6 +78,8 @@ export default function InsuranceAdvisorSection({ cards }) {
                 <img
                   src={card.image}
                   alt={card.imageAlt || card.titleHighlight}
+                  loading="lazy"
+                  decoding="async"
                   className="mt-6 w-56 mx-auto"
                 />
               )}
@@ -93,7 +95,7 @@ export default function InsuranceAdvisorSection({ cards }) {
         ))}
       </div>
 
-      <FormModal />
+      {/* <FormModal /> */}
     </section>
   );
 }
