@@ -11,7 +11,7 @@ const doctors = [
     role: "Founder & Chief Proctologist",
     experience: "42+ Years",
     badge: "Founder",
-    image: "/doctorchiragcard.png",
+    image: "/doctorchiragcard.avif",
     whatsappText:
       "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Rajasekhar",
   },
@@ -20,7 +20,7 @@ const doctors = [
     qualification: "MBBS, MS, FSGE Surgical",
     role: "Gastroenterology & Colorectal Surgeon",
     experience: "12+ Years",
-    image: "/doctorshreedevicard.png",
+    image: "/doctorshreedevicard.avif",
     whatsappText:
       "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Shreedevi",
   },

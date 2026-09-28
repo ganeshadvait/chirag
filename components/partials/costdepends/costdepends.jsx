@@ -24,6 +24,8 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
                 <img
                   src={item.icon}
                   alt={item.titleBold}
+                  loading="lazy"
+                  decoding="async"
                   className="w-10 h-10 object-contain"
                 />
               </div>

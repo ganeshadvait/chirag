@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useFormModal } from "@/hooks/useFormModal";
 import { useState } from "react";
 import { contactAction } from "@/hooks/contact";
-import {
-  SUPPORT_PHONE_DEFAULT,
-  toTel,
-} from "@/constants/contact";
+import { useSupportPhone } from "@/hooks/useSupportPhone";
+import { toTel } from "@/constants/contact";
 
 export default function DoctorsSection({
   heading,
@@ -15,7 +12,7 @@ export default function DoctorsSection({
   moreDoctors,
   banner,
 }) {
-  const { handleButtonClick, FormModal, supportPhone } = useFormModal();
+  const supportPhone = useSupportPhone();
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -59,8 +56,6 @@ export default function DoctorsSection({
       )}
 
       <ConsultBanner {...banner} handleButtonClick={contactAction} />
-
-      <FormModal />
     </section>
   );
 }
@@ -76,6 +71,8 @@ function DoctorCard({ doctor, supportPhone }) {
           <img
             src={doctor.img}
             alt={doctor.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full rounded-xl object-cover object-top"
           />
         </div>

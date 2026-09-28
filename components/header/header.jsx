@@ -1,9 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import LoaderModal from "../LoaderModal";
 import Image from "next/image";
 
 // ─── Dynamic phone number config ────────────────────────────────
@@ -61,23 +58,6 @@ export default function Header({
         behavior: "smooth",
       });
     }
-  };
-
-  const handleCTAclick = (ctaLabel) => {
-    console.log("CTA Clicked:", ctaLabel); // First confirmation
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "cta_click",
-      cta_label: ctaLabel,
-    });
-    console.log("DataLayer now:", window.dataLayer); // Second confirmation
-  };
-  const [showModal, setShowModal] = useState(false);
-  const [showFallback, setShowFallback] = useState(false);
-  const [serviceTitle, setServiceTitle] = useState("");
-  const [onClosee, setClosee] = useState(false);
-  const handleWhatsapp = (title) => {
-    alert("WhatsApp feature is coming soon!");
   };
 
   return (
@@ -182,15 +162,6 @@ export default function Header({
         </a>
       </div>
       </header>
-      {showModal && (
-        <LoaderModal
-          serviceTitle={serviceTitle}
-          showFallback={showFallback}
-          onClose={() => {
-            setShowModal(false);
-          }}
-        />
-      )}
     </>
   );
 }

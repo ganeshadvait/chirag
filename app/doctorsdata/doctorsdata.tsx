@@ -66,7 +66,7 @@ const DoctorsData: DoctorsDataType = {
       mobileNumberDoctor: "tel:9380498256",
     },
     "Dr. Rajasekhar": {
-      url: "/chiragheroimage.png",
+      url: "/doctorchiragcard.avif",
       name: "Dr. Rajasekhar",
       qualification: "MBBS, MS, FMAS, FISCP, DMAS",
       designation: "Senior Colorectal Surgeon",

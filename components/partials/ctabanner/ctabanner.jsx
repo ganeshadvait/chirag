@@ -1,11 +1,7 @@
-"use client";
 import Image from "next/image";
-import { useFormModal } from "@/hooks/useFormModal";
-import { contactAction } from "@/hooks/contact";
+import ContactButton from "@/components/partials/contactbutton/contactbutton";
 
 export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
-  const { handleButtonClick, FormModal } = useFormModal();
-
   return (
     <section className="px-0 md:p-6">
       <div className="w-full border border-blue-300 rounded-3xl bg-blue-50 flex flex-col md:flex-row items-center justify-between ">
@@ -14,12 +10,9 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
           <div className="flex flex-col items-start gap-4 w-full md:basis-7/10 p-6 md:p-8">
             <h2 className="text-[32px] font-bold text-gray-900">{heading}</h2>
 
-            <button
-              onClick={contactAction}
-              className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
-            >
+            <ContactButton className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4">
               {buttonText}
-            </button>
+            </ContactButton>
           </div>
 
           {/* Right Section */}
@@ -30,6 +23,7 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
                   src={imageSrc}
                   alt="Health CTA"
                   fill
+                  sizes="(max-width: 1500px) 25vw, 380px"
                   className="rounded-lg "
                 />
               </div>
@@ -37,9 +31,6 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
           )}
         </div>
       </div>
-
-      {/* Form Modal */}
-      <FormModal />
     </section>
   );
 }

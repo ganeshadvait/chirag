@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const DEFAULT_RISKS = [
   {
     title: "Worsening incontinence:",
@@ -39,10 +41,12 @@ export default function RisksOfDelayPediatric({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
           {/* LEFT: Image */}
           <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-            <div className="w-full max-w-[460px] aspect-[4/3] rounded-2xl overflow-hidden flex items-center justify-center">
-              <img
+            <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-2xl overflow-hidden flex items-center justify-center">
+              <Image
                 src={image}
                 alt={imageAlt}
+                fill
+                sizes="(max-width: 500px) 100vw, 460px"
                 className="w-full h-full object-cover rounded-2xl"
               />
             </div>

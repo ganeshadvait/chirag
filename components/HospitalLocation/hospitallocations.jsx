@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import Image from "next/image";
 

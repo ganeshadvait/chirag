@@ -374,7 +374,7 @@ export default function PilesConditions() {
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
         experience: "38 Years",
         reviews: "99%",
-        img: "/doctorchiragcard.png",
+        img: "/doctorchiragcard.avif",
       },
       {
         name: "Dr. Shreedevi KN",
@@ -382,7 +382,7 @@ export default function PilesConditions() {
         qualification: "Head Colorectal Surgery & Proctology",
         experience: "12 Years",
         reviews: "99%",
-        img: "/doctorshreedevicard.png",
+        img: "/doctorshreedevicard.avif",
       },
       {
         name: "Dr. Padmanabh R Bhat",
@@ -390,7 +390,7 @@ export default function PilesConditions() {
         qualification: "General Surgeon",
         experience: "28 Years",
         reviews: "99%",
-        img: "/doctorpadmanabhcard.png",
+        img: "/doctorpadmanabhcard.avif",
       },
     ],
 
@@ -401,7 +401,7 @@ export default function PilesConditions() {
         qualification: "Colorectal Surgeon & Proctologist",
         experience: "4 Years",
         reviews: "99%",
-        img: "/doctorjyotsnacard.png",
+        img: "/doctorjyotsnacard.avif",
       },
     ],
 

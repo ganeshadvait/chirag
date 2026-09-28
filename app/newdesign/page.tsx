@@ -272,7 +272,7 @@ export default function NewDesign() {
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
         experience: "12 Years",
         reviews: "99%",
-        img: "/doctorchiragcard.png",
+        img: "/doctorchiragcard.avif",
       },
       {
         name: "Dr. Shreedevi KN",
@@ -280,7 +280,7 @@ export default function NewDesign() {
         qualification: "Head Colorectal Surgery & Proctology",
         experience: "12 Years",
         reviews: "99%",
-        img: "/doctorshreedevicard.png",
+        img: "/doctorshreedevicard.avif",
       },
       {
         name: "Dr. Prithvija Chakravarthy",
@@ -288,7 +288,7 @@ export default function NewDesign() {
         qualification: "Proctologist",
         experience: "10 Years",
         reviews: "99%",
-        img: "/doctorprithvicard.png",
+        img: "/doctorprithvicard.avif",
       },
     ],
 
@@ -299,7 +299,7 @@ export default function NewDesign() {
         qualification: "Proctologist",
         experience: "8 Years",
         reviews: "99%",
-        img: "/doctorsuchithracard.png",
+        img: "/doctorsuchithracard.avif",
       },
       {
         name: "Dr.Jyotsna Vemulapalli",
@@ -307,7 +307,7 @@ export default function NewDesign() {
         qualification: "General Surgeon",
         experience: "4 Years",
         reviews: "99%",
-        img: "/doctorjyotsnacard.png",
+        img: "/doctorjyotsnacard.avif",
       },
       {
         name: "Dr. Padmanabh R Bhat",
@@ -315,7 +315,7 @@ export default function NewDesign() {
         qualification: "General Surgeon",
         experience: "28 Years",
         reviews: "99%",
-        img: "/doctorpadmanabhcard.png",
+        img: "/doctorpadmanabhcard.avif",
       },
     ],
 

@@ -1,9 +1,15 @@
-"use client";
-
 import Image from "next/image";
-import { useFormModal } from "@/hooks/useFormModal";
 import DoctorsData from "@/app/doctorsdata/doctorsdata";
-import { contactAction } from "@/hooks/contact";
+import ContactButton from "@/components/partials/contactbutton/contactbutton";
+
+const doctor = DoctorsData.Proctology["Dr. Rajasekhar"];
+
+const doctorInfo = {
+  name: doctor.name,
+  qualifications: doctor.qualification,
+  designation: doctor.designation,
+  experience: doctor.experience,
+};
 
 export default function HeroSection({
   heading,
@@ -12,19 +18,6 @@ export default function HeroSection({
   buttonText,
   imageSrc,
 }) {
-  const { handleButtonClick, FormModal } = useFormModal();
-
-  const doctor = DoctorsData.Proctology["Dr. Rajasekhar"];
-
-  const doctorInfo = {
-    image: doctor.url,
-    name: doctor.name,
-    qualifications: doctor.qualification,
-    designation: doctor.designation,
-    experience: doctor.experience,
-    booklink: doctor.mobileNumberDoctor || "#",
-    highlights: doctor.highlights || [],
-  };
 
   return (
     <section className="w-full bg-white pt-4 pb-4 my-4">
@@ -59,12 +52,9 @@ export default function HeroSection({
             })}
           </ul>
 
-          <button
-            onClick={contactAction}
-            className="mt-6 md:mt-8 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-6 md:px-8 py-3 text-base md:text-lg"
-          >
+          <ContactButton className="mt-6 md:mt-8 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-6 md:px-8 py-3 text-base md:text-lg">
             {buttonText}
-          </button>
+          </ContactButton>
         </div>
 
         {/* RIGHT IMAGE */}
@@ -75,6 +65,7 @@ export default function HeroSection({
                 src={imageSrc}
                 alt={heading}
                 fill
+                preload
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 32rem, 28rem"
                 className="object-cover"
               />
@@ -90,9 +81,6 @@ export default function HeroSection({
           </div>
         </div>
       </div>
-
-      {/* Form Modal */}
-      <FormModal />
     </section>
   );
 }
