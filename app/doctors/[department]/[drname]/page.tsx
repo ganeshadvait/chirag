@@ -343,7 +343,7 @@ export default async function DoctorProfile({ params }: Props) {
       {
         name: "Dr.Jyotsna Vemulapalli",
         designation: "MBBS, MS(Gen Surgery)",
-        qualification: "General Surgeon",
+        qualification: "Colorectal Surgeon & Proctologist",
         experience: "4 Years",
         reviews: "99%",
         img: "/doctorjyotsnacard.avif",

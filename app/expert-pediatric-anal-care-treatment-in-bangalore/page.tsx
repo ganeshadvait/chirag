@@ -439,7 +439,7 @@ export default function PilesConditions() {
       {
         name: "Dr. Padmanabh R Bhat",
         designation: "MBBS, MS(Gen Surgery),FRCS(Edin)",
-        qualification: "General Surgeon",
+        qualification: "Colorectal Surgeon & Proctologist",
         experience: "28 Years",
         reviews: "99%",
         img: "/doctorpadmanabhcard.avif",
