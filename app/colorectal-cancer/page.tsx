@@ -427,31 +427,31 @@ export default function PilesConditions() {
     testimonials: [
       {
         // title: "Laser treatment for my dad's piles",
-        text: "Dr Rajshekhar is a specialist in colorectal cancer. He explained my condition clearly and discussed the treatment options in simple language. I felt comfortable asking questions and was satisfied with the care.",
+        text: "Dr.Rajasekhar is a specialist in colorectal cancer. He explained my condition clearly and discussed the treatment options in simple language. I felt comfortable asking questions and was satisfied with the care.",
         name: "Abddul",
         rating: 5,
       },
       {
         // title: "Smooth and painless",
-        text: "I consulted Dr Rajshekhar for colorectal cancer treatment. He reviewed my reports carefully and suggested the right treatment plan. He is calm, patient, and supportive.",
+        text: "I consulted Dr.Rajasekhar for colorectal cancer treatment. He reviewed my reports carefully and suggested the right treatment plan. He is calm, patient, and supportive.",
         name: "Sai",
         rating: 5,
       },
       {
         // title: "Colorectal Diseases",
-        text: "Dr Rajshekhar handled my colorectal cancer surgery. The procedure went well, and he monitored my recovery closely. I am thankful for his guidance during the treatment.",
+        text: "Dr.Rajasekhar handled my colorectal cancer surgery. The procedure went well, and he monitored my recovery closely. I am thankful for his guidance during the treatment.",
         name: "Kasireddy",
         rating: 5,
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "We met Dr Rajshekhar after my diagnosis of colorectal cancer. He explained the stage of the disease and what steps were needed next. The overall treatment process was smooth.",
+        text: "We met Dr.Rajasekhar after my diagnosis of colorectal cancer. He explained the stage of the disease and what steps were needed next. The overall treatment process was smooth.",
         name: "Syam",
         rating: 5,
       },
       {
         // title: "Admitted for my fistula surgery",
-        text: "Dr Rajshekhar is experienced in treating colorectal cancer. He answers questions clearly and makes sure the patient understands the treatment plan. I would recommend him for colorectal cancer care.",
+        text: "Dr.Rajasekhar is experienced in treating colorectal cancer. He answers questions clearly and makes sure the patient understands the treatment plan. I would recommend him for colorectal cancer care.",
         name: "Priyank",
         rating: 5,
       },

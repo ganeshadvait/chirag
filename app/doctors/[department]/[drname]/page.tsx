@@ -387,13 +387,13 @@ export default async function DoctorProfile({ params }: Props) {
   const rajasekharTestimonials = [
     {
       title: "",
-      text: "This Hospital is one of the best hospitals in the world in terms of skill set mainly for fissure, fistula and for piles issue. Please don’t go by infrastructure and ambience.. Dr Rajshekhar is such a gem of the hospital, 70% recovery happens just by talking and interacting with him. Overall it’s a good systemic and highly skilled hospital which takes care even the post surgery recovery.. And the procedure is not really painful through laser…",
+      text: "This Hospital is one of the best hospitals in the world in terms of skill set mainly for fissure, fistula and for piles issue. Please don’t go by infrastructure and ambience. Dr.Rajasekhar is such a gem of the hospital, 70% recovery happens just by talking and interacting with him. Overall it’s a good systemic and highly skilled hospital which takes care even the post surgery recovery.. And the procedure is not really painful through laser…",
       name: "NEERAJ ARORA",
       rating: 5,
     },
     {
       title: "",
-      text: "Dr Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
+      text: "Dr.Rajasekhar and his staff are amazing. They are friendly, attentive, caring, patient and helpful. I’ve had a multitude of piles surgery have been done by Dr.Rajasekhar & Dr. Pruthvija and his staff. When I called with concerns about the hospital’s billing system, they made sure it was smooth and quick. I would highly recommend chirag hospital for piles laser treatment.",
       name: "Abdul Khader",
       rating: 5,
     },
@@ -411,7 +411,7 @@ export default async function DoctorProfile({ params }: Props) {
     },
     {
       title: "",
-      text: "Dr Rajasekar is one of the best doctor and a very nice person. We have till date had best experience with him and chirag hospital. He makes the patient and family feel so comfortable despite of the complex situation whatsoever. Dr. Rajasekhar has treated two of my family members for piles problems. A year before to my father-in-Law and recent one to my sister-in-law for piles both of them recovered fast and doing good. Such is the confidence we have built with Dr. Rajasekhar sir. These days we even visit him for second opinion on any health-related issues. Best doctor and best service. The best part of chirag hospital is that they will not push the patient to get surgery. They will try their best in treatment without any surgery. I like their approach very much and i strongly suggest for any one suffering with piles to visit chirag hospital to get treatment for piles without any surgery. Thank you Sir!!",
+      text: "Dr.Rajasekar is one of the best doctor and a very nice person. We have till date had best experience with him and chirag hospital. He makes the patient and family feel so comfortable despite of the complex situation whatsoever. Dr. Rajasekhar has treated two of my family members for piles problems. A year before to my father-in-Law and recent one to my sister-in-law for piles both of them recovered fast and doing good. Such is the confidence we have built with Dr. Rajasekhar sir. These days we even visit him for second opinion on any health-related issues. Best doctor and best service. The best part of chirag hospital is that they will not push the patient to get surgery. They will try their best in treatment without any surgery. I like their approach very much and i strongly suggest for any one suffering with piles to visit chirag hospital to get treatment for piles without any surgery. Thank you Sir!!",
       name: "Anji Yadav",
       rating: 4.8,
     },
