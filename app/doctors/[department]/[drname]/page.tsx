@@ -213,8 +213,8 @@ export default async function DoctorProfile({ params }: Props) {
         alt: "Anal Fissure",
         label: "Anal Fissure",
       },
-      { src: "/pilonidalsinus.svg", alt: "pilonidalsinus", label: "pilonidalsinus" },
-      { src: "/rectal prolaps.svg", alt: "rectal prolaps", label: "rectal prolaps" },
+      { src: "/pilonidalsinus.svg", alt: "pilonidal sinus", label: "Pilonidal Sinus" },
+      { src: "/rectal prolaps.svg", alt: "rectal prolaps", label: "Rectal Prolaps" },
       {
         src: "/proctitis.svg",
         alt: "proctitis",
