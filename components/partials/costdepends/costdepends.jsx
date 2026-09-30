@@ -1,10 +1,7 @@
 "use client";
+import ContactCta from "@/components/ContactCta";
 
 export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
-  // Always open WhatsApp
-  const handleButtonClick = () => {
-    window.open("https://wa.me/919380498256", "_blank");
-  };
 
   return (
     <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-6">
@@ -41,12 +38,11 @@ export default function TreatmentCostDependsOn({ heading, items, ctaText }) {
         </div>
 
         {/* CTA */}
-        <button
-          onClick={handleButtonClick}
+        <ContactCta
           className="mt-6 w-full bg-[#17a388] text-white font-semibold rounded-full py-3.5 flex items-center justify-center gap-2 text-lg hover:bg-emerald-700 transition"
         >
           <span>{ctaText}</span>
-        </button>
+        </ContactCta>
       </div>
 
     </section>

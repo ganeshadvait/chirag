@@ -350,7 +350,7 @@ export default function PilesConditions() {
       "A trusted, child-friendly colorectal team dedicated to the unique needs of pediatric patients.",
     features: [
       {
-        title: "38+ Years of Colorectal Expertise",
+        title: "30+ Years of Colorectal Expertise",
         description:
           "Led by Dr. Rajasekhar M R, our senior colorectal team brings decades of experience in treating complex pediatric anorectal conditions with a child-first philosophy.",
       },
@@ -424,7 +424,7 @@ export default function PilesConditions() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS General Surgeon",
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },
@@ -614,7 +614,7 @@ export default function PilesConditions() {
     {
       faqTitle: "Why is Chirag Hospitals trusted for pediatric anal care?",
       faqAnswer:
-        "Chirag Global Hospitals brings 38+ years of colorectal expertise, 180K+ successfully treated patients, a child-friendly treatment environment, and a conservative-first philosophy that prioritizes your child's comfort. Our team of specialized colorectal surgeons ensures the highest standard of care for pediatric patients.",
+        "Chirag Global Hospitals brings 30+ years of colorectal expertise, 180K+ successfully treated patients, a child-friendly treatment environment, and a conservative-first philosophy that prioritizes your child's comfort. Our team of specialized colorectal surgeons ensures the highest standard of care for pediatric patients.",
     },
   ];
 

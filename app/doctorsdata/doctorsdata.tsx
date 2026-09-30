@@ -22,13 +22,13 @@ const DoctorsData: DoctorsDataType = {
       url: "/chiragheroimage.png",
       name: "Dr. Rajasekhar M R",
       qualification: "MBBS, MS General Surgeon",
-      experience: "38 years",
+      experience: "30+ years",
       designation: "Chairman, Chief Colorectal Surgeon & Proctologist",
       description:
-        "Dr. Rajasekhar is one of Bangalore’s most respected and experienced colorectal surgeons, with over 38 years of clinical excellence. He is widely known for his expertise in the comprehensive management of colorectal and anorectal conditions, including piles, fissures, fistula, and other bowel disorders.",
+        "Dr. Rajasekhar is one of Bangalore’s most respected and experienced colorectal surgeons, with over 30+ years of clinical excellence. He is widely known for his expertise in the comprehensive management of colorectal and anorectal conditions, including piles, fissures, fistula, and other bowel disorders.",
       mobileNumberDoctor: "tel:9380498256",
       highlights: [
-        "Senior colorectal surgeon with 38 years of experience",
+        "Senior colorectal surgeon with 30+ years of experience",
         "Comprehensive care for complex anorectal conditions",
         "Advanced laser & minimally invasive procedures",
         "Emphasis on accurate diagnosis and faster recovery",
@@ -70,7 +70,7 @@ const DoctorsData: DoctorsDataType = {
       name: "Dr. Rajasekhar",
       qualification: "MBBS, MS, FMAS, FISCP, DMAS",
       designation: "Senior Colorectal Surgeon",
-      experience: "Experience: 38 years",
+      experience: "Experience: 30+ years",
       description:
         "Dr. Rajasekhar is a skilled Proctologist and Laparoscopic Surgeon experienced in treating colorectal and anorectal conditions. Trained at Osmania Hospital, he worked with top surgeons in India. He treated 5,000+ patients with 99% success and holds fellowships in FMAS, Colorectal, and MIS.",
       mobileNumberDoctor: "tel:9380498256",

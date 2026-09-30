@@ -112,7 +112,7 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916415";
+  const defaultPhone = "08065916418";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
@@ -352,7 +352,7 @@ export default function PilesConditions() {
       "Bangalore's most experienced colorectal team for complex rectal prolapse management.",
     features: [
       {
-        title: "38+ Years of Colorectal Expertise",
+        title: "30+ Years of Colorectal Expertise",
         description:
           "Dr. Rajasekhar M R and team have extensive experience in all surgical approaches for rectal prolapse, from laparoscopic rectopexy to perineal procedures.",
       },
@@ -426,7 +426,7 @@ export default function PilesConditions() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS General Surgeon",
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },
@@ -616,7 +616,7 @@ export default function PilesConditions() {
     {
       faqTitle: "How much does rectal prolapse treatment cost at Chirag Hospitals?",
       faqAnswer:
-        "Treatment costs depend on the procedure type and complexity. Interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916415 for a detailed cost estimate based on your specific condition.",
+        "Treatment costs depend on the procedure type and complexity. Interest-free EMI options through GMoney, and transparent pricing. Contact our health advisors at 08065916418 for a detailed cost estimate based on your specific condition.",
     },
   ];
 

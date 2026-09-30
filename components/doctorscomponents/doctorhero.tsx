@@ -4,7 +4,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
-import { contactAction } from "@/hooks/contact";
+import ContactCta from "@/components/ContactCta";
 
 export interface DoctorInfo {
   image?: string;
@@ -86,12 +86,9 @@ export default function Doctordetailspagehero({
                 <Icon icon="lucide:briefcase" className="w-5 h-5" />
                 <span>Experience: {merged.experience || "N/A"}</span>
               </div>
-              <button
-                className="w-full h-[45px] text-white rounded-full mb-2 bg-[#F8B956]"
-                onClick={contactAction}
-              >
+              <ContactCta className="w-full h-[45px] text-white rounded-full mb-2 bg-[#F8B956] flex items-center justify-center">
                 Book Appointment
-              </button>
+              </ContactCta>
               {/* <div className="flex items-center justify-center gap-2 text-sm">
                 <span className="text-gray-700">
                   {merged.insurance || "Have Insurance?"}

@@ -54,7 +54,7 @@ export default function MtDoctorsStrip() {
           </h2>
 
           <p className="mt-3 text-sm leading-7 text-[#5A7078] sm:text-base">
-            Led by Dr. Rajasekhar Mysore — 38+ years, 180k+ Patients Treated.
+            Led by Dr. Rajasekhar Mysore — 30+ years, 180k+ Patients Treated.
             You&apos;ll be treated by the specialist, not handed off to a
             junior.
           </p>

@@ -274,7 +274,7 @@ export default function PilesConditions() {
       {
         title: "Advanced Surgical Techniques",
         description:
-          "At Chirag Hospitals, we offer the most effective and advanced procedures for fistula treatment, including LIFT (Low Interventional Fistula Treatment), VAAFT (Video Assisted Anal Fistula Treatment).",
+          "At Chirag Hospitals, we offer the most effective and advanced procedures for fistula treatment, including LIFT (Ligation of Intersphincteric Fistula Tract), VAAFT (Video Assisted Anal Fistula Treatment).",
       },
       {
         title: "Comprehensive Diagnostic Tools",
@@ -391,7 +391,7 @@ export default function PilesConditions() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS General Surgeon",
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },
@@ -605,7 +605,7 @@ export default function PilesConditions() {
     {
       faqTitle: "Is the doctor experienced in treating fistula?",
       faqAnswer:
-        "Yes, our team includes Dr. Rajasekhar M R with 38 years of colorectal surgery experience, supported by highly trained colorectal specialists. All treatments are provided by board-certified surgeons with extensive fistula management expertise and proven track records.",
+        "Yes, our team includes Dr. Rajasekhar M R with 30+ years of colorectal surgery experience, supported by highly trained colorectal specialists. All treatments are provided by board-certified surgeons with extensive fistula management expertise and proven track records.",
     },
     {
       faqTitle: "How much does fistula treatment cost at Chirag Hospitals?",

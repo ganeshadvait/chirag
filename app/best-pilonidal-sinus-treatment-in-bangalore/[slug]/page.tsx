@@ -262,7 +262,7 @@ export default function PilesConditions() {
       "Bangalore's most experienced colorectal team for modern, laser-based pilonidal sinus care.",
     features: [
       {
-        title: "38+ Years of Colorectal Expertise",
+        title: "30+ Years of Colorectal Expertise",
         description:
           "Dr. Rajasekhar M R and our senior colorectal team have decades of experience in all pilonidal techniques — from laser (SiLaC / FiLaC) to advanced flap reconstruction.",
       },
@@ -391,7 +391,7 @@ export default function PilesConditions() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },

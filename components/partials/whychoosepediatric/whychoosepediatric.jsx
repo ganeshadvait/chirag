@@ -1,6 +1,6 @@
 const DEFAULT_FEATURES = [
   {
-    title: "38+ Years of Colorectal Expertise",
+    title: "30+ Years of Colorectal Expertise",
     description:
       "Dr. Rajasekhar M R and team have extensive experience in all surgical approaches for rectal prolapse, from laparoscopic rectopexy to perineal procedures.",
   },

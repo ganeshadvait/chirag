@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useFormModal } from "@/hooks/useFormModal";
+import ContactCta from "@/components/ContactCta";
 export default function Cost({ title, points, buttonText, imageSrc }) {
-  const { handleButtonClick, FormModal } = useFormModal();
   return (
     <div className="w-full bg-teal-50 rounded-2xl p-6 md:p-10">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -20,14 +19,12 @@ export default function Cost({ title, points, buttonText, imageSrc }) {
             </ul>
           </div>
 
-          <button
-            onClick={handleButtonClick}
-            className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+          <ContactCta
+            className="inline-block mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-teal-600 transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
           >
             {buttonText}
-          </button>
+          </ContactCta>
         </div>
-        <FormModal />
         {/* Right Section */}
         {imageSrc && (
           <div className="hidden md:block w-full max-w-md rounded-2xl p-2 text-center">

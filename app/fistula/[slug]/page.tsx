@@ -156,7 +156,7 @@ export default function FistualConditions() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS General Surgeon",
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },

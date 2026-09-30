@@ -229,7 +229,7 @@ export default function PilesConditions() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },

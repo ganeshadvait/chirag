@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title:
     "Chirag Global Hospitals – Best Colon & Colorectal Care for Piles, Fistula & Colon Cancer",
   description:
-    "Chirag Global Hospitals offers 38 years of expert Colorectal care for piles, fistula, fissure, constipation and colon/rectal disorders. Advanced laser treatments, experienced surgeons and personalized care ensure effective & affordable solutions.",
+    "Chirag Global Hospitals offers 30+ years of expert Colorectal care for piles, fistula, fissure, constipation and colon/rectal disorders. Advanced laser treatments, experienced surgeons and personalized care ensure effective & affordable solutions.",
 };
 
 export default function RootLayout({
