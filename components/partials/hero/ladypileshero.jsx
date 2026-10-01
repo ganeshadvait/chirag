@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useFormModal } from "@/hooks/useFormModal";
-import { contactAction } from "@/hooks/contact";
+import ContactCta from "@/components/ContactCta";
 
 export default function LadyHeroSection({
   heading,
@@ -38,12 +38,11 @@ export default function LadyHeroSection({
             ))}
           </ul>
 
-          <button
-            onClick={contactAction}
-            className="mt-6 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-8 py-3 text-lg"
+          <ContactCta
+            className="inline-block mt-6 bg-[#F8B956] hover:bg-transparent transition text-white hover:text-black border-2 border-transparent hover:border-[#F8B956] font-semibold rounded-full px-8 py-3 text-lg"
           >
             {buttonText}
-          </button>
+          </ContactCta>
         </div>
 
         {/* RIGHT IMAGE */}

@@ -187,7 +187,7 @@ export default function PilesConditions() {
         name: "Dr. Rajasekhar M R",
         designation: "MBBS, MS General Surgeon",
         qualification: "Chairman, Chief Colorectal Surgeon & Proctologist",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },
@@ -202,7 +202,7 @@ export default function PilesConditions() {
       {
         name: "Dr. Padmanabh R Bhat",
         designation: "MBBS MS General Surgery",
-        qualification: "Colorectal Surgeon & Proctologist",
+        qualification: "General Surgeon",
         experience: "28 Years",
         reviews: "99%",
         img: "/doctorpadmanabhcard.avif",

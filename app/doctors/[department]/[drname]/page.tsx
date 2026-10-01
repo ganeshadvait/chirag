@@ -314,9 +314,9 @@ export default async function DoctorProfile({ params }: Props) {
     topDoctors: [
       {
         name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
+        designation: "MBBS, MS General Surgeon",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },
@@ -371,7 +371,7 @@ export default async function DoctorProfile({ params }: Props) {
       points:
         details.name === "Dr. Shreedevi KN"
           ? [
-              "Expert colorectal surgeon with 12+ years of experience",
+              "Expert colorectal surgeon with 12 years of experience",
               "Advanced laser and minimally invasive procedures",
               "Consistent treatment outcomes and patient satisfaction",
             ]

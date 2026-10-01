@@ -1,13 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useFormModal } from "@/hooks/useFormModal";
 import { useState } from "react";
-import { contactAction } from "@/hooks/contact";
-import {
-  // SUPPORT_PHONE_DEFAULT,
-  toTel,
-} from "@/constants/contact";
+import ContactCta from "@/components/ContactCta";
 
 export default function DoctorsSection({
   heading,
@@ -15,8 +10,6 @@ export default function DoctorsSection({
   moreDoctors,
   banner,
 }) {
-  // const { handleButtonClick, FormModal, supportPhone } = useFormModal();
-  const { supportPhone } = useFormModal();
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -30,7 +23,7 @@ export default function DoctorsSection({
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5 items-stretch">
         {/* Top Doctors */}
         {topDoctors.map((doc, idx) => (
-          <DoctorCard key={`top-${idx}`} doctor={doc} supportPhone={supportPhone} />
+          <DoctorCard key={`top-${idx}`} doctor={doc} />
         ))}
 
         {/* More Doctors
@@ -41,7 +34,7 @@ export default function DoctorsSection({
             key={`more-${idx}`}
             className={`${showMore ? "block" : "hidden"} sm:block h-full`}
           >
-            <DoctorCard doctor={doc} supportPhone={supportPhone} />
+            <DoctorCard doctor={doc} />
           </div>
         ))}
       </div>
@@ -59,26 +52,16 @@ export default function DoctorsSection({
         </div>
       )}
 
-      <ConsultBanner {...banner} handleButtonClick={contactAction} />
+      <ConsultBanner {...banner} />
 
       {/* <FormModal /> */}
     </section>
   );
 }
 
-/* Mobile keeps the tel: link (call); desktop opens WhatsApp instead.
-   Same device check as contactAction. */
-function openWhatsAppOnDesktop(e) {
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  if (!isMobile) {
-    e.preventDefault();
-    window.open("https://wa.me/919380498256", "_blank");
-  }
-}
-
 /* ===================== Doctor Card (OLD UI + FULL HEIGHT IMAGE) ===================== */
 
-function DoctorCard({ doctor, supportPhone }) {
+function DoctorCard({ doctor }) {
   return (
     <div className="bg-white rounded-2xl shadow-md px-3 sm:px-4 py-4 h-full">
       <div className="flex gap-3 xl:gap-4 items-stretch h-full">
@@ -115,16 +98,14 @@ function DoctorCard({ doctor, supportPhone }) {
           </div>
 
           {/* CTA – never wider than the card */}
-          <a
-            href={toTel(supportPhone)}
-            onClick={openWhatsAppOnDesktop}
+          <ContactCta
             className="mt-3 block w-full max-w-[180px] text-center
     border-2 border-[#625587] text-[#625587]
     rounded-full px-2 py-2 text-[12px] xl:text-[13px] font-medium
     hover:bg-[#625587] hover:text-white transition"
           >
             Book Appointment
-          </a>
+          </ContactCta>
         </div>
       </div>
     </div>
@@ -138,7 +119,6 @@ function ConsultBanner({
   points = [],
   buttonText = "",
   imageSrc = "",
-  handleButtonClick,
 }) {
   return (
     <div className="w-full bg-[#9e8dce] rounded-2xl my-6 overflow-hidden">
@@ -155,13 +135,12 @@ function ConsultBanner({
             ))}
           </ul>
 
-          <button
-            onClick={handleButtonClick}
-            className="rounded-full bg-[#f8b956] px-6 md:px-8 py-3 md:py-4 text-sm font-medium text-white
+          <ContactCta
+            className="inline-block rounded-full bg-[#f8b956] px-6 md:px-8 py-3 md:py-4 text-sm font-medium text-white
             hover:bg-[#e0a644] transition"
           >
             {buttonText}
-          </button>
+          </ContactCta>
         </div>
 
         {/* RIGHT IMAGE */}

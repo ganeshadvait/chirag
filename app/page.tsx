@@ -27,7 +27,7 @@ export default function NewDesign() {
   const HeroData = {
     heading: "Top Colorectal Hospital in Bangalore",
     points: [
-      "38 Years of Specialized Experience",
+      "30+ Years of Specialized Experience",
       "99.5% Success Rate in Anorectal Treatments",
       "Advanced Laser & Minimally Invasive Procedures",
       "Personalized, Patient-First Care",
@@ -89,9 +89,9 @@ export default function NewDesign() {
     topDoctors: [
       {
         name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
+        designation: "MBBS, MS General Surgeon",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },
@@ -205,7 +205,7 @@ export default function NewDesign() {
   const whyChooseData = {
     heading: "Why Choose Chirag Global Hospitals",
     points: [
-      "38 years of expertise in colorectal, anorectal, and digestive disorders",
+      "30+ years of expertise in colorectal, anorectal, and digestive disorders",
       "99.5% success rate in piles, fissure, fistula, and complex cases",
       "Laser & minimally invasive treatments for faster recovery and less pain",
       "Minimal Waiting Time for Consultations",
@@ -219,7 +219,7 @@ export default function NewDesign() {
     title: "Why choose a specialist",
     description: (
       <>
-        Led by Dr. Rajasekhar Mysore (38 yrs experience), Chirag Global
+        Led by Dr. Rajasekhar Mysore (30+ yrs experience), Chirag Global
         Hospitals is one of Bangalore’s top colon care centers, offering safe,
         effective, and affordable treatment.
       </>
@@ -273,7 +273,7 @@ export default function NewDesign() {
       faqTitle:
         "Why is Chirag Global Hospitals considered one of the best hospitals in Bangalore?",
       faqAnswer:
-        "Because of its 38 years of expertise, 99.5% success rate, advanced technology, and strong patient trust.",
+        "Because of its 30+ years of expertise, 99.5% success rate, advanced technology, and strong patient trust.",
     },
     {
       faqTitle: "What conditions are treated at Chirag Global Hospitals?",

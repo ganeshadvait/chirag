@@ -227,9 +227,9 @@ export default function PilesConditions() {
     topDoctors: [
       {
         name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
+        designation: "MBBS, MS General Surgeon",
         qualification: "Founder and Senior Colorectal Surgeon",
-        experience: "38 Years",
+        experience: "30+ Years",
         reviews: "99%",
         img: "/doctorchiragcard.avif",
       },

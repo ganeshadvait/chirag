@@ -5,26 +5,8 @@ import { usePathname } from "next/navigation";
 // import Link from "next/link";
 // import LoaderModal from "../LoaderModal";
 import Image from "next/image";
+import { WHATSAPP_URL, getPhoneForPath } from "@/constants/contact";
 
-// ─── Dynamic phone number config ────────────────────────────────
-// Any page NOT listed below falls back to DEFAULT_PHONE.
-const DEFAULT_PHONE = "08065916415";
-
-// Special pages → 08065916418
-const SPECIAL_PHONE = "08065916418";
-const SPECIAL_PHONE_PAGES = [
-  "/best-pilonidal-sinus-treatment-in-bangalore",
-  "/best-rectal-prolapse-treatment-in-bangalore",
-  "/expert-pediatric-anal-care-treatment-in-bangalore",
-];
-
-// Cost pages → 08065916427
-const COST_PHONE = "08065916427";
-const COST_PHONE_PAGES = [
-  "/piles/piles-laser-treatment-cost-in-Bangalore",
-  "/fistula/anal-fistula-surgery-cost-in-Bangalore",
-];
-// ────────────────────────────────────────────────────────────────
 
 export default function Header({
   PhoneNumber,
@@ -33,15 +15,7 @@ export default function Header({
 }) {
   const pathname = usePathname();
 
-  // Strip a trailing slash so "/page/" still matches "/page".
-  const normalizedPath = (pathname ?? "").replace(/\/$/, "");
-
-  let phoneNumber = DEFAULT_PHONE;
-  if (COST_PHONE_PAGES.includes(normalizedPath)) {
-    phoneNumber = COST_PHONE;
-  } else if (SPECIAL_PHONE_PAGES.includes(normalizedPath)) {
-    phoneNumber = SPECIAL_PHONE;
-  }
+  const phoneNumber = getPhoneForPath(pathname);
 
   const scrollToSection = (id) => {
     if (!id) {
@@ -130,7 +104,7 @@ export default function Header({
               <div className="header__cta flex items-center gap-1 md:gap-3">
         {/* WhatsApp Icon (separate) */}
         <a
-          href="https://wa.me/919380498256"
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center"
@@ -169,7 +143,7 @@ export default function Header({
 
         {/* <!-- Desktop Link (> 760px) → WhatsApp --> */}
         <a
-          href="https://wa.me/919380498256"
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="header_cta_type_one desktop-only flex items-center gap-2 transition-transform duration-300 hover:-translate-y-1 active:translate-y-0.5"

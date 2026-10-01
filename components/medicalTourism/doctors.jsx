@@ -7,7 +7,7 @@ import ConsultationForm from "./form";
 const doctors = [
   {
     name: "Dr. Rajashekar M R",
-    qualification: "MBBS, MS",
+    qualification: "MBBS, MS General Surgeon",
     role: "Founder & Chief Proctologist",
     experience: "42+ Years",
     badge: "Founder",
@@ -19,7 +19,7 @@ const doctors = [
     name: "Dr. Shreedevi K.N.",
     qualification: "MBBS, MS, FSGE Surgical",
     role: "Gastroenterology & Colorectal Surgeon",
-    experience: "12+ Years",
+    experience: "12 Years",
     image: "/doctorshreedevicard.avif",
     whatsappText:
       "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Shreedevi",
@@ -54,7 +54,7 @@ export default function MtDoctorsStrip() {
           </h2>
 
           <p className="mt-3 text-sm leading-7 text-[#5A7078] sm:text-base">
-            Led by Dr. Rajasekhar Mysore — 38+ years, 180k+ Patients Treated.
+            Led by Dr. Rajasekhar Mysore — 30+ years, 180k+ Patients Treated.
             You&apos;ll be treated by the specialist, not handed off to a
             junior.
           </p>

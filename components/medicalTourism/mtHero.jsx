@@ -69,7 +69,7 @@ export default function MtHero() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-7 !text-white/90 sm:text-lg">
-            38 years of expert proctology care. If you're struggling with Piles,
+            30+ years of expert proctology care. If you're struggling with Piles,
             Fistula, Fissure, or Colon conditions — get world-class treatment at
             a fraction of Western costs. Thousands of patients from various
             countries trust Dr. Rajasekhar's team.
@@ -94,7 +94,7 @@ export default function MtHero() {
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
             <div className="rounded-2xl bg-white/10 px-4 py-5 text-center shadow-sm backdrop-blur-sm">
               <div className="text-2xl font-bold text-[#F8B956] sm:text-3xl">
-                38+
+                30+
               </div>
               <div className="mt-1 text-sm text-white/90">Years Experience</div>
             </div>

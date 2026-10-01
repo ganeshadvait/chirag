@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 // import { useFormModal } from "@/hooks/useFormModal";
-import { contactAction } from "@/hooks/contact";
+import ContactCta from "@/components/ContactCta";
 
 export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
   // const { handleButtonClick, FormModal } = useFormModal();
@@ -14,12 +14,11 @@ export default function AiHealthBanner({ heading, buttonText, imageSrc }) {
           <div className="flex flex-col items-start gap-4 w-full md:basis-7/10 p-6 md:p-8">
             <h2 className="text-[32px] font-bold text-gray-900">{heading}</h2>
 
-            <button
-              onClick={contactAction}
-              className="mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
+            <ContactCta
+              className="inline-block mt-3 rounded-full bg-[#625587] px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-black hover:border border-[#625587] transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:ml-4"
             >
               {buttonText}
-            </button>
+            </ContactCta>
           </div>
 
           {/* Right Section */}

@@ -1,60 +1,15 @@
 "use client";
 // import { useFormModal } from "@/hooks/useFormModal";
-import { usePathname } from "next/navigation";
-import { contactAction } from "@/hooks/contact";
+import ContactCta from "@/components/ContactCta";
+import { useContactPhone } from "@/hooks/contact";
+import { toTel } from "@/constants/contact";
+
+const buttonClass =
+  "mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center";
 
 export default function InsuranceAdvisorSection({ cards }) {
   // const { handleButtonClick, FormModal } = useFormModal();
-  const pathname = usePathname();
-
-  // Pages that should use the alternate number
-  const specialPages = new Set([
-    "/piles/piles-laser-treatment-cost-in-Bangalore",
-    "/fistula/anal-fistula-surgery-cost-in-Bangalore",
-  ]);
-
-  // Page trees that should use the 08065916418 number (matches base path and any /[slug] under it)
-  const altPhonePrefixes = [
-    "/best-pilonidal-sinus-treatment-in-bangalore",
-    "/best-rectal-prolapse-treatment-in-bangalore",
-    "/expert-pediatric-anal-care-treatment-in-bangalore",
-  ];
-
-  const matchesAltPrefix = altPhonePrefixes.some(
-    (p) => pathname === p || pathname.startsWith(p + "/")
-  );
-
-  const phoneNumber = specialPages.has(pathname)
-    ? "08065916427"
-    : matchesAltPrefix
-    ? "08065916418"
-    : "08065916415";
-
-  const isMobile = () =>
-    typeof window !== "undefined" &&
-    window.matchMedia("(max-width: 767px)").matches;
-
-  const callNow = () => {
-    window.location.href = `tel:${phoneNumber}`;
-  };
-
-  const handleCTAClick = (idx) => {
-    // First card:
-    // Desktop -> open modal
-    // Mobile  -> call
-    if (idx === 0) {
-      if (isMobile()) callNow();
-      else contactAction();
-      return;
-    }
-
-    // Second card:
-    // Desktop + Mobile -> call
-    if (idx === 1) {
-      callNow();
-      return;
-    }
-  };
+  const phoneNumber = useContactPhone();
 
   return (
     <section className="w-full max-w-5xl mx-auto px-0 md:px-4 py-8">
@@ -85,12 +40,15 @@ export default function InsuranceAdvisorSection({ cards }) {
               )}
             </div>
 
-            <button
-              onClick={() => handleCTAClick(idx)}
-              className="mt-auto rounded-full bg-[#625587] px-7 py-3.5 text-white font-semibold text-lg shadow hover:bg-white hover:text-black hover:border border-[#625587] transition flex items-center justify-center"
-            >
-              {card.buttonText}
-            </button>
+            {/* First card: desktop → WhatsApp, mobile → call.
+                Second card ("Call Our Advisors"): call on desktop + mobile. */}
+            {idx === 1 ? (
+              <a href={toTel(phoneNumber)} className={buttonClass}>
+                {card.buttonText}
+              </a>
+            ) : (
+              <ContactCta className={buttonClass}>{card.buttonText}</ContactCta>
+            )}
           </div>
         ))}
       </div>
