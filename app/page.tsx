@@ -89,7 +89,7 @@ export default function NewDesign() {
     topDoctors: [
       {
         name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
+        designation: "MBBS, MS General Surgeon",
         qualification: "Founder and Senior Colorectal Surgeon",
         experience: "30+ Years",
         reviews: "99%",
