@@ -11,7 +11,7 @@ export default function StatsSection({
       {aboveContetn && (
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 mb-6 leading-relaxed bg-[#625587] p-5 md:p-6 rounded-lg shadow-lg">
           <div className="w-full sm:w-[65%] lg:w-[70%] sm:pl-2 md:pl-6 text-center sm:text-left order-2 sm:order-1">
-            <h2 className="text-lg md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-white mb-2">
+            <h2 className="no-section-heading text-lg md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-white mb-2">
               {aboveContetn}
             </h2>
             <h3 className="text-base md:text-xl lg:text-xl xl:text-2xl font-medium text-white">

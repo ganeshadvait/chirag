@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.variable} antialiased`}>
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
@@ -42,6 +42,19 @@ export default function RootLayout({
         {/* Google Translate */}
         <Script id="google-translate-init" strategy="beforeInteractive">
           {`
+            // Mark the active language on <html> before first paint so CSS
+            // can style translated pages (html[data-lang="kn"|"hi"]).
+            // No regex here: backslashes are eaten by this template literal.
+            try {
+              var lang = 'en';
+              document.cookie.split('; ').forEach(function (c) {
+                if (c.indexOf('googtrans=') === 0) {
+                  var parts = c.split('=')[1].split('/');
+                  if (parts[2]) lang = parts[2];
+                }
+              });
+              document.documentElement.setAttribute('data-lang', lang);
+            } catch (e) {}
             window.googleTranslateElementInit = function () {
               new google.translate.TranslateElement({
                 pageLanguage: 'en',

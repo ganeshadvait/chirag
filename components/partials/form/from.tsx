@@ -286,7 +286,7 @@ export default function ConsultationForm({
       )}
 
       <h2
-        className={`text-xl font-semibold text-[#0b1b3f] mt-2 mb-0 md:mb-4 ${
+        className={`no-section-heading text-xl font-semibold text-[#0b1b3f] mt-2 mb-0 md:mb-4 ${
           !showForm ? "hidden" : "block"
         }`}
       >
