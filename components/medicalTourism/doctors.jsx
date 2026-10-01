@@ -7,7 +7,7 @@ import ConsultationForm from "./form";
 const doctors = [
   {
     name: "Dr. Rajashekar M R",
-    qualification: "MBBS, MS",
+    qualification: "MBBS, MS General Surgeon",
     role: "Founder & Chief Proctologist",
     experience: "42+ Years",
     badge: "Founder",

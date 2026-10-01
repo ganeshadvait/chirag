@@ -314,7 +314,7 @@ export default async function DoctorProfile({ params }: Props) {
     topDoctors: [
       {
         name: "Dr. Rajasekhar M R",
-        designation: "MBBS, MS",
+        designation: "MBBS, MS General Surgeon",
         qualification: "Founder and Senior Colorectal Surgeon",
         experience: "30+ Years",
         reviews: "99%",
