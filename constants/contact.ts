@@ -19,6 +19,8 @@ const SPECIAL_PHONE_PAGES = [
   "/best-rectal-prolapse-treatment-in-bangalore",
   "/expert-pediatric-anal-care-treatment-in-bangalore",
 ];
+// Whole sections (the page itself and every page under it) → 08065916418
+const SPECIAL_PHONE_SECTIONS = ["/colorectal-cancer"];
 // ────────────────────────────────────────────────────────────────
 
 export const WHATSAPP_URL = "https://wa.me/919380498256";
@@ -32,10 +34,14 @@ const normalizePath = (pathname: string) =>
 const matches = (pages: string[], path: string) =>
   pages.some((p) => p.toLowerCase() === path);
 
+const inSection = (sections: string[], path: string) =>
+  sections.some((s) => path === s || path.startsWith(`${s}/`));
+
 export function getPhoneForPath(pathname?: string | null) {
   const path = normalizePath(pathname ?? "");
   if (matches(COST_PHONE_PAGES, path)) return COST_PHONE;
   if (matches(SPECIAL_PHONE_PAGES, path)) return SPECIAL_PHONE;
+  if (inSection(SPECIAL_PHONE_SECTIONS, path)) return SPECIAL_PHONE;
   return SUPPORT_PHONE_DEFAULT;
 }
 

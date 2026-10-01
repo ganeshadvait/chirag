@@ -36,7 +36,7 @@ const contentMap: Record<
   }
 > = {
   "colorectal-laser-treatment-cost-in-bangalore": {
-    phone: "08065916415",
+    phone: "08065916418",
     hero: {
       heading: "Best Colorectal Cancer Treatment in Bangalore",
       points: [
@@ -76,6 +76,9 @@ const contentMap: Record<
       },
     ],
   },
+  "best-colorectal-cancer-treatment-in-bangalore": {
+    phone: "08065916418",
+  },
 };
 
 export default function PilesConditions() {
@@ -89,7 +92,7 @@ export default function PilesConditions() {
 
   const pageContent = contentMap[normalizedSlug];
 
-  const defaultPhone = "08065916415";
+  const defaultPhone = "08065916418";
   const finalPhone = pageContent?.phone ?? defaultPhone;
 
   const finalPhoneTel = `tel:${finalPhone}`;
