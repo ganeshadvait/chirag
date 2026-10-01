@@ -371,7 +371,7 @@ export default async function DoctorProfile({ params }: Props) {
       points:
         details.name === "Dr. Shreedevi KN"
           ? [
-              "Expert colorectal surgeon with 12+ years of experience",
+              "Expert colorectal surgeon with 12 years of experience",
               "Advanced laser and minimally invasive procedures",
               "Consistent treatment outcomes and patient satisfaction",
             ]

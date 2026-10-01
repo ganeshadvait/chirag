@@ -19,7 +19,7 @@ const doctors = [
     name: "Dr. Shreedevi K.N.",
     qualification: "MBBS, MS, FSGE Surgical",
     role: "Gastroenterology & Colorectal Surgeon",
-    experience: "12+ Years",
+    experience: "12 Years",
     image: "/doctorshreedevicard.avif",
     whatsappText:
       "I'd%20like%20to%20book%20a%20consultation%20with%20Dr.%20Shreedevi",
